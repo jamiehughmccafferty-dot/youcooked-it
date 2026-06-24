@@ -26,9 +26,7 @@ img{max-width:100%;display:block} a{color:inherit;text-decoration:none}
 
 /* nav */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;
-  padding:14px clamp(18px,4vw,46px);color:var(--ink);background:rgba(255,255,255,.72);
-  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(36,23,18,.06)}
-nav a{color:inherit}
+  padding:16px clamp(18px,4vw,46px);mix-blend-mode:difference;color:#fff}
 nav .brand{font-family:"Unbounded";font-weight:800;font-size:19px;text-transform:lowercase;letter-spacing:-.02em}
 nav .nl{display:flex;gap:20px;font-size:13px;text-transform:lowercase}
 @media(max-width:680px){nav .nl{display:none}}
