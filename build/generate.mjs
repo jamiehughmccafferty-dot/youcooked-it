@@ -61,8 +61,10 @@ const CAT={curry:'#e8991c',rice:'#b7923c',chicken:'#e2561f',dessert:'#ff4d6d',ca
   salad:'#4f8a3a',veg:'#6fae3c',vegetarian:'#3c9e74',breakfast:'#e9a72f',brunch:'#d98a52',pasta:'#c0341a',
   seafood:'#2f9bb0',soup:'#cf7b2a',stew:'#9c5526',bread:'#c98a3a',drinks:'#8a5cc4',sauce:'#cf3636'};
 const imgFiles = new Set(fs.existsSync(p('images')) ? fs.readdirSync(p('images')).map(f=>f.toLowerCase()) : []);
-const imaged = {};
-records.forEach(r=>{ if(imgFiles.has((r.slug+'.png').toLowerCase())) imaged[r.slug]=1; });
+const thumbFiles = new Set(fs.existsSync(p('images','thumb')) ? fs.readdirSync(p('images','thumb')).map(f=>f.toLowerCase()) : []);
+const imaged = {};   // slug -> the (small) image path used on the browse card
+records.forEach(r=>{ const f=(r.slug+'.png').toLowerCase();
+  if(imgFiles.has(f)) imaged[r.slug] = thumbFiles.has(f) ? 'images/thumb/'+r.slug+'.png' : 'images/'+r.slug+'.png'; });
 const esc = s => String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 const metaDesc = rec => { const s=(rec.story||'').trim(); if(s){ const first=s.split('. ')[0]; return first.length>20?first+'.':s.slice(0,155); } return rec.title+' — an immersive cook-along recipe from You Cooked It.'; };
 
@@ -223,7 +225,7 @@ ${imaged['marry-me-chicken']?`<meta property="og:image" content="${SITE}/images/
         var col=CAT[c.category]||'#e2561f';
         var hasImg=!!IMAGED[c.slug];
         var a=document.createElement('a');a.className='card'+(hasImg?' has-img':'');a.href=LINK+c.slug+'.html';a.style.setProperty('--c',col);
-        var art=hasImg?'<div class="cglow"></div><img class="cimg" alt="" onerror="this.previousSibling.style.display=\\'none\\';this.style.display=\\'none\\'" src="'+ASSET+'images/'+c.slug+'.png">':'<div class="cblob"></div>';
+        var art=hasImg?'<div class="cglow"></div><img class="cimg" alt="" loading="lazy" decoding="async" width="256" height="256" onerror="this.previousSibling.style.display=\\'none\\';this.style.display=\\'none\\'" src="'+ASSET+IMAGED[c.slug]+'">':'<div class="cblob"></div>';
         a.innerHTML=art+(c.tag==='trender'?'<div class="tag">trending</div>':'')+
           '<div class="inner"><div class="ccat">'+c.category+'</div><div class="ctitle">'+c.title.toLowerCase()+'</div></div>';
         grid.appendChild(a);

@@ -52,6 +52,11 @@ async function keyBlack(srcPath, dstPath) {
   }
 
   await img.writeAsync(dstPath);
+
+  // also write a 256px card thumbnail (alpha preserved) so the home grid stays light
+  const thumbDir = path.join(path.dirname(dstPath), 'thumb');
+  fs.mkdirSync(thumbDir, { recursive: true });
+  await img.clone().resize(256, Jimp.AUTO, Jimp.RESIZE_BICUBIC).writeAsync(path.join(thumbDir, path.basename(dstPath)));
 }
 
 (async () => {
