@@ -172,7 +172,7 @@ records.forEach(rec=>fs.writeFileSync(path.join(outDir,rec.slug+'.html'), page(r
 
 // ---- home page (browse grid) ----
 const cats = [...new Set(records.map(r=>r.category))].sort();
-const cards = records.map(r=>({slug:r.slug,title:r.title,category:r.category,tag:r.tag||'evergreen',published:r.status==='published'}));
+const cards = records.map(r=>({slug:r.slug,title:r.title,category:r.category,cuisine:r.cuisine||'',tag:r.tag||'evergreen',published:r.status==='published'}));
 
 const browse = (assetPrefix, linkPrefix)=>`<!DOCTYPE html>
 <html lang="en">
@@ -217,14 +217,38 @@ ${imaged['marry-me-chicken']?`<meta property="og:image" content="${SITE}/images/
     // recipes with a hero image on disk (derived at build time)
     var IMAGED=${JSON.stringify(imaged)};
     var grid=document.getElementById('grid'),count=document.getElementById('count'),filters=document.getElementById('filters');
-    var active='all';
-    function chip(label,val){var b=document.createElement('button');b.className='fchip'+(val===active?' on':'');b.textContent=label;b.onclick=function(){active=val;draw();};return b;}
-    function drawFilters(){filters.innerHTML='';filters.appendChild(chip('all','all'));CATS.forEach(function(c){filters.appendChild(chip(c,c));});}
-    function draw(){
-      drawFilters();grid.innerHTML='';
-      var list=CARDS.filter(function(c){return active==='all'||c.category===active;});
-      // on the unfiltered view, pin the trending recipes to the front (stable order otherwise)
-      if(active==='all')list=list.slice().sort(function(a,b){return (b.tag==='trender')-(a.tag==='trender');});
+    var active='all',query='';
+    // similar-word map (UK/US + common variants) so a search finds the dish either way
+    var SYN={prawn:'shrimp',shrimp:'prawn',prawns:'shrimp',aubergine:'eggplant',eggplant:'aubergine',courgette:'zucchini',zucchini:'courgette',
+      coriander:'cilantro',cilantro:'coriander',cookie:'biscuit',biscuit:'cookie',cookies:'biscuit',chips:'fries',fries:'chips',
+      pudding:'dessert',mince:'beef',rocket:'arugula',arugula:'rocket',pepper:'capsicum',capsicum:'pepper',chickpea:'garbanzo',garbanzo:'chickpea',
+      starter:'side',spicy:'hot',sweet:'dessert',veggie:'vegetarian',veg:'vegetable',noodle:'noodles'};
+    CARDS.forEach(function(c){c._s=(c.title+' '+c.category+' '+(c.cuisine||'')).toLowerCase();c._w=c._s.split(/[^a-z0-9]+/).filter(Boolean);});
+    function lev(a,b){var m=a.length,n=b.length,d=[],i,j;for(i=0;i<=m;i++)d[i]=[i];for(j=0;j<=n;j++)d[0][j]=j;
+      for(i=1;i<=m;i++)for(j=1;j<=n;j++)d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]===b[j-1]?0:1));return d[m][n];}
+    function tokenHit(tok,c){
+      if(c._s.indexOf(tok)>-1)return true;                              // substring (keywords)
+      var s=SYN[tok];if(s&&c._s.indexOf(s)>-1)return true;              // similar word
+      if(tok.length>=4){for(var i=0;i<c._w.length;i++){var w=c._w[i];if(Math.abs(w.length-tok.length)<=1&&lev(tok,w)<=1)return true;}}  // typo
+      return false;
+    }
+    function matchesQuery(c){if(!query)return true;var toks=query.split(/\s+/).filter(Boolean);for(var i=0;i<toks.length;i++)if(!tokenHit(toks[i],c))return false;return true;}
+    function chip(label,val){var b=document.createElement('button');b.className='fchip cat'+(val===active?' on':'');b.textContent=label;b.onclick=function(){active=val;drawFilters();renderGrid();};return b;}
+    // search pill — built once, kept across redraws so it never loses focus/value
+    var searchChip=document.createElement('label');searchChip.className='fchip fsearch';
+    searchChip.innerHTML='<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="7" cy="7" r="4.5"/><path d="M11 11l3.5 3.5"/></svg>';
+    var qi=document.createElement('input');qi.type='search';qi.placeholder='search';qi.setAttribute('autocomplete','off');qi.setAttribute('aria-label','search recipes');
+    searchChip.appendChild(qi);
+    qi.addEventListener('input',function(){query=qi.value.toLowerCase().trim();renderGrid();});
+    function drawFilters(){
+      [].slice.call(filters.querySelectorAll('.fchip.cat')).forEach(function(b){b.remove();});
+      var frag=document.createDocumentFragment();frag.appendChild(chip('all','all'));CATS.forEach(function(c){frag.appendChild(chip(c,c));});
+      filters.insertBefore(frag,searchChip);
+    }
+    function renderGrid(){
+      grid.innerHTML='';
+      var list=CARDS.filter(function(c){return (active==='all'||c.category===active)&&matchesQuery(c);});
+      if(active==='all'&&!query)list=list.slice().sort(function(a,b){return (b.tag==='trender')-(a.tag==='trender');});
       list.forEach(function(c){
         var col=CAT[c.category]||'#e2561f';
         var hasImg=!!IMAGED[c.slug];
@@ -234,9 +258,11 @@ ${imaged['marry-me-chicken']?`<meta property="og:image" content="${SITE}/images/
           '<div class="inner"><div class="ccat">'+c.category+'</div><div class="ctitle">'+c.title.toLowerCase()+'</div></div>';
         grid.appendChild(a);
       });
-      count.textContent=list.length+' of '+CARDS.length+' recipes';
+      if(!list.length)grid.innerHTML='<div class="noresults">no recipes match that yet — try another word.</div>';
+      count.textContent=query?(list.length+' result'+(list.length===1?'':'s')):(list.length+' of '+CARDS.length+' recipes');
     }
-    draw();
+    filters.appendChild(searchChip);
+    drawFilters();renderGrid();
   </script>
 </body>
 </html>`;

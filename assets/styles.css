@@ -164,6 +164,15 @@ nav .nl{display:flex;gap:20px;font-size:13px;text-transform:lowercase}
   background:#fff;color:var(--ink);padding:8px 14px;border-radius:999px;cursor:pointer;transition:.15s}
 .fchip:hover{border-color:var(--ink)}
 .fchip.on{background:var(--ink);color:var(--cream);border-color:var(--ink)}
+/* search pill — looks like a chip, holds an input */
+.fsearch{display:inline-flex;align-items:center;gap:7px;cursor:text;padding:8px 14px}
+.fsearch svg{width:13px;height:13px;opacity:.5;flex:none}
+.fsearch:focus-within{border-color:var(--ink)}
+.fsearch input{border:0;outline:0;background:transparent;width:84px;padding:0;color:var(--ink);
+  font-family:"Space Mono";font-size:12px;text-transform:uppercase;letter-spacing:.08em}
+.fsearch input::placeholder{color:rgba(36,23,18,.45)}
+.fsearch input::-webkit-search-cancel-button{-webkit-appearance:none}
+.noresults{grid-column:1/-1;text-align:center;color:var(--ink-soft);font-size:15px;padding:44px 0}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
 .card{position:relative;display:block;border-radius:20px;overflow:hidden;background:#fff;border:1px solid rgba(36,23,18,.08);
   padding:22px 20px 20px;min-height:170px;transition:transform .18s,box-shadow .18s}
