@@ -1,0 +1,31 @@
+# Cloudflare Pages global response headers (DEFENSIVE BACKUP).
+# Production runs on Vercel — see vercel.json. Keep both in sync if hosts change.
+# Docs: https://developers.cloudflare.com/pages/configuration/headers/
+
+# ─── Security headers (every response) ───────────────────────────────
+/*
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
+  X-Frame-Options: SAMEORIGIN
+
+# ─── Assets (css + js) — short cache, revalidate (not content-hashed) ─
+/assets/*
+  Cache-Control: public, max-age=86400, must-revalidate
+
+# ─── Hero images — stable per slug, longer cache ─────────────────────
+/images/*
+  Cache-Control: public, max-age=604800
+
+# ─── HTML pages (short cache + revalidate) ───────────────────────────
+/*.html
+  Cache-Control: public, max-age=300, must-revalidate
+
+# ─── XML / TXT / manifest ────────────────────────────────────────────
+/sitemap.xml
+  Cache-Control: public, max-age=3600
+/robots.txt
+  Cache-Control: public, max-age=3600
+/site.webmanifest
+  Cache-Control: public, max-age=86400

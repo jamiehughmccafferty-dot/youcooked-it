@@ -1,0 +1,12 @@
+{
+  "name": "You Cooked It",
+  "short_name": "You Cooked It",
+  "description": "Immersive cook-along recipes — every recipe, one kitchen.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#e2561f",
+  "icons": [
+    { "src": "/favicon.svg", "type": "image/svg+xml", "sizes": "any" }
+  ]
+}

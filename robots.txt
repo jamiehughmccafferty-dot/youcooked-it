@@ -1,0 +1,7 @@
+# You Cooked It
+User-agent: *
+Allow: /
+
+Disallow: /recipe.html
+
+Sitemap: https://youcooked-it.com/sitemap.xml

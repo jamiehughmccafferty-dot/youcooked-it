@@ -1,0 +1,8 @@
+# Cloudflare Pages redirects (DEFENSIVE BACKUP for Cloudflare only).
+# Production runs on Vercel (vercel.json: "cleanUrls": true). Vercel IGNORES this file.
+#
+# Clean URLs (drop .html) are handled natively by both Vercel (cleanUrls) and
+# Cloudflare Pages, so no per-page rules are needed here. Only special cases below.
+
+# Legacy single-file redirect shim -> canonical home
+/recipe.html   /   301
