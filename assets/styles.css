@@ -58,7 +58,7 @@ nav .nl{display:flex;gap:20px;font-size:13px;text-transform:lowercase}
 .badge{position:absolute;z-index:3;top:-11%;right:-11%;width:120px;height:120px;animation:spin 14s linear infinite}
 .badge text{font-family:"Space Mono";font-size:10.5px;letter-spacing:.15em;fill:var(--ink);text-transform:uppercase} .badge .dot{fill:var(--accent)}
 @keyframes spin{to{transform:rotate(360deg)}}
-@media(max-width:820px){#hero .grid{grid-template-columns:1fr;gap:28px}.art{order:-1;max-width:420px;margin-inline:auto}.badge{width:84px;height:84px;top:-2%;right:2%}}
+@media(max-width:820px){#hero .grid{grid-template-columns:1fr;gap:44px}.art{order:-1;max-width:420px;margin-inline:auto}.blob{width:110%}.badge{width:84px;height:84px;top:-2%;right:2%}#hero .grid>div:first-child{position:relative;z-index:1}}
 
 /* marquee */
 .marquee{overflow:hidden;padding:13px 0;white-space:nowrap;background:var(--ink);color:var(--cream)}
