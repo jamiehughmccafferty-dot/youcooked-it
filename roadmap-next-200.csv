@@ -1,0 +1,201 @@
+category,recipe,slug,tag
+chicken,Chicken Chow Mein,chicken-chow-mein,evergreen
+chicken,Sweet and Sour Chicken,sweet-and-sour-chicken,evergreen
+chicken,Kung Pao Chicken,kung-pao-chicken,evergreen
+chicken,General Tso's Chicken,general-tsos-chicken,evergreen
+chicken,Peri Peri Chicken,peri-peri-chicken,evergreen
+chicken,Chicken Cordon Bleu,chicken-cordon-bleu,evergreen
+chicken,Hunters Chicken,hunters-chicken,evergreen
+chicken,Chicken Souvlaki,chicken-souvlaki,evergreen
+chicken,Chicken Tagine,chicken-tagine,evergreen
+chicken,Chicken and Chorizo Bake,chicken-and-chorizo-bake,evergreen
+chicken,Chicken Pasta Bake,chicken-pasta-bake,evergreen
+chicken,Chicken Goujons,chicken-goujons,evergreen
+pasta,Penne alla Vodka,penne-alla-vodka,evergreen
+pasta,Spaghetti and Meatballs,spaghetti-and-meatballs,evergreen
+pasta,Pasta Primavera,pasta-primavera,evergreen
+pasta,Bucatini all'Amatriciana,bucatini-allamatriciana,evergreen
+pasta,Orecchiette with Sausage,orecchiette-with-sausage,evergreen
+pasta,Pasta alla Norma,pasta-alla-norma,evergreen
+pasta,Linguine alle Vongole,linguine-alle-vongole,evergreen
+pasta,Spinach and Ricotta Cannelloni,spinach-ricotta-cannelloni,evergreen
+pasta,Baked Feta Pasta,baked-feta-pasta,trender
+pasta,Lobster Mac and Cheese,lobster-mac-and-cheese,evergreen
+curry,Chicken Jalfrezi,chicken-jalfrezi,evergreen
+curry,Lamb Bhuna,lamb-bhuna,evergreen
+curry,Beef Madras,beef-madras,evergreen
+curry,Chicken Dhansak,chicken-dhansak,evergreen
+curry,Lamb Vindaloo,lamb-vindaloo,evergreen
+curry,Goan Fish Curry,goan-fish-curry,evergreen
+curry,Paneer Tikka Masala,paneer-tikka-masala,evergreen
+curry,Aloo Gobi,aloo-gobi,evergreen
+curry,Chicken Korma,chicken-korma,evergreen
+curry,Keema Curry,keema-curry,evergreen
+dessert,Eton Mess,eton-mess,evergreen
+dessert,Profiteroles,profiteroles,evergreen
+dessert,Trifle,trifle,evergreen
+dessert,Bakewell Tart,bakewell-tart,evergreen
+dessert,Lemon Meringue Pie,lemon-meringue-pie,evergreen
+dessert,Pavlova,pavlova,evergreen
+dessert,Rice Pudding,rice-pudding,evergreen
+dessert,Baklava,baklava,evergreen
+dessert,Fruit Crumble,fruit-crumble,evergreen
+dessert,Treacle Tart,treacle-tart,evergreen
+cake,Battenberg Cake,battenberg-cake,evergreen
+cake,Swiss Roll,swiss-roll,evergreen
+cake,Marble Cake,marble-cake,evergreen
+cake,Madeira Cake,madeira-cake,evergreen
+cake,Tres Leches Cake,tres-leches-cake,evergreen
+cake,Banana Cake,banana-cake,evergreen
+cake,Chocolate Fudge Cake,chocolate-fudge-cake,evergreen
+cake,Lemon Polenta Cake,lemon-polenta-cake,evergreen
+baking,Macarons,macarons,evergreen
+baking,Eclairs,eclairs,evergreen
+baking,Doughnuts,doughnuts,evergreen
+baking,Bagels,bagels,evergreen
+baking,Soft Pretzels,soft-pretzels,evergreen
+baking,Millionaire's Shortbread,millionaires-shortbread,evergreen
+baking,Welsh Cakes,welsh-cakes,evergreen
+baking,Hot Cross Buns,hot-cross-buns,evergreen
+baking,Cheese Scones,cheese-scones,evergreen
+baking,Jam Tarts,jam-tarts,evergreen
+bread,Baguette,baguette,evergreen
+bread,Pita Bread,pita-bread,evergreen
+bread,Flatbread,flatbread,evergreen
+bread,Bao Buns,bao-buns,evergreen
+bread,Pizza Dough,pizza-dough,evergreen
+bread,Crumpets,crumpets,evergreen
+soup,Leek and Potato Soup,leek-and-potato-soup,evergreen
+soup,Carrot and Coriander Soup,carrot-and-coriander-soup,evergreen
+soup,Cream of Mushroom Soup,cream-of-mushroom-soup,evergreen
+soup,Gazpacho,gazpacho,evergreen
+soup,Tom Yum Soup,tom-yum-soup,evergreen
+soup,Miso Soup,miso-soup,evergreen
+soup,Chicken and Sweetcorn Soup,chicken-and-sweetcorn-soup,evergreen
+soup,Cullen Skink,cullen-skink,evergreen
+soup,Wonton Soup,wonton-soup,evergreen
+soup,Laksa,laksa,evergreen
+stew,Coq au Vin,coq-au-vin,evergreen
+stew,Lamb Tagine,lamb-tagine,evergreen
+stew,Lancashire Hotpot,lancashire-hotpot,evergreen
+stew,Cassoulet,cassoulet,evergreen
+stew,Pot Roast,pot-roast,evergreen
+stew,Osso Buco,osso-buco,evergreen
+stew,Chicken Cacciatore,chicken-cacciatore,evergreen
+stew,Sausage Casserole,sausage-casserole,evergreen
+salad,Watermelon and Feta Salad,watermelon-feta-salad,evergreen
+salad,Halloumi Salad,halloumi-salad,evergreen
+salad,Fattoush,fattoush,evergreen
+salad,Couscous Salad,couscous-salad,evergreen
+salad,Beetroot and Goat Cheese Salad,beetroot-and-goat-cheese-salad,evergreen
+salad,Asian Slaw,asian-slaw,evergreen
+salad,Green Goddess Salad,green-goddess-salad,trender
+salad,Chicken Caesar Salad,chicken-caesar-salad,evergreen
+seafood,Fish Pie,fish-pie,evergreen
+seafood,Moules Marinieres,moules-marinieres,evergreen
+seafood,Lobster Roll,lobster-roll,evergreen
+seafood,Salt and Pepper Squid,salt-and-pepper-squid,evergreen
+seafood,Kedgeree,kedgeree,evergreen
+seafood,Pan-Seared Scallops,pan-seared-scallops,evergreen
+seafood,Calamari,calamari,evergreen
+seafood,Cod in Parsley Sauce,cod-in-parsley-sauce,evergreen
+seafood,Bang Bang Prawns,bang-bang-prawns,trender
+seafood,Prawn Toast,prawn-toast,evergreen
+rice,Jollof Rice,jollof-rice,evergreen
+rice,Bibimbap,bibimbap,evergreen
+rice,Coconut Rice,coconut-rice,evergreen
+rice,Rice and Peas,rice-and-peas,evergreen
+rice,Spanish Rice,spanish-rice,evergreen
+rice,Congee,congee,evergreen
+drinks,Negroni,negroni,evergreen
+drinks,Aperol Spritz,aperol-spritz,evergreen
+drinks,Whiskey Sour,whiskey-sour,evergreen
+drinks,Bloody Mary,bloody-mary,evergreen
+drinks,Bubble Tea,bubble-tea,evergreen
+drinks,Mulled Wine,mulled-wine,evergreen
+sauce,Fresh Salsa,fresh-salsa,evergreen
+sauce,Tzatziki,tzatziki,evergreen
+sauce,Peppercorn Sauce,peppercorn-sauce,evergreen
+sauce,Romesco Sauce,romesco-sauce,evergreen
+sauce,Sweet Chilli Sauce,sweet-chilli-sauce,evergreen
+sauce,Satay Sauce,satay-sauce,evergreen
+veg,Bubble and Squeak,bubble-and-squeak,evergreen
+veg,Mushroom Wellington,mushroom-wellington,evergreen
+veg,Cauliflower Wings,cauliflower-wings,evergreen
+veg,Courgette Fritters,courgette-fritters,evergreen
+veg,Creamed Spinach,creamed-spinach,evergreen
+veg,Roasted Cauliflower Steaks,roasted-cauliflower-steaks,evergreen
+vegetarian,Lentil Bolognese,lentil-bolognese,evergreen
+vegetarian,Halloumi Burger,halloumi-burger,evergreen
+vegetarian,Mushroom Stroganoff,mushroom-stroganoff,evergreen
+vegetarian,Jackfruit Tacos,jackfruit-tacos,evergreen
+breakfast,Eggs Florentine,eggs-florentine,evergreen
+breakfast,Hash Browns,hash-browns,evergreen
+breakfast,Crepes,crepes,evergreen
+breakfast,Dutch Baby Pancake,dutch-baby-pancake,evergreen
+breakfast,Frittata,frittata,evergreen
+breakfast,Porridge,porridge,evergreen
+breakfast,Breakfast Sandwich,breakfast-sandwich,evergreen
+breakfast,Acai Bowl,acai-bowl,evergreen
+brunch,Croque Monsieur,croque-monsieur,evergreen
+brunch,Quiche Lorraine,quiche-lorraine,evergreen
+brunch,Eggs Royale,eggs-royale,evergreen
+brunch,Smoked Salmon Bagel,smoked-salmon-bagel,evergreen
+sides,Roast Potatoes,roast-potatoes,evergreen
+sides,Mashed Potatoes,mashed-potatoes,evergreen
+sides,Yorkshire Puddings,yorkshire-puddings,evergreen
+sides,Sweet Potato Fries,sweet-potato-fries,evergreen
+sides,Onion Rings,onion-rings,evergreen
+sides,Dauphinoise Potatoes,dauphinoise-potatoes,evergreen
+sides,Hasselback Potatoes,hasselback-potatoes,evergreen
+sides,Honey Roasted Parsnips,honey-roasted-parsnips,evergreen
+sides,Garlic Mushrooms,garlic-mushrooms,evergreen
+sides,Potato Wedges,potato-wedges,evergreen
+snacks,Loaded Nachos,loaded-nachos,evergreen
+snacks,Mozzarella Sticks,mozzarella-sticks,evergreen
+snacks,Spring Rolls,spring-rolls,evergreen
+snacks,Vegetable Samosas,vegetable-samosas,evergreen
+snacks,Onion Bhaji,onion-bhaji,evergreen
+snacks,Gyoza,gyoza,evergreen
+snacks,Arancini,arancini,evergreen
+snacks,Scotch Eggs,scotch-eggs,evergreen
+snacks,Empanadas,empanadas,evergreen
+snacks,Popcorn Chicken,popcorn-chicken,evergreen
+noodles,Pad Thai,pad-thai,evergreen
+noodles,Pad See Ew,pad-see-ew,evergreen
+noodles,Singapore Noodles,singapore-noodles,evergreen
+noodles,Dan Dan Noodles,dan-dan-noodles,evergreen
+noodles,Yaki Udon,yaki-udon,evergreen
+noodles,Lo Mein,lo-mein,evergreen
+noodles,Sesame Noodles,sesame-noodles,evergreen
+noodles,Japchae,japchae,evergreen
+sandwich,Classic Cheeseburger,classic-cheeseburger,evergreen
+sandwich,Smash Burger,smash-burger,trender
+sandwich,Pulled Pork Sandwich,pulled-pork-sandwich,evergreen
+sandwich,BLT,blt,evergreen
+sandwich,Club Sandwich,club-sandwich,evergreen
+sandwich,Reuben Sandwich,reuben-sandwich,evergreen
+sandwich,Philly Cheesesteak,philly-cheesesteak,evergreen
+sandwich,Banh Mi,banh-mi,evergreen
+pie,Steak and Ale Pie,steak-and-ale-pie,evergreen
+pie,Cornish Pasty,cornish-pasty,evergreen
+pie,Sausage Rolls,sausage-rolls,evergreen
+pie,Beef Wellington,beef-wellington,evergreen
+pie,Shepherd's Pie,shepherds-pie,evergreen
+pie,Cottage Pie,cottage-pie,evergreen
+pie,Pork Pie,pork-pie,evergreen
+pie,Chicken and Mushroom Pie,chicken-and-mushroom-pie,evergreen
+bowl,Poke Bowl,poke-bowl,trender
+bowl,Buddha Bowl,buddha-bowl,evergreen
+bowl,Burrito Bowl,burrito-bowl,evergreen
+bowl,Falafel Bowl,falafel-bowl,evergreen
+bowl,Chicken Teriyaki Bowl,chicken-teriyaki-bowl,evergreen
+bowl,Salmon Rice Bowl,salmon-rice-bowl,evergreen
+dip,Hummus,hummus,evergreen
+dip,Guacamole,guacamole,evergreen
+dip,Spinach Artichoke Dip,spinach-artichoke-dip,evergreen
+dip,Baba Ganoush,baba-ganoush,evergreen
+grill,BBQ Ribs,bbq-ribs,evergreen
+grill,Beef Brisket,beef-brisket,evergreen
+grill,Shish Kebabs,shish-kebabs,evergreen
+grill,Lamb Chops,lamb-chops,evergreen

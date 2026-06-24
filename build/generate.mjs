@@ -102,7 +102,7 @@ ${ogImage?`<meta property="og:image" content="${ogImage}"/>
 <link rel="stylesheet" href="../assets/styles.css?v=${cssVer}">
 </head>
 <body data-category="${rec.category}">
-  <div id="pre"><div class="mark"><span style="color:var(--accent)">cooking</span> it</div><div class="pct" id="pct">0%</div><div class="barwrap"><div class="bar" id="prebar"></div></div></div>
+  <div id="pre"><div class="mark"><span style="color:var(--accent)">prepping</span> it</div><div class="pct" id="pct">0%</div><div class="barwrap"><div class="bar" id="prebar"></div></div></div>
 
   <nav><a class="brand" href="../index.html"><span style="color:var(--accent)">cooking</span> it</a><div class="nl"><a href="../index.html">all recipes</a><a href="#story">story</a><a href="#ingredients">ingredients</a><a href="#method">method</a><a href="#finale">serve</a></div></nav>
 
