@@ -178,7 +178,7 @@ nav .nl{display:flex;gap:20px;font-size:13px;text-transform:lowercase}
 /* image cards: transparent plate on an accent blob, title kept to the left */
 .card .cglow{position:absolute;top:50%;right:-34px;transform:translateY(-50%);width:142px;height:142px;
   border-radius:46% 54% 60% 40%/50%;background:var(--c);opacity:.82;filter:blur(1px);z-index:0}
-.card .cimg{position:absolute;top:46%;right:2px;transform:translateY(-50%);width:42%;max-width:110px;z-index:1;
+.card .cimg{position:absolute;top:46%;right:2px;transform:translateY(-50%);width:42%;max-width:110px;height:auto;aspect-ratio:1;z-index:1;
   filter:drop-shadow(0 10px 16px rgba(120,40,15,.28));pointer-events:none}
 .card.has-img .inner{position:relative;z-index:2}
 .card.has-img .ctitle{max-width:52%}
