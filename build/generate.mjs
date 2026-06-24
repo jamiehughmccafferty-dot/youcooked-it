@@ -9,6 +9,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import crypto from 'node:crypto';
 import authored from './recipes-data.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -57,6 +58,9 @@ fs.writeFileSync(p('recipes.json'), JSON.stringify(records,null,2));
 
 // ---- site config, accent palette, hero-image set, helpers (used by page + browse) ----
 const SITE='https://youcooked-it.com';
+// content-hash the assets so a deploy busts browser caches immediately (the files aren't renamed)
+const ver = f => { try { return crypto.createHash('md5').update(fs.readFileSync(p('assets',f))).digest('hex').slice(0,8); } catch(e){ return '1'; } };
+const cssVer = ver('styles.css'), jsVer = ver('recipe-engine.js');
 const CAT={curry:'#e8991c',rice:'#b7923c',chicken:'#e2561f',dessert:'#ff4d6d',cake:'#ef5fa0',baking:'#b86a4a',
   salad:'#4f8a3a',veg:'#6fae3c',vegetarian:'#3c9e74',breakfast:'#e9a72f',brunch:'#d98a52',pasta:'#c0341a',
   seafood:'#2f9bb0',soup:'#cf7b2a',stew:'#9c5526',bread:'#c98a3a',drinks:'#8a5cc4',sauce:'#cf3636'};
@@ -95,7 +99,7 @@ ${ogImage?`<meta property="og:image" content="${ogImage}"/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700;800&family=Hanken+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/styles.css">
+<link rel="stylesheet" href="../assets/styles.css?v=${cssVer}">
 </head>
 <body data-category="${rec.category}">
   <div id="pre"><div class="mark"><span style="color:var(--accent)">cooking</span> it</div><div class="pct" id="pct">0%</div><div class="barwrap"><div class="bar" id="prebar"></div></div></div>
@@ -157,7 +161,7 @@ ${ogImage?`<meta property="og:image" content="${ogImage}"/>
   <div id="hud"><span id="hudtxt">method · 0/0 done</span><div class="hb"><div class="hbf" id="hbf"></div></div></div>
 
   <script>window.RECIPE=${JSON.stringify(rec).replace(/</g,'\\u003c')};</script>
-  <script src="../assets/recipe-engine.js"></script>
+  <script src="../assets/recipe-engine.js?v=${jsVer}"></script>
 </body>
 </html>`;
 };
@@ -191,7 +195,7 @@ ${imaged['marry-me-chicken']?`<meta property="og:image" content="${SITE}/images/
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700;800&family=Hanken+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="${assetPrefix}assets/styles.css">
+<link rel="stylesheet" href="${assetPrefix}assets/styles.css?v=${cssVer}">
 </head>
 <body>
   <nav><a class="brand" href="${assetPrefix||'./'}">you <span style="color:var(--accent)">cook</span> it</a><div class="nl"><a href="${assetPrefix||'./'}">all recipes</a></div></nav>
