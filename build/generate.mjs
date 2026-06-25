@@ -66,6 +66,7 @@ const CAT={curry:'#e8991c',rice:'#b7923c',chicken:'#e2561f',dessert:'#ff4d6d',ca
   seafood:'#2f9bb0',soup:'#cf7b2a',stew:'#9c5526',bread:'#c98a3a',drinks:'#8a5cc4',sauce:'#cf3636'};
 const imgFiles = new Set(fs.existsSync(p('images')) ? fs.readdirSync(p('images')).map(f=>f.toLowerCase()) : []);
 const thumbFiles = new Set(fs.existsSync(p('images','thumb')) ? fs.readdirSync(p('images','thumb')).map(f=>f.toLowerCase()) : []);
+const ogFiles = new Set(fs.existsSync(p('og')) ? fs.readdirSync(p('og')).map(f=>f.toLowerCase()) : []);  // 1200x630 share cards
 const imaged = {};   // slug -> the (small) image path used on the browse card
 records.forEach(r=>{ const f=(r.slug+'.png').toLowerCase();
   if(imgFiles.has(f)) imaged[r.slug] = thumbFiles.has(f) ? 'images/thumb/'+r.slug+'.png' : 'images/'+r.slug+'.png'; });
@@ -75,7 +76,10 @@ const metaDesc = rec => { const s=(rec.story||'').trim(); if(s){ const first=s.s
 // ---- recipe page template ----
 const page = (rec)=>{
   const url=SITE+'/recipes/'+rec.slug, accent=CAT[rec.category]||'#e2561f';
-  const desc=metaDesc(rec), ogImage=imaged[rec.slug]?SITE+'/images/'+rec.slug+'.png':'';
+  const desc=metaDesc(rec);
+  const ogCard=ogFiles.has(rec.slug+'.jpg');
+  const ogImage=ogCard?SITE+'/og/'+rec.slug+'.jpg':(imaged[rec.slug]?SITE+'/images/'+rec.slug+'.png':'');
+  const ogW=ogCard?1200:1024, ogH=ogCard?630:1024;
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -90,8 +94,8 @@ const page = (rec)=>{
 <meta property="og:description" content="${esc(desc)}"/>
 <meta property="og:url" content="${url}"/>
 ${ogImage?`<meta property="og:image" content="${ogImage}"/>
-<meta property="og:image:width" content="1024"/>
-<meta property="og:image:height" content="1024"/>`:''}
+<meta property="og:image:width" content="${ogW}"/>
+<meta property="og:image:height" content="${ogH}"/>`:''}
 <meta name="twitter:card" content="${ogImage?'summary_large_image':'summary'}"/>
 <meta name="theme-color" content="${accent}"/>
 <link rel="icon" href="/favicon.ico" sizes="48x48"/>
@@ -152,7 +156,7 @@ ${ogImage?`<meta property="og:image" content="${ogImage}"/>
     <h2 class="display up">you cooked it.</h2>
     <p class="up" id="finaleText"></p>
     <div class="serveideas up" id="serveideas"></div>
-    <a class="pill" href="#" id="printBtn">save the recipe ⤓</a>
+    <a class="pill pop" href="#" id="shareBtn">share it</a>
   </div></section>
 
   <section id="foot"><div class="wrap">
@@ -189,7 +193,9 @@ const browse = (assetPrefix, linkPrefix)=>`<!DOCTYPE html>
 <meta property="og:title" content="You Cooked It — every recipe, one kitchen"/>
 <meta property="og:description" content="Hundreds of immersive cook-along recipes. Pick a lane and cook with us."/>
 <meta property="og:url" content="${SITE}/"/>
-${imaged['marry-me-chicken']?`<meta property="og:image" content="${SITE}/images/marry-me-chicken.png"/>`:''}
+${ogFiles.has('marry-me-chicken.jpg')?`<meta property="og:image" content="${SITE}/og/marry-me-chicken.jpg"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>`:''}
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="theme-color" content="#ffffff"/>
 <link rel="icon" href="/favicon.ico" sizes="48x48"/>

@@ -8,11 +8,13 @@
     "build": "node build/generate.mjs",
     "keyimages": "node build/transparent.cjs",
     "favicons": "node build/favicons.cjs",
+    "ogcards": "node build/og-cards.mjs",
     "check": "node build/check-images.mjs",
     "serve": "npx -y serve -l 8099 ."
   },
   "devDependencies": {
     "jimp": "^0.22.12",
-    "png-to-ico": "^3.0.1"
+    "png-to-ico": "^3.0.1",
+    "puppeteer": "^25.2.1"
   }
 }

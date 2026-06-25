@@ -150,7 +150,16 @@
   var finished=false;
   function finish(){if(finished)return;finished=true;hud.classList.remove('show');$('#rev').classList.add('in');confettiBurst(60);location.hash='#finale';}
   new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)$('#rev').classList.add('in');});},{threshold:.4}).observe($('#finale'));
-  $('#printBtn').addEventListener('click',function(e){e.preventDefault();window.print();});
+  // share: native share sheet on mobile (shows the OG card), copy-link fallback on desktop
+  var sb=$('#shareBtn');
+  if(sb)sb.addEventListener('click',function(e){e.preventDefault();
+    var url=location.href, t=(R.title||'You Cooked It');
+    var data={title:t+' · You Cooked It', text:'Cook '+t.toLowerCase()+' with You Cooked It', url:url};
+    if(navigator.share){navigator.share(data).catch(function(){});return;}
+    var ok=function(){var o=sb.textContent;sb.textContent='link copied ✓';setTimeout(function(){sb.textContent=o;},1800);};
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(url).then(ok,function(){window.prompt('Copy this link:',url);});}
+    else window.prompt('Copy this link:',url);
+  });
 
   /* confetti */
   function confettiBurst(n){for(var i=0;i<n;i++){var l=document.createElement('div');l.className='leaf';
