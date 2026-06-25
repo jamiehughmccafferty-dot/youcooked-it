@@ -9,6 +9,7 @@
     "keyimages": "node build/transparent.cjs",
     "favicons": "node build/favicons.cjs",
     "ogcards": "node build/og-cards.mjs",
+    "banners": "node build/banners.mjs",
     "check": "node build/check-images.mjs",
     "serve": "npx -y serve -l 8099 ."
   },
