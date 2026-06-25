@@ -182,12 +182,12 @@ const browse = (assetPrefix, linkPrefix)=>`<!DOCTYPE html>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>You Cooked It — every recipe, one kitchen</title>
-<meta name="description" content="${records.length} immersive cook-along recipes from You Cooked It. Pick a lane and cook with us."/>
+<meta name="description" content="Hundreds of immersive cook-along recipes from You Cooked It. Pick a lane and cook with us."/>
 <link rel="canonical" href="${SITE}/"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="You Cooked It"/>
 <meta property="og:title" content="You Cooked It — every recipe, one kitchen"/>
-<meta property="og:description" content="${records.length} immersive cook-along recipes. Pick a lane and cook with us."/>
+<meta property="og:description" content="Hundreds of immersive cook-along recipes. Pick a lane and cook with us."/>
 <meta property="og:url" content="${SITE}/"/>
 ${imaged['marry-me-chicken']?`<meta property="og:image" content="${SITE}/images/marry-me-chicken.png"/>`:''}
 <meta name="twitter:card" content="summary_large_image"/>
@@ -206,7 +206,7 @@ ${imaged['marry-me-chicken']?`<meta property="og:image" content="${SITE}/images/
   <section id="browse"><div class="wrap">
     <div class="head">
       <h1 class="display">every recipe.<br>one kitchen.</h1>
-      <p class="lead">${records.length} recipes, each an immersive cook-along. Pick a lane, or filter by what you're in the mood for.</p>
+      <p class="lead">Hundreds of recipes, each an immersive cook-along. Pick a lane, or filter by what you're in the mood for.</p>
     </div>
     <div class="filters" id="filters"></div>
     <div class="grid" id="grid"></div>
@@ -263,7 +263,7 @@ ${imaged['marry-me-chicken']?`<meta property="og:image" content="${SITE}/images/
         grid.appendChild(a);
       });
       if(!list.length)grid.innerHTML='<div class="noresults">no recipes match that yet — try another word.</div>';
-      count.textContent=query?(list.length+' result'+(list.length===1?'':'s')):(list.length+' of '+CARDS.length+' recipes');
+      count.textContent=query?(list.length+' result'+(list.length===1?'':'s')):(active==='all'?'hundreds of recipes':(list.length+' '+active+' recipes'));
     }
     filters.appendChild(searchChip);
     drawFilters();renderGrid();
