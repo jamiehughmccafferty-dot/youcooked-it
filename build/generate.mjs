@@ -94,7 +94,9 @@ ${ogImage?`<meta property="og:image" content="${ogImage}"/>
 <meta property="og:image:height" content="1024"/>`:''}
 <meta name="twitter:card" content="${ogImage?'summary_large_image':'summary'}"/>
 <meta name="theme-color" content="${accent}"/>
+<link rel="icon" href="/favicon.ico" sizes="48x48"/>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
 <link rel="manifest" href="/site.webmanifest"/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -189,9 +191,11 @@ const browse = (assetPrefix, linkPrefix)=>`<!DOCTYPE html>
 <meta property="og:url" content="${SITE}/"/>
 ${imaged['marry-me-chicken']?`<meta property="og:image" content="${SITE}/images/marry-me-chicken.png"/>`:''}
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="theme-color" content="#e2561f"/>
-<link rel="icon" href="${assetPrefix}favicon.svg" type="image/svg+xml"/>
-<link rel="manifest" href="${assetPrefix}site.webmanifest"/>
+<meta name="theme-color" content="#ffffff"/>
+<link rel="icon" href="/favicon.ico" sizes="48x48"/>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
+<link rel="manifest" href="/site.webmanifest"/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700;800&family=Hanken+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
