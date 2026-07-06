@@ -71,7 +71,7 @@ const imaged = {};   // slug -> the (small) image path used on the browse card
 records.forEach(r=>{ const f=(r.slug+'.png').toLowerCase();
   if(imgFiles.has(f)) imaged[r.slug] = thumbFiles.has(f) ? 'images/thumb/'+r.slug+'.png' : 'images/'+r.slug+'.png'; });
 const esc = s => String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-const metaDesc = rec => { const s=(rec.story||'').trim(); if(s){ const first=s.split('. ')[0]; return first.length>20?first+'.':s.slice(0,155); } return rec.title+' — an immersive cook-along recipe from You Cooked It.'; };
+const metaDesc = rec => { const s=(rec.story||'').trim(); if(s){ const first=s.split('. ')[0]; return first.length>20?first+'.':s.slice(0,155); } return rec.title+', an immersive cook-along recipe from You Cooked It.'; };
 
 // ---- schema.org Recipe (JSON-LD) — invisible metadata for Google rich results ----
 const isoDur = s => { if(!s) return null; const h=(String(s).match(/(\d+)\s*hr/)||[])[1], m=(String(s).match(/(\d+)\s*min/)||[])[1];
@@ -307,7 +307,7 @@ ${ogFiles.has('marry-me-chicken.jpg')?`<meta property="og:image" content="${SITE
           '<div class="inner"><div class="ccat">'+c.category+'</div><div class="ctitle">'+c.title.toLowerCase()+'</div></div>';
         grid.appendChild(a);
       });
-      if(!list.length)grid.innerHTML='<div class="noresults">no recipes match that yet — try another word.</div>';
+      if(!list.length)grid.innerHTML='<div class="noresults">no recipes match that yet · try another word.</div>';
       count.textContent=query?(list.length+' result'+(list.length===1?'':'s')):(active==='all'?'hundreds of recipes':(list.length+' '+active+' recipes'));
     }
     filters.appendChild(searchChip);
@@ -360,23 +360,23 @@ ${noindex?'<meta name="robots" content="noindex"/>':`<link rel="canonical" href=
 
 fs.writeFileSync(p('about.html'), staticPage('about','the kitchen','about<br>you cooked it',`
     <p>You Cooked It is an independent kitchen project from Croft &amp; Hugh. We got tired of recipe sites that bury the food under pop-ups, life stories and fifteen ads, so we built the opposite: one recipe, one screen, and a steady hand on your shoulder from "prepping it" to "you cooked it."</p>
-    <p>Every recipe is written for real UK home kitchens — metric measures, supermarket ingredients, honest timings — and shaped into a cook-along you can actually follow with floury hands: a live serving scaler, step timers, and a little celebration when you're done. Because you did cook it.</p>
+    <p>Every recipe is written for real UK home kitchens, with metric measures, supermarket ingredients and honest timings, then shaped into a cook-along you can actually follow with floury hands: a live serving scaler, step timers, and a little celebration when you're done. Because you did cook it.</p>
     <p>We're a small operation and we're building the biggest, calmest recipe database in the UK, one lane at a time. If a recipe let you down or you want us to cook something next, we want to hear about it.</p>`));
 
 fs.writeFileSync(p('privacy.html'), staticPage('privacy','the small print','privacy',`
     <p>We keep this simple, because we collect almost nothing.</p>
     <p><span class="hl">No cookies from us.</span> We don't set tracking cookies, show personalised ads, or follow you around the internet. That's why there's no cookie banner here.</p>
     <p><span class="hl">Anonymous analytics.</span> We use privacy-friendly, cookieless analytics (Vercel Web Analytics) to count visits and see which recipes people love. It doesn't identify you and doesn't track you across sites.</p>
-    <p><span class="hl">Third parties.</span> Our fonts load from Google Fonts and the site is hosted on Vercel, so those services see standard technical data (like your IP address) needed to deliver the page. Some outbound links may be affiliate links — see our <a href="/disclosure" style="text-decoration:underline">affiliate disclosure</a>.</p>
-    <p>If we ever add anything that changes this — like an email newsletter — we'll ask you first and explain it there, in plain English.</p>`));
+    <p><span class="hl">Third parties.</span> Our fonts load from Google Fonts and the site is hosted on Vercel, so those services see standard technical data (like your IP address) needed to deliver the page. Some outbound links may be affiliate links, see our <a href="/disclosure" style="text-decoration:underline">affiliate disclosure</a>.</p>
+    <p>If we ever add anything that changes this, like an email newsletter, we'll ask you first and explain it there, in plain English.</p>`));
 
 fs.writeFileSync(p('disclosure.html'), staticPage('disclosure','the honest bit','affiliate<br>disclosure',`
-    <p>Some links on You Cooked It may be affiliate links — for example, links to kitchen kit on Amazon. If you buy something through one of them, we may earn a small commission. It costs you nothing extra, and it helps keep this site fast, calm and free of intrusive ads.</p>
+    <p>Some links on You Cooked It may be affiliate links, for example links to kitchen kit on Amazon. If you buy something through one of them, we may earn a small commission. It costs you nothing extra, and it helps keep this site fast, calm and free of intrusive ads.</p>
     <p>As an Amazon Associate we earn from qualifying purchases.</p>
     <p>Two promises: we only ever point at kit we'd genuinely use in our own kitchen, and affiliate links will never interrupt the cook-along itself. Recipes come first, always.</p>`));
 
 fs.writeFileSync(p('404.html'), staticPage('404','lost in the kitchen',"we couldn't<br>find that one.",`
-    <p>That page isn't on the menu — it may have moved, or the link had a typo in it.</p>
+    <p>That page isn't on the menu. It may have moved, or the link had a typo in it.</p>
     <p style="margin-top:26px"><a class="pill pop" href="/">browse every recipe</a></p>`,{noindex:true}));
 
 // ---- sitemap.xml (clean URLs) + robots.txt ----

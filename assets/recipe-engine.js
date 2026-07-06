@@ -103,7 +103,7 @@
     }
     countGathered();
   }
-  function countGathered(){var c=$$('.ing.checked').length;$('#gathered').textContent=c+' of '+total+' gathered'+(total&&c===total?' — all set! 🙌':(total?' — tap to check off':''));}
+  function countGathered(){var c=$$('.ing.checked').length;$('#gathered').textContent=c+' of '+total+' gathered'+(total&&c===total?' · all set! 🙌':(total?' · tap to check off':''));}
   function syncServes(){$('#sv').textContent=serv;var e=document.getElementById('heroEyebrow');if(e)e.textContent='the recipe · serves '+serv;}
   $('#plus').onclick=function(){serv=Math.min(serv+1,12);syncServes();render();};
   $('#minus').onclick=function(){serv=Math.max(serv-1,1);syncServes();render();};

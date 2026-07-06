@@ -88,7 +88,7 @@
           '<div class="inner"><div class="ccat">'+c.category+'</div><div class="ctitle">'+c.title.toLowerCase()+'</div></div>';
         grid.appendChild(a);
       });
-      if(!list.length)grid.innerHTML='<div class="noresults">no recipes match that yet — try another word.</div>';
+      if(!list.length)grid.innerHTML='<div class="noresults">no recipes match that yet · try another word.</div>';
       count.textContent=query?(list.length+' result'+(list.length===1?'':'s')):(active==='all'?'hundreds of recipes':(list.length+' '+active+' recipes'));
     }
     filters.appendChild(searchChip);
