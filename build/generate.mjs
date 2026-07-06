@@ -73,6 +73,40 @@ records.forEach(r=>{ const f=(r.slug+'.png').toLowerCase();
 const esc = s => String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 const metaDesc = rec => { const s=(rec.story||'').trim(); if(s){ const first=s.split('. ')[0]; return first.length>20?first+'.':s.slice(0,155); } return rec.title+' — an immersive cook-along recipe from You Cooked It.'; };
 
+// ---- schema.org Recipe (JSON-LD) — invisible metadata for Google rich results ----
+const isoDur = s => { if(!s) return null; const h=(String(s).match(/(\d+)\s*hr/)||[])[1], m=(String(s).match(/(\d+)\s*min/)||[])[1];
+  if(!h&&!m) return null; return 'PT'+(h?h+'H':'')+(m?m+'M':''); };
+const schemaFor = rec => {
+  const serves=(rec.meta&&rec.meta.serves)||4;
+  const images=[];
+  if(imgFiles.has((rec.slug+'.png').toLowerCase())) images.push(SITE+'/images/'+rec.slug+'.png');      // 1:1
+  if(ogFiles.has(rec.slug+'.jpg')) images.push(SITE+'/og/'+rec.slug+'.jpg');                            // 1.91:1
+  const s={
+    '@context':'https://schema.org','@type':'Recipe',
+    name:rec.title,
+    url:SITE+'/recipes/'+rec.slug,
+    image:images,
+    description:metaDesc(rec),
+    author:{'@type':'Organization',name:'You Cooked It',url:SITE},
+    recipeCategory:rec.category,
+    recipeYield:serves+' servings',
+    keywords:[rec.title,rec.category,rec.cuisine].filter(Boolean).join(', '),
+    recipeIngredient:(rec.ingredient_groups||[]).flatMap(g=>(g.items||[]).map(it=>
+      [it.qty,it.unit,it.name].filter(x=>x!==null&&x!==undefined&&x!=='').join(' ').trim())).filter(Boolean),
+    recipeInstructions:(rec.method||[]).map(st=>({'@type':'HowToStep',name:st.title,text:st.body}))
+  };
+  if(rec.cuisine) s.recipeCuisine=rec.cuisine;
+  const tt=isoDur(rec.meta&&rec.meta.total_time); if(tt) s.totalTime=tt;
+  const m=rec.macros||{};
+  if(m.protein_g!=null&&m.fat_g!=null&&m.carbs_g!=null){
+    s.nutrition={'@type':'NutritionInformation',
+      calories:Math.round(4*m.protein_g+9*m.fat_g+4*m.carbs_g)+' calories',
+      proteinContent:m.protein_g+' g',fatContent:m.fat_g+' g',carbohydrateContent:m.carbs_g+' g',
+      servingSize:'1 serving'};
+  }
+  return JSON.stringify(s).replace(/</g,'\\u003c');
+};
+
 // ---- recipe page template ----
 const page = (rec)=>{
   const url=SITE+'/recipes/'+rec.slug, accent=CAT[rec.category]||'#e2561f';
@@ -106,6 +140,8 @@ ${ogImage?`<meta property="og:image" content="${ogImage}"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700;800&family=Hanken+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/styles.css?v=${cssVer}">
+<script type="application/ld+json">${schemaFor(rec)}</script>
+<script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body data-category="${rec.category}">
   <div id="pre"><div class="mark"><span style="color:var(--accent)">prepping</span> it</div><div class="pct" id="pct">0%</div><div class="barwrap"><div class="bar" id="prebar"></div></div></div>
@@ -162,6 +198,7 @@ ${ogImage?`<meta property="og:image" content="${ogImage}"/>
   <section id="foot"><div class="wrap">
     <div class="display" style="font-size:clamp(34px,7vw,72px);font-weight:800">you <span style="color:var(--accent)">cooked</span> it.</div>
     <div class="mono">an immersive recipe · kitchen by croft &amp; hugh · © 2026</div>
+    <div class="mono" style="margin-top:10px"><a href="/about">about</a> · <a href="/privacy">privacy</a> · <a href="/disclosure">affiliate disclosure</a></div>
   </div></section>
 
   <div id="hud"><span id="hudtxt">method · 0/0 done</span><div class="hb"><div class="hbf" id="hbf"></div></div></div>
@@ -206,6 +243,7 @@ ${ogFiles.has('marry-me-chicken.jpg')?`<meta property="og:image" content="${SITE
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700;800&family=Hanken+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="${assetPrefix}assets/styles.css?v=${cssVer}">
+<script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
   <nav><a class="brand" href="${assetPrefix||'./'}">you <span style="color:var(--accent)">cook</span> it</a><div class="nl"><a href="${assetPrefix||'./'}">all recipes</a></div></nav>
@@ -217,6 +255,7 @@ ${ogFiles.has('marry-me-chicken.jpg')?`<meta property="og:image" content="${SITE
     <div class="filters" id="filters"></div>
     <div class="grid" id="grid"></div>
     <div class="count" id="count"></div>
+    <div class="count" style="margin-top:14px">kitchen by croft &amp; hugh · <a href="/about">about</a> · <a href="/privacy">privacy</a> · <a href="/disclosure">affiliate disclosure</a></div>
   </div></section>
   <script>
     var CARDS=${JSON.stringify(cards).replace(/</g,'\\u003c')};
@@ -283,9 +322,67 @@ fs.writeFileSync(p('index.html'), browse('', 'recipes/'));
 fs.writeFileSync(path.join(outDir,'index.html'),
   '<!DOCTYPE html>\n<meta charset="utf-8">\n<title>You Cooked It</title>\n<meta http-equiv="refresh" content="0; url=../index.html">\n<a href="../index.html">browse all recipes →</a>\n');
 
+// ---- static info pages (about / privacy / disclosure / 404) ----
+const staticPage = (slug, eyebrow, title, bodyHtml, {noindex=false}={}) => {
+  const plain = title.replace(/<[^>]+>/g,' ').replace(/\s+/g,' ').trim();
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>You Cooked It — ${esc(plain)}</title>
+<meta name="description" content="${esc(plain)} — You Cooked It."/>
+${noindex?'<meta name="robots" content="noindex"/>':`<link rel="canonical" href="${SITE}/${slug}"/>`}
+<meta name="theme-color" content="#ffffff"/>
+<link rel="icon" href="/favicon.ico" sizes="48x48"/>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700;800&family=Hanken+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/styles.css?v=${cssVer}">
+<script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body>
+  <nav><a class="brand" href="/">you <span style="color:var(--accent)">cooked</span> it</a><div class="nl"><a href="/">all recipes</a></div></nav>
+  <section id="story" style="padding-top:clamp(110px,16vw,170px)"><div class="wrap">
+    <div class="eyebrow">${esc(eyebrow)}</div>
+    <h1 class="display" style="font-size:clamp(30px,5.5vw,64px);font-weight:800">${title}</h1>
+    ${bodyHtml}
+  </div></section>
+  <section id="foot" style="padding-top:0"><div class="wrap">
+    <div class="mono">kitchen by croft &amp; hugh · © 2026</div>
+    <div class="mono" style="margin-top:10px"><a href="/about">about</a> · <a href="/privacy">privacy</a> · <a href="/disclosure">affiliate disclosure</a></div>
+  </div></section>
+</body>
+</html>`;
+};
+
+fs.writeFileSync(p('about.html'), staticPage('about','the kitchen','about<br>you cooked it',`
+    <p>You Cooked It is an independent kitchen project from Croft &amp; Hugh. We got tired of recipe sites that bury the food under pop-ups, life stories and fifteen ads, so we built the opposite: one recipe, one screen, and a steady hand on your shoulder from "prepping it" to "you cooked it."</p>
+    <p>Every recipe is written for real UK home kitchens — metric measures, supermarket ingredients, honest timings — and shaped into a cook-along you can actually follow with floury hands: a live serving scaler, step timers, and a little celebration when you're done. Because you did cook it.</p>
+    <p>We're a small operation and we're building the biggest, calmest recipe database in the UK, one lane at a time. If a recipe let you down or you want us to cook something next, we want to hear about it.</p>`));
+
+fs.writeFileSync(p('privacy.html'), staticPage('privacy','the small print','privacy',`
+    <p>We keep this simple, because we collect almost nothing.</p>
+    <p><span class="hl">No cookies from us.</span> We don't set tracking cookies, show personalised ads, or follow you around the internet. That's why there's no cookie banner here.</p>
+    <p><span class="hl">Anonymous analytics.</span> We use privacy-friendly, cookieless analytics (Vercel Web Analytics) to count visits and see which recipes people love. It doesn't identify you and doesn't track you across sites.</p>
+    <p><span class="hl">Third parties.</span> Our fonts load from Google Fonts and the site is hosted on Vercel, so those services see standard technical data (like your IP address) needed to deliver the page. Some outbound links may be affiliate links — see our <a href="/disclosure" style="text-decoration:underline">affiliate disclosure</a>.</p>
+    <p>If we ever add anything that changes this — like an email newsletter — we'll ask you first and explain it there, in plain English.</p>`));
+
+fs.writeFileSync(p('disclosure.html'), staticPage('disclosure','the honest bit','affiliate<br>disclosure',`
+    <p>Some links on You Cooked It may be affiliate links — for example, links to kitchen kit on Amazon. If you buy something through one of them, we may earn a small commission. It costs you nothing extra, and it helps keep this site fast, calm and free of intrusive ads.</p>
+    <p>As an Amazon Associate we earn from qualifying purchases.</p>
+    <p>Two promises: we only ever point at kit we'd genuinely use in our own kitchen, and affiliate links will never interrupt the cook-along itself. Recipes come first, always.</p>`));
+
+fs.writeFileSync(p('404.html'), staticPage('404','lost in the kitchen',"we couldn't<br>find that one.",`
+    <p>That page isn't on the menu — it may have moved, or the link had a typo in it.</p>
+    <p style="margin-top:26px"><a class="pill pop" href="/">browse every recipe</a></p>`,{noindex:true}));
+
 // ---- sitemap.xml (clean URLs) + robots.txt ----
 const urls = ['<url><loc>'+SITE+'/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>']
-  .concat(records.map(r=>'<url><loc>'+SITE+'/recipes/'+r.slug+'</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>'));
+  .concat(records.map(r=>'<url><loc>'+SITE+'/recipes/'+r.slug+'</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>'))
+  .concat(['about','privacy','disclosure'].map(s=>'<url><loc>'+SITE+'/'+s+'</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>'));
 fs.writeFileSync(p('sitemap.xml'),
   '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+urls.join('\n')+'\n</urlset>\n');
 fs.writeFileSync(p('robots.txt'),
@@ -293,4 +390,4 @@ fs.writeFileSync(p('robots.txt'),
 
 const published = records.filter(r=>r.status==='published').length;
 console.log('Home page + '+records.length+' recipe pages ('+published+' published, '+(records.length-published)+' stubbed).');
-console.log('SEO: sitemap.xml ('+(records.length+1)+' urls) + robots.txt written. Canonical host '+SITE+'.');
+console.log('SEO: sitemap.xml ('+(records.length+4)+' urls) + robots.txt + JSON-LD recipe schema + info pages written. Canonical host '+SITE+'.');
