@@ -141,7 +141,7 @@ const moreRow = (rec)=>{
   }).join('');
   return `
   <section id="more"><div class="wrap">
-    <div class="eyebrow">the encore</div>
+    <div class="eyebrow">same time tomorrow?</div>
     <h2 class="display" style="font-size:clamp(26px,4.5vw,48px);font-weight:800">you'll cook<br>it next.</h2>
     <div class="moregrid">${cards}</div>
   </div></section>
