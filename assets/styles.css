@@ -193,6 +193,15 @@ nav .nl{display:flex;gap:20px;font-size:13px;text-transform:lowercase}
 .card.has-img .ctitle{max-width:52%}
 .count{text-align:center;font-family:"Space Mono";font-size:12px;color:var(--ink-soft);margin-top:30px}
 
+/* newsletter signup (the friday five) */
+.nlform{margin:36px auto 0;max-width:440px;text-align:center}
+.nlform .nlrow{display:flex;gap:10px;justify-content:center}
+.nlform input{flex:1;min-width:0;border:1.5px solid rgba(36,23,18,.25);border-radius:999px;padding:12px 18px;
+  font-family:"Hanken Grotesk",sans-serif;font-size:15px;background:#fff;color:var(--ink);outline:none}
+.nlform input:focus{border-color:var(--ink)}
+.nlform .pill{border:0;white-space:nowrap}
+@media(max-width:480px){.nlform .nlrow{flex-direction:column}.nlform .pill{justify-content:center}}
+
 /* related recipes row (after the finale) */
 #more{padding:clamp(40px,7vw,80px) 0}
 #more .moregrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px}

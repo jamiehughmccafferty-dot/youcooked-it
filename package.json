@@ -12,7 +12,9 @@
     "banners": "node build/banners.mjs",
     "check": "node build/check-images.mjs",
     "serve": "npx -y serve -l 8099 .",
-    "pins": "node build/pins.mjs"
+    "pins": "node build/pins.mjs",
+    "newsletter": "node build/newsletter.mjs",
+    "friday": "node build/friday.mjs"
   },
   "devDependencies": {
     "jimp": "^0.22.12",

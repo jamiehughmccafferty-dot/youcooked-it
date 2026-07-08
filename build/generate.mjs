@@ -107,6 +107,16 @@ const schemaFor = rec => {
   return JSON.stringify(s).replace(/</g,'\\u003c');
 };
 
+// ---- newsletter signup (the friday five) ----
+// Hidden until the MailerLite form action URL is set (paste it here once the
+// account exists). NLACTION env var overrides for local design preview.
+const NL_ACTION = process.env.NLACTION || '';
+const nlForm = NL_ACTION ? `
+    <form class="nlform" action="${NL_ACTION}" method="post" target="_blank">
+      <div class="mono" style="margin-bottom:10px">the friday five · new recipes in your inbox, every friday</div>
+      <div class="nlrow"><input type="email" name="fields[email]" placeholder="your email" required aria-label="email address"/><button class="pill pop" type="submit">count me in</button></div>
+    </form>` : '';
+
 // ---- related recipes ("cook something like this") ----
 // 3 same-category picks, deterministic per slug. Server-rendered links = real
 // internal linking for SEO (recipe pages are no longer dead ends).
@@ -219,6 +229,7 @@ ${ogImage?`<meta property="og:image" content="${ogImage}"/>
     <p class="up" id="finaleText"></p>
     <div class="serveideas up" id="serveideas"></div>
     <a class="pill pop" href="#" id="shareBtn">share it</a>
+${nlForm}
   </div></section>
 ${moreRow(rec)}
   <section id="foot"><div class="wrap">
@@ -282,6 +293,7 @@ ${ogFiles.has('marry-me-chicken.jpg')?`<meta property="og:image" content="${SITE
     <div class="filters" id="filters"></div>
     <div class="grid" id="grid"></div>
     <div class="count" id="count"></div>
+${nlForm}
     <div class="count" style="margin-top:14px">kitchen by croft &amp; hugh · <a href="/about">about</a> · <a href="/privacy">privacy</a> · <a href="/disclosure">affiliate disclosure</a></div>
   </div></section>
   <script>
