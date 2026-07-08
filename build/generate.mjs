@@ -107,6 +107,31 @@ const schemaFor = rec => {
   return JSON.stringify(s).replace(/</g,'\\u003c');
 };
 
+// ---- related recipes ("cook something like this") ----
+// 3 same-category picks, deterministic per slug. Server-rendered links = real
+// internal linking for SEO (recipe pages are no longer dead ends).
+const relatedFor = (rec)=>{
+  const peers = records.filter(r=>r.category===rec.category && r.slug!==rec.slug);
+  if(!peers.length) return [];
+  let h=0; for(const ch of rec.slug) h=(h*31+ch.charCodeAt(0))>>>0;
+  const start = h % peers.length;
+  return [0,1,2].map(i=>peers[(start+i)%peers.length]).slice(0, Math.min(3, peers.length));
+};
+const moreRow = (rec)=>{
+  const cards = relatedFor(rec).map(r=>{
+    const col=CAT[r.category]||'#e2561f';
+    const img=imaged[r.slug]?`<div class="cglow"></div><img class="cimg" alt="${esc(r.title)}" decoding="async" width="256" height="256" src="/${imaged[r.slug]}">`:'<div class="cblob"></div>';
+    return `<a class="card${imaged[r.slug]?' has-img':''}" href="/recipes/${r.slug}" style="--c:${col}">${img}<div class="inner"><div class="ccat">${esc(r.category)}</div><div class="ctitle">${esc(r.title.toLowerCase())}</div></div></a>`;
+  }).join('');
+  return `
+  <section id="more"><div class="wrap">
+    <div class="eyebrow">the encore</div>
+    <h2 class="display" style="font-size:clamp(26px,4.5vw,48px);font-weight:800">you'll cook<br>it next.</h2>
+    <div class="moregrid">${cards}</div>
+  </div></section>
+`;
+};
+
 // ---- recipe page template ----
 const page = (rec)=>{
   const url=SITE+'/recipes/'+rec.slug, accent=CAT[rec.category]||'#e2561f';
@@ -195,7 +220,7 @@ ${ogImage?`<meta property="og:image" content="${ogImage}"/>
     <div class="serveideas up" id="serveideas"></div>
     <a class="pill pop" href="#" id="shareBtn">share it</a>
   </div></section>
-
+${moreRow(rec)}
   <section id="foot"><div class="wrap">
     <div class="display" style="font-size:clamp(34px,7vw,72px);font-weight:800">you <span style="color:var(--accent)">cooked</span> it.</div>
     <div class="mono">an immersive recipe · kitchen by croft &amp; hugh · © 2026</div>
