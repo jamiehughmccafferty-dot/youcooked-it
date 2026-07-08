@@ -4989,6 +4989,129 @@ export default {
       {title:"add stock",when:"8 min",body:"Gradually whisk in the hot stock and simmer until thickened and glossy.",timer_seconds:480},
       {title:"strain and serve",when:"now",body:"Season, strain if you like it smooth, and pour into a warm jug.",timer_seconds:null}],
     serving_ideas:[{emoji:"🦃",label:"a roast"},{emoji:"🥔",label:"roast potatoes"},{emoji:"🥩",label:"yorkshires"},{emoji:"🍷",label:"red wine"}]
+  },
+
+  "chicken-souvlaki": {
+    cuisine:"Greek",
+    story:"Greek street food at its sunniest. Chunks of chicken in a lemon, garlic and oregano marinade, threaded onto skewers and charred until golden at the edges. Stuff into warm pita with cool tzatziki and let everyone build their own. The longer the marinade, the better the holiday.",
+    meta:{total_time:"35 min",marinate_time:"1 hr",serves:4,heat:"mild",skill:"easy"},
+    macros:{protein_g:38,fat_g:16,carbs_g:32,estimate:true},
+    ingredient_groups:[
+      {name:"the marinade",items:[
+        {qty:700,unit:"g",name:"chicken thigh, chunked",countable:false},
+        {qty:1,unit:"",name:"lemon, juiced",countable:true},
+        {qty:3,unit:"",name:"garlic cloves, crushed",countable:true},
+        {qty:3,unit:"tbsp",name:"olive oil",countable:false}]},
+      {name:"to serve",items:[
+        {qty:4,unit:"",name:"pita breads",countable:true},
+        {qty:200,unit:"g",name:"tzatziki",countable:false},
+        {qty:0.5,unit:"",name:"red onion, thinly sliced",countable:true},
+        {qty:2,unit:"",name:"tomatoes, chopped",countable:true}]}],
+    spice_mix:[
+      {name:"dried oregano",note:"the greek backbone"},
+      {name:"sweet paprika",note:"colour and warmth"}],
+    method:[
+      {title:"marinate",when:"1 hr",body:"Toss the chicken with the lemon, garlic, oil and spice mix. Cover and marinate for at least an hour, overnight if you can.",timer_seconds:3600},
+      {title:"skewer",when:"5 min",body:"Thread the chicken onto skewers, not too tightly so the heat gets everywhere.",timer_seconds:null},
+      {title:"char",when:"14 min",body:"Grill or griddle over high heat, turning, until golden, charred at the edges and cooked through.",timer_seconds:840},
+      {title:"warm the pita",when:"2 min",body:"Warm the pita on the bars for the last minute, they should be soft and puffy.",timer_seconds:null},
+      {title:"build",when:"now",body:"Stuff the pita with chicken, tzatziki, onion and tomato. Napkins essential.",timer_seconds:null}],
+    serving_ideas:[{emoji:"🫓",label:"warm pita"},{emoji:"🥒",label:"tzatziki"},{emoji:"🥗",label:"greek salad"},{emoji:"🍋",label:"lemon"}]
+  },
+
+  "watermelon-feta-salad": {
+    cuisine:"Greek",
+    story:"The salad that tastes like a heatwave. Cold sweet watermelon against salty feta, with mint and lime to sharpen it and red onion for bite. Five minutes of chopping and no cooking at all. Serve it icy cold at a barbecue and watch it vanish first.",
+    meta:{total_time:"15 min",marinate_time:null,serves:4,heat:"mild",skill:"easy"},
+    macros:{protein_g:7,fat_g:12,carbs_g:16,estimate:true},
+    ingredient_groups:[
+      {name:"the salad",items:[
+        {qty:800,unit:"g",name:"watermelon, chunked",countable:false},
+        {qty:200,unit:"g",name:"feta, in chunks",countable:false},
+        {qty:0.5,unit:"",name:"red onion, very thinly sliced",countable:true},
+        {qty:1,unit:"small bunch",name:"mint, leaves picked",countable:false}]},
+      {name:"the dressing",items:[
+        {qty:1,unit:"",name:"lime, juiced",countable:true},
+        {qty:2,unit:"tbsp",name:"olive oil",countable:false},
+        {qty:60,unit:"g",name:"black olives (optional)",countable:false}]}],
+    spice_mix:[],
+    method:[
+      {title:"chill everything",when:"30 min",body:"Get the watermelon properly cold in the fridge first, it makes the whole salad.",timer_seconds:1800},
+      {title:"chop",when:"6 min",body:"Chunk the watermelon and feta into similar generous pieces and slice the onion paper thin.",timer_seconds:null},
+      {title:"combine",when:"2 min",body:"Tumble the watermelon, feta, onion and olives together gently, don't break up the feta.",timer_seconds:null},
+      {title:"dress",when:"1 min",body:"Squeeze over the lime, drizzle with oil and season with black pepper. Easy on the salt, the feta brings plenty.",timer_seconds:null},
+      {title:"serve",when:"now",body:"Tear over the mint at the last second and serve immediately, icy cold.",timer_seconds:null}],
+    serving_ideas:[{emoji:"🍖",label:"barbecue"},{emoji:"🌿",label:"mint"},{emoji:"🫒",label:"olives"},{emoji:"☀️",label:"sunshine"}]
+  },
+
+  "gazpacho": {
+    cuisine:"Spanish",
+    story:"Spain's answer to a hot day: a chilled soup you drink like salvation. Ripe tomatoes, cucumber and pepper blended silky with sherry vinegar and good olive oil. No hob, no oven, just a blender and a couple of hours in the fridge. Sunshine, liquidised.",
+    meta:{total_time:"20 min",marinate_time:"2 hr chill",serves:4,heat:"mild",skill:"easy"},
+    macros:{protein_g:3,fat_g:12,carbs_g:12,estimate:true},
+    ingredient_groups:[
+      {name:"the soup",items:[
+        {qty:1,unit:"kg",name:"very ripe tomatoes, chunked",countable:false},
+        {qty:1,unit:"",name:"cucumber, peeled and chunked",countable:true},
+        {qty:1,unit:"",name:"red pepper, chunked",countable:true},
+        {qty:1,unit:"",name:"garlic clove",countable:true},
+        {qty:50,unit:"g",name:"stale white bread, torn",countable:false},
+        {qty:2,unit:"tbsp",name:"sherry vinegar",countable:false},
+        {qty:4,unit:"tbsp",name:"extra virgin olive oil",countable:false}]}],
+    spice_mix:[],
+    method:[
+      {title:"chop",when:"8 min",body:"Roughly chunk the tomatoes, cucumber and pepper. Ripeness matters more than knife skills here.",timer_seconds:null},
+      {title:"blend",when:"4 min",body:"Blitz everything with the garlic, bread and vinegar until completely smooth, streaming in the oil at the end.",timer_seconds:null},
+      {title:"season",when:"2 min",body:"Season generously and taste. It should be bright, sharp and savoury. Loosen with cold water if thick.",timer_seconds:null},
+      {title:"chill",when:"2 hr",body:"Refrigerate until properly cold, the flavour comes together as it chills.",timer_seconds:1800},
+      {title:"serve",when:"now",body:"Pour into cold glasses or bowls with a drizzle of oil and some chopped cucumber on top.",timer_seconds:null}],
+    serving_ideas:[{emoji:"🫒",label:"olive oil"},{emoji:"🥒",label:"chopped cucumber"},{emoji:"🥖",label:"crusty bread"},{emoji:"🧊",label:"served icy"}]
+  },
+
+  "bang-bang-prawns": {
+    cuisine:"American",
+    story:"The starter that never makes it to the table. Crispy coated prawns tossed in a creamy, sweet and fiery bang bang sauce. Ten minutes of frying, one bowl of sauce and zero leftovers. Pile them high, scatter with spring onion and stand well back.",
+    meta:{total_time:"25 min",marinate_time:null,serves:4,heat:"medium",skill:"easy"},
+    macros:{protein_g:22,fat_g:18,carbs_g:22,estimate:true},
+    ingredient_groups:[
+      {name:"the prawns",items:[
+        {qty:500,unit:"g",name:"large prawns, peeled",countable:false},
+        {qty:80,unit:"g",name:"cornflour",countable:false},
+        {qty:1,unit:"",name:"egg, beaten",countable:true}]},
+      {name:"the bang bang sauce",items:[
+        {qty:4,unit:"tbsp",name:"mayonnaise",countable:false},
+        {qty:2,unit:"tbsp",name:"sweet chilli sauce",countable:false},
+        {qty:1,unit:"tbsp",name:"sriracha",countable:false},
+        {qty:1,unit:"tsp",name:"honey",countable:false},
+        {qty:0.5,unit:"",name:"lime, juiced",countable:true}]}],
+    spice_mix:[],
+    method:[
+      {title:"make the sauce",when:"3 min",body:"Stir the mayo, sweet chilli, sriracha, honey and lime together. Taste and tip the balance whichever way you like it.",timer_seconds:null},
+      {title:"coat",when:"5 min",body:"Pat the prawns dry, dip through the egg, then toss in cornflour until every one is dusted.",timer_seconds:null},
+      {title:"fry",when:"6 min",body:"Shallow fry in hot oil in batches until golden, crisp and just cooked through.",timer_seconds:360},
+      {title:"toss",when:"1 min",body:"Drain on kitchen paper, then toss through the sauce while still hot.",timer_seconds:null},
+      {title:"serve",when:"now",body:"Pile up, scatter with spring onion and sesame, and serve immediately.",timer_seconds:null}],
+    serving_ideas:[{emoji:"🧅",label:"spring onion"},{emoji:"🌰",label:"sesame seeds"},{emoji:"🥬",label:"lettuce cups"},{emoji:"🍋",label:"lime"}]
+  },
+
+  "aperol-spritz": {
+    cuisine:"Italian",
+    story:"The sound of an Italian summer evening in a glass. Bitter orange Aperol lifted with prosecco and a splash of soda over a mountain of ice. Three ingredients, one big wine glass, and suddenly your garden is a piazza. Serve with olives and nowhere to be.",
+    meta:{total_time:"5 min",marinate_time:null,serves:1,heat:"mild",skill:"easy"},
+    macros:{protein_g:0,fat_g:0,carbs_g:11,estimate:true},
+    ingredient_groups:[
+      {name:"the spritz",items:[
+        {qty:75,unit:"ml",name:"prosecco",countable:false},
+        {qty:50,unit:"ml",name:"Aperol",countable:false},
+        {qty:25,unit:"ml",name:"soda water",countable:false},
+        {qty:1,unit:"slice",name:"orange",countable:false},
+        {qty:1,unit:"big handful",name:"ice",countable:false}]}],
+    spice_mix:[],
+    method:[
+      {title:"ice the glass",when:"1 min",body:"Fill a big wine glass right to the top with ice. More than feels reasonable.",timer_seconds:null},
+      {title:"build 3 2 1",when:"1 min",body:"Pour in the prosecco first, then the Aperol, then the splash of soda. That order keeps it from sinking.",timer_seconds:null},
+      {title:"finish",when:"now",body:"Stir once, slide in the orange slice and serve while the evening is still warm.",timer_seconds:null}],
+    serving_ideas:[{emoji:"🫒",label:"olives"},{emoji:"🍊",label:"orange slice"},{emoji:"🧀",label:"aperitivo snacks"},{emoji:"🌅",label:"golden hour"}]
   }
 
 };

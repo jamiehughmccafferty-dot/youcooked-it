@@ -6,7 +6,6 @@ chicken,General Tso's Chicken,general-tsos-chicken,evergreen
 chicken,Peri Peri Chicken,peri-peri-chicken,evergreen
 chicken,Chicken Cordon Bleu,chicken-cordon-bleu,evergreen
 chicken,Hunters Chicken,hunters-chicken,evergreen
-chicken,Chicken Souvlaki,chicken-souvlaki,evergreen
 chicken,Chicken Tagine,chicken-tagine,evergreen
 chicken,Chicken and Chorizo Bake,chicken-and-chorizo-bake,evergreen
 chicken,Chicken Pasta Bake,chicken-pasta-bake,evergreen
@@ -68,7 +67,6 @@ bread,Crumpets,crumpets,evergreen
 soup,Leek and Potato Soup,leek-and-potato-soup,evergreen
 soup,Carrot and Coriander Soup,carrot-and-coriander-soup,evergreen
 soup,Cream of Mushroom Soup,cream-of-mushroom-soup,evergreen
-soup,Gazpacho,gazpacho,evergreen
 soup,Tom Yum Soup,tom-yum-soup,evergreen
 soup,Miso Soup,miso-soup,evergreen
 soup,Chicken and Sweetcorn Soup,chicken-and-sweetcorn-soup,evergreen
@@ -83,7 +81,6 @@ stew,Pot Roast,pot-roast,evergreen
 stew,Osso Buco,osso-buco,evergreen
 stew,Chicken Cacciatore,chicken-cacciatore,evergreen
 stew,Sausage Casserole,sausage-casserole,evergreen
-salad,Watermelon and Feta Salad,watermelon-feta-salad,evergreen
 salad,Halloumi Salad,halloumi-salad,evergreen
 salad,Fattoush,fattoush,evergreen
 salad,Couscous Salad,couscous-salad,evergreen
@@ -99,7 +96,6 @@ seafood,Kedgeree,kedgeree,evergreen
 seafood,Pan-Seared Scallops,pan-seared-scallops,evergreen
 seafood,Calamari,calamari,evergreen
 seafood,Cod in Parsley Sauce,cod-in-parsley-sauce,evergreen
-seafood,Bang Bang Prawns,bang-bang-prawns,trender
 seafood,Prawn Toast,prawn-toast,evergreen
 rice,Jollof Rice,jollof-rice,evergreen
 rice,Bibimbap,bibimbap,evergreen
@@ -108,7 +104,6 @@ rice,Rice and Peas,rice-and-peas,evergreen
 rice,Spanish Rice,spanish-rice,evergreen
 rice,Congee,congee,evergreen
 drinks,Negroni,negroni,evergreen
-drinks,Aperol Spritz,aperol-spritz,evergreen
 drinks,Whiskey Sour,whiskey-sour,evergreen
 drinks,Bloody Mary,bloody-mary,evergreen
 drinks,Bubble Tea,bubble-tea,evergreen
