@@ -86,7 +86,7 @@
         f.addEventListener('submit',function(e){e.preventDefault();if(done)return;
           var b=f.querySelector('button[type=submit]');b.textContent='adding you…';
           fetch(f.action,{method:'POST',body:new URLSearchParams(new FormData(f))})
-            .then(function(r){if(!r.ok)throw 0;done=true;f.innerHTML='<div class="mono">welcome to the friday five 🎉 check your inbox.</div>';})
+            .then(function(r){if(!r.ok)throw 0;done=true;f.innerHTML='<div class="mono">welcome to the friday five 🎉 we send new recipes every friday morning, keep an eye out.</div>';})
             .catch(function(){done=true;f.submit();});});})();</script>
     </form>
   </div></section>
