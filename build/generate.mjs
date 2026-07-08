@@ -108,13 +108,19 @@ const schemaFor = rec => {
 };
 
 // ---- newsletter signup (the friday five) ----
-// Hidden until the MailerLite form action URL is set (paste it here once the
-// account exists). NLACTION env var overrides for local design preview.
-const NL_ACTION = process.env.NLACTION || '';
+// Posts to the MailerLite "Friday five" form. Submits via fetch for an inline
+// success message; falls back to a plain form post if fetch fails.
+const NL_ACTION = process.env.NLACTION || 'https://assets.mailerlite.com/jsonp/2497756/forms/192434888920532489/subscribe';
 const nlForm = NL_ACTION ? `
     <form class="nlform" action="${NL_ACTION}" method="post" target="_blank">
       <div class="mono" style="margin-bottom:10px">the friday five · new recipes in your inbox, every friday</div>
-      <div class="nlrow"><input type="email" name="fields[email]" placeholder="your email" required aria-label="email address"/><button class="pill pop" type="submit">count me in</button></div>
+      <div class="nlrow"><input type="email" name="fields[email]" placeholder="your email" required aria-label="email address" autocomplete="email"/><input type="hidden" name="ml-submit" value="1"/><input type="hidden" name="anticsrf" value="true"/><button class="pill pop" type="submit">count me in</button></div>
+      <script>(function(){var f=document.currentScript.parentElement;var done=false;
+        f.addEventListener('submit',function(e){e.preventDefault();if(done)return;
+          var b=f.querySelector('button[type=submit]');b.textContent='adding you…';
+          fetch(f.action,{method:'POST',body:new URLSearchParams(new FormData(f))})
+            .then(function(r){if(!r.ok)throw 0;done=true;f.innerHTML='<div class="mono">welcome to the friday five 🎉 check your inbox.</div>';})
+            .catch(function(){done=true;f.submit();});});})();</script>
     </form>` : '';
 
 // ---- related recipes ("cook something like this") ----

@@ -38,6 +38,16 @@
     <div class="grid" id="grid"></div>
     <div class="count" id="count"></div>
 
+    <form class="nlform" action="https://assets.mailerlite.com/jsonp/2497756/forms/192434888920532489/subscribe" method="post" target="_blank">
+      <div class="mono" style="margin-bottom:10px">the friday five · new recipes in your inbox, every friday</div>
+      <div class="nlrow"><input type="email" name="fields[email]" placeholder="your email" required aria-label="email address" autocomplete="email"/><input type="hidden" name="ml-submit" value="1"/><input type="hidden" name="anticsrf" value="true"/><button class="pill pop" type="submit">count me in</button></div>
+      <script>(function(){var f=document.currentScript.parentElement;var done=false;
+        f.addEventListener('submit',function(e){e.preventDefault();if(done)return;
+          var b=f.querySelector('button[type=submit]');b.textContent='adding you…';
+          fetch(f.action,{method:'POST',body:new URLSearchParams(new FormData(f))})
+            .then(function(r){if(!r.ok)throw 0;done=true;f.innerHTML='<div class="mono">welcome to the friday five 🎉 check your inbox.</div>';})
+            .catch(function(){done=true;f.submit();});});})();</script>
+    </form>
     <div class="count" style="margin-top:14px">kitchen by croft &amp; hugh · <a href="/about">about</a> · <a href="/privacy">privacy</a> · <a href="/disclosure">affiliate disclosure</a></div>
   </div></section>
   <script>
