@@ -127,7 +127,7 @@ const nlForm = NL_ACTION ? `
 // 3 same-category picks, deterministic per slug. Server-rendered links = real
 // internal linking for SEO (recipe pages are no longer dead ends).
 const relatedFor = (rec)=>{
-  const peers = records.filter(r=>r.category===rec.category && r.slug!==rec.slug);
+  const peers = records.filter(r=>r.category===rec.category && r.slug!==rec.slug && imaged[r.slug]);
   if(!peers.length) return [];
   let h=0; for(const ch of rec.slug) h=(h*31+ch.charCodeAt(0))>>>0;
   const start = h % peers.length;
@@ -257,8 +257,11 @@ fs.mkdirSync(outDir,{recursive:true});
 records.forEach(rec=>fs.writeFileSync(path.join(outDir,rec.slug+'.html'), page(rec)));
 
 // ---- home page (browse grid) ----
-const cats = [...new Set(records.map(r=>r.category))].sort();
-const cards = records.map(r=>({slug:r.slug,title:r.title,category:r.category,cuisine:r.cuisine||'',tag:r.tag||'evergreen',published:r.status==='published'}));
+// Only recipes with a hero image go on display; new drops appear automatically
+// once their photos are keyed in.
+const onDisplay = records.filter(r=>imaged[r.slug]);
+const cats = [...new Set(onDisplay.map(r=>r.category))].sort();
+const cards = onDisplay.map(r=>({slug:r.slug,title:r.title,category:r.category,cuisine:r.cuisine||'',tag:r.tag||'evergreen',published:r.status==='published'}));
 
 const browse = (assetPrefix, linkPrefix)=>`<!DOCTYPE html>
 <html lang="en">
@@ -427,7 +430,7 @@ fs.writeFileSync(p('404.html'), staticPage('404','lost in the kitchen',"we could
 
 // ---- sitemap.xml (clean URLs) + robots.txt ----
 const urls = ['<url><loc>'+SITE+'/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>']
-  .concat(records.map(r=>'<url><loc>'+SITE+'/recipes/'+r.slug+'</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>'))
+  .concat(onDisplay.map(r=>'<url><loc>'+SITE+'/recipes/'+r.slug+'</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>'))
   .concat(['about','privacy','disclosure'].map(s=>'<url><loc>'+SITE+'/'+s+'</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>'));
 fs.writeFileSync(p('sitemap.xml'),
   '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+urls.join('\n')+'\n</urlset>\n');
