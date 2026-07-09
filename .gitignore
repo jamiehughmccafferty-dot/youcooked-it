@@ -6,5 +6,7 @@ node_modules/
 .env.*
 branding/
 banners/
-pins/
+pins/*
+!pins/queue
 newsletters/
+build/pinterest-auth.json

@@ -16,7 +16,8 @@
     "newsletter": "node build/newsletter.mjs",
     "friday": "node build/friday.mjs",
     "pingroups": "node build/pin-groups.mjs",
-    "pinqueue": "node build/pin-queue.mjs"
+    "pinqueue": "node build/pin-queue.mjs",
+    "pinpost": "node build/pin-post.mjs"
   },
   "devDependencies": {
     "jimp": "^0.22.12",
