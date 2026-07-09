@@ -45,6 +45,7 @@ console.log('\nThis week\'s drop (' + slugs.length + '): ' + slugs.join(', '));
 run('node build/og-cards.mjs ' + slugs.join(' '));
 run('node build/pins.mjs ' + slugs.join(' '));
 run('node build/pin-groups.mjs');
+run('node build/pin-queue.mjs');
 
 // 3. newsletter
 run('node build/newsletter.mjs ' + slugs.join(' '));
@@ -62,4 +63,4 @@ run('git push origin main');
 console.log('\n──────── friday drop complete ────────');
 console.log('Live in ~2 min. Remaining by hand:');
 console.log('  1. MailerLite -> new campaign -> paste newsletters/' + log.lastDrop.date + '.html -> send/schedule');
-console.log('  2. Pinterest  -> schedule the ' + slugs.length + ' new pins (filed in pins/<colour-group>/, link each to its recipe URL)');
+console.log('  2. Pinterest  -> schedule next pins from pins/queue/ in filename order (the ' + slugs.length + ' new ones were appended to the rainbow cycle)');
