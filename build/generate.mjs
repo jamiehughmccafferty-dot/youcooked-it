@@ -412,8 +412,8 @@ fs.writeFileSync(p('about.html'), staticPage('about','the kitchen','about<br>you
     <p>Every recipe is written for real UK home kitchens, with metric measures, supermarket ingredients and honest timings, then shaped into a cook-along you can actually follow with floury hands: a live serving scaler, step timers, and a little celebration when you're done. Because you did cook it.</p>
     <p>We're a small operation and we're building the biggest, calmest recipe database in the UK, one lane at a time. If a recipe let you down or you want us to cook something next, we want to hear about it.</p>`));
 
-fs.writeFileSync(p('privacy.html'), staticPage('privacy','the small print','privacy',`
-    <p>We keep this simple, because we collect almost nothing.</p>
+fs.writeFileSync(p('privacy.html'), staticPage('privacy','the small print','privacy<br>policy',`
+    <p>This is the privacy policy for You Cooked It (youcooked-it.com), operated by Croft &amp; Hugh. We keep it simple, because we collect almost nothing.</p>
     <p><span class="hl">No cookies from us.</span> We don't set tracking cookies, show personalised ads, or follow you around the internet. That's why there's no cookie banner here.</p>
     <p><span class="hl">Anonymous analytics.</span> We use privacy-friendly, cookieless analytics (Vercel Web Analytics) to count visits and see which recipes people love. It doesn't identify you and doesn't track you across sites.</p>
     <p><span class="hl">Third parties.</span> Our fonts load from Google Fonts and the site is hosted on Vercel, so those services see standard technical data (like your IP address) needed to deliver the page. Some outbound links may be affiliate links, see our <a href="/disclosure" style="text-decoration:underline">affiliate disclosure</a>.</p>
