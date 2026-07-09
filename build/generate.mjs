@@ -93,7 +93,7 @@ const schemaFor = rec => {
     keywords:[rec.title,rec.category,rec.cuisine].filter(Boolean).join(', '),
     recipeIngredient:(rec.ingredient_groups||[]).flatMap(g=>(g.items||[]).map(it=>
       [it.qty,it.unit,it.name].filter(x=>x!==null&&x!==undefined&&x!=='').join(' ').trim())).filter(Boolean),
-    recipeInstructions:(rec.method||[]).map(st=>({'@type':'HowToStep',name:st.title,text:st.body}))
+    recipeInstructions:(rec.method||[]).map((st,i)=>({'@type':'HowToStep',position:i+1,name:st.title,text:st.body,url:SITE+'/recipes/'+rec.slug+'#step-'+(i+1)}))
   };
   if(rec.cuisine) s.recipeCuisine=rec.cuisine;
   const tt=isoDur(rec.meta&&rec.meta.total_time); if(tt) s.totalTime=tt;

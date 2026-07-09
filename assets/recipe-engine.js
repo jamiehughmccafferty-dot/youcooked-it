@@ -122,7 +122,7 @@
   var CK='<svg class="ck" width="17" height="17" viewBox="0 0 17 17" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l3.5 4L14 4"/></svg>';
   if(!N){wrap.insertAdjacentHTML('beforeend','<p class="soon" style="padding:18px 0 6px">The method for this recipe is coming soon. The photo and colour are ready, the step-by-step is on the way.</p>');}
   steps.forEach(function(s,i){
-    var el=document.createElement('div');el.className='step up';
+    var el=document.createElement('div');el.className='step up';el.id='step-'+(i+1);
     var timer=s[3]?'<div class="tools"><button class="tmr" data-timer="'+s[3]+'">⏱ set a '+Math.round(s[3]/60)+'-min timer</button></div>':'';
     el.innerHTML='<div class="marker"><span class="n">'+(i+1)+'</span>'+CK+'</div>'+
       '<div class="body"><div class="when">'+esc(s[1]||'')+'</div><h3>'+esc(s[0]||'')+'</h3><p>'+esc(s[2]||'')+'</p>'+timer+'</div>';
