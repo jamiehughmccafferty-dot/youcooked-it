@@ -14,7 +14,8 @@
     "serve": "npx -y serve -l 8099 .",
     "pins": "node build/pins.mjs",
     "newsletter": "node build/newsletter.mjs",
-    "friday": "node build/friday.mjs"
+    "friday": "node build/friday.mjs",
+    "pingroups": "node build/pin-groups.mjs"
   },
   "devDependencies": {
     "jimp": "^0.22.12",
