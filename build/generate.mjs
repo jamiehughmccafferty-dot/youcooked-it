@@ -174,6 +174,7 @@ ${ogImage?`<meta property="og:image" content="${ogImage}"/>
 <meta name="twitter:card" content="${ogImage?'summary_large_image':'summary'}"/>
 <meta name="theme-color" content="${accent}"/>
 <meta name="p:domain_verify" content="3156f1604e908302e98a662cb785ae28"/>
+<meta name="verification" content="116c64a7b4f153f774bc988ce7f27cd3"/>
 <link rel="icon" href="/favicon.ico" sizes="48x48"/>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
 <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
@@ -282,6 +283,7 @@ ${ogFiles.has('marry-me-chicken.jpg')?`<meta property="og:image" content="${SITE
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="theme-color" content="#ffffff"/>
 <meta name="p:domain_verify" content="3156f1604e908302e98a662cb785ae28"/>
+<meta name="verification" content="116c64a7b4f153f774bc988ce7f27cd3"/>
 <link rel="icon" href="/favicon.ico" sizes="48x48"/>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
 <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
@@ -383,6 +385,7 @@ const staticPage = (slug, eyebrow, title, bodyHtml, {noindex=false}={}) => {
 ${noindex?'<meta name="robots" content="noindex"/>':`<link rel="canonical" href="${SITE}/${slug}"/>`}
 <meta name="theme-color" content="#ffffff"/>
 <meta name="p:domain_verify" content="3156f1604e908302e98a662cb785ae28"/>
+<meta name="verification" content="116c64a7b4f153f774bc988ce7f27cd3"/>
 <link rel="icon" href="/favicon.ico" sizes="48x48"/>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
 <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
