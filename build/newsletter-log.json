@@ -199,7 +199,21 @@
     "hollandaise-sauce",
     "hot-honey",
     "bbq-sauce",
-    "roast-gravy"
+    "roast-gravy",
+    "chicken-souvlaki",
+    "watermelon-feta-salad",
+    "gazpacho",
+    "bang-bang-prawns",
+    "aperol-spritz"
   ],
-  "lastDrop": null
+  "lastDrop": {
+    "date": "2026-07-09",
+    "slugs": [
+      "chicken-souvlaki",
+      "watermelon-feta-salad",
+      "gazpacho",
+      "bang-bang-prawns",
+      "aperol-spritz"
+    ]
+  }
 }
