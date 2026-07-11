@@ -19,7 +19,7 @@ const RAINBOW = [
   ['orange', ['chicken']],
   ['amber',  ['curry', 'breakfast']],
   ['earth',  ['soup', 'brunch', 'bread', 'rice', 'baking', 'stew']],
-  ['green',  ['veg', 'salad']],
+  ['green',  ['veg', 'salad', 'vegan']],
   ['teal',   ['vegetarian', 'seafood']],
   ['purple', ['drinks']],
   ['pink',   ['dessert', 'cake']],

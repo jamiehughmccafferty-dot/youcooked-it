@@ -5112,6 +5112,284 @@ export default {
       {title:"build 3 2 1",when:"1 min",body:"Pour in the prosecco first, then the Aperol, then the splash of soda. That order keeps it from sinking.",timer_seconds:null},
       {title:"finish",when:"now",body:"Stir once, slide in the orange slice and serve while the evening is still warm.",timer_seconds:null}],
     serving_ideas:[{emoji:"🫒",label:"olives"},{emoji:"🍊",label:"orange slice"},{emoji:"🧀",label:"aperitivo snacks"},{emoji:"🌅",label:"golden hour"}]
+  },
+
+  "vegan-mac-and-cheese": {
+    cuisine:"American",
+    story:"Comfort food with nothing to apologise for. Cashews and nutritional yeast blend into a sauce so silky and savoury that nobody at the table asks questions. The secret is boiling the cashews soft first, then blitzing until completely smooth. Golden, glossy and gone in minutes.",
+    meta:{total_time:"30 min",marinate_time:null,serves:4,heat:"mild",skill:"easy"},
+    macros:{protein_g:16,fat_g:18,carbs_g:62,estimate:true},
+    ingredient_groups:[
+      {name:"the sauce",items:[
+        {qty:150,unit:"g",name:"cashews",countable:false},
+        {qty:4,unit:"tbsp",name:"nutritional yeast",countable:false},
+        {qty:1,unit:"tsp",name:"dijon mustard",countable:false},
+        {qty:1,unit:"",name:"garlic clove",countable:true},
+        {qty:250,unit:"ml",name:"plant milk (unsweetened)",countable:false},
+        {qty:1,unit:"tsp",name:"smoked paprika",countable:false}]},
+      {name:"the pasta",items:[
+        {qty:350,unit:"g",name:"macaroni",countable:false},
+        {qty:40,unit:"g",name:"breadcrumbs",countable:false}]}],
+    spice_mix:[],
+    method:[
+      {title:"soften the cashews",when:"12 min",body:"Boil the cashews until soft and blendable. This is what makes the sauce silky, don't skip it.",timer_seconds:720},
+      {title:"cook the pasta",when:"9 min",body:"Boil the macaroni until just al dente, saving a mug of pasta water.",timer_seconds:540},
+      {title:"blitz the sauce",when:"3 min",body:"Blend the cashews with the nutritional yeast, mustard, garlic, paprika and plant milk until completely smooth. Season well.",timer_seconds:null},
+      {title:"combine",when:"3 min",body:"Stir the sauce through the pasta over low heat, loosening with pasta water until glossy.",timer_seconds:null},
+      {title:"crisp the top",when:"5 min",body:"Tip into a dish, scatter with breadcrumbs and grill until golden.",timer_seconds:300}],
+    serving_ideas:[{emoji:"🌶️",label:"hot sauce"},{emoji:"🥦",label:"greens"},{emoji:"🍞",label:"crunchy topping"},{emoji:"🍅",label:"roasted tomatoes"}]
+  },
+
+  "tofu-katsu-curry": {
+    cuisine:"Japanese",
+    story:"Crispy panko tofu under a rich, gently spiced katsu sauce. Pressing the tofu properly is the whole game, then it fries up golden and crunchy enough to convince anyone. The sauce is sweet, savoury and silky, made for spooning over rice until the plate is clean.",
+    meta:{total_time:"40 min",marinate_time:null,serves:4,heat:"mild",skill:"medium"},
+    macros:{protein_g:20,fat_g:18,carbs_g:66,estimate:true},
+    ingredient_groups:[
+      {name:"the tofu",items:[
+        {qty:400,unit:"g",name:"extra firm tofu, in thick slices",countable:false},
+        {qty:60,unit:"g",name:"plain flour",countable:false},
+        {qty:100,unit:"g",name:"panko breadcrumbs",countable:false},
+        {qty:100,unit:"ml",name:"plant milk",countable:false}]},
+      {name:"the katsu sauce",items:[
+        {qty:1,unit:"",name:"onion, diced",countable:true},
+        {qty:2,unit:"",name:"garlic cloves",countable:true},
+        {qty:1,unit:"thumb",name:"ginger, grated",countable:false},
+        {qty:400,unit:"ml",name:"coconut milk",countable:false},
+        {qty:1,unit:"tbsp",name:"soy sauce",countable:false},
+        {qty:300,unit:"g",name:"rice, to serve",countable:false}]}],
+    spice_mix:[
+      {name:"mild curry powder",note:"the katsu backbone"},
+      {name:"ground turmeric",note:"golden colour"}],
+    method:[
+      {title:"press the tofu",when:"15 min",body:"Press the tofu slices between kitchen paper under a weight so they crisp instead of steam.",timer_seconds:900},
+      {title:"make the sauce",when:"12 min",body:"Soften the onion, garlic and ginger, stir in the spice mix, then add the coconut milk and soy and simmer until thick. Blend smooth.",timer_seconds:720},
+      {title:"coat",when:"5 min",body:"Dust the tofu in flour, dip through the plant milk, then press into the panko on every side.",timer_seconds:null},
+      {title:"fry",when:"6 min",body:"Shallow fry until deep golden and crunchy on both sides, then drain.",timer_seconds:360},
+      {title:"serve",when:"now",body:"Slice the tofu over rice and pour the katsu sauce generously over the top.",timer_seconds:null}],
+    serving_ideas:[{emoji:"🍚",label:"sticky rice"},{emoji:"🥬",label:"pickled cabbage"},{emoji:"🧅",label:"spring onion"},{emoji:"🌶️",label:"chilli flakes"}]
+  },
+
+  "sticky-aubergine-rice-bowl": {
+    cuisine:"Asian",
+    story:"Aubergine doing its best impression of something indulgent. Roasted until collapsing, then tossed in a sticky, garlicky glaze that caramelises at the edges. Piled over rice with fresh crunchy bits, it's the bowl that converts aubergine sceptics on the first forkful.",
+    meta:{total_time:"35 min",marinate_time:null,serves:2,heat:"medium",skill:"easy"},
+    macros:{protein_g:9,fat_g:12,carbs_g:74,estimate:true},
+    ingredient_groups:[
+      {name:"the aubergine",items:[
+        {qty:2,unit:"",name:"aubergines, in chunks",countable:true},
+        {qty:2,unit:"tbsp",name:"cornflour",countable:false},
+        {qty:3,unit:"tbsp",name:"soy sauce",countable:false},
+        {qty:2,unit:"tbsp",name:"maple syrup",countable:false},
+        {qty:1,unit:"tbsp",name:"rice vinegar",countable:false},
+        {qty:3,unit:"",name:"garlic cloves, minced",countable:true},
+        {qty:1,unit:"tsp",name:"chilli flakes",countable:false}]},
+      {name:"the bowl",items:[
+        {qty:150,unit:"g",name:"rice",countable:false},
+        {qty:1,unit:"",name:"cucumber, ribboned",countable:true},
+        {qty:2,unit:"",name:"spring onions, sliced",countable:true},
+        {qty:1,unit:"tbsp",name:"sesame seeds",countable:false}]}],
+    spice_mix:[],
+    method:[
+      {title:"roast the aubergine",when:"22 min",body:"Toss the chunks in cornflour and a little oil and roast at 210C fan until golden and collapsing.",timer_seconds:1320},
+      {title:"cook the rice",when:"14 min",body:"Cook the rice while the aubergine roasts.",timer_seconds:840},
+      {title:"make the glaze",when:"3 min",body:"Simmer the soy, maple, vinegar, garlic and chilli flakes until it turns sticky.",timer_seconds:180},
+      {title:"glaze",when:"3 min",body:"Toss the hot aubergine through the glaze until every piece is lacquered.",timer_seconds:null},
+      {title:"build the bowl",when:"now",body:"Rice, aubergine, cucumber, spring onion, sesame. Eat immediately.",timer_seconds:null}],
+    serving_ideas:[{emoji:"🥒",label:"cucumber"},{emoji:"🌰",label:"sesame"},{emoji:"🌶️",label:"chilli oil"},{emoji:"🧅",label:"spring onion"}]
+  },
+
+  "lentil-shepherds-pie": {
+    cuisine:"British",
+    story:"Sunday comfort, no shepherd required. Green lentils simmered rich with carrots, mushrooms and rosemary do everything mince ever did, under a golden roof of creamy mash. It feeds a crowd, freezes brilliantly, and tastes like it took far more effort than it did.",
+    meta:{total_time:"1 hr",marinate_time:null,serves:6,heat:"mild",skill:"easy"},
+    macros:{protein_g:15,fat_g:9,carbs_g:58,estimate:true},
+    ingredient_groups:[
+      {name:"the filling",items:[
+        {qty:300,unit:"g",name:"cooked green lentils (2 tins, drained)",countable:false},
+        {qty:1,unit:"",name:"onion, diced",countable:true},
+        {qty:2,unit:"",name:"carrots, diced",countable:true},
+        {qty:200,unit:"g",name:"mushrooms, chopped",countable:false},
+        {qty:2,unit:"tbsp",name:"tomato purée",countable:false},
+        {qty:400,unit:"ml",name:"vegetable stock",countable:false},
+        {qty:2,unit:"sprigs",name:"rosemary",countable:false}]},
+      {name:"the mash",items:[
+        {qty:1,unit:"kg",name:"potatoes",countable:false},
+        {qty:60,unit:"ml",name:"olive oil or vegan butter",countable:false}]}],
+    spice_mix:[],
+    method:[
+      {title:"make the mash",when:"20 min",body:"Boil the potatoes until tender, then mash with the oil or vegan butter. Season generously.",timer_seconds:1200},
+      {title:"build the filling",when:"10 min",body:"Soften the onion, carrot and mushrooms until browned, then stir in the tomato purée.",timer_seconds:600},
+      {title:"simmer",when:"15 min",body:"Add the lentils, stock and rosemary and simmer until thick and savoury.",timer_seconds:900},
+      {title:"assemble",when:"5 min",body:"Filling into a dish, mash on top, rough up the surface with a fork so it crisps.",timer_seconds:null},
+      {title:"bake",when:"20 min",body:"Bake at 200C fan until golden on top and bubbling at the edges.",timer_seconds:1200}],
+    serving_ideas:[{emoji:"🥦",label:"greens"},{emoji:"🫛",label:"peas"},{emoji:"🍅",label:"ketchup, no judgement"},{emoji:"🍷",label:"red wine"}]
+  },
+
+  "mushroom-ramen": {
+    cuisine:"Japanese",
+    story:"A deep, savoury bowl built entirely from plants. Dried shiitake and miso give the broth that slow-simmered depth, while golden pan-fried mushrooms pile on top with springy noodles and greens. Proof that a proper ramen night needs nothing from the butcher.",
+    meta:{total_time:"35 min",marinate_time:null,serves:2,heat:"mild",skill:"easy"},
+    macros:{protein_g:14,fat_g:12,carbs_g:60,estimate:true},
+    ingredient_groups:[
+      {name:"the broth",items:[
+        {qty:10,unit:"g",name:"dried shiitake mushrooms",countable:false},
+        {qty:2,unit:"tbsp",name:"white miso paste",countable:false},
+        {qty:2,unit:"tbsp",name:"soy sauce",countable:false},
+        {qty:1,unit:"thumb",name:"ginger, sliced",countable:false},
+        {qty:2,unit:"",name:"garlic cloves, smashed",countable:true},
+        {qty:900,unit:"ml",name:"vegetable stock",countable:false}]},
+      {name:"the bowl",items:[
+        {qty:250,unit:"g",name:"chestnut mushrooms, sliced",countable:false},
+        {qty:2,unit:"",name:"portions ramen noodles",countable:true},
+        {qty:100,unit:"g",name:"pak choi",countable:false},
+        {qty:2,unit:"",name:"spring onions, sliced",countable:true},
+        {qty:1,unit:"tbsp",name:"chilli oil",countable:false}]}],
+    spice_mix:[],
+    method:[
+      {title:"build the broth",when:"18 min",body:"Simmer the stock with the dried shiitake, ginger and garlic so the umami develops, then whisk in the miso and soy off the boil.",timer_seconds:1080},
+      {title:"fry the mushrooms",when:"7 min",body:"Fry the chestnut mushrooms hard in a little oil until deep golden and crisp at the edges.",timer_seconds:420},
+      {title:"noodles and greens",when:"4 min",body:"Cook the noodles, wilting the pak choi in the same pot for the last minute.",timer_seconds:240},
+      {title:"assemble",when:"2 min",body:"Noodles into bowls, broth over, mushrooms and greens on top.",timer_seconds:null},
+      {title:"finish",when:"now",body:"Spring onion and a spoon of chilli oil. Slurping encouraged.",timer_seconds:null}],
+    serving_ideas:[{emoji:"🌶️",label:"chilli oil"},{emoji:"🧅",label:"spring onion"},{emoji:"🍄",label:"crispy mushrooms"},{emoji:"🌽",label:"sweetcorn"}]
+  },
+
+  "peanut-butter-noodles": {
+    cuisine:"Asian",
+    story:"The fifteen minute dinner that tastes like a takeaway secret. A whole jarful of savoury peanut sauce clings to every noodle, sharpened with lime and soy and warmed with a little chilli. Cheap, fast and dangerously repeatable. Keep the ingredients in the cupboard at all times.",
+    meta:{total_time:"15 min",marinate_time:null,serves:2,heat:"medium",skill:"easy"},
+    macros:{protein_g:16,fat_g:22,carbs_g:64,estimate:true},
+    ingredient_groups:[
+      {name:"the sauce",items:[
+        {qty:3,unit:"tbsp",name:"smooth peanut butter",countable:false},
+        {qty:2,unit:"tbsp",name:"soy sauce",countable:false},
+        {qty:1,unit:"tbsp",name:"maple syrup",countable:false},
+        {qty:1,unit:"",name:"lime, juiced",countable:true},
+        {qty:1,unit:"tsp",name:"sriracha",countable:false},
+        {qty:1,unit:"",name:"garlic clove, grated",countable:true}]},
+      {name:"the noodles",items:[
+        {qty:2,unit:"",name:"portions noodles",countable:true},
+        {qty:1,unit:"",name:"carrot, ribboned",countable:true},
+        {qty:0.5,unit:"",name:"cucumber, ribboned",countable:true},
+        {qty:1,unit:"tbsp",name:"crushed peanuts",countable:false}]}],
+    spice_mix:[],
+    method:[
+      {title:"whisk the sauce",when:"3 min",body:"Whisk the peanut butter, soy, maple, lime, sriracha and garlic with a splash of hot water until pourable.",timer_seconds:null},
+      {title:"cook the noodles",when:"5 min",body:"Cook the noodles to packet time, saving a little of the water.",timer_seconds:300},
+      {title:"toss",when:"2 min",body:"Toss the hot noodles through the sauce, loosening with noodle water until every strand is coated.",timer_seconds:null},
+      {title:"serve",when:"now",body:"Top with carrot, cucumber and crushed peanuts. Eat straight from the pan, we won't tell.",timer_seconds:null}],
+    serving_ideas:[{emoji:"🥜",label:"crushed peanuts"},{emoji:"🍋",label:"lime"},{emoji:"🌶️",label:"sriracha"},{emoji:"🥒",label:"cucumber"}]
+  },
+
+  "cauliflower-tacos": {
+    cuisine:"Mexican",
+    story:"Cauliflower roasted in smoky spices until crisp edged and golden, piled into warm tortillas with quick pickled onions and a cool creamy drizzle. Taco night with nothing missing. The florets catch the spice in every crevice, which is exactly the point of cauliflower.",
+    meta:{total_time:"35 min",marinate_time:null,serves:4,heat:"medium",skill:"easy"},
+    macros:{protein_g:9,fat_g:12,carbs_g:48,estimate:true},
+    ingredient_groups:[
+      {name:"the cauliflower",items:[
+        {qty:1,unit:"",name:"large cauliflower, in florets",countable:true},
+        {qty:2,unit:"tbsp",name:"olive oil",countable:false}]},
+      {name:"the spice mix",items:[
+        {qty:2,unit:"tsp",name:"smoked paprika",countable:false},
+        {qty:1,unit:"tsp",name:"ground cumin",countable:false},
+        {qty:1,unit:"tsp",name:"chilli powder",countable:false}]},
+      {name:"to serve",items:[
+        {qty:8,unit:"",name:"small tortillas",countable:true},
+        {qty:0.5,unit:"",name:"red onion, thinly sliced",countable:true},
+        {qty:1,unit:"",name:"lime",countable:true},
+        {qty:4,unit:"tbsp",name:"vegan yoghurt or mayo",countable:false},
+        {qty:1,unit:"handful",name:"coriander",countable:false}]}],
+    spice_mix:[
+      {name:"smoked paprika",note:"the smoke"},
+      {name:"ground cumin",note:"earthy warmth"},
+      {name:"chilli powder",note:"the kick"}],
+    method:[
+      {title:"quick pickle",when:"20 min",body:"Toss the red onion with the lime juice and a pinch of salt and let it turn pink while you cook.",timer_seconds:1200},
+      {title:"spice the florets",when:"4 min",body:"Toss the cauliflower in the oil and spice mix until every floret is coated.",timer_seconds:null},
+      {title:"roast",when:"25 min",body:"Roast at 210C fan until crisp edged and golden, turning once.",timer_seconds:1500},
+      {title:"warm the tortillas",when:"2 min",body:"Char the tortillas briefly over a flame or in a dry pan.",timer_seconds:null},
+      {title:"build",when:"now",body:"Cauliflower, pickled onions, a drizzle of the creamy stuff, coriander, lime. Repeat.",timer_seconds:null}],
+    serving_ideas:[{emoji:"🧅",label:"pickled onions"},{emoji:"🍋",label:"lime"},{emoji:"🥑",label:"avocado"},{emoji:"🌶️",label:"hot sauce"}]
+  },
+
+  "vegan-chocolate-brownies": {
+    cuisine:"American",
+    story:"Fudgy, glossy, deeply chocolatey, and nobody will guess. The trick is not overbaking: pull them while the middle still wobbles slightly and let the tin finish the job. Dark chocolate and good cocoa do the heavy lifting, no eggs required, no compromise made.",
+    meta:{total_time:"45 min",marinate_time:null,serves:12,heat:"mild",skill:"easy"},
+    macros:{protein_g:4,fat_g:14,carbs_g:34,estimate:true},
+    ingredient_groups:[
+      {name:"the brownies",items:[
+        {qty:200,unit:"g",name:"dark chocolate (dairy free)",countable:false},
+        {qty:120,unit:"ml",name:"vegetable oil",countable:false},
+        {qty:200,unit:"g",name:"caster sugar",countable:false},
+        {qty:200,unit:"ml",name:"plant milk",countable:false},
+        {qty:180,unit:"g",name:"plain flour",countable:false},
+        {qty:40,unit:"g",name:"cocoa powder",countable:false},
+        {qty:1,unit:"tsp",name:"baking powder",countable:false},
+        {qty:1,unit:"pinch",name:"flaky salt",countable:false}]}],
+    spice_mix:[],
+    method:[
+      {title:"melt",when:"5 min",body:"Melt 150g of the chocolate with the oil, then stir in the sugar and plant milk.",timer_seconds:300},
+      {title:"fold",when:"4 min",body:"Fold in the flour, cocoa and baking powder until just combined, then the remaining chocolate in chunks.",timer_seconds:null},
+      {title:"bake",when:"25 min",body:"Bake in a lined tin at 170C fan until the edges are set but the middle still has a slight wobble.",timer_seconds:1500},
+      {title:"the hard part",when:"30 min",body:"Cool in the tin completely. They firm up to perfect fudginess as they cool, cutting early ruins them.",timer_seconds:1800},
+      {title:"serve",when:"now",body:"Cut into squares, scatter with flaky salt and try to share.",timer_seconds:null}],
+    serving_ideas:[{emoji:"🧂",label:"flaky salt"},{emoji:"🍦",label:"vegan vanilla ice cream"},{emoji:"🍓",label:"raspberries"},{emoji:"☕",label:"coffee"}]
+  },
+
+  "vegan-pancakes": {
+    cuisine:"American",
+    story:"Fluffy weekend pancakes, no eggs, no milk, no difference. A splash of vinegar in the plant milk mimics buttermilk and gives the baking powder something to fight, which is where the height comes from. Stack them tall and let the maple do the rest.",
+    meta:{total_time:"20 min",marinate_time:null,serves:4,heat:"mild",skill:"easy"},
+    macros:{protein_g:7,fat_g:8,carbs_g:52,estimate:true},
+    ingredient_groups:[
+      {name:"the batter",items:[
+        {qty:250,unit:"g",name:"plain flour",countable:false},
+        {qty:2,unit:"tsp",name:"baking powder",countable:false},
+        {qty:2,unit:"tbsp",name:"sugar",countable:false},
+        {qty:300,unit:"ml",name:"plant milk",countable:false},
+        {qty:1,unit:"tbsp",name:"cider vinegar",countable:false},
+        {qty:2,unit:"tbsp",name:"vegetable oil",countable:false}]}],
+    spice_mix:[],
+    method:[
+      {title:"vegan buttermilk",when:"5 min",body:"Stir the vinegar into the plant milk and leave it to thicken slightly.",timer_seconds:300},
+      {title:"mix",when:"3 min",body:"Whisk the flour, baking powder and sugar, then fold in the soured milk and oil to a thick, slightly lumpy batter.",timer_seconds:null},
+      {title:"cook",when:"10 min",body:"Ladle into a hot oiled pan and flip when bubbles burst on the surface. Golden both sides.",timer_seconds:600},
+      {title:"stack",when:"now",body:"Pile high with maple syrup, berries and whatever else the morning demands.",timer_seconds:null}],
+    serving_ideas:[{emoji:"🍁",label:"maple syrup"},{emoji:"🫐",label:"berries"},{emoji:"🍌",label:"banana"},{emoji:"🥜",label:"nut butter"}]
+  },
+
+  "smoky-bean-stew": {
+    cuisine:"Spanish",
+    story:"A big, brooding pot of beans in a smoky tomato and pepper sauce, somewhere between a stew and a hug. Smoked paprika does the work a chorizo normally would, and the beans drink it all in. Serve with bread you're not ashamed of and let everyone help themselves.",
+    meta:{total_time:"40 min",marinate_time:null,serves:4,heat:"medium",skill:"easy"},
+    macros:{protein_g:15,fat_g:8,carbs_g:52,estimate:true},
+    ingredient_groups:[
+      {name:"the stew",items:[
+        {qty:2,unit:"",name:"x 400g tins butter beans, drained",countable:false},
+        {qty:1,unit:"",name:"onion, sliced",countable:true},
+        {qty:2,unit:"",name:"red peppers, sliced",countable:true},
+        {qty:3,unit:"",name:"garlic cloves, sliced",countable:true},
+        {qty:400,unit:"g",name:"chopped tomatoes",countable:false},
+        {qty:200,unit:"ml",name:"vegetable stock",countable:false},
+        {qty:1,unit:"handful",name:"parsley",countable:false}]},
+      {name:"the spice mix",items:[
+        {qty:2,unit:"tsp",name:"smoked paprika",countable:false},
+        {qty:1,unit:"tsp",name:"ground cumin",countable:false},
+        {qty:1,unit:"pinch",name:"chilli flakes",countable:false}]}],
+    spice_mix:[
+      {name:"smoked paprika",note:"does the chorizo's job"},
+      {name:"ground cumin",note:"earthy depth"},
+      {name:"chilli flakes",note:"gentle heat"}],
+    method:[
+      {title:"soften",when:"10 min",body:"Cook the onion and peppers slowly in olive oil until soft and sweet, then add the garlic.",timer_seconds:600},
+      {title:"spice",when:"2 min",body:"Stir in the spice mix and let it bloom in the oil.",timer_seconds:null},
+      {title:"simmer",when:"20 min",body:"Add the tomatoes, stock and beans and simmer until thick, rich and glossy.",timer_seconds:1200},
+      {title:"season",when:"2 min",body:"Season boldly and mash a few beans against the pan to thicken the sauce.",timer_seconds:null},
+      {title:"serve",when:"now",body:"Scatter with parsley, drizzle with your best olive oil and serve with crusty bread.",timer_seconds:null}],
+    serving_ideas:[{emoji:"🥖",label:"crusty bread"},{emoji:"🫒",label:"good olive oil"},{emoji:"🌿",label:"parsley"},{emoji:"🍚",label:"or over rice"}]
   }
 
 };

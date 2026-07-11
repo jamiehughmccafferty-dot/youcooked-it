@@ -204,7 +204,17 @@
     "watermelon-feta-salad",
     "gazpacho",
     "bang-bang-prawns",
-    "aperol-spritz"
+    "aperol-spritz",
+    "vegan-mac-and-cheese",
+    "tofu-katsu-curry",
+    "sticky-aubergine-rice-bowl",
+    "lentil-shepherds-pie",
+    "mushroom-ramen",
+    "peanut-butter-noodles",
+    "cauliflower-tacos",
+    "vegan-chocolate-brownies",
+    "vegan-pancakes",
+    "smoky-bean-stew"
   ],
   "lastDrop": {
     "date": "2026-07-09",
@@ -214,6 +224,22 @@
       "gazpacho",
       "bang-bang-prawns",
       "aperol-spritz"
+    ]
+  },
+  "heldForSpecial": {
+    "date": "2026-07-11",
+    "note": "vegan lane launch edition, run manually when list is viable: node build/newsletter.mjs vegan-mac-and-cheese tofu-katsu-curry sticky-aubergine-rice-bowl lentil-shepherds-pie mushroom-ramen peanut-butter-noodles cauliflower-tacos vegan-chocolate-brownies vegan-pancakes smoky-bean-stew",
+    "slugs": [
+      "vegan-mac-and-cheese",
+      "tofu-katsu-curry",
+      "sticky-aubergine-rice-bowl",
+      "lentil-shepherds-pie",
+      "mushroom-ramen",
+      "peanut-butter-noodles",
+      "cauliflower-tacos",
+      "vegan-chocolate-brownies",
+      "vegan-pancakes",
+      "smoky-bean-stew"
     ]
   }
 }

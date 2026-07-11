@@ -16,7 +16,7 @@ const GROUPS = [
   ['02-orange', ['chicken']],                                         // #e2561f
   ['03-amber',  ['curry', 'breakfast']],                              // #e8991c #e9a72f
   ['04-earth',  ['soup', 'brunch', 'bread', 'rice', 'baking', 'stew']], // warm browns, light->dark
-  ['05-green',  ['veg', 'salad']],                                    // #6fae3c #4f8a3a
+  ['05-green',  ['veg', 'salad', 'vegan']],                                    // #6fae3c #4f8a3a
   ['06-teal',   ['vegetarian', 'seafood']],                           // #3c9e74 #2f9bb0
   ['07-purple', ['drinks']],                                          // #8a5cc4
   ['08-pink',   ['dessert', 'cake']],                                 // #ff4d6d #ef5fa0
