@@ -358,8 +358,13 @@ ${ogFiles.has('marry-me-chicken.jpg')?`<meta property="og:image" content="${SITE
     <div class="grid" id="grid"></div>
     <div class="count" id="count"></div>
 ${nlForm}
-    <div class="count" style="margin-top:14px">${SOCIALS.map(s=>`<a href="${s.url}" target="_blank" rel="noopener">${s.name}</a>`).join(" · ")}</div>
-    <div class="count" style="margin-top:8px">kitchen by croft &amp; hugh · <a href="/about">about</a> · <a href="/privacy">privacy</a> · <a href="/disclosure">affiliate disclosure</a></div>
+  </div></section>
+
+  <section id="foot"><div class="wrap">
+    <div class="display" style="font-size:clamp(34px,7vw,72px);font-weight:800">you <span style="color:var(--accent)">cooked</span> it.</div>
+    <div class="mono">an immersive recipe · kitchen by croft &amp; hugh · © 2026</div>
+${socialLine}
+    <div class="mono" style="margin-top:10px"><a href="/about">about</a> · <a href="/privacy">privacy</a> · <a href="/disclosure">affiliate disclosure</a></div>
   </div></section>
   <script>
     var CARDS=${JSON.stringify(cards).replace(/</g,'\\u003c')};
