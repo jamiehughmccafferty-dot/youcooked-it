@@ -123,6 +123,36 @@ const nlForm = NL_ACTION ? `
             .catch(function(){done=true;f.submit();});});})();</script>
     </form>` : '';
 
+// ---- partners (slot 2: category-matched card after the encore) ----
+// One card max per page, only on matching categories, always labelled,
+// rel=sponsored. EXAMPLE GATE below until the design is signed off.
+const PARTNERS = [
+  { id:'abel-and-cole', name:'abel &amp; cole', active:true,
+    categories:['veg','vegetarian','salad','soup'],
+    link:'https://www.awin1.com/awclick.php?gid=385402&mid=6388&awinaffid=2918949&linkid=2603115&clickref=recipe',
+    headline:'the veg drawer, sorted.',
+    blurb:'Organic fruit and veg boxes from Abel &amp; Cole, delivered to your door. 50% off your 1st and 4th boxes with code <b>VEGBOX26</b>.',
+    cta:'get 50% off',
+    image:'/partners/abel-and-cole.jpg' },
+];
+const partnerCard = (rec)=>{
+  const pt = PARTNERS.find(x=>x.active && x.categories.includes(rec.category));
+  if(!pt) return '';
+  return `
+  <section id="partner"><div class="wrap">
+    <a class="pcard" href="${pt.link}" target="_blank" rel="sponsored noopener">
+      <div class="pimg"><img src="${pt.image}" alt="${pt.name.replace(/&amp;/g,'and')}" loading="lazy" decoding="async"/></div>
+      <div class="pbody">
+        <div class="mono plabel">partner · ${pt.name}</div>
+        <h3>${pt.headline}</h3>
+        <p>${pt.blurb}</p>
+        <span class="pill">${pt.cta}</span>
+      </div>
+    </a>
+  </div></section>
+`;
+};
+
 // ---- related recipes ("cook something like this") ----
 // 3 same-category picks, deterministic per slug. Server-rendered links = real
 // internal linking for SEO (recipe pages are no longer dead ends).
@@ -238,7 +268,7 @@ ${ogImage?`<meta property="og:image" content="${ogImage}"/>
     <a class="pill pop" href="#" id="shareBtn">share it</a>
 ${nlForm}
   </div></section>
-${moreRow(rec)}
+${moreRow(rec)}${partnerCard(rec)}
   <section id="foot"><div class="wrap">
     <div class="display" style="font-size:clamp(34px,7vw,72px);font-weight:800">you <span style="color:var(--accent)">cooked</span> it.</div>
     <div class="mono">an immersive recipe · kitchen by croft &amp; hugh · © 2026</div>
