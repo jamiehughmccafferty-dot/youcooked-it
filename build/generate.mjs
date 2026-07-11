@@ -71,6 +71,17 @@ const imaged = {};   // slug -> the (small) image path used on the browse card
 records.forEach(r=>{ const f=(r.slug+'.png').toLowerCase();
   if(imgFiles.has(f)) imaged[r.slug] = thumbFiles.has(f) ? 'images/thumb/'+r.slug+'.png' : 'images/'+r.slug+'.png'; });
 const esc = s => String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+
+// ---- socials (footer links + schema sameAs) ----
+const SOCIALS = [
+  { name:'pinterest', url:'https://uk.pinterest.com/YouCookedIt/' },
+  { name:'instagram', url:'https://www.instagram.com/youcooked.it' },
+  { name:'tiktok',    url:'https://www.tiktok.com/@youcookedit' },
+  // { name:'facebook', url:'' },   // paste page URL to enable
+].filter(s=>s.url);
+const socialLine = SOCIALS.length
+  ? `<div class="mono" style="margin-top:10px">${SOCIALS.map(s=>`<a href="${s.url}" target="_blank" rel="noopener">${s.name}</a>`).join(' · ')}</div>`
+  : '';
 const metaDesc = rec => { const s=(rec.story||'').trim(); if(s){ const first=s.split('. ')[0]; return first.length>20?first+'.':s.slice(0,155); } return rec.title+', an immersive cook-along recipe from You Cooked It.'; };
 
 // ---- schema.org Recipe (JSON-LD) — invisible metadata for Google rich results ----
@@ -87,7 +98,7 @@ const schemaFor = rec => {
     url:SITE+'/recipes/'+rec.slug,
     image:images,
     description:metaDesc(rec),
-    author:{'@type':'Organization',name:'You Cooked It',url:SITE},
+    author:{'@type':'Organization',name:'You Cooked It',url:SITE,sameAs:SOCIALS.map(x=>x.url)},
     recipeCategory:rec.category,
     recipeYield:serves+' servings',
     keywords:[rec.title,rec.category,rec.cuisine].filter(Boolean).join(', '),
@@ -282,6 +293,7 @@ ${moreRow(rec)}${partnerCard(rec)}
   <section id="foot"><div class="wrap">
     <div class="display" style="font-size:clamp(34px,7vw,72px);font-weight:800">you <span style="color:var(--accent)">cooked</span> it.</div>
     <div class="mono">an immersive recipe · kitchen by croft &amp; hugh · © 2026</div>
+    ${socialLine}
     <div class="mono" style="margin-top:10px"><a href="/about">about</a> · <a href="/privacy">privacy</a> · <a href="/disclosure">affiliate disclosure</a></div>
   </div></section>
 
@@ -332,6 +344,7 @@ ${ogFiles.has('marry-me-chicken.jpg')?`<meta property="og:image" content="${SITE
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700;800&family=Hanken+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="${assetPrefix}assets/styles.css?v=${cssVer}">
+<script type="application/ld+json">${JSON.stringify({'@context':'https://schema.org','@type':'Organization',name:'You Cooked It',url:SITE,logo:SITE+'/icon-512.png',sameAs:SOCIALS.map(x=>x.url)})}</script>
 <script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
@@ -345,7 +358,8 @@ ${ogFiles.has('marry-me-chicken.jpg')?`<meta property="og:image" content="${SITE
     <div class="grid" id="grid"></div>
     <div class="count" id="count"></div>
 ${nlForm}
-    <div class="count" style="margin-top:14px">kitchen by croft &amp; hugh · <a href="/about">about</a> · <a href="/privacy">privacy</a> · <a href="/disclosure">affiliate disclosure</a></div>
+    <div class="count" style="margin-top:14px">${SOCIALS.map(s=>`<a href="${s.url}" target="_blank" rel="noopener">${s.name}</a>`).join(" · ")}</div>
+    <div class="count" style="margin-top:8px">kitchen by croft &amp; hugh · <a href="/about">about</a> · <a href="/privacy">privacy</a> · <a href="/disclosure">affiliate disclosure</a></div>
   </div></section>
   <script>
     var CARDS=${JSON.stringify(cards).replace(/</g,'\\u003c')};
@@ -456,6 +470,7 @@ ${noindex?'<meta name="robots" content="noindex"/>':`<link rel="canonical" href=
   </div></section>
   <section id="foot" style="padding-top:0"><div class="wrap">
     <div class="mono">kitchen by croft &amp; hugh · © 2026</div>
+    ${socialLine}
     <div class="mono" style="margin-top:10px"><a href="/about">about</a> · <a href="/privacy">privacy</a> · <a href="/disclosure">affiliate disclosure</a></div>
   </div></section>
 </body>
