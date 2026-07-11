@@ -25,7 +25,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700;800&family=Hanken+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/styles.css?v=ef4e7744">
+<link rel="stylesheet" href="assets/styles.css?v=605f0e40">
 <script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
@@ -101,6 +101,18 @@
           '<div class="inner"><div class="ccat">'+c.category+'</div><div class="ctitle">'+c.title.toLowerCase()+'</div></div>';
         grid.appendChild(a);
       });
+      var PTILES=[{"link":"https://www.awin1.com/awclick.php?gid=385402&mid=6388&awinaffid=2918949&linkid=2603115&clickref=grid","img":"partners/abel-and-cole-plate.png","name":"partner · abel & cole","title":"the veg drawer, sorted.","badge":"50% off","color":"#eab308","label":"#8a6d00"}];
+      if(active==='all'&&!query){
+        PTILES.forEach(function(PT,k){
+          var at=11+k*14;                      // first tile at position 12, then one every ~14 cards
+          if(grid.children.length<=at)return;
+          var t=document.createElement('a');t.className='card has-img ptile';t.href=PT.link;t.target='_blank';t.rel='sponsored noopener';t.style.setProperty('--c',PT.color);
+          t.innerHTML='<div class="cglow"></div><img class="cimg" alt="'+PT.name.replace('partner · ','')+'" decoding="async" width="256" height="256" src="'+ASSET+PT.img+'">'+
+            '<div class="tag" style="background:var(--ink)">'+PT.badge+'</div>'+
+            '<div class="inner"><div class="ccat" style="color:'+PT.label+'">'+PT.name+'</div><div class="ctitle">'+PT.title+'</div></div>';
+          grid.insertBefore(t,grid.children[at]);
+        });
+      }
       if(!list.length)grid.innerHTML='<div class="noresults">no recipes match that yet · try another word.</div>';
       count.textContent=query?(list.length+' result'+(list.length===1?'':'s')):(active==='all'?'hundreds of recipes':(list.length+' '+active+' recipes'));
     }

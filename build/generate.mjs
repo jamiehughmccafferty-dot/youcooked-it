@@ -133,14 +133,11 @@ const PARTNERS = [
     headline:'the veg drawer, sorted.',
     blurb:'Organic fruit and veg boxes from Abel &amp; Cole, delivered to your door. 50% off your 1st and 4th boxes with code <b>VEGBOX26</b>.',
     cta:'get 50% off',
-    image:'/partners/abel-and-cole.jpg' },
+    image:'/partners/abel-and-cole.jpg',
+    tile:{ img:'partners/abel-and-cole-plate.png', title:'the veg drawer, sorted.', badge:'50% off', color:'#eab308', label:'#8a6d00' } },
 ];
-const partnerCard = (rec)=>{
-  const pt = PARTNERS.find(x=>x.active && x.categories.includes(rec.category));
-  if(!pt) return '';
-  return `
-  <section id="partner"><div class="wrap">
-    <a class="pcard" href="${pt.link}" target="_blank" rel="sponsored noopener">
+const pcardHtml = (pt, ref)=>`
+    <a class="pcard" href="${pt.link.replace('clickref=recipe','clickref='+ref)}" target="_blank" rel="sponsored noopener">
       <div class="pimg"><img src="${pt.image}" alt="${pt.name.replace(/&amp;/g,'and')}" loading="lazy" decoding="async"/></div>
       <div class="pbody">
         <div class="mono plabel">partner · ${pt.name}</div>
@@ -148,10 +145,23 @@ const partnerCard = (rec)=>{
         <p>${pt.blurb}</p>
         <span class="pill">${pt.cta}</span>
       </div>
-    </a>
+    </a>`;
+const partnerCard = (rec)=>{
+  const pt = PARTNERS.find(x=>x.active && x.categories.includes(rec.category));
+  if(!pt) return '';
+  return `
+  <section id="partner"><div class="wrap">${pcardHtml(pt,'recipe')}
   </div></section>
 `;
 };
+// slot 1: native in-grid tiles on the home page. One tile per active partner
+// with a `tile` config, first at position 12 (first-scroll depth) then one
+// every ~14 cards. Unfiltered view only; labelled PARTNER so it reads honest.
+const PTILES = PARTNERS.filter(p=>p.active && p.tile).map(p=>({
+  link: p.link.replace('clickref=recipe','clickref=grid'),
+  img: p.tile.img, name: 'partner · '+p.name.replace(/&amp;/g,'&'),
+  title: p.tile.title, badge: p.tile.badge, color: p.tile.color, label: p.tile.label
+}));
 
 // ---- related recipes ("cook something like this") ----
 // 3 same-category picks, deterministic per slug. Server-rendered links = real
@@ -387,6 +397,18 @@ ${nlForm}
           '<div class="inner"><div class="ccat">'+c.category+'</div><div class="ctitle">'+c.title.toLowerCase()+'</div></div>';
         grid.appendChild(a);
       });
+      var PTILES=${JSON.stringify(PTILES)};
+      if(active==='all'&&!query){
+        PTILES.forEach(function(PT,k){
+          var at=11+k*14;                      // first tile at position 12, then one every ~14 cards
+          if(grid.children.length<=at)return;
+          var t=document.createElement('a');t.className='card has-img ptile';t.href=PT.link;t.target='_blank';t.rel='sponsored noopener';t.style.setProperty('--c',PT.color);
+          t.innerHTML='<div class="cglow"></div><img class="cimg" alt="'+PT.name.replace('partner · ','')+'" decoding="async" width="256" height="256" src="'+ASSET+PT.img+'">'+
+            '<div class="tag" style="background:var(--ink)">'+PT.badge+'</div>'+
+            '<div class="inner"><div class="ccat" style="color:'+PT.label+'">'+PT.name+'</div><div class="ctitle">'+PT.title+'</div></div>';
+          grid.insertBefore(t,grid.children[at]);
+        });
+      }
       if(!list.length)grid.innerHTML='<div class="noresults">no recipes match that yet · try another word.</div>';
       count.textContent=query?(list.length+' result'+(list.length===1?'':'s')):(active==='all'?'hundreds of recipes':(list.length+' '+active+' recipes'));
     }

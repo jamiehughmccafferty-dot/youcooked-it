@@ -202,6 +202,9 @@ nav .nl{display:flex;gap:20px;font-size:13px;text-transform:lowercase}
 .nlform .pill{border:0;white-space:nowrap}
 @media(max-width:480px){.nlform .nlrow{flex-direction:column}.nlform .pill{justify-content:center}}
 
+/* partner tile in the home grid: keep the label clear of the offer badge */
+.ptile .ccat{padding-right:74px}
+
 /* partner card (after the encore, category-matched, one per page max) */
 #partner{padding:0 0 clamp(44px,7vw,84px)}
 #partner .pcard{display:flex;align-items:stretch;background:#fff;border:1px solid rgba(36,23,18,.08);border-radius:20px;
