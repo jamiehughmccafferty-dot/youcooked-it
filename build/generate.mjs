@@ -361,7 +361,7 @@ ${nlForm}
   </div></section>
 
   <section id="foot"><div class="wrap">
-    <div class="display" style="font-size:clamp(34px,7vw,72px);font-weight:800">you <span style="color:var(--accent)">cooked</span> it.</div>
+    <div class="display" style="font-size:clamp(34px,7vw,72px);font-weight:800">you cooked it.</div>
     <div class="mono">an immersive recipe · kitchen by croft &amp; hugh · © 2026</div>
 ${socialLine}
     <div class="mono" style="margin-top:10px"><a href="/about">about</a> · <a href="/privacy">privacy</a> · <a href="/disclosure">affiliate disclosure</a></div>
