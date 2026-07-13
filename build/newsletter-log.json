@@ -214,16 +214,21 @@
     "cauliflower-tacos",
     "vegan-chocolate-brownies",
     "vegan-pancakes",
-    "smoky-bean-stew"
+    "smoky-bean-stew",
+    "bbq-ribs",
+    "beef-brisket",
+    "shish-kebabs",
+    "lamb-chops",
+    "lamb-koftas"
   ],
   "lastDrop": {
-    "date": "2026-07-09",
+    "date": "2026-07-13",
     "slugs": [
-      "chicken-souvlaki",
-      "watermelon-feta-salad",
-      "gazpacho",
-      "bang-bang-prawns",
-      "aperol-spritz"
+      "bbq-ribs",
+      "beef-brisket",
+      "shish-kebabs",
+      "lamb-chops",
+      "lamb-koftas"
     ]
   },
   "heldForSpecial": {
