@@ -15,7 +15,7 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const p = (...a) => path.join(ROOT, ...a);
 
 const RAINBOW = [
-  ['red',    ['pasta', 'sauce']],
+  ['red',    ['pasta', 'sauce', 'grill']],
   ['orange', ['chicken']],
   ['amber',  ['curry', 'breakfast']],
   ['earth',  ['soup', 'brunch', 'bread', 'rice', 'baking', 'stew']],

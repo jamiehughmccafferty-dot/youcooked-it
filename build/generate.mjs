@@ -63,7 +63,7 @@ const ver = f => { try { return crypto.createHash('md5').update(fs.readFileSync(
 const cssVer = ver('styles.css'), jsVer = ver('recipe-engine.js');
 const CAT={curry:'#e8991c',rice:'#b7923c',chicken:'#e2561f',dessert:'#ff4d6d',cake:'#ef5fa0',baking:'#b86a4a',
   salad:'#4f8a3a',veg:'#6fae3c',vegetarian:'#3c9e74',vegan:'#9bb020',breakfast:'#e9a72f',brunch:'#d98a52',pasta:'#c0341a',
-  seafood:'#2f9bb0',soup:'#cf7b2a',stew:'#9c5526',bread:'#c98a3a',drinks:'#8a5cc4',sauce:'#cf3636'};
+  seafood:'#2f9bb0',soup:'#cf7b2a',stew:'#9c5526',bread:'#c98a3a',drinks:'#8a5cc4',sauce:'#cf3636',grill:'#a8402a'};
 const imgFiles = new Set(fs.existsSync(p('images')) ? fs.readdirSync(p('images')).map(f=>f.toLowerCase()) : []);
 const thumbFiles = new Set(fs.existsSync(p('images','thumb')) ? fs.readdirSync(p('images','thumb')).map(f=>f.toLowerCase()) : []);
 const ogFiles = new Set(fs.existsSync(p('og')) ? fs.readdirSync(p('og')).map(f=>f.toLowerCase()) : []);  // 1200x630 share cards
@@ -146,6 +146,14 @@ const PARTNERS = [
     cta:'get 50% off',
     image:'/partners/abel-and-cole.jpg',
     tile:{ img:'partners/abel-and-cole-plate.png', title:'the veg drawer, sorted.', badge:'50% off', color:'#eab308', label:'#8a6d00' } },
+  { id:'real-food-hub', name:'real food hub', active:true,
+    categories:['seafood','stew','grill'],
+    link:'https://www.awin1.com/cread.php?s=2744555&v=20241&q=400469&r=2918949&clickref=recipe',
+    headline:'Real Food Hub, a marketplace for food, drink &amp; gifts.',
+    blurb:'Shop for Heritage Breed Meat &amp; Regional Cheeses, Sustainably Sourced Fish &amp; Seafood, Deli &amp; Charcuterie, Organic Fruit &amp; Veg, plus Treats like Artisan Chocolate, Craft Beer, Boutique Wines, and British Gin all at one easy to use marketplace.',
+    cta:'shop now',
+    image:'/partners/real-food-hub.jpg',
+    tile:{ img:'partners/real-food-hub-plate.png', title:'food, drink & gifts, delivered.', badge:'shop now', color:'#e8384f', label:'#9c1f30' } },
 ];
 const pcardHtml = (pt, ref)=>`
     <a class="pcard" href="${pt.link.replace('clickref=recipe','clickref='+ref)}" target="_blank" rel="sponsored noopener">
@@ -514,4 +522,4 @@ fs.writeFileSync(p('robots.txt'),
 
 const published = records.filter(r=>r.status==='published').length;
 console.log('Home page + '+records.length+' recipe pages ('+published+' published, '+(records.length-published)+' stubbed).');
-console.log('SEO: sitemap.xml ('+(records.length+4)+' urls) + robots.txt + JSON-LD recipe schema + info pages written. Canonical host '+SITE+'.');
+console.log('SEO: sitemap.xml ('+(onDisplay.length+4)+' urls) + robots.txt + JSON-LD recipe schema + info pages written. Canonical host '+SITE+'.');

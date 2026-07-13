@@ -5390,6 +5390,163 @@ export default {
       {title:"season",when:"2 min",body:"Season boldly and mash a few beans against the pan to thicken the sauce.",timer_seconds:null},
       {title:"serve",when:"now",body:"Scatter with parsley, drizzle with your best olive oil and serve with crusty bread.",timer_seconds:null}],
     serving_ideas:[{emoji:"🥖",label:"crusty bread"},{emoji:"🫒",label:"good olive oil"},{emoji:"🌿",label:"parsley"},{emoji:"🍚",label:"or over rice"}]
+  },
+
+  "bbq-ribs": {
+    cuisine:"American",
+    story:"Proper sticky ribs, the kind that surrender off the bone without a fight. The oven does the slow, patient work under foil, then a glossy glaze and a blast of heat turn them lacquered and charred at the edges. Napkins are not optional.",
+    meta:{total_time:"3 hr 30",marinate_time:"1 hr",serves:4,heat:"medium",skill:"easy"},
+    macros:{protein_g:42,fat_g:33,carbs_g:20,estimate:true},
+    ingredient_groups:[
+      {name:"the ribs",items:[
+        {qty:2,unit:"",name:"racks of pork ribs, membrane removed",countable:true},
+        {qty:2,unit:"tbsp",name:"soft brown sugar",countable:false},
+        {qty:1,unit:"tbsp",name:"olive oil",countable:false}]},
+      {name:"the glaze",items:[
+        {qty:150,unit:"ml",name:"barbecue sauce",countable:false},
+        {qty:2,unit:"tbsp",name:"honey",countable:false},
+        {qty:1,unit:"tbsp",name:"cider vinegar",countable:false}]},
+      {name:"the spice mix",items:[
+        {qty:2,unit:"tsp",name:"smoked paprika",countable:false},
+        {qty:1,unit:"tsp",name:"garlic granules",countable:false},
+        {qty:1,unit:"tsp",name:"onion granules",countable:false},
+        {qty:1,unit:"tsp",name:"black pepper",countable:false}]}],
+    spice_mix:[
+      {name:"smoked paprika",note:"bottled smoke, basically"},
+      {name:"garlic granules",note:"savoury backbone"},
+      {name:"onion granules",note:"sweet depth"},
+      {name:"black pepper",note:"gentle bite"}],
+    method:[
+      {title:"rub",when:"1 hr",body:"Mix the spice mix with the sugar and oil, massage it all over the ribs and let them sit for at least an hour, overnight if you can.",timer_seconds:3600},
+      {title:"the slow bit",when:"3 hr",body:"Wrap each rack tightly in foil and bake at 140C fan until the meat gives when you twist a bone.",timer_seconds:10800},
+      {title:"glaze",when:"5 min",body:"Stir the barbecue sauce, honey and vinegar together and brush the ribs generously all over.",timer_seconds:null},
+      {title:"fire",when:"15 min",body:"Finish on a hot barbecue or under a hot grill, turning and basting, until sticky and charred at the edges.",timer_seconds:900},
+      {title:"serve",when:"now",body:"Rest for five minutes, cut between the bones and pile onto a board.",timer_seconds:null}],
+    serving_ideas:[{emoji:"🌽",label:"corn on the cob"},{emoji:"🥗",label:"slaw"},{emoji:"🍟",label:"fries"},{emoji:"🥒",label:"pickles"}]
+  },
+
+  "beef-brisket": {
+    cuisine:"American",
+    story:"Brisket rewards the patient and punishes the curious, so rub it, seal it, and walk away. Six slow hours later you get bark on the outside, blushing tender beef inside, and a kitchen that smells like a Texas smokehouse. The overnight rub is the whole secret.",
+    meta:{total_time:"6 hr 30",marinate_time:"overnight",serves:8,heat:"medium",skill:"medium"},
+    macros:{protein_g:48,fat_g:28,carbs_g:6,estimate:true},
+    ingredient_groups:[
+      {name:"the beef",items:[
+        {qty:2,unit:"kg",name:"beef brisket joint",countable:false},
+        {qty:2,unit:"tbsp",name:"soft brown sugar",countable:false},
+        {qty:250,unit:"ml",name:"beef stock",countable:false},
+        {qty:2,unit:"tbsp",name:"worcestershire sauce",countable:false}]},
+      {name:"the spice mix",items:[
+        {qty:2,unit:"tbsp",name:"smoked paprika",countable:false},
+        {qty:1,unit:"tbsp",name:"black pepper, coarsely ground",countable:false},
+        {qty:1,unit:"tbsp",name:"sea salt",countable:false},
+        {qty:2,unit:"tsp",name:"garlic granules",countable:false},
+        {qty:1,unit:"tsp",name:"mustard powder",countable:false}]}],
+    spice_mix:[
+      {name:"smoked paprika",note:"the smoke ring's understudy"},
+      {name:"black pepper",note:"the bark builder"},
+      {name:"garlic granules",note:"savoury base"},
+      {name:"mustard powder",note:"quiet heat"}],
+    method:[
+      {title:"rub",when:"overnight",body:"Mix the spice mix with the sugar and press it into every surface of the brisket. Wrap and refrigerate overnight.",timer_seconds:null},
+      {title:"the long haul",when:"6 hr",body:"Sit the brisket fat side up in a deep tray with the stock and worcestershire sauce, cover tightly with foil and cook at 130C fan until a fork twists in the thickest part with no resistance.",timer_seconds:21600},
+      {title:"bark",when:"20 min",body:"Uncover, spoon the juices over and finish at 200C fan or on the barbecue until the outside darkens to a proper crust.",timer_seconds:1200},
+      {title:"the hard part",when:"30 min",body:"Rest under loose foil. Cutting early undoes six hours of work, so do not.",timer_seconds:1800},
+      {title:"serve",when:"now",body:"Slice against the grain, as thick as your patience allows, and spoon over the tray juices.",timer_seconds:null}],
+    serving_ideas:[{emoji:"🍞",label:"soft white rolls"},{emoji:"🥒",label:"pickles"},{emoji:"🥗",label:"slaw"},{emoji:"🌶️",label:"hot sauce"}]
+  },
+
+  "shish-kebabs": {
+    cuisine:"Turkish",
+    story:"Cubes of beef in a garlicky yogurt marinade that keeps them juicy over fierce heat, threaded with peppers and onion that catch and char at the corners. This is skewer food the way the grill houses do it, fast, smoky and unapologetically messy.",
+    meta:{total_time:"30 min",marinate_time:"2 hr",serves:4,heat:"medium",skill:"easy"},
+    macros:{protein_g:38,fat_g:18,carbs_g:10,estimate:true},
+    ingredient_groups:[
+      {name:"the skewers",items:[
+        {qty:700,unit:"g",name:"beef rump or sirloin, cut into chunks",countable:false},
+        {qty:2,unit:"",name:"red peppers, cut into squares",countable:true},
+        {qty:1,unit:"",name:"red onion, cut into petals",countable:true}]},
+      {name:"the marinade",items:[
+        {qty:150,unit:"g",name:"natural yogurt",countable:false},
+        {qty:3,unit:"",name:"garlic cloves, crushed",countable:true},
+        {qty:2,unit:"tbsp",name:"olive oil",countable:false},
+        {qty:1,unit:"",name:"lemon, juiced",countable:true}]},
+      {name:"the spice mix",items:[
+        {qty:2,unit:"tsp",name:"ground cumin",countable:false},
+        {qty:2,unit:"tsp",name:"sweet paprika",countable:false},
+        {qty:1,unit:"tsp",name:"dried oregano",countable:false},
+        {qty:1,unit:"pinch",name:"chilli flakes",countable:false}]}],
+    spice_mix:[
+      {name:"ground cumin",note:"warm and earthy"},
+      {name:"sweet paprika",note:"colour and sweetness"},
+      {name:"dried oregano",note:"the Turkish grill note"},
+      {name:"chilli flakes",note:"optional menace"}],
+    method:[
+      {title:"marinate",when:"2 hr",body:"Whisk the yogurt, garlic, oil, lemon and spice mix, coat the beef and refrigerate for at least two hours.",timer_seconds:7200},
+      {title:"thread",when:"10 min",body:"Thread the beef onto skewers with the peppers and onion, alternating as you go and not packing too tightly.",timer_seconds:600},
+      {title:"fire",when:"12 min",body:"Grill over high heat or under a hot grill, turning every few minutes, until charred outside and just cooked through.",timer_seconds:720},
+      {title:"rest",when:"5 min",body:"Rest the skewers on a warm plate while you get the flatbreads on the heat.",timer_seconds:300},
+      {title:"serve",when:"now",body:"Slide everything off the skewers into warm flatbreads with whatever you love.",timer_seconds:null}],
+    serving_ideas:[{emoji:"🫓",label:"flatbreads"},{emoji:"🥗",label:"chopped salad"},{emoji:"🧄",label:"garlic sauce"},{emoji:"🍋",label:"lemon wedges"}]
+  },
+
+  "lamb-chops": {
+    cuisine:"British",
+    story:"Lamb chops want two things, a garlicky rosemary bath and heat that borders on reckless. Get the fat cap crisp, keep the middle pink, and you have the fastest route to feeling like you own a gastropub. The bones are handles, use them.",
+    meta:{total_time:"20 min",marinate_time:"1 hr",serves:4,heat:"mild",skill:"easy"},
+    macros:{protein_g:35,fat_g:30,carbs_g:2,estimate:true},
+    ingredient_groups:[
+      {name:"the lamb",items:[
+        {qty:8,unit:"",name:"lamb loin chops or cutlets",countable:true}]},
+      {name:"the marinade",items:[
+        {qty:3,unit:"tbsp",name:"olive oil",countable:false},
+        {qty:3,unit:"",name:"garlic cloves, crushed",countable:true},
+        {qty:2,unit:"sprigs",name:"rosemary, leaves chopped",countable:false},
+        {qty:1,unit:"",name:"lemon, zested and juiced",countable:true},
+        {qty:1,unit:"tsp",name:"black pepper",countable:false},
+        {qty:1,unit:"tsp",name:"sea salt",countable:false}]}],
+    spice_mix:[],
+    method:[
+      {title:"marinate",when:"1 hr",body:"Mix the oil, garlic, rosemary, lemon zest and seasoning, coat the chops and leave them at room temperature for the last half hour.",timer_seconds:3600},
+      {title:"fire",when:"8 min",body:"Cook over high heat on the barbecue or in a screaming hot pan, about three to four minutes a side, standing them on the fat edge at the end to crisp it.",timer_seconds:480},
+      {title:"rest",when:"5 min",body:"Rest on a warm plate. The juices settle and the pink evens out.",timer_seconds:300},
+      {title:"serve",when:"now",body:"Squeeze over the lemon juice, scatter with extra rosemary and serve with the pan juices.",timer_seconds:null}],
+    serving_ideas:[{emoji:"🥔",label:"crushed new potatoes"},{emoji:"🥗",label:"green salad"},{emoji:"🍷",label:"red wine"},{emoji:"🌿",label:"mint sauce"}]
+  },
+
+  "lamb-koftas": {
+    cuisine:"Middle Eastern",
+    story:"Spiced lamb mince shaped onto skewers and grilled until the edges catch, then bundled into flatbreads with cool yogurt and hot sauce arguing over the top. They ask for one bowl, ten minutes of shaping and almost nothing else, which makes them dangerous knowledge on a weeknight.",
+    meta:{total_time:"30 min",marinate_time:null,serves:4,heat:"medium",skill:"easy"},
+    macros:{protein_g:30,fat_g:26,carbs_g:8,estimate:true},
+    ingredient_groups:[
+      {name:"the koftas",items:[
+        {qty:500,unit:"g",name:"lamb mince",countable:false},
+        {qty:1,unit:"",name:"small onion, grated",countable:true},
+        {qty:2,unit:"",name:"garlic cloves, crushed",countable:true},
+        {qty:1,unit:"handful",name:"parsley, chopped",countable:false}]},
+      {name:"the spice mix",items:[
+        {qty:2,unit:"tsp",name:"ground cumin",countable:false},
+        {qty:2,unit:"tsp",name:"ground coriander",countable:false},
+        {qty:1,unit:"tsp",name:"smoked paprika",countable:false},
+        {qty:1,unit:"tsp",name:"ground cinnamon",countable:false},
+        {qty:1,unit:"pinch",name:"chilli flakes",countable:false}]},
+      {name:"to serve",items:[
+        {qty:4,unit:"",name:"flatbreads",countable:true},
+        {qty:150,unit:"g",name:"natural yogurt",countable:false},
+        {qty:1,unit:"handful",name:"mint leaves",countable:false}]}],
+    spice_mix:[
+      {name:"ground cumin",note:"the kofta keystone"},
+      {name:"ground coriander",note:"citrusy warmth"},
+      {name:"smoked paprika",note:"borrowed fire"},
+      {name:"ground cinnamon",note:"the sweet trick"},
+      {name:"chilli flakes",note:"as brave as you like"}],
+    method:[
+      {title:"mix",when:"5 min",body:"Squeeze the grated onion dry, then work it into the mince with the garlic, parsley and spice mix until it holds together.",timer_seconds:null},
+      {title:"shape",when:"10 min",body:"Divide into eight and press each around a skewer into a long sausage shape. Chill while the grill heats.",timer_seconds:600},
+      {title:"fire",when:"10 min",body:"Grill over high heat, turning, until charred outside and cooked through the middle.",timer_seconds:600},
+      {title:"serve",when:"now",body:"Pile into warm flatbreads with yogurt, mint and anything pickled you can find.",timer_seconds:null}],
+    serving_ideas:[{emoji:"🫓",label:"flatbreads"},{emoji:"🥛",label:"minted yogurt"},{emoji:"🍅",label:"chopped tomatoes"},{emoji:"🧅",label:"pickled onions"}]
   }
 
 };

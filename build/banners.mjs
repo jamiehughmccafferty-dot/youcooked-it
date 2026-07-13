@@ -12,7 +12,7 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const p = (...a) => path.join(ROOT, ...a);
 const CAT = { chicken:'#e2561f',curry:'#e8991c',rice:'#b7923c',dessert:'#ff4d6d',cake:'#ef5fa0',baking:'#b86a4a',
   salad:'#4f8a3a',veg:'#6fae3c',vegetarian:'#3c9e74',vegan:'#9bb020',breakfast:'#e9a72f',brunch:'#d98a52',pasta:'#c0341a',
-  seafood:'#2f9bb0',soup:'#cf7b2a',stew:'#9c5526',bread:'#c98a3a',drinks:'#8a5cc4',sauce:'#cf3636' };
+  seafood:'#2f9bb0',soup:'#cf7b2a',stew:'#9c5526',bread:'#c98a3a',drinks:'#8a5cc4',sauce:'#cf3636',grill:'#a8402a' };
 const CREAM = '#f6edda';
 
 const argVal = (n, d) => { const i = process.argv.indexOf(n); return i !== -1 ? process.argv[i + 1] : d; };
