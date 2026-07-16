@@ -15,8 +15,8 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const p = (...a) => path.join(ROOT, ...a);
 const SITE = 'https://youcooked-it.com';
 const CAT = { curry:'#e8991c',rice:'#b7923c',chicken:'#e2561f',dessert:'#ff4d6d',cake:'#ef5fa0',baking:'#b86a4a',
-  salad:'#4f8a3a',veg:'#6fae3c',vegetarian:'#3c9e74',breakfast:'#e9a72f',brunch:'#d98a52',pasta:'#c0341a',
-  seafood:'#2f9bb0',soup:'#cf7b2a',stew:'#9c5526',bread:'#c98a3a',drinks:'#8a5cc4',sauce:'#cf3636' };
+  salad:'#4f8a3a',veg:'#6fae3c',vegetarian:'#3c9e74',vegan:'#9bb020',breakfast:'#e9a72f',brunch:'#d98a52',pasta:'#c0341a',
+  seafood:'#2f9bb0',soup:'#cf7b2a',stew:'#9c5526',bread:'#c98a3a',drinks:'#8a5cc4',sauce:'#cf3636',grill:'#a8402a' };
 const INK = '#241712', CREAM = '#f6edda';
 const esc = (s) => String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 
@@ -55,6 +55,47 @@ const card = (rec) => {
   </td></tr>`;
 };
 
+// optional themed intro: --intro "text" or NL_INTRO env; falls back to the standard line
+const introIdx = process.argv.indexOf('--intro');
+const INTRO = (introIdx !== -1 && process.argv[introIdx + 1]) || process.env.NL_INTRO || '';
+
+// partner slot: native cards after the five, links tagged clickref=newsletter.
+// Edit per edition (or empty the array to skip the section).
+const NL_PARTNERS = [
+  { // Tower's own email banner, used whole
+    banner: SITE + '/partners/tower-email.jpg', alt: 'Tower, home of the air fryer',
+    link: 'https://www.awin1.com/cread.php?awinmid=20823&awinaffid=2918949&clickref=newsletter',
+    note: 'no oven, no sweat. the air fryer keeps the kitchen cool.' },
+  { // Abel & Cole native card in the recipe-card style
+    accent: '#eab308', label: 'partner · abel & cole', title: 'salad season, sorted.',
+    meta: '50% off your 1st box | code VEGBOX26', cta: 'get 50% off',
+    img: SITE + '/partners/abel-and-cole-box.jpg', alt: 'Abel and Cole veg box',
+    link: 'https://www.awin1.com/awclick.php?gid=385402&mid=6388&awinaffid=2918949&linkid=2603115&clickref=newsletter' },
+];
+const partnerRows = !NL_PARTNERS.length ? '' : `
+  <tr><td align="center" style="font-family:Poppins,Arial,sans-serif;font-weight:700;font-size:15px;letter-spacing:1.5px;color:${INK};text-transform:uppercase;padding:26px 0 14px 0;">from our kitchen partners</td></tr>
+  ${NL_PARTNERS.map((pt) => pt.banner ? `
+  <tr><td style="padding:0 0 8px 0;">
+    <a href="${pt.link}"><img src="${pt.banner}" width="600" alt="${esc(pt.alt)}" style="display:block;width:100%;max-width:600px;height:auto;border:0;border-radius:22px;"/></a>
+  </td></tr>
+  <tr><td align="center" style="font-family:Poppins,Arial,sans-serif;font-size:13px;font-weight:600;color:#6b574a;padding:0 26px 18px 26px;">${esc(pt.note || '')}</td></tr>` : `
+  <tr><td style="padding:0 0 18px 0;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:${pt.accent};border-radius:22px;">
+      <tr>
+        <td style="padding:26px 8px 26px 28px;vertical-align:middle;">
+          <div style="font-family:Poppins,Arial,sans-serif;font-size:12px;font-weight:600;letter-spacing:2px;color:${CREAM};text-transform:uppercase;">${esc(pt.label)}</div>
+          <div style="font-family:Poppins,Arial,sans-serif;font-size:26px;line-height:1.15;font-weight:700;color:#ffffff;padding:6px 0 4px 0;"><a href="${pt.link}" style="color:#ffffff;text-decoration:none;">${esc(pt.title)}</a></div>
+          <div style="font-family:Poppins,Arial,sans-serif;font-size:14px;font-weight:600;color:#ffffff;padding-bottom:14px;">${esc(pt.meta)}</div>
+          <a href="${pt.link}" style="font-family:Poppins,Arial,sans-serif;font-size:14px;font-weight:600;color:${pt.accent};background:#ffffff;text-decoration:none;padding:9px 20px;border-radius:999px;display:inline-block;">${esc(pt.cta)}</a>
+        </td>
+        <td width="170" style="padding:14px 18px 14px 0;vertical-align:middle;">
+          <a href="${pt.link}"><img src="${pt.img}" width="170" alt="${esc(pt.alt)}" style="display:block;width:170px;height:auto;border:0;border-radius:16px;"/></a>
+        </td>
+      </tr>
+    </table>
+  </td></tr>`).join('')}
+  <tr><td align="center" style="font-family:Poppins,Arial,sans-serif;font-size:11px;color:#6b574a;padding:0 26px 6px 26px;">partner links · they help keep the recipes free</td></tr>`;
+
 const today = new Date();
 const stamp = today.toISOString().slice(0, 10);
 const nice = today.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
@@ -65,7 +106,7 @@ const html = `<!DOCTYPE html>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap" rel="stylesheet">
 </head>
 <body style="margin:0;padding:0;background:#ffffff;">
-<div style="display:none;max-height:0;overflow:hidden;">${picks.length} new recipes just landed in the kitchen.</div>
+<div style="display:none;max-height:0;overflow:hidden;">${esc(INTRO) || picks.length + ' new recipes just landed in the kitchen.'}</div>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr><td align="center" style="padding:34px 14px;">
 <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;">
 
@@ -77,10 +118,10 @@ const html = `<!DOCTYPE html>
 
   <tr><td align="center" style="font-family:Poppins,Arial,sans-serif;font-weight:700;font-size:34px;color:${INK};padding:18px 0 4px 0;">the friday five</td></tr>
   <tr><td align="center" style="font-family:Poppins,Arial,sans-serif;font-weight:600;font-size:14px;color:#6b574a;padding-bottom:8px;">${nice}</td></tr>
-  <tr><td align="center" style="font-family:Poppins,Arial,sans-serif;font-size:16px;line-height:1.55;color:${INK};padding:0 26px 28px 26px;">${picks.length} new recipes just landed in the kitchen. Pick one for the weekend, we'll walk you through it.</td></tr>
+  <tr><td align="center" style="font-family:Poppins,Arial,sans-serif;font-size:16px;line-height:1.55;color:${INK};padding:0 26px 28px 26px;">${esc(INTRO) || picks.length + " new recipes just landed in the kitchen. Pick one for the weekend, we'll walk you through it."}</td></tr>
 
   ${picks.map(card).join('')}
-
+${partnerRows}
   <tr><td align="center" style="font-family:Poppins,Arial,sans-serif;font-weight:700;font-size:15px;letter-spacing:1.5px;color:${INK};text-transform:uppercase;padding:26px 0 16px 0;">no more doom scrolling</td></tr>
 
   <tr><td align="center" style="padding-bottom:30px;">
