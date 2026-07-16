@@ -62,10 +62,11 @@ const INTRO = (introIdx !== -1 && process.argv[introIdx + 1]) || process.env.NL_
 // partner slot: native cards after the five, links tagged clickref=newsletter.
 // Edit per edition (or empty the array to skip the section).
 const NL_PARTNERS = [
-  { // Tower's own email banner, used whole
-    banner: SITE + '/partners/tower-email.jpg', alt: 'Tower, home of the air fryer',
-    link: 'https://www.awin1.com/cread.php?awinmid=20823&awinaffid=2918949&clickref=newsletter',
-    note: 'no oven, no sweat. the air fryer keeps the kitchen cool.' },
+  { // Tower summer range: slushie machines and BBQs (swap back to tower-email.jpg banner when the summer promo ends)
+    accent: '#9bb020', label: 'partner · tower', title: 'ready for summer.',
+    meta: 'BBQs and slushie machines | save up to £250', cta: 'shop the range',
+    img: SITE + '/partners/tower-slushie.jpg', alt: 'Tower slushie machine',
+    link: 'https://www.awin1.com/cread.php?awinmid=20823&awinaffid=2918949&clickref=newsletter' },
   { // Abel & Cole native card in the recipe-card style
     accent: '#eab308', label: 'partner · abel & cole', title: 'salad season, sorted.',
     meta: '50% off your 1st box | code VEGBOX26', cta: 'get 50% off',
