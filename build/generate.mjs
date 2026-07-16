@@ -148,7 +148,7 @@ const PARTNERS = [
     tile:{ img:'partners/abel-and-cole-plate.png', title:'the veg drawer, sorted.', badge:'50% off', color:'#eab308', label:'#8a6d00' } },
   { id:'real-food-hub', name:'real food hub', active:true,
     categories:['seafood','stew','grill'],
-    link:'https://www.awin1.com/cread.php?s=2744555&v=20241&q=400469&r=2918949&clickref=recipe',
+    link:'https://www.awin1.com/cread.php?awinmid=20241&awinaffid=2918949&clickref=recipe',
     headline:'Real Food Hub, a marketplace for food, drink &amp; gifts.',
     blurb:'Shop for Heritage Breed Meat &amp; Regional Cheeses, Sustainably Sourced Fish &amp; Seafood, Deli &amp; Charcuterie, Organic Fruit &amp; Veg, plus Treats like Artisan Chocolate, Craft Beer, Boutique Wines, and British Gin all at one easy to use marketplace.',
     cta:'shop now',
