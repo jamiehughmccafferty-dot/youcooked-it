@@ -156,7 +156,7 @@ const PARTNERS = [
     tile:{ img:'partners/real-food-hub-plate.png', title:'food, drink & gifts, delivered.', badge:'shop now', color:'#e8384f', label:'#9c1f30' } },
   { id:'tower', name:'tower', active:true,
     categories:['curry','sauce','rice','breakfast','brunch','drinks'],
-    link:'https://www.awin1.com/cread.php?s=3909177&v=20823&q=516481&r=2918949&clickref=recipe',
+    link:'https://www.awin1.com/cread.php?awinmid=20823&awinaffid=2918949&clickref=recipe',
     headline:'the kit behind the cooking.',
     blurb:'Everyday pans, woks and air fryers from Tower, trusted in British kitchens since 1912. Free recipe book with selected air fryers.',
     cta:'shop now',
