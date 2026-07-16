@@ -219,16 +219,21 @@
     "beef-brisket",
     "shish-kebabs",
     "lamb-chops",
-    "lamb-koftas"
+    "lamb-koftas",
+    "frozen-yogurt-bark",
+    "smashed-cucumber-salad",
+    "prawn-cocktail",
+    "tzatziki",
+    "pimms-cup"
   ],
   "lastDrop": {
-    "date": "2026-07-13",
+    "date": "2026-07-16",
     "slugs": [
-      "bbq-ribs",
-      "beef-brisket",
-      "shish-kebabs",
-      "lamb-chops",
-      "lamb-koftas"
+      "frozen-yogurt-bark",
+      "smashed-cucumber-salad",
+      "prawn-cocktail",
+      "tzatziki",
+      "pimms-cup"
     ]
   },
   "heldForSpecial": {
