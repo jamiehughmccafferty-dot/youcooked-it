@@ -120,7 +120,8 @@
         "emoji": "🍋",
         "label": "lemon"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "marry-me-chicken",
@@ -272,7 +273,8 @@
         "emoji": "🧀",
         "label": "parmesan"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "chicken-parmesan",
@@ -406,7 +408,8 @@
         "emoji": "🌿",
         "label": "basil"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "honey-garlic-chicken",
@@ -534,7 +537,8 @@
         "emoji": "⚪",
         "label": "sesame"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "chicken-fajitas",
@@ -708,7 +712,8 @@
         "emoji": "🧀",
         "label": "cheese"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "fried-chicken",
@@ -848,7 +853,8 @@
         "emoji": "🥒",
         "label": "pickles"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "chicken-stir-fry",
@@ -988,7 +994,8 @@
         "emoji": "🧅",
         "label": "spring onion"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "chicken-pot-pie",
@@ -1140,7 +1147,8 @@
         "emoji": "🥣",
         "label": "extra gravy"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "lemon-chicken",
@@ -1268,7 +1276,8 @@
         "emoji": "⚪",
         "label": "sesame"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "chicken-shawarma",
@@ -1430,7 +1439,8 @@
         "emoji": "🍅",
         "label": "tomato salad"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "bbq-chicken",
@@ -1546,7 +1556,8 @@
         "emoji": "🍞",
         "label": "soft rolls"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "buffalo-wings",
@@ -1662,7 +1673,8 @@
         "emoji": "🌶️",
         "label": "extra hot sauce"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "chicken-enchiladas",
@@ -1826,7 +1838,8 @@
         "emoji": "🥛",
         "label": "soured cream"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "teriyaki-chicken",
@@ -1942,7 +1955,8 @@
         "emoji": "🧅",
         "label": "spring onion"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "coronation-chicken",
@@ -2069,7 +2083,8 @@
         "emoji": "🌿",
         "label": "coriander"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "chicken-kiev",
@@ -2197,7 +2212,8 @@
         "emoji": "🥬",
         "label": "green salad"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "jerk-chicken",
@@ -2371,7 +2387,8 @@
         "emoji": "🥗",
         "label": "slaw"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "chicken-quesadilla",
@@ -2476,7 +2493,8 @@
         "emoji": "🌶️",
         "label": "jalapeños"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "chicken-satay",
@@ -2610,7 +2628,8 @@
         "emoji": "🍋",
         "label": "lime"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "nashville-hot-chicken",
@@ -2744,7 +2763,8 @@
         "emoji": "🧀",
         "label": "ranch dip"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "chicken-schnitzel",
@@ -2855,7 +2875,8 @@
         "emoji": "🥒",
         "label": "pickles"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "chicken-gyros",
@@ -2989,7 +3010,8 @@
         "emoji": "🧅",
         "label": "red onion"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "butter-chicken",
@@ -3154,7 +3176,8 @@
         "emoji": "🧈",
         "label": "extra butter"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "chicken-tikka-masala",
@@ -3393,7 +3416,8 @@
         "emoji": "🌿",
         "label": "coriander"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "chicken-curry",
@@ -3556,7 +3580,8 @@
         "emoji": "🧅",
         "label": "onion salad"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "chicken-katsu-curry",
@@ -3719,7 +3744,8 @@
         "emoji": "🌶️",
         "label": "chilli flakes"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "thai-green-curry",
@@ -3872,7 +3898,8 @@
         "emoji": "🌶️",
         "label": "sliced chilli"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "thai-red-curry",
@@ -4015,7 +4042,8 @@
         "emoji": "🌿",
         "label": "coriander"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "beef-rendang",
@@ -4168,7 +4196,8 @@
         "emoji": "🌶️",
         "label": "sambal"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "lamb-rogan-josh",
@@ -4327,7 +4356,8 @@
         "emoji": "🧅",
         "label": "onion salad"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "chana-masala",
@@ -4486,7 +4516,8 @@
         "emoji": "🍋",
         "label": "lemon"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "saag-paneer",
@@ -4635,7 +4666,8 @@
         "emoji": "🍋",
         "label": "lemon"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "massaman-curry",
@@ -4782,7 +4814,8 @@
         "emoji": "🍋",
         "label": "lime"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "dal-tadka",
@@ -4929,7 +4962,8 @@
         "emoji": "🧈",
         "label": "extra ghee"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "prawn-curry",
@@ -5088,7 +5122,8 @@
         "emoji": "🌿",
         "label": "coriander"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "vegetable-korma",
@@ -5241,7 +5276,8 @@
         "emoji": "🌿",
         "label": "coriander"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "spaghetti-bolognese",
@@ -5387,7 +5423,8 @@
         "emoji": "🥗",
         "label": "green salad"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "spaghetti-carbonara",
@@ -5504,7 +5541,8 @@
         "emoji": "🥗",
         "label": "rocket"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "chicken-alfredo",
@@ -5632,7 +5670,8 @@
         "emoji": "🥗",
         "label": "salad"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "lasagna",
@@ -5783,7 +5822,8 @@
         "emoji": "🌿",
         "label": "basil"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "mac-and-cheese",
@@ -5922,7 +5962,8 @@
         "emoji": "🍅",
         "label": "roast tomatoes"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "pesto-pasta",
@@ -6038,7 +6079,8 @@
         "emoji": "🌰",
         "label": "pine nuts"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "penne-arrabbiata",
@@ -6155,7 +6197,8 @@
         "emoji": "🫒",
         "label": "olive oil"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "cacio-e-pepe",
@@ -6254,7 +6297,8 @@
         "emoji": "🥗",
         "label": "rocket"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "creamy-tuscan-pasta",
@@ -6376,7 +6420,8 @@
         "emoji": "🥖",
         "label": "bread"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "baked-ziti",
@@ -6515,7 +6560,8 @@
         "emoji": "🧀",
         "label": "parmesan"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "pasta-puttanesca",
@@ -6638,7 +6684,8 @@
         "emoji": "🥖",
         "label": "bread"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "gnocchi-pomodoro",
@@ -6749,7 +6796,8 @@
         "emoji": "🫒",
         "label": "olive oil"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "ravioli-sage-butter",
@@ -6854,7 +6902,8 @@
         "emoji": "🌶️",
         "label": "black pepper"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "spaghetti-aglio-e-olio",
@@ -6965,7 +7014,8 @@
         "emoji": "🫒",
         "label": "olive oil"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "creamy-mushroom-pasta",
@@ -7087,7 +7137,8 @@
         "emoji": "🥗",
         "label": "rocket"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "sausage-rigatoni",
@@ -7221,7 +7272,8 @@
         "emoji": "🥖",
         "label": "focaccia"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "chocolate-chip-cookies",
@@ -7356,7 +7408,8 @@
         "emoji": "🍫",
         "label": "extra chocolate"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "fudgy-brownies",
@@ -7473,7 +7526,8 @@
         "emoji": "☕",
         "label": "espresso"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "new-york-cheesecake",
@@ -7601,7 +7655,8 @@
         "emoji": "☕",
         "label": "coffee"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "tiramisu",
@@ -7729,7 +7784,8 @@
         "emoji": "🍓",
         "label": "berries"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "creme-brulee",
@@ -7845,7 +7901,8 @@
         "emoji": "🌼",
         "label": "vanilla"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "apple-pie",
@@ -7988,7 +8045,8 @@
         "emoji": "🍎",
         "label": "extra cinnamon"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "chocolate-mousse",
@@ -8093,7 +8151,8 @@
         "emoji": "🌊",
         "label": "sea salt"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "panna-cotta",
@@ -8204,7 +8263,8 @@
         "emoji": "🌼",
         "label": "vanilla"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "bread-pudding",
@@ -8341,7 +8401,8 @@
         "emoji": "☕",
         "label": "tea"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "sticky-toffee-pudding",
@@ -8481,7 +8542,8 @@
         "emoji": "🍯",
         "label": "extra toffee"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "lemon-bars",
@@ -8609,7 +8671,8 @@
         "emoji": "☕",
         "label": "coffee"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "key-lime-pie",
@@ -8725,7 +8788,8 @@
         "emoji": "☀️",
         "label": "sunshine"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "pecan-pie",
@@ -8853,7 +8917,8 @@
         "emoji": "☕",
         "label": "coffee"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "churros",
@@ -8992,7 +9057,8 @@
         "emoji": "🥛",
         "label": "dulce de leche"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "banoffee-pie",
@@ -9114,7 +9180,8 @@
         "emoji": "☕",
         "label": "coffee"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "dubai-chocolate-bar",
@@ -9236,7 +9303,8 @@
         "emoji": "☕",
         "label": "coffee"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "victoria-sponge",
@@ -9364,7 +9432,8 @@
         "emoji": "❄️",
         "label": "icing sugar"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "chocolate-cake",
@@ -9516,7 +9585,8 @@
         "emoji": "🎂",
         "label": "candles"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "carrot-cake",
@@ -9692,7 +9762,8 @@
         "emoji": "☕",
         "label": "coffee"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "red-velvet-cake",
@@ -9844,7 +9915,8 @@
         "emoji": "☕",
         "label": "coffee"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "lemon-drizzle-cake",
@@ -9966,7 +10038,8 @@
         "emoji": "🫐",
         "label": "blueberries"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "vanilla-cupcakes",
@@ -10100,7 +10173,8 @@
         "emoji": "🎉",
         "label": "a party"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "coffee-cake",
@@ -10240,7 +10314,8 @@
         "emoji": "🫖",
         "label": "tea"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "pound-cake",
@@ -10357,7 +10432,8 @@
         "emoji": "☕",
         "label": "coffee"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "funfetti-cake",
@@ -10497,7 +10573,8 @@
         "emoji": "🍦",
         "label": "ice cream"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "black-forest-cake",
@@ -10643,7 +10720,8 @@
         "emoji": "🥃",
         "label": "kirsch"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "angel-food-cake",
@@ -10754,7 +10832,8 @@
         "emoji": "🫐",
         "label": "blueberries"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "molten-lava-cake",
@@ -10865,7 +10944,8 @@
         "emoji": "🍫",
         "label": "more chocolate"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "banana-bread",
@@ -10982,7 +11062,8 @@
         "emoji": "☕",
         "label": "coffee"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "scones",
@@ -11093,7 +11174,8 @@
         "emoji": "🧈",
         "label": "butter"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "blueberry-muffins",
@@ -11216,7 +11298,8 @@
         "emoji": "🍋",
         "label": "lemon zest"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "cinnamon-rolls",
@@ -11367,7 +11450,8 @@
         "emoji": "🍂",
         "label": "cinnamon"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "shortbread",
@@ -11472,7 +11556,8 @@
         "emoji": "☕",
         "label": "coffee"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "flapjacks",
@@ -11577,7 +11662,8 @@
         "emoji": "☕",
         "label": "coffee"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "croissants",
@@ -11705,7 +11791,8 @@
         "emoji": "🍫",
         "label": "add chocolate"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "chocolate-chip-muffins",
@@ -11828,7 +11915,8 @@
         "emoji": "🧈",
         "label": "butter"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "gingerbread",
@@ -11987,7 +12075,8 @@
         "emoji": "🍂",
         "label": "more spice"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "oatmeal-raisin-cookies",
@@ -12115,7 +12204,8 @@
         "emoji": "🍪",
         "label": "more cookies"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "snickerdoodles",
@@ -12254,7 +12344,8 @@
         "emoji": "🍪",
         "label": "a full jar"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "peanut-butter-cookies",
@@ -12359,7 +12450,8 @@
         "emoji": "🍓",
         "label": "jam"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "sourdough-bread",
@@ -12464,7 +12556,8 @@
         "emoji": "🍳",
         "label": "toast and eggs"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "focaccia",
@@ -12581,7 +12674,8 @@
         "emoji": "🧀",
         "label": "cheese"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "naan",
@@ -12709,7 +12803,8 @@
         "emoji": "🧈",
         "label": "butter"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "garlic-bread",
@@ -12808,7 +12903,8 @@
         "emoji": "🥗",
         "label": "a big salad"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "dinner-rolls",
@@ -12925,7 +13021,8 @@
         "emoji": "🍯",
         "label": "honey"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "soda-bread",
@@ -13036,7 +13133,8 @@
         "emoji": "🧀",
         "label": "sharp cheese"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "ciabatta",
@@ -13147,7 +13245,8 @@
         "emoji": "🧀",
         "label": "cheese board"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "brioche",
@@ -13264,7 +13363,8 @@
         "emoji": "🍞",
         "label": "french toast"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "chicken-noodle-soup",
@@ -13392,7 +13492,8 @@
         "emoji": "🧈",
         "label": "buttered toast"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "tomato-soup",
@@ -13509,7 +13610,8 @@
         "emoji": "🥖",
         "label": "croutons"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "minestrone",
@@ -13638,7 +13740,8 @@
         "emoji": "🫒",
         "label": "olive oil"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "french-onion-soup",
@@ -13766,7 +13869,8 @@
         "emoji": "🌿",
         "label": "thyme"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "butternut-squash-soup",
@@ -13877,7 +13981,8 @@
         "emoji": "🌶️",
         "label": "chilli oil"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "chicken-tortilla-soup",
@@ -14047,7 +14152,8 @@
         "emoji": "🌿",
         "label": "coriander"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "ramen",
@@ -14187,7 +14293,8 @@
         "emoji": "🥬",
         "label": "pak choi"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "pho",
@@ -14351,7 +14458,8 @@
         "emoji": "🧅",
         "label": "beansprouts"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "broccoli-cheddar-soup",
@@ -14474,7 +14582,8 @@
         "emoji": "🌶️",
         "label": "black pepper"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "lentil-soup",
@@ -14611,7 +14720,8 @@
         "emoji": "🫒",
         "label": "olive oil"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "clam-chowder",
@@ -14734,7 +14844,8 @@
         "emoji": "🌿",
         "label": "parsley"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "pea-and-ham-soup",
@@ -14845,7 +14956,8 @@
         "emoji": "🌶️",
         "label": "black pepper"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "beef-stew",
@@ -14968,7 +15080,8 @@
         "emoji": "🥦",
         "label": "greens"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "beef-bourguignon",
@@ -15102,7 +15215,8 @@
         "emoji": "🌿",
         "label": "parsley"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "chili-con-carne",
@@ -15265,7 +15379,8 @@
         "emoji": "🥑",
         "label": "guacamole"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "white-chicken-chili",
@@ -15418,7 +15533,8 @@
         "emoji": "🍋",
         "label": "lime"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "irish-stew",
@@ -15535,7 +15651,8 @@
         "emoji": "🥬",
         "label": "cabbage"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "hungarian-goulash",
@@ -15678,7 +15795,8 @@
         "emoji": "🌶️",
         "label": "paprika"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "beef-stroganoff",
@@ -15795,7 +15913,8 @@
         "emoji": "🥒",
         "label": "pickles"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "gumbo",
@@ -15940,7 +16059,8 @@
         "emoji": "🌶️",
         "label": "hot sauce"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "caesar-salad",
@@ -16074,7 +16194,8 @@
         "emoji": "🐟",
         "label": "anchovy"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "greek-salad",
@@ -16202,7 +16323,8 @@
         "emoji": "🌿",
         "label": "oregano"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "cobb-salad",
@@ -16336,7 +16458,8 @@
         "emoji": "🥚",
         "label": "egg"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "caprese-salad",
@@ -16441,7 +16564,8 @@
         "emoji": "🫒",
         "label": "olive oil"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "pasta-salad",
@@ -16575,7 +16699,8 @@
         "emoji": "🧺",
         "label": "a picnic"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "potato-salad",
@@ -16691,7 +16816,8 @@
         "emoji": "🥒",
         "label": "gherkins"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "coleslaw",
@@ -16813,7 +16939,8 @@
         "emoji": "🥪",
         "label": "sandwiches"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "nicoise-salad",
@@ -16953,7 +17080,8 @@
         "emoji": "🥖",
         "label": "baguette"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "waldorf-salad",
@@ -17081,7 +17209,8 @@
         "emoji": "🥬",
         "label": "lettuce cups"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "tabbouleh",
@@ -17203,7 +17332,8 @@
         "emoji": "🧆",
         "label": "falafel"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "quinoa-salad",
@@ -17331,7 +17461,8 @@
         "emoji": "🥒",
         "label": "cucumber"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "panzanella",
@@ -17453,7 +17584,8 @@
         "emoji": "🫒",
         "label": "olive oil"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "ratatouille",
@@ -17570,7 +17702,8 @@
         "emoji": "🌿",
         "label": "basil"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "stuffed-peppers",
@@ -17692,7 +17825,8 @@
         "emoji": "🍶",
         "label": "soured cream"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "vegetable-stir-fry",
@@ -17832,7 +17966,8 @@
         "emoji": "🌶️",
         "label": "chilli oil"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "cauliflower-cheese",
@@ -17949,7 +18084,8 @@
         "emoji": "🌶️",
         "label": "black pepper"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "roasted-vegetables",
@@ -18066,7 +18202,8 @@
         "emoji": "🌿",
         "label": "fresh herbs"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "vegetable-chili",
@@ -18213,7 +18350,8 @@
         "emoji": "🌽",
         "label": "tortilla chips"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "tofu-stir-fry",
@@ -18347,7 +18485,8 @@
         "emoji": "🌶️",
         "label": "sriracha"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "stuffed-mushrooms",
@@ -18463,7 +18602,8 @@
         "emoji": "🥗",
         "label": "side salad"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "falafel",
@@ -18600,7 +18740,8 @@
         "emoji": "🌶️",
         "label": "hot sauce"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "halloumi-traybake",
@@ -18717,7 +18858,8 @@
         "emoji": "🌿",
         "label": "mint"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "veggie-burger",
@@ -18845,7 +18987,8 @@
         "emoji": "🍟",
         "label": "fries"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "aubergine-parmigiana",
@@ -18962,7 +19105,8 @@
         "emoji": "🥗",
         "label": "green salad"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "spanakopita",
@@ -19090,7 +19234,8 @@
         "emoji": "🫒",
         "label": "olives"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "bean-burrito",
@@ -19238,7 +19383,8 @@
         "emoji": "🧀",
         "label": "extra cheese"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "fluffy-pancakes",
@@ -19355,7 +19501,8 @@
         "emoji": "🥓",
         "label": "crispy bacon"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "french-toast",
@@ -19466,7 +19613,8 @@
         "emoji": "🍯",
         "label": "honey"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "scrambled-eggs",
@@ -19559,7 +19707,8 @@
         "emoji": "🌶️",
         "label": "black pepper"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "omelette",
@@ -19658,7 +19807,8 @@
         "emoji": "🥗",
         "label": "side salad"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "overnight-oats",
@@ -19763,7 +19913,8 @@
         "emoji": "🌰",
         "label": "seeds"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "chia-pudding",
@@ -19868,7 +20019,8 @@
         "emoji": "🌾",
         "label": "granola"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "cottage-cheese-bowl",
@@ -19967,7 +20119,8 @@
         "emoji": "🥜",
         "label": "peanut butter"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "breakfast-burrito",
@@ -20095,7 +20248,8 @@
         "emoji": "🍳",
         "label": "extra egg"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "homemade-granola",
@@ -20206,7 +20360,8 @@
         "emoji": "🍯",
         "label": "extra honey"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "belgian-waffles",
@@ -20323,7 +20478,8 @@
         "emoji": "🍦",
         "label": "ice cream"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "smoothie-bowl",
@@ -20445,7 +20601,8 @@
         "emoji": "🥜",
         "label": "nut butter"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "banana-pancakes",
@@ -20556,7 +20713,8 @@
         "emoji": "🍫",
         "label": "choc chips"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "eggs-benedict",
@@ -20684,7 +20842,8 @@
         "emoji": "🥬",
         "label": "wilted spinach"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "shakshuka",
@@ -20831,7 +20990,8 @@
         "emoji": "🫓",
         "label": "flatbread"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "avocado-toast",
@@ -20936,7 +21096,8 @@
         "emoji": "🍅",
         "label": "cherry tomatoes"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "full-english-breakfast",
@@ -21059,7 +21220,8 @@
         "emoji": "☕",
         "label": "strong tea"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "huevos-rancheros",
@@ -21219,7 +21381,8 @@
         "emoji": "🍋",
         "label": "lime"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "breakfast-hash",
@@ -21330,7 +21493,8 @@
         "emoji": "🌿",
         "label": "parsley"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "fish-and-chips",
@@ -21452,7 +21616,8 @@
         "emoji": "🧂",
         "label": "salt and vinegar"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "teriyaki-salmon",
@@ -21568,7 +21733,8 @@
         "emoji": "🧅",
         "label": "spring onion"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "garlic-butter-shrimp",
@@ -21679,7 +21845,8 @@
         "emoji": "🌿",
         "label": "parsley"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "fish-tacos",
@@ -21807,7 +21974,8 @@
         "emoji": "🌶️",
         "label": "hot sauce"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "shrimp-scampi",
@@ -21924,7 +22092,8 @@
         "emoji": "🍷",
         "label": "white wine"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "baked-salmon",
@@ -22029,7 +22198,8 @@
         "emoji": "🌿",
         "label": "dill"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "seafood-paella",
@@ -22189,7 +22359,8 @@
         "emoji": "🍷",
         "label": "a cold glass"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "crab-cakes",
@@ -22300,7 +22471,8 @@
         "emoji": "🌶️",
         "label": "chilli mayo"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "tuna-pasta-bake",
@@ -22423,7 +22595,8 @@
         "emoji": "🌽",
         "label": "sweetcorn"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "miso-salmon",
@@ -22533,7 +22706,8 @@
         "emoji": "🧅",
         "label": "spring onion"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "prawn-stir-fry",
@@ -22667,7 +22841,8 @@
         "emoji": "🌶️",
         "label": "chilli"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "ceviche",
@@ -22772,7 +22947,8 @@
         "emoji": "🌽",
         "label": "tortilla chips"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "egg-fried-rice",
@@ -22877,7 +23053,8 @@
         "emoji": "🌶️",
         "label": "chilli oil"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "chicken-biryani",
@@ -23039,7 +23216,8 @@
         "emoji": "🫓",
         "label": "naan"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "mushroom-risotto",
@@ -23156,7 +23334,8 @@
         "emoji": "🍷",
         "label": "white wine"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "jambalaya",
@@ -23322,7 +23501,8 @@
         "emoji": "🌶️",
         "label": "hot sauce"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "nasi-goreng",
@@ -23450,7 +23630,8 @@
         "emoji": "🦐",
         "label": "prawn crackers"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "pilau-rice",
@@ -23591,7 +23772,8 @@
         "emoji": "🫓",
         "label": "naan"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "risotto-milanese",
@@ -23713,7 +23895,8 @@
         "emoji": "🍷",
         "label": "white wine"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "kimchi-fried-rice",
@@ -23824,7 +24007,8 @@
         "emoji": "🥬",
         "label": "extra kimchi"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "margarita",
@@ -23917,7 +24101,8 @@
         "emoji": "🌮",
         "label": "taco night"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "mojito",
@@ -24016,7 +24201,8 @@
         "emoji": "☀️",
         "label": "sunshine"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "pina-colada",
@@ -24103,7 +24289,8 @@
         "emoji": "🏖️",
         "label": "the beach"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "old-fashioned",
@@ -24196,7 +24383,8 @@
         "emoji": "🔥",
         "label": "a fireside"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "espresso-martini",
@@ -24289,7 +24477,8 @@
         "emoji": "🎉",
         "label": "a night out"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "hot-chocolate",
@@ -24382,7 +24571,8 @@
         "emoji": "🧣",
         "label": "a cold day"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "matcha-latte",
@@ -24475,7 +24665,8 @@
         "emoji": "🍯",
         "label": "honey"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "mango-lassi",
@@ -24574,7 +24765,8 @@
         "emoji": "🌰",
         "label": "pistachio"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "marinara-sauce",
@@ -24679,7 +24871,8 @@
         "emoji": "🌿",
         "label": "basil"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "bechamel-sauce",
@@ -24778,7 +24971,8 @@
         "emoji": "🌰",
         "label": "nutmeg"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "basil-pesto",
@@ -24883,7 +25077,8 @@
         "emoji": "🧀",
         "label": "parmesan"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "chimichurri",
@@ -24994,7 +25189,8 @@
         "emoji": "🥖",
         "label": "crusty bread"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "hollandaise-sauce",
@@ -25093,7 +25289,8 @@
         "emoji": "🍋",
         "label": "lemon"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "hot-honey",
@@ -25192,7 +25389,8 @@
         "emoji": "🧇",
         "label": "waffles"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "bbq-sauce",
@@ -25303,7 +25501,8 @@
         "emoji": "🔥",
         "label": "the grill"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "roast-gravy",
@@ -25402,7 +25601,8 @@
         "emoji": "🍷",
         "label": "red wine"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "chicken-souvlaki",
@@ -25545,7 +25745,8 @@
         "emoji": "🍋",
         "label": "lemon"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "watermelon-feta-salad",
@@ -25673,7 +25874,8 @@
         "emoji": "☀️",
         "label": "sunshine"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "gazpacho",
@@ -25796,7 +25998,8 @@
         "emoji": "🧊",
         "label": "served icy"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "bang-bang-prawns",
@@ -25930,7 +26133,8 @@
         "emoji": "🍋",
         "label": "lime"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "aperol-spritz",
@@ -26029,7 +26233,8 @@
         "emoji": "🌅",
         "label": "golden hour"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "vegan-mac-and-cheese",
@@ -26163,7 +26368,8 @@
         "emoji": "🍅",
         "label": "roasted tomatoes"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "tofu-katsu-curry",
@@ -26318,7 +26524,8 @@
         "emoji": "🌶️",
         "label": "chilli flakes"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "sticky-aubergine-rice-bowl",
@@ -26470,7 +26677,8 @@
         "emoji": "🧅",
         "label": "spring onion"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "lentil-shepherds-pie",
@@ -26610,7 +26818,8 @@
         "emoji": "🍷",
         "label": "red wine"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "mushroom-ramen",
@@ -26762,7 +26971,8 @@
         "emoji": "🌽",
         "label": "sweetcorn"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "peanut-butter-noodles",
@@ -26902,7 +27112,8 @@
         "emoji": "🥒",
         "label": "cucumber"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "cauliflower-tacos",
@@ -27066,7 +27277,8 @@
         "emoji": "🌶️",
         "label": "hot sauce"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "vegan-chocolate-brownies",
@@ -27195,7 +27407,8 @@
         "emoji": "☕",
         "label": "coffee"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "vegan-pancakes",
@@ -27306,7 +27519,8 @@
         "emoji": "🥜",
         "label": "nut butter"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "smoky-bean-stew",
@@ -27465,7 +27679,8 @@
         "emoji": "🍚",
         "label": "or over rice"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "bbq-ribs",
@@ -27633,7 +27848,8 @@
         "emoji": "🥒",
         "label": "pickles"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "beef-brisket",
@@ -27790,7 +28006,8 @@
         "emoji": "🌶️",
         "label": "hot sauce"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "shish-kebabs",
@@ -27964,7 +28181,8 @@
         "emoji": "🍋",
         "label": "lemon wedges"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "lamb-chops",
@@ -28086,7 +28304,8 @@
         "emoji": "🌿",
         "label": "mint sauce"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "lamb-koftas",
@@ -28264,7 +28483,8 @@
         "emoji": "🧅",
         "label": "pickled onions"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "frozen-yogurt-bark",
@@ -28381,7 +28601,8 @@
         "emoji": "☀️",
         "label": "a deckchair"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "smashed-cucumber-salad",
@@ -28515,7 +28736,8 @@
         "emoji": "🍚",
         "label": "sticky rice"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "prawn-cocktail",
@@ -28655,7 +28877,8 @@
         "emoji": "🌶️",
         "label": "extra tabasco"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "tzatziki",
@@ -28772,7 +28995,8 @@
         "emoji": "🍋",
         "label": "extra lemon"
       }
-    ]
+    ],
+    "kitchen_notes": []
   },
   {
     "slug": "pimms-cup",
@@ -28889,6 +29113,7 @@
         "emoji": "🥒",
         "label": "cucumber ribbons"
       }
-    ]
+    ],
+    "kitchen_notes": []
   }
 ]

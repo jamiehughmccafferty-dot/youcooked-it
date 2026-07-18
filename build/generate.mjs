@@ -32,7 +32,8 @@ function publish(rec, a){
     cuisine:a.cuisine||'', hero:a.hero||(rec.slug+'.png'), status:'published',
     story:a.story||'', meta:a.meta||{serves:4}, macros:a.macros||{estimate:true},
     ingredient_groups:a.ingredient_groups||[], spice_mix:a.spice_mix||[],
-    method:a.method||[], serving_ideas:a.serving_ideas||[]
+    method:a.method||[], serving_ideas:a.serving_ideas||[],
+    kitchen_notes:a.kitchen_notes||[]
   };
 }
 
@@ -387,7 +388,11 @@ ${hubByCat[rec.category]?`<script type="application/ld+json">${JSON.stringify({'
     <div class="eyebrow up">the story</div>
     <h2 class="display up" id="storyTitle"></h2>
     <p class="up" id="storyText"></p>
-  </div></section>
+${(rec.kitchen_notes&&rec.kitchen_notes.length)?`    <div class="knotes up">
+      <div class="kn-title">kitchen notes</div>
+${rec.kitchen_notes.map(n=>`      <div class="kn"><span class="kd">${esc(n.date)}</span> · ${esc(n.note)}</div>`).join('\n')}
+    </div>
+`:''}  </div></section>
 
   <section id="ingredients"><div class="wrap">
     <div class="ing-top">

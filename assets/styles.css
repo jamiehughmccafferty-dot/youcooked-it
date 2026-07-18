@@ -245,3 +245,9 @@ nav .nl{display:flex;gap:20px;font-size:13px;text-transform:lowercase}
 .morehub{margin-top:26px;text-align:center}
 .hubhead.light{color:var(--ink)}
 .hubhead.light .crumb,.hubhead.light .hublead,.hubhead.light .hubcount{color:rgba(36,23,18,.78)}
+
+/* kitchen notes: dated one-liners from cooks who actually made it */
+.knotes{max-width:54ch;margin:26px auto 0;text-align:left;border-top:1px dashed rgba(36,23,18,.25);padding-top:16px}
+.kn-title{font-family:"Space Mono";font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent-deep,var(--accent));margin-bottom:8px}
+.kn{font-family:"Space Mono";font-size:13px;line-height:1.6;color:var(--ink-soft);padding:3px 0}
+.kn .kd{color:var(--ink);font-weight:700}
