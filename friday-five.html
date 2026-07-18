@@ -28,8 +28,8 @@
 /* ---- friday five club: the fridge story ------------------------------- */
 /* monochrome world; the only colour is real food. colour arrives when you  */
 /* know what to cook.                                                       */
-body{background:var(--cream);transition:background 1.2s ease}
-body.flood{background:var(--ember)}
+body{--accent:#2f9bb0;background:var(--cream);transition:background 1.2s ease}
+body.flood{background:#2f9bb0}
 
 /* ACT 1: one long scroll scene */
 #act1{height:620vh;position:relative}
@@ -115,7 +115,7 @@ body.flood{background:var(--ember)}
   opacity:var(--bloomop,0);transform:scale(calc(.1 + var(--bloom,0)*.9)) translateY(calc((1 - var(--bloom,0))*-12vh))}
 .bloom .bart{position:relative;width:min(62vh,86vw)}
 .bloom .blob{position:absolute;inset:-8%;width:116%}
-.bloom img{position:relative;z-index:2;width:100%;filter:drop-shadow(0 30px 30px rgba(120,40,15,.4))}
+.bloom img{position:relative;z-index:2;width:100%;filter:drop-shadow(0 30px 30px rgba(15,60,72,.45))}
 
 /* ACT 2+: colour world */
 section.block{padding:clamp(70px,11vw,130px) 0;text-align:center}
@@ -233,7 +233,7 @@ section.block .lead{max-width:44ch;margin:16px auto 0;color:var(--ink-soft);font
     <div class="bloom">
       <div class="bart">
         <div class="blob"></div>
-        <img src="/images/marry-me-chicken.png" alt="marry me chicken, plated"/>
+        <img src="/images/seafood-paella.png" alt="seafood paella, plated"/>
       </div>
     </div>
 
