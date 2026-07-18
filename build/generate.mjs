@@ -528,7 +528,8 @@ fs.writeFileSync(p('404.html'), staticPage('404','lost in the kitchen',"we could
 // ---- sitemap.xml (clean URLs) + robots.txt ----
 const urls = ['<url><loc>'+SITE+'/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>']
   .concat(onDisplay.map(r=>'<url><loc>'+SITE+'/recipes/'+r.slug+'</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>'))
-  .concat(['about','privacy','disclosure'].map(s=>'<url><loc>'+SITE+'/'+s+'</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>'));
+  .concat(['about','privacy','disclosure'].map(s=>'<url><loc>'+SITE+'/'+s+'</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>'))
+  .concat(['<url><loc>'+SITE+'/friday-five</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>']);  // the club signup page (friday-five.html, static)
 fs.writeFileSync(p('sitemap.xml'),
   '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+urls.join('\n')+'\n</urlset>\n');
 fs.writeFileSync(p('robots.txt'),
