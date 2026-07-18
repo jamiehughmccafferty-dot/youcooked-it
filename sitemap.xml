@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url><loc>https://youcooked-it.com/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+<url><loc>https://youcooked-it.com/chicken-recipes</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://youcooked-it.com/bbq-recipes</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://youcooked-it.com/vegan-recipes</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://youcooked-it.com/seafood-recipes</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
 <url><loc>https://youcooked-it.com/recipes/roast-chicken</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 <url><loc>https://youcooked-it.com/recipes/marry-me-chicken</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 <url><loc>https://youcooked-it.com/recipes/chicken-parmesan</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>

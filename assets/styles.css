@@ -232,3 +232,16 @@ nav .nl{display:flex;gap:20px;font-size:13px;text-transform:lowercase}
 :focus-visible{outline:3px solid var(--ink);outline-offset:2px;border-radius:4px}
 .card .ccat{color:var(--cl,var(--c))}
 .eyebrow{color:var(--accent-deep,var(--accent))}
+
+/* category hub pages: the lane landing pages. Full-bleed accent header,
+   then the standard card grid on white. */
+.hubhead{background:var(--accent);color:#fff;padding:clamp(110px,16vh,170px) 0 clamp(42px,7vw,72px)}
+.hubhead .crumb{font-family:"Space Mono";font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.85)}
+.hubhead .crumb a{text-decoration:underline}
+.hubhead h1{font-size:clamp(46px,9vw,110px);font-weight:800;margin-top:14px}
+.hubhead .hublead{max-width:52ch;margin-top:16px;font-size:clamp(15px,1.8vw,18px);line-height:1.6;color:rgba(255,255,255,.93)}
+.hubhead .hubcount{font-family:"Space Mono";margin-top:16px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.8)}
+.hubgrid{padding:clamp(40px,6vw,70px) 0}
+.morehub{margin-top:26px;text-align:center}
+.hubhead.light{color:var(--ink)}
+.hubhead.light .crumb,.hubhead.light .hublead,.hubhead.light .hubcount{color:rgba(36,23,18,.78)}

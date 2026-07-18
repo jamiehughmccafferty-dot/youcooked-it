@@ -204,6 +204,25 @@ const PTILES = PARTNERS.filter(p=>p.active && p.tile).map(p=>({
   title: p.tile.title, badge: p.tile.badge, color: p.tile.color, label: p.tile.label
 }));
 
+// ---- category hub pages: lane landing pages targeting the head terms ----
+// Proof set of four; the rest of the lanes follow once the pattern is signed off.
+const HUBS = [
+  { cat:'chicken', slug:'chicken-recipes', name:'chicken recipes', h1:'chicken<br>recipes.',
+    intro:c=>`${c} chicken recipes, from friday night butter chicken to jerk straight off the grill. Every one is a step-by-step cook-along with timers, so tea lands on the table without the guesswork.`,
+    desc:'Chicken recipes cooked along with you, step by step with timers. Butter chicken, katsu curry, jerk chicken and more from the You Cooked It kitchen.' },
+  { cat:'grill', slug:'bbq-recipes', name:'bbq recipes', h1:'bbq<br>recipes.',
+    intro:c=>`Ribs, brisket and good things on sticks. ${c} bbq recipes built for garden weather, each one a cook-along with timers so nothing burns except the charcoal.`,
+    desc:'BBQ recipes with step-by-step cook-along timers. Sticky ribs, slow brisket, kebabs and koftas from the You Cooked It kitchen.' },
+  { cat:'vegan', slug:'vegan-recipes', name:'vegan recipes', h1:'vegan<br>recipes.',
+    intro:c=>`No discrimination in this kitchen. ${c} vegan recipes with the same cook-along treatment as everything else, from ten-minute noodles to a brownie worth hiding from everyone you live with.`,
+    desc:'Vegan recipes cooked along with you, step by step with timers. Ramen, katsu curry, brownies and more from the You Cooked It kitchen.' },
+  { cat:'seafood', slug:'seafood-recipes', name:'seafood recipes', h1:'seafood<br>recipes.',
+    intro:c=>`From garlic butter prawns in ten minutes to a paella worth a sunday. ${c} seafood recipes, each a step-by-step cook-along with timers, so fish stops being the intimidating one.`,
+    desc:'Seafood recipes with step-by-step cook-along timers. Paella, fish pie, prawns and more from the You Cooked It kitchen.' },
+];
+const hubByCat = Object.fromEntries(HUBS.map(h=>[h.cat,h]));
+const laneLinks = `<div class="mono" style="margin-top:10px">${HUBS.map(h=>`<a href="/${h.slug}">${h.name}</a>`).join(' · ')}</div>`;
+
 // ---- related recipes ("cook something like this") ----
 // 3 same-category picks, deterministic per slug. Server-rendered links = real
 // internal linking for SEO (recipe pages are no longer dead ends).
@@ -220,11 +239,13 @@ const moreRow = (rec)=>{
     const img=imaged[r.slug]?`<div class="cglow"></div><img class="cimg" alt="${esc(r.title)}" loading="lazy" decoding="async" width="256" height="256" src="/${imaged[r.slug].replace(/\.png$/,'.webp')}">`:'<div class="cblob"></div>';
     return `<a class="card${imaged[r.slug]?' has-img':''}" href="/recipes/${r.slug}" style="--c:${col};--cl:${deep(col)}">${img}<div class="inner"><div class="ccat">${esc(r.category)}</div><div class="ctitle">${esc(r.title.toLowerCase())}</div></div></a>`;
   }).join('');
+  const hub=hubByCat[rec.category];
+  const hubLink=hub?`<div class="morehub"><a class="pill ghost" href="/${hub.slug}">all ${hub.name} →</a></div>`:'';
   return `
   <section id="more"><div class="wrap">
     <div class="eyebrow">same time tomorrow?</div>
     <h2 class="display" style="font-size:clamp(26px,4.5vw,48px);font-weight:800">here's some<br>inspiration.</h2>
-    <div class="moregrid">${cards}</div>
+    <div class="moregrid">${cards}</div>${hubLink}
   </div></section>
 `;
 };
@@ -283,6 +304,10 @@ ${ogImage?`<meta property="og:image" content="${ogImage}"/>
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700;800&family=Hanken+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/styles.css?v=${cssVer}">
 <script type="application/ld+json">${schemaFor(rec)}</script>
+${hubByCat[rec.category]?`<script type="application/ld+json">${JSON.stringify({'@context':'https://schema.org','@type':'BreadcrumbList',itemListElement:[
+  {'@type':'ListItem',position:1,name:'You Cooked It',item:SITE+'/'},
+  {'@type':'ListItem',position:2,name:hubByCat[rec.category].name,item:SITE+'/'+hubByCat[rec.category].slug},
+  {'@type':'ListItem',position:3,name:rec.title,item:url}]})}</script>`:''}
 <script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body data-category="${rec.category}">
@@ -343,6 +368,7 @@ ${moreRow(rec)}${partnerCard(rec)}
     <div class="display" style="font-size:clamp(34px,7vw,72px);font-weight:800">you <span style="color:var(--accent)">cooked</span> it.</div>
     <div class="mono">an immersive recipe · kitchen by croft &amp; hugh · © 2026</div>
     ${socialLine}
+${laneLinks}
     <div class="mono" style="margin-top:10px"><a href="/about">about</a> · <a href="/privacy">privacy</a> · <a href="/disclosure">affiliate disclosure</a></div>
   </div></section>
 
@@ -430,6 +456,7 @@ ${nlForm}
     <div class="display" style="font-size:clamp(34px,7vw,72px);font-weight:800">you cooked it.</div>
     <div class="mono">an immersive recipe · kitchen by croft &amp; hugh · © 2026</div>
 ${socialLine}
+${laneLinks}
     <div class="mono" style="margin-top:10px"><a href="/about">about</a> · <a href="/privacy">privacy</a> · <a href="/disclosure">affiliate disclosure</a></div>
   </div></section>
   <script>
@@ -504,6 +531,80 @@ ${socialLine}
 </body>
 </html>`;
 
+// ---- hub page template + writes ----
+const hubPage = (h)=>{
+  const list=onDisplay.filter(r=>r.category===h.cat);
+  const accent=CAT[h.cat]||'#e2561f';
+  // light accents (lime, amber) get ink header text; dark ones get white
+  const [lr,lg,lb]=accent.slice(1).match(/../g).map(x=>parseInt(x,16));
+  const lightAccent=(0.2126*lr+0.7152*lg+0.0722*lb)/255>0.5;
+  const url=SITE+'/'+h.slug;
+  const intro=h.intro(list.length);
+  const cardsHtml=list.map(gridCardHtml).join('');
+  const pt=PARTNERS.find(x=>x.active && x.categories.includes(h.cat));
+  const ogImg=list.find(r=>ogFiles.has(r.slug+'.jpg'));
+  const breadcrumb={'@context':'https://schema.org','@type':'BreadcrumbList',itemListElement:[
+    {'@type':'ListItem',position:1,name:'You Cooked It',item:SITE+'/'},
+    {'@type':'ListItem',position:2,name:h.name,item:url}]};
+  const itemList={'@context':'https://schema.org','@type':'ItemList',name:h.name,
+    itemListElement:list.map((r,i)=>({'@type':'ListItem',position:i+1,name:r.title,url:SITE+'/recipes/'+r.slug}))};
+  const titleCase=h.name.replace(/\b[a-z]/g,c=>c.toUpperCase()).replace(/\bBbq\b/,'BBQ');
+  return `<!DOCTYPE html>
+<html lang="en" style="--accent:${accent};--accent-deep:${deep(accent)}">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>${esc(titleCase)} — You Cooked It</title>
+<meta name="description" content="${esc(h.desc)}"/>
+<link rel="canonical" href="${url}"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="You Cooked It"/>
+<meta property="og:title" content="${esc(titleCase)} — You Cooked It"/>
+<meta property="og:description" content="${esc(h.desc)}"/>
+<meta property="og:url" content="${url}"/>
+${ogImg?`<meta property="og:image" content="${SITE}/og/${ogImg.slug}.jpg"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>`:''}
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="theme-color" content="${accent}"/>
+<link rel="icon" href="/favicon.ico" sizes="48x48"/>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700;800&family=Hanken+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/styles.css?v=${cssVer}">
+<script type="application/ld+json">${JSON.stringify(breadcrumb)}</script>
+<script type="application/ld+json">${JSON.stringify(itemList).replace(/</g,'\\u003c')}</script>
+<script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body>
+  <a class="skip" href="#lane">skip to recipes</a>
+  <nav><a class="brand" href="/">you <span style="color:var(--accent)">cook</span> it</a><div class="nl"><a href="/">all recipes</a></div></nav>
+  <header class="hubhead${lightAccent?' light':''}"><div class="wrap">
+    <div class="crumb"><a href="/">all recipes</a> · ${esc(h.name)}</div>
+    <h1 class="display">${h.h1}</h1>
+    <p class="hublead">${esc(intro)}</p>
+    <div class="hubcount">${list.length} recipes · new drops every friday</div>
+  </div></header>
+  <section class="hubgrid" id="lane"><div class="wrap">
+    <div class="grid">${cardsHtml}</div>
+${nlForm}
+  </div></section>
+${pt?`  <section id="partner"><div class="wrap">${pcardHtml({...pt, image:(pt.images&&pt.images[h.cat])||pt.image},'hub')}
+  </div></section>
+`:''}  <section id="foot"><div class="wrap">
+    <div class="display" style="font-size:clamp(34px,7vw,72px);font-weight:800">you cooked it.</div>
+    <div class="mono">an immersive recipe · kitchen by croft &amp; hugh · © 2026</div>
+${socialLine}
+${laneLinks}
+    <div class="mono" style="margin-top:10px"><a href="/about">about</a> · <a href="/privacy">privacy</a> · <a href="/disclosure">affiliate disclosure</a></div>
+  </div></section>
+</body>
+</html>`;
+};
+HUBS.forEach(h=>fs.writeFileSync(p(h.slug+'.html'), hubPage(h)));
+
 // home page at root
 fs.writeFileSync(p('index.html'), browse('', 'recipes/'));
 // keep the old /recipes/index.html path working
@@ -572,6 +673,7 @@ fs.writeFileSync(p('404.html'), staticPage('404','lost in the kitchen',"we could
 
 // ---- sitemap.xml (clean URLs) + robots.txt ----
 const urls = ['<url><loc>'+SITE+'/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>']
+  .concat(HUBS.map(h=>'<url><loc>'+SITE+'/'+h.slug+'</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>'))
   .concat(onDisplay.map(r=>'<url><loc>'+SITE+'/recipes/'+r.slug+'</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>'))
   .concat(['about','privacy','disclosure'].map(s=>'<url><loc>'+SITE+'/'+s+'</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>'))
   .concat(['<url><loc>'+SITE+'/friday-five</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>']);  // the club signup page (friday-five.html, static)
