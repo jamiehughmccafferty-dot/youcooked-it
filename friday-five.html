@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>the friday five club — You Cooked It</title>
+<meta name="description" content="Five new recipes in your inbox every Friday morning. Free forever. Join the friday five club."/>
+<link rel="canonical" href="https://youcooked-it.com/friday-five"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="You Cooked It"/>
+<meta property="og:title" content="the friday five club — You Cooked It"/>
+<meta property="og:description" content="Five new recipes in your inbox every Friday morning. Free forever."/>
+<meta property="og:url" content="https://youcooked-it.com/friday-five"/>
+<meta property="og:image" content="https://youcooked-it.com/og/marry-me-chicken.jpg"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="theme-color" content="#f6edda"/>
+<link rel="icon" href="/favicon.ico" sizes="48x48"/>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700;800&family=Hanken+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/styles.css">
+<script defer src="/_vercel/insights/script.js"></script>
+<style>
+/* ---- friday five club: the fridge story ------------------------------- */
+/* monochrome world; the only colour is real food. colour arrives when you  */
+/* know what to cook.                                                       */
+body{background:var(--cream);transition:background 1.2s ease}
+body.flood{background:var(--ember)}
+
+/* ACT 1: one long scroll scene */
+#act1{height:620vh;position:relative}
+#act1 .stage{position:sticky;top:0;height:100vh;overflow:hidden;display:flex;flex-direction:column;
+  align-items:center;justify-content:center}
+
+.introcopy{position:absolute;top:12vh;left:0;right:0;text-align:center;z-index:5;padding:0 20px;
+  opacity:calc(1 - var(--p1,0)*2);transform:translateY(calc(var(--p1,0)*-40px));pointer-events:none}
+.introcopy .eyebrow{color:var(--ink)}
+.introcopy h1{font-family:"Unbounded";text-transform:lowercase;font-weight:800;letter-spacing:-.02em;
+  font-size:clamp(30px,6.4vw,66px);line-height:1;margin-top:14px}
+.introcopy .sub{margin:14px auto 0;max-width:34ch;color:var(--ink-soft);font-size:clamp(14px,1.6vw,17px);line-height:1.5}
+
+.scrollcue{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:5;
+  font-family:"Space Mono";font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-soft);
+  opacity:calc(1 - var(--p1,0)*3);animation:cue 1.6s ease-in-out infinite}
+@keyframes cue{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,7px)}}
+
+/* the fridge */
+.scene3d{perspective:1400px;position:relative;z-index:2;
+  transform:translateY(calc(27vh - var(--p1,0)*25vh)) scale(calc(.78 + var(--p1,0)*.22))}
+.fridge{position:relative;width:min(300px,64vw);aspect-ratio:0.58;transform-style:preserve-3d}
+.fbody{position:absolute;inset:0;background:var(--paper);border:3px solid var(--ink);border-radius:26px;
+  box-shadow:0 34px 60px rgba(36,23,18,.18)}
+.fridge .feet{position:absolute;bottom:-14px;left:12%;width:12%;height:14px;border:3px solid var(--ink);border-top:0;
+  border-radius:0 0 8px 8px;background:var(--paper)}
+.fridge .feet.r{left:auto;right:12%}
+/* interior, revealed behind the door */
+.interior{position:absolute;inset:8px;border-radius:18px;background:var(--cream2);overflow:hidden}
+.interior .lightwash{position:absolute;inset:0;background:radial-gradient(120% 90% at 50% 8%,rgba(255,244,200,.95),rgba(255,244,200,0) 68%);
+  opacity:var(--light,0)}
+.shelf{position:absolute;left:6%;right:6%;height:0;border-top:2.5px solid var(--ink);opacity:.85}
+.doodles{position:absolute;inset:0}
+.doodle{position:absolute;stroke:var(--ink);fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.jig .doodle{animation:jig .5s ease-in-out infinite}
+.jig .doodle:nth-child(2n){animation-duration:.42s;animation-delay:.08s}
+.jig .doodle:nth-child(3n){animation-duration:.58s;animation-delay:.14s}
+@keyframes jig{0%,100%{transform:translate(0,0) rotate(0deg)}25%{transform:translate(-1.5px,1px) rotate(-2.4deg)}
+  75%{transform:translate(1.5px,-1px) rotate(2.4deg)}}
+.qmarks{position:absolute;inset:0;pointer-events:none}
+.qmarks span{position:absolute;font-family:"Space Mono";font-weight:700;color:var(--ink);
+  opacity:calc(var(--p2,0)*.9);transform:translateY(calc(var(--p2,0)*-34px)) rotate(var(--r,0deg))}
+/* the door: hinged on the left, screen on the front */
+.door{position:absolute;inset:0;transform-origin:left center;transform:rotateY(calc(var(--door,0)*-104deg));
+  transform-style:preserve-3d;z-index:3}
+.doorface{position:absolute;inset:0;background:var(--paper);border:3px solid var(--ink);border-radius:26px;
+  backface-visibility:hidden;display:flex;flex-direction:column;align-items:center}
+.doorback{position:absolute;inset:0;background:var(--cream2);border:3px solid var(--ink);border-radius:26px;
+  transform:rotateY(180deg);backface-visibility:hidden}
+.handle{position:absolute;right:9px;top:16%;width:9px;height:26%;background:var(--ink);border-radius:8px}
+.magnet{position:absolute;left:14%;bottom:13%;background:var(--ink);color:var(--cream);border-radius:10px;
+  padding:8px 10px;font-family:"Unbounded";font-weight:800;font-size:11px;line-height:1.1;text-transform:lowercase;transform:rotate(-5deg)}
+/* the screen */
+.screen{position:absolute;top:9%;left:14%;right:17%;height:36%;background:var(--ink);border-radius:14px;
+  overflow:hidden;box-shadow:inset 0 0 0 3px var(--ink)}
+.screen .off{position:absolute;inset:0;background:var(--ink);opacity:calc(1 - var(--screen,0));z-index:3;transition:opacity .2s}
+.screen .glowring{position:absolute;inset:-14px;border-radius:22px;pointer-events:none;z-index:-1;
+  box-shadow:0 0 34px 6px rgba(207,232,79,.65);opacity:var(--screen,0)}
+.emailscroll{position:absolute;left:8%;right:8%;top:8%;
+  transform:translateY(calc(var(--email,0)*-58%));}
+.emailscroll .echip{background:var(--cream);color:var(--ink);display:inline-block;border-radius:8px;padding:5px 7px;
+  font-family:"Unbounded";font-weight:800;font-size:8px;line-height:1.15;text-transform:lowercase}
+.emailscroll .etitle{font-family:"Unbounded";font-weight:800;font-size:12px;color:#fff;text-transform:lowercase;margin:7px 0 8px}
+.ecard{border-radius:10px;padding:8px;display:flex;align-items:center;gap:7px;margin-bottom:7px}
+.ecard img{width:34px;height:34px;flex:none}
+.ecard .el b{display:block;font-family:"Unbounded";font-weight:700;font-size:8.5px;color:#fff;text-transform:lowercase;line-height:1.15}
+.ecard .el i{font-style:normal;font-family:"Space Mono";font-size:6.5px;letter-spacing:.08em;color:rgba(255,255,255,.85);text-transform:uppercase}
+
+/* captions that narrate the act */
+.cap{position:absolute;left:0;right:0;text-align:center;z-index:6;padding:0 24px;pointer-events:none;
+  font-family:"Unbounded";font-weight:700;text-transform:lowercase;letter-spacing:-.01em;
+  font-size:clamp(19px,3.4vw,32px);color:var(--ink);opacity:0;transform:translateY(14px)}
+.cap.small{font-family:"Space Mono";font-weight:400;font-size:clamp(12px,1.8vw,14px);letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft)}
+.cap.show{opacity:1;transform:translateY(0)}
+.cap{transition:opacity .45s ease,transform .45s ease}
+#cap-confused{top:14vh}
+#cap-friday{top:14vh}
+#cap-inbox{bottom:9vh}
+#cap-dinner{bottom:10vh;color:#fff;text-shadow:0 2px 18px rgba(120,40,15,.4);font-size:clamp(26px,5vw,52px)}
+
+/* the bloom: a real dish takes over the world */
+.bloom{position:absolute;inset:0;display:grid;place-items:center;z-index:8;pointer-events:none;
+  opacity:var(--bloomop,0);transform:scale(calc(.1 + var(--bloom,0)*.9)) translateY(calc((1 - var(--bloom,0))*-12vh))}
+.bloom .bart{position:relative;width:min(62vh,86vw)}
+.bloom .blob{position:absolute;inset:-8%;width:116%}
+.bloom img{position:relative;z-index:2;width:100%;filter:drop-shadow(0 30px 30px rgba(120,40,15,.4))}
+
+/* ACT 2+: colour world */
+section.block{padding:clamp(70px,11vw,130px) 0;text-align:center}
+section.block h2{font-family:"Unbounded";text-transform:lowercase;font-weight:800;letter-spacing:-.02em;
+  font-size:clamp(30px,5.5vw,60px)}
+section.block .lead{max-width:44ch;margin:16px auto 0;color:var(--ink-soft);font-size:clamp(15px,1.7vw,18px);line-height:1.6}
+#five{background:#fff;border-radius:34px 34px 0 0}
+#five .grid{margin-top:44px;text-align:left}
+#five .card{opacity:0;transform:translateY(26px);transition:opacity .5s ease,transform .5s ease}
+#five .card.in{opacity:1;transform:none}
+#five .card:hover{transform:translateY(-4px)}
+#stats{background:#fff}
+#stats .meta{justify-content:center;gap:clamp(22px,6vw,64px);margin-top:38px}
+#stats .meta div b{font-size:clamp(26px,4.6vw,44px)}
+#join{background:var(--ink);color:var(--cream);border-radius:34px 34px 0 0}
+#join h2{color:var(--cream)}
+#join .lead{color:rgba(246,237,218,.75)}
+#join .nlform input{border-color:transparent}
+#join .smallprint{margin-top:22px;font-family:"Space Mono";font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:rgba(246,237,218,.55)}
+#pagefoot{background:var(--ink);color:var(--cream);text-align:center;padding:10px 0 46px}
+#pagefoot .mono{font-size:12px;color:rgba(246,237,218,.6)}
+#pagefoot a{text-decoration:underline}
+
+/* sticky join pill */
+#joinpill{position:fixed;right:18px;bottom:18px;z-index:90;opacity:0;pointer-events:none;transform:translateY(12px);
+  transition:opacity .3s,transform .3s}
+#joinpill.show{opacity:1;pointer-events:auto;transform:none}
+
+@media(max-width:680px){
+  .fridge{width:min(250px,68vw)}
+  #cap-confused,#cap-friday{top:11vh}
+}
+@media (prefers-reduced-motion: reduce){
+  #act1{height:auto}
+  #act1 .stage{position:static;height:auto;padding:120px 0 60px}
+  .door{transform:rotateY(-70deg)}
+  .introcopy{position:static;opacity:1;transform:none;margin-bottom:40px}
+  .cap,.bloom,.scrollcue{display:none}
+  #five .card{opacity:1;transform:none}
+  .jig .doodle{animation:none}
+}
+</style>
+</head>
+<body>
+<nav><a class="brand" href="/">you <span style="color:var(--accent)">cook</span> it</a><div class="nl"><a href="/">all recipes</a></div></nav>
+
+<!-- ACT 1 · the fridge -->
+<div id="act1">
+  <div class="stage" id="stage">
+    <div class="introcopy">
+      <div class="eyebrow">the friday five club</div>
+      <h1>your fridge is full.<br>your head is empty.</h1>
+      <div class="sub">Five new recipes in your inbox every Friday morning. This is the story of how dinner gets decided.</div>
+    </div>
+
+    <div class="scene3d">
+      <div class="fridge" id="fridge">
+        <div class="fbody"></div>
+        <div class="interior">
+          <div class="shelf" style="top:31%"></div>
+          <div class="shelf" style="top:55%"></div>
+          <div class="shelf" style="top:79%"></div>
+          <div class="doodles" id="doodles">
+            <!-- scribbled ink ingredients, drawn confused on purpose -->
+            <svg class="doodle" style="left:10%;top:12%;width:17%" viewBox="0 0 40 52"><path d="M8 14 L8 46 L32 46 L32 14 L26 4 L14 4 Z M8 14 L32 14 M14 4 L14 14"/></svg>
+            <svg class="doodle" style="left:38%;top:9%;width:11%" viewBox="0 0 30 56"><path d="M11 6 L19 6 L19 16 C25 20 26 26 26 32 L26 48 C26 51 23 52 15 52 C7 52 4 51 4 48 L4 32 C4 26 5 20 11 16 Z"/></svg>
+            <svg class="doodle" style="left:62%;top:16%;width:20%" viewBox="0 0 52 34"><path d="M4 30 L48 30 L48 16 C48 10 40 4 26 4 C12 4 4 10 4 16 Z M4 22 C10 18 16 24 22 20 C28 16 34 24 40 20 C43 18 46 20 48 22"/></svg>
+            <svg class="doodle" style="left:8%;top:36%;width:15%" viewBox="0 0 40 40"><circle cx="20" cy="22" r="14"/><path d="M14 22 C14 18 17 15 20 15"/></svg>
+            <svg class="doodle" style="left:34%;top:34%;width:22%" viewBox="0 0 56 40"><path d="M6 34 L28 6 L50 34 Z M18 34 C18 28 22 24 28 24 C34 24 38 28 38 34"/></svg>
+            <svg class="doodle" style="left:66%;top:38%;width:16%" viewBox="0 0 40 44"><path d="M10 8 L30 8 L30 14 L10 14 Z M8 14 L32 14 L30 40 L10 40 Z"/></svg>
+            <svg class="doodle" style="left:12%;top:60%;width:24%" viewBox="0 0 60 36"><path d="M8 18 C14 8 26 4 34 8 C42 12 44 20 40 26 C34 34 20 34 14 28 C10 24 8 22 8 18 Z M34 8 C38 12 40 18 40 26"/></svg>
+            <svg class="doodle" style="left:48%;top:58%;width:13%" viewBox="0 0 34 40"><path d="M17 4 C24 12 30 18 30 26 C30 33 24 38 17 38 C10 38 4 33 4 26 C4 18 10 12 17 4 Z"/></svg>
+            <svg class="doodle" style="left:70%;top:62%;width:17%" viewBox="0 0 44 38"><path d="M6 12 C14 4 30 4 38 12 L38 30 C30 36 14 36 6 30 Z M6 20 L38 20"/></svg>
+            <svg class="doodle" style="left:14%;top:84%;width:19%" viewBox="0 0 48 24"><path d="M4 12 C10 4 20 4 24 12 C28 20 38 20 44 12 M4 12 C10 20 20 20 24 12 C28 4 38 4 44 12"/></svg>
+            <svg class="doodle" style="left:52%;top:84%;width:14%" viewBox="0 0 36 26"><path d="M4 22 C4 12 11 4 18 4 C25 4 32 12 32 22 Z M12 22 L12 14 M18 22 L18 12 M24 22 L24 14"/></svg>
+          </div>
+          <div class="qmarks">
+            <span style="left:18%;top:24%;font-size:19px;--r:-10deg">?</span>
+            <span style="left:56%;top:14%;font-size:26px;--r:8deg">?</span>
+            <span style="left:76%;top:44%;font-size:17px;--r:14deg">?</span>
+            <span style="left:30%;top:52%;font-size:23px;--r:-6deg">?</span>
+            <span style="left:64%;top:72%;font-size:20px;--r:4deg">?</span>
+          </div>
+          <div class="lightwash"></div>
+        </div>
+        <div class="door">
+          <div class="doorface">
+            <div class="screen">
+              <div class="glowring"></div>
+              <div class="emailscroll">
+                <div class="echip">you<br>cooked<br>it.</div>
+                <div class="etitle">the friday five</div>
+                <div class="ecard" style="background:#c0341a"><img src="/images/thumb/creamy-tuscan-pasta.png" alt=""><div class="el"><b>creamy tuscan pasta</b><i>pasta</i></div></div>
+                <div class="ecard" style="background:#e2561f"><img src="/images/thumb/jerk-chicken.png" alt=""><div class="el"><b>jerk chicken</b><i>chicken</i></div></div>
+                <div class="ecard" style="background:#4f8a3a"><img src="/images/thumb/smashed-cucumber-salad.png" alt=""><div class="el"><b>smashed cucumber salad</b><i>salad</i></div></div>
+                <div class="ecard" style="background:#2f9bb0"><img src="/images/thumb/seafood-paella.png" alt=""><div class="el"><b>seafood paella</b><i>seafood</i></div></div>
+                <div class="ecard" style="background:#ff4d6d"><img src="/images/thumb/tiramisu.png" alt=""><div class="el"><b>tiramisu</b><i>dessert</i></div></div>
+              </div>
+              <div class="off"></div>
+            </div>
+            <div class="handle"></div>
+            <div class="magnet">friday<br>five</div>
+          </div>
+          <div class="doorback"></div>
+        </div>
+        <div class="feet"></div><div class="feet r"></div>
+      </div>
+    </div>
+
+    <div class="cap small" id="cap-confused">what do i even make with all this?</div>
+    <div class="cap" id="cap-friday">then friday happens.</div>
+    <div class="cap small" id="cap-inbox">five ideas land in your inbox</div>
+    <div class="cap" id="cap-dinner">and suddenly, dinner.</div>
+
+    <div class="bloom">
+      <div class="bart">
+        <div class="blob"></div>
+        <img src="/images/marry-me-chicken.png" alt="marry me chicken, plated"/>
+      </div>
+    </div>
+
+    <div class="scrollcue">scroll ↓</div>
+  </div>
+</div>
+
+<!-- ACT 2 · what you get -->
+<section class="block" id="five"><div class="wrap">
+  <div class="eyebrow">every friday morning</div>
+  <h2>five new recipes.<br>yours first.</h2>
+  <p class="lead">Real recipes from the You Cooked It kitchen, each one an immersive cook-along. Pick one for the weekend, we'll walk you through it.</p>
+  <div class="grid">
+    <a class="card has-img" href="/recipes/creamy-tuscan-pasta" style="--c:#c0341a"><div class="cglow"></div><img class="cimg" src="/images/thumb/creamy-tuscan-pasta.png" alt="creamy tuscan pasta"><div class="inner"><div class="ccat">pasta</div><div class="ctitle">creamy tuscan pasta</div></div></a>
+    <a class="card has-img" href="/recipes/jerk-chicken" style="--c:#e2561f"><div class="cglow"></div><img class="cimg" src="/images/thumb/jerk-chicken.png" alt="jerk chicken"><div class="inner"><div class="ccat">chicken</div><div class="ctitle">jerk chicken</div></div></a>
+    <a class="card has-img" href="/recipes/smashed-cucumber-salad" style="--c:#4f8a3a"><div class="cglow"></div><img class="cimg" src="/images/thumb/smashed-cucumber-salad.png" alt="smashed cucumber salad"><div class="inner"><div class="ccat">salad</div><div class="ctitle">smashed cucumber salad</div></div></a>
+    <a class="card has-img" href="/recipes/seafood-paella" style="--c:#2f9bb0"><div class="cglow"></div><img class="cimg" src="/images/thumb/seafood-paella.png" alt="seafood paella"><div class="inner"><div class="ccat">seafood</div><div class="ctitle">seafood paella</div></div></a>
+    <a class="card has-img" href="/recipes/tiramisu" style="--c:#ff4d6d"><div class="cglow"></div><img class="cimg" src="/images/thumb/tiramisu.png" alt="tiramisu"><div class="inner"><div class="ccat">dessert</div><div class="ctitle">tiramisu</div></div></a>
+  </div>
+</div></section>
+
+<!-- ACT 3 · the numbers -->
+<section class="block" id="stats"><div class="wrap">
+  <div class="eyebrow">no fake reviews. just numbers.</div>
+  <h2>the kitchen so far</h2>
+  <div class="meta">
+    <div><b>225</b><span>recipes</span></div>
+    <div><b>20</b><span>lanes</span></div>
+    <div><b>5</b><span>every friday</span></div>
+    <div><b>0</b><span>spam, ever</span></div>
+  </div>
+</div></section>
+
+<!-- ACT 4 · join -->
+<section class="block" id="join"><div class="wrap">
+  <div class="eyebrow" style="color:var(--lime)">free forever</div>
+  <h2>join the friday five.</h2>
+  <p class="lead">New recipes every Friday morning, in the same design you just scrolled through. One email a week, worth opening.</p>
+  <form class="nlform" action="https://assets.mailerlite.com/jsonp/2497756/forms/192434888920532489/subscribe" method="post" target="_blank">
+    <div class="nlrow"><input type="email" name="fields[email]" placeholder="your email" required aria-label="email address" autocomplete="email"/><input type="hidden" name="ml-submit" value="1"/><input type="hidden" name="anticsrf" value="true"/><button class="pill pop" type="submit">count me in</button></div>
+    <script>(function(){var f=document.currentScript.parentElement;var done=false;
+      f.addEventListener('submit',function(e){e.preventDefault();if(done)return;
+        var b=f.querySelector('button[type=submit]');b.textContent='adding you…';
+        fetch(f.action,{method:'POST',body:new URLSearchParams(new FormData(f))})
+          .then(function(r){if(!r.ok)throw 0;done=true;f.innerHTML='<div class="mono" style="color:var(--cream)">welcome to the friday five 🎉 we send new recipes every friday morning, keep an eye out.</div>';})
+          .catch(function(){done=true;f.submit();});});})();</script>
+  </form>
+  <div class="smallprint">free forever · unsubscribe anytime, no hard feelings</div>
+</div></section>
+
+<div id="pagefoot"><div class="mono">a <a href="/">you cooked it</a> production · © 2026</div></div>
+
+<a class="pill pop" id="joinpill" href="#join">join free</a>
+
+<script>
+(function(){
+  var act1=document.getElementById('act1'), stage=document.getElementById('stage');
+  var fridge=document.getElementById('fridge'), doodles=document.getElementById('doodles');
+  var caps={confused:document.getElementById('cap-confused'),friday:document.getElementById('cap-friday'),
+            inbox:document.getElementById('cap-inbox'),dinner:document.getElementById('cap-dinner')};
+  var pill=document.getElementById('joinpill'), join=document.getElementById('join');
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var seg=function(p,a,b){return Math.max(0,Math.min(1,(p-a)/(b-a)))};
+  var ticking=false;
+
+  function update(){
+    ticking=false;
+    var r=act1.getBoundingClientRect();
+    var total=r.height-window.innerHeight;
+    var p=Math.max(0,Math.min(1,-r.top/total));
+
+    var p1=seg(p,0.06,0.24);            // door opens
+    var p2=seg(p,0.26,0.44);            // confusion
+    var p3=seg(p,0.46,0.58);            // door closes
+    var scr=seg(p,0.58,0.64);           // screen lights
+    var email=seg(p,0.64,0.80);         // email scrolls
+    var bloom=seg(p,0.82,0.97);         // dish takes over
+
+    var door=Math.min(p1,1-p3);         // open then close
+    var s=stage.style;
+    s.setProperty('--p1',p1);
+    s.setProperty('--door',door);
+    s.setProperty('--light',Math.min(p1*1.4,1-p3));
+    s.setProperty('--p2',p2);
+    s.setProperty('--screen',scr);
+    s.setProperty('--email',email);
+    s.setProperty('--bloom',bloom);
+    s.setProperty('--bloomop',seg(bloom,0,0.25));
+
+    doodles.parentElement.classList.toggle('jig',p2>0.05&&p3<0.5);
+    caps.confused.classList.toggle('show',p2>0.2&&p3<0.3);
+    caps.friday.classList.toggle('show',p3>0.6&&bloom<0.05);
+    caps.inbox.classList.toggle('show',email>0.15&&bloom<0.05);
+    caps.dinner.classList.toggle('show',bloom>0.55);
+    document.body.classList.toggle('flood',bloom>0.35);
+
+    var jr=join.getBoundingClientRect();
+    pill.classList.toggle('show',p>=1&&jr.top>window.innerHeight);
+  }
+  function onScroll(){ if(!ticking){ ticking=true; requestAnimationFrame(update); } }
+  if(!reduce){
+    window.addEventListener('scroll',onScroll,{passive:true});
+    window.addEventListener('resize',onScroll);
+    update();
+  }
+
+  // reveal the five cards
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){
+    if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.2});
+  document.querySelectorAll('#five .card').forEach(function(c,i){c.style.transitionDelay=(i*70)+'ms';io.observe(c);});
+})();
+</script>
+</body>
+</html>
