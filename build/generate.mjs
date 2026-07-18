@@ -661,10 +661,10 @@ fs.writeFileSync(path.join(outDir,'index.html'),
   '<!DOCTYPE html>\n<meta charset="utf-8">\n<title>You Cooked It</title>\n<meta http-equiv="refresh" content="0; url=../index.html">\n<a href="../index.html">browse all recipes →</a>\n');
 
 // ---- static info pages (about / privacy / disclosure / 404) ----
-const staticPage = (slug, eyebrow, title, bodyHtml, {noindex=false}={}) => {
+const staticPage = (slug, eyebrow, title, bodyHtml, {noindex=false, accent=null}={}) => {
   const plain = title.replace(/<[^>]+>/g,' ').replace(/\s+/g,' ').trim();
   return `<!DOCTYPE html>
-<html lang="en">
+<html lang="en"${accent?` style="--accent:${accent};--accent-deep:${deep(accent)}"`:''}>
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -708,7 +708,7 @@ fs.writeFileSync(p('about.html'), staticPage('about','the kitchen','about<br>you
     <script type="application/ld+json">${JSON.stringify({'@context':'https://schema.org','@type':'AboutPage',url:SITE+'/about',
       about:{'@type':'Organization',name:'You Cooked It',url:SITE,logo:SITE+'/icon-512.png',sameAs:SOCIALS.map(x=>x.url),
         founder:[{'@type':'Person',name:'Jay'},{'@type':'Person',name:'Kelli'}],
-        contactPoint:{'@type':'ContactPoint',email:'hello@youcooked-it.com',contactType:'customer support'}}})}</script>`));
+        contactPoint:{'@type':'ContactPoint',email:'hello@youcooked-it.com',contactType:'customer support'}}})}</script>`,{accent:'#2f9bb0'}));
 
 fs.writeFileSync(p('privacy.html'), staticPage('privacy','the small print','privacy<br>policy',`
     <p>This is the privacy policy for You Cooked It (youcooked-it.com), operated by Croft &amp; Hugh. We keep it simple, because we collect almost nothing.</p>
