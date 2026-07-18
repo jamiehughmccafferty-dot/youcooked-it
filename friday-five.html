@@ -49,9 +49,11 @@ body.flood{background:#2f9bb0}
 @keyframes cue{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,7px)}}
 
 /* the fridge */
-.scene3d{perspective:1400px;position:relative;z-index:2;
-  transform:translateY(calc(27vh - var(--p1,0)*25vh)) scale(calc(.78 + var(--p1,0)*.22))}
-.fridge{position:relative;width:min(300px,64vw);aspect-ratio:0.58;transform-style:preserve-3d}
+.scene3d{--so:30vh;perspective:2600px;position:relative;z-index:2;
+  transform:translateX(calc(var(--door,0)*4vw)) translateY(calc(var(--so) - var(--p1,0)*(var(--so) - 2vh))) scale(calc(.78 + var(--p1,0)*.22))}
+@media(max-width:680px){.scene3d{--so:15vh}}
+.fridge{position:relative;width:min(300px,64vw);aspect-ratio:0.58;transform-style:preserve-3d;
+  opacity:calc(1 - max(0, var(--bloom,0) - .35)*1.8)}
 .fbody{position:absolute;inset:0;background:var(--paper);border:3px solid var(--ink);border-radius:26px;
   box-shadow:0 34px 60px rgba(36,23,18,.18)}
 .fridge .feet{position:absolute;bottom:-14px;left:12%;width:12%;height:14px;border:3px solid var(--ink);border-top:0;
@@ -73,8 +75,9 @@ body.flood{background:#2f9bb0}
 .qmarks span{position:absolute;font-family:"Space Mono";font-weight:700;color:var(--ink);
   opacity:calc(var(--p2,0)*.9);transform:translateY(calc(var(--p2,0)*-34px)) rotate(var(--r,0deg))}
 /* the door: hinged on the left, screen on the front */
-.door{position:absolute;inset:0;transform-origin:left center;transform:rotateY(calc(var(--door,0)*-104deg));
+.door{position:absolute;inset:0;transform-origin:left center;transform:rotateY(calc(var(--door,0)*-96deg));
   transform-style:preserve-3d;z-index:3}
+.screen,.handle,.magnet{backface-visibility:hidden}
 .doorface{position:absolute;inset:0;background:var(--paper);border:3px solid var(--ink);border-radius:26px;
   backface-visibility:hidden;display:flex;flex-direction:column;align-items:center}
 .doorback{position:absolute;inset:0;background:var(--cream2);border:3px solid var(--ink);border-radius:26px;
