@@ -21,7 +21,8 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const p = (...a) => path.join(ROOT, ...a);
 const run = (cmd) => { console.log('\n> ' + cmd); execSync(cmd, { cwd: ROOT, stdio: 'inherit' }); };
 
-// 1. rebuild first so recipes.json reflects the latest data
+// 1. webp variants for any newly keyed images, then rebuild (pages reference webp)
+run('node build/webp.mjs');
 run('node build/generate.mjs');
 
 const records = JSON.parse(fs.readFileSync(p('recipes.json'), 'utf8'));

@@ -222,3 +222,13 @@ nav .nl{display:flex;gap:20px;font-size:13px;text-transform:lowercase}
 #more{padding:clamp(40px,7vw,80px) 0}
 #more .moregrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px}
 @media(max-width:680px){#more .moregrid{grid-template-columns:1fr}}
+
+/* accessibility: skip link, visible focus, and darkened small-text accents.
+   --cl / --accent-deep are the same hues at 62% lightness so 11-12px labels
+   pass WCAG AA on white without changing the big colour moments. */
+.skip{position:absolute;left:-9999px;top:0;z-index:10000;background:var(--ink);color:var(--cream);
+  padding:12px 20px;border-radius:0 0 14px 0;font-family:"Space Mono";font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+.skip:focus{left:0}
+:focus-visible{outline:3px solid var(--ink);outline-offset:2px;border-radius:4px}
+.card .ccat{color:var(--cl,var(--c))}
+.eyebrow{color:var(--accent-deep,var(--accent))}

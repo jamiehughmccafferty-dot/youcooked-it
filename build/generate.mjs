@@ -82,7 +82,15 @@ const SOCIALS = [
 const socialLine = SOCIALS.length
   ? `<div class="mono" style="margin-top:10px">${SOCIALS.map(s=>`<a href="${s.url}" target="_blank" rel="noopener">${s.name}</a>`).join(' · ')}</div>`
   : '';
-const metaDesc = rec => { const s=(rec.story||'').trim(); if(s){ const first=s.split('. ')[0]; return first.length>20?first+'.':s.slice(0,155); } return rec.title+', an immersive cook-along recipe from You Cooked It.'; };
+// darkened accent variant: same hue, enough contrast for small text on white (WCAG AA)
+const deep = hex => '#'+hex.slice(1).match(/../g).map(h=>Math.round(parseInt(h,16)*.62).toString(16).padStart(2,'0')).join('');
+const metaDesc = rec => {
+  const m=rec.meta||{};
+  const bits=[m.total_time,m.skill].filter(Boolean).join(', ');
+  const first=(rec.story||'').trim().split('. ')[0];
+  const d=`${rec.title} recipe with step-by-step cook-along timers${bits?` (${bits})`:''}. ${first?first+'.':''}`;
+  return d.length>155 ? d.slice(0,152).replace(/\s+\S*$/,'')+'…' : d;
+};
 
 // ---- schema.org Recipe (JSON-LD) — invisible metadata for Google rich results ----
 const isoDur = s => { if(!s) return null; const h=(String(s).match(/(\d+)\s*hr/)||[])[1], m=(String(s).match(/(\d+)\s*min/)||[])[1];
@@ -209,8 +217,8 @@ const relatedFor = (rec)=>{
 const moreRow = (rec)=>{
   const cards = relatedFor(rec).map(r=>{
     const col=CAT[r.category]||'#e2561f';
-    const img=imaged[r.slug]?`<div class="cglow"></div><img class="cimg" alt="${esc(r.title)}" decoding="async" width="256" height="256" src="/${imaged[r.slug]}">`:'<div class="cblob"></div>';
-    return `<a class="card${imaged[r.slug]?' has-img':''}" href="/recipes/${r.slug}" style="--c:${col}">${img}<div class="inner"><div class="ccat">${esc(r.category)}</div><div class="ctitle">${esc(r.title.toLowerCase())}</div></div></a>`;
+    const img=imaged[r.slug]?`<div class="cglow"></div><img class="cimg" alt="${esc(r.title)}" loading="lazy" decoding="async" width="256" height="256" src="/${imaged[r.slug].replace(/\.png$/,'.webp')}">`:'<div class="cblob"></div>';
+    return `<a class="card${imaged[r.slug]?' has-img':''}" href="/recipes/${r.slug}" style="--c:${col};--cl:${deep(col)}">${img}<div class="inner"><div class="ccat">${esc(r.category)}</div><div class="ctitle">${esc(r.title.toLowerCase())}</div></div></a>`;
   }).join('');
   return `
   <section id="more"><div class="wrap">
@@ -228,17 +236,35 @@ const page = (rec)=>{
   const ogCard=ogFiles.has(rec.slug+'.jpg');
   const ogImage=ogCard?SITE+'/og/'+rec.slug+'.jpg':(imaged[rec.slug]?SITE+'/images/'+rec.slug+'.png':'');
   const ogW=ogCard?1200:1024, ogH=ogCard?630:1024;
+  // server-rendered hero: identical markup to what recipe-engine.js writes, so
+  // crawlers get a real H1 and the engine's re-render is a no-op visually
+  const titleLc=rec.title.toLowerCase();
+  const tightenI=s=>esc(s).replace(/i/g,'<span class="tin">i</span>');
+  const hw=titleLc.split(' ');
+  const h1html = hw.length<2 ? `<span class="em">${tightenI(titleLc)}</span>`
+    : `${tightenI(hw.slice(0,-1).join(' '))}<br><span class="em">${tightenI(hw[hw.length-1])}</span>`;
+  const m=rec.meta||{};
+  const metaHtml=[['total',m.total_time],['marinate',m.marinate_time],['heat',m.heat],['skill',m.skill]]
+    .filter(x=>x[1]).map(x=>`<div><b>${esc(x[1])}</b><span>${esc(x[0])}</span></div>`).join('');
+  const sub=(rec.story||'').split('. ')[0];
+  const subHtml=sub?esc(sub.replace(/\.$/,''))+'.':'';
+  const heroImg = imaged[rec.slug]
+    ? `<img class="heroimg" id="heroimg" src="/images/${rec.slug}.webp" srcset="/images/${rec.slug}-480.webp 480w,/images/${rec.slug}-768.webp 768w,/images/${rec.slug}.webp 1024w" sizes="(max-width:820px) 88vw, 42vw" width="1024" height="1024" fetchpriority="high" alt="${esc(rec.title)}, plated"/>`
+    : `<img class="heroimg" id="heroimg" alt=""/>`;
+  const revImg = imaged[rec.slug]
+    ? `<img class="rev" id="rev" src="/images/${rec.slug}-768.webp" loading="lazy" decoding="async" width="768" height="768" alt="${esc(rec.title)}, ready to serve"/>`
+    : `<img class="rev" id="rev" alt=""/>`;
   return `<!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="--accent:${accent};--accent-deep:${deep(accent)}">
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>You Cooked It — ${esc(rec.title)}</title>
+<title>${esc(rec.title)} Recipe — You Cooked It</title>
 <meta name="description" content="${esc(desc)}"/>
 <link rel="canonical" href="${url}"/>
 <meta property="og:type" content="article"/>
 <meta property="og:site_name" content="You Cooked It"/>
-<meta property="og:title" content="${esc(rec.title)}"/>
+<meta property="og:title" content="${esc(rec.title)} Recipe"/>
 <meta property="og:description" content="${esc(desc)}"/>
 <meta property="og:url" content="${url}"/>
 ${ogImage?`<meta property="og:image" content="${ogImage}"/>
@@ -260,23 +286,24 @@ ${ogImage?`<meta property="og:image" content="${ogImage}"/>
 <script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body data-category="${rec.category}">
+  <a class="skip" href="#hero">skip to recipe</a>
   <div id="pre"><div class="mark"><span style="color:var(--accent)">prepping</span> it</div><div class="pct" id="pct">0%</div><div class="barwrap"><div class="bar" id="prebar"></div></div></div>
 
   <nav><a class="brand" href="../index.html"><span style="color:var(--accent)">cooking</span> it</a><div class="nl"><a href="../index.html">all recipes</a><a href="#story">story</a><a href="#ingredients">ingredients</a><a href="#method">method</a><a href="#finale">serve</a></div></nav>
 
   <section id="hero"><div class="wrap"><div class="grid">
     <div>
-      <div class="eyebrow up" id="heroEyebrow"></div>
-      <h1 class="display up" id="heroTitle"></h1>
-      <p class="sub up" id="heroSub"></p>
-      <div class="meta up" id="heroMeta"></div>
+      <div class="eyebrow up" id="heroEyebrow">the recipe · serves ${esc(m.serves||4)}</div>
+      <h1 class="display up" id="heroTitle">${h1html}</h1>
+      <p class="sub up" id="heroSub">${subHtml}</p>
+      <div class="meta up" id="heroMeta">${metaHtml}</div>
       <div class="row up"><a class="pill pop" href="#method">start cooking</a><a class="pill ghost" href="#ingredients">ingredients</a></div>
     </div>
     <div class="art up">
       <div class="blob"></div>
       <svg class="badge" viewBox="0 0 100 100"><defs><path id="circ" d="M50,50 m-37,0 a37,37 0 1,1 74,0 a37,37 0 1,1 -74,0"/></defs>
         <text><textPath href="#circ">fresh · made from scratch · </textPath></text><circle class="dot" cx="50" cy="50" r="5"/></svg>
-      <img class="heroimg" id="heroimg" alt=""/>
+      ${heroImg}
     </div>
   </div></div></section>
 
@@ -304,7 +331,7 @@ ${ogImage?`<meta property="og:image" content="${ogImage}"/>
   </div></section>
 
   <section id="finale"><div class="wrap">
-    <img class="rev" id="rev" alt=""/>
+    ${revImg}
     <h2 class="display up">you cooked it.</h2>
     <p class="up" id="finaleText"></p>
     <div class="serveideas up" id="serveideas"></div>
@@ -338,6 +365,22 @@ const onDisplay = records.filter(r=>imaged[r.slug]);
 const cats = [...new Set(onDisplay.map(r=>r.category))].sort();
 const cards = onDisplay.map(r=>({slug:r.slug,title:r.title,category:r.category,cuisine:r.cuisine||'',tag:r.tag||'evergreen',published:r.status==='published'}));
 
+// server-rendered grid: crawlable internal links for every recipe. The JS
+// re-render on load produces identical markup, so filtering keeps working.
+const gridCardHtml = c => {
+  const col=CAT[c.category]||'#e2561f';
+  const art=imaged[c.slug]
+    ? `<div class="cglow"></div><img class="cimg" alt="" loading="lazy" decoding="async" width="256" height="256" src="/${imaged[c.slug].replace(/\.png$/,'.webp')}">`
+    : '<div class="cblob"></div>';
+  return `<a class="card${imaged[c.slug]?' has-img':''}" href="/recipes/${c.slug}" style="--c:${col};--cl:${deep(col)}">${art}${c.tag==='trender'?'<div class="tag">trending</div>':''}<div class="inner"><div class="ccat">${esc(c.category)}</div><div class="ctitle">${esc(c.title.toLowerCase())}</div></div></a>`;
+};
+const gridSSR = (()=>{
+  const arr = cards.slice().sort((a,b)=>(b.tag==='trender')-(a.tag==='trender')).map(gridCardHtml);
+  PTILES.forEach((PT,k)=>{ const at=11+k*14; if(arr.length>at) arr.splice(at,0,
+    `<a class="card has-img ptile" href="${PT.link}" target="_blank" rel="sponsored noopener" style="--c:${PT.color}"><div class="cglow"></div><img class="cimg" alt="${esc(PT.name.replace('partner · ',''))}" loading="lazy" decoding="async" width="256" height="256" src="/${PT.img}"><div class="tag" style="background:var(--ink)">${esc(PT.badge)}</div><div class="inner"><div class="ccat" style="color:${PT.label}">${esc(PT.name)}</div><div class="ctitle">${esc(PT.title)}</div></div></a>`); });
+  return arr.join('');
+})();
+
 const browse = (assetPrefix, linkPrefix)=>`<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -370,6 +413,7 @@ ${ogFiles.has('marry-me-chicken.jpg')?`<meta property="og:image" content="${SITE
 <script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
+  <a class="skip" href="#browse">skip to recipes</a>
   <nav><a class="brand" href="${assetPrefix||'./'}">you <span style="color:var(--accent)">cook</span> it</a><div class="nl"><a href="${assetPrefix||'./'}">all recipes</a></div></nav>
   <section id="browse"><div class="wrap">
     <div class="head">
@@ -377,7 +421,7 @@ ${ogFiles.has('marry-me-chicken.jpg')?`<meta property="og:image" content="${SITE
       <p class="lead">Hundreds of recipes, each an immersive cook-along. No more doom scrolling! Pick a lane, or filter by what you're in the mood for.</p>
     </div>
     <div class="filters" id="filters"></div>
-    <div class="grid" id="grid"></div>
+    <div class="grid" id="grid">${gridSSR}</div>
     <div class="count" id="count"></div>
 ${nlForm}
   </div></section>
@@ -391,6 +435,7 @@ ${socialLine}
   <script>
     var CARDS=${JSON.stringify(cards).replace(/</g,'\\u003c')};
     var CAT=${JSON.stringify(CAT)};
+    var DEEP=${JSON.stringify(Object.fromEntries(Object.entries(CAT).map(([k,v])=>[k,deep(v)])))};
     var CATS=${JSON.stringify(cats)};
     var LINK=${JSON.stringify(linkPrefix)};
     var ASSET=${JSON.stringify(assetPrefix)};
@@ -432,8 +477,8 @@ ${socialLine}
       list.forEach(function(c){
         var col=CAT[c.category]||'#e2561f';
         var hasImg=!!IMAGED[c.slug];
-        var a=document.createElement('a');a.className='card'+(hasImg?' has-img':'');a.href=LINK+c.slug+'.html';a.style.setProperty('--c',col);
-        var art=hasImg?'<div class="cglow"></div><img class="cimg" alt="" loading="lazy" decoding="async" width="256" height="256" onerror="this.previousSibling.style.display=\\'none\\';this.style.display=\\'none\\'" src="'+ASSET+IMAGED[c.slug]+'">':'<div class="cblob"></div>';
+        var a=document.createElement('a');a.className='card'+(hasImg?' has-img':'');a.href=LINK+c.slug;a.style.setProperty('--c',col);a.style.setProperty('--cl',DEEP[c.category]||'#8c3513');
+        var art=hasImg?'<div class="cglow"></div><img class="cimg" alt="" loading="lazy" decoding="async" width="256" height="256" onerror="this.previousSibling.style.display=\\'none\\';this.style.display=\\'none\\'" src="'+ASSET+IMAGED[c.slug].replace(/\\.png$/,'.webp')+'">':'<div class="cblob"></div>';
         a.innerHTML=art+(c.tag==='trender'?'<div class="tag">trending</div>':'')+
           '<div class="inner"><div class="ccat">'+c.category+'</div><div class="ctitle">'+c.title.toLowerCase()+'</div></div>';
         grid.appendChild(a);

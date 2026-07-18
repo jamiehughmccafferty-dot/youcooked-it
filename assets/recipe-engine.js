@@ -7,7 +7,10 @@
     seafood:'#2f9bb0',soup:'#cf7b2a',stew:'#9c5526',bread:'#c98a3a',drinks:'#8a5cc4',sauce:'#cf3636',grill:'#a8402a'};
   var ACCENT=CAT[R.category]||'#e2561f';
   document.documentElement.style.setProperty('--accent',ACCENT);
-  document.title='You Cooked It — '+(R.title||'Recipe');
+  // darkened variant for small text on white (WCAG contrast)
+  var DEEPA='#'+(ACCENT.slice(1).match(/../g)||[]).map(function(h){return ('0'+Math.round(parseInt(h,16)*.62).toString(16)).slice(-2);}).join('');
+  document.documentElement.style.setProperty('--accent-deep',DEEPA);
+  document.title=(R.title||'Recipe')+' Recipe — You Cooked It';
 
   function setText(id,t){var el=document.getElementById(id);if(el)el.textContent=t;}
   function setHTML(id,h){var el=document.getElementById(id);if(el)el.innerHTML=h;}
@@ -39,7 +42,10 @@
   var hero=document.getElementById('heroimg'),rev=document.getElementById('rev');
   function hideOnError(img){if(img)img.addEventListener('error',function(){img.style.visibility='hidden';});}
   hideOnError(hero);hideOnError(rev);
-  if(R.hero){if(hero){hero.src='../images/'+R.hero;hero.alt=R.title||'';}if(rev){rev.src='../images/'+R.hero;rev.alt=R.title||'';}}
+  // hero/finale images are server-rendered with webp srcset; only fill as a fallback
+  if(R.hero){var hsrc='../images/'+R.hero.replace(/\.png$/,'.webp');
+    if(hero&&!hero.getAttribute('src')){hero.src=hsrc;hero.alt=R.title||'';}
+    if(rev&&!rev.getAttribute('src')){rev.src=hsrc;rev.alt=R.title||'';}}
 
   /* marquee */
   var mq=[R.category,R.cuisine||'home cooking','made from scratch','no jar, no shortcut'].filter(Boolean).map(esc);
@@ -59,11 +65,16 @@
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
   $$('.up').forEach(function(el,i){el.style.transitionDelay=(i%3*0.05)+'s';io.observe(el);});
 
-  /* preloader */
-  var pre=$('#pre'),pct=$('#pct'),pbar=$('#prebar'),v=0;
-  var iv=setInterval(function(){v=Math.min(v+Math.random()*9+3,100);pct.textContent=Math.floor(v)+'%';pbar.style.width=v+'%';
-    if(v>=100){clearInterval(iv);setTimeout(function(){pre.classList.add('done');},250);}},90);
-  setTimeout(function(){pre.classList.add('done');},5000);
+  /* preloader — the brand moment plays once per session, then stays out of the way */
+  var pre=$('#pre'),pct=$('#pct'),pbar=$('#prebar'),v=0,seen=false;
+  try{seen=!!sessionStorage.getItem('yciPre');}catch(e){}
+  if(seen&&pre){pre.classList.add('done');}
+  else{
+    try{sessionStorage.setItem('yciPre','1');}catch(e){}
+    var iv=setInterval(function(){v=Math.min(v+Math.random()*9+3,100);pct.textContent=Math.floor(v)+'%';pbar.style.width=v+'%';
+      if(v>=100){clearInterval(iv);setTimeout(function(){pre.classList.add('done');},250);}},90);
+    setTimeout(function(){pre.classList.add('done');},5000);
+  }
 
   /* hero parallax */
   if(hero)addEventListener('pointermove',function(e){var dx=(e.clientX/innerWidth-.5),dy=(e.clientY/innerHeight-.5);
