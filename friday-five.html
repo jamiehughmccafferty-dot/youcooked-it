@@ -43,15 +43,11 @@ body.flood{background:#2f9bb0}
   font-size:clamp(30px,6.4vw,66px);line-height:1;margin-top:14px}
 .introcopy .sub{margin:14px auto 0;max-width:34ch;color:var(--ink-soft);font-size:clamp(14px,1.6vw,17px);line-height:1.5}
 
-.scrollcue{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:5;
-  font-family:"Space Mono";font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-soft);
-  opacity:calc(1 - var(--p1,0)*3);animation:cue 1.6s ease-in-out infinite}
-@keyframes cue{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,7px)}}
-/* on mobile the cue lives in the deadspace under the copy, so it is on
-   screen even with the browser url bar eating the viewport */
-.scrollcue.incopy{display:none;position:static;transform:none;margin-top:18px;animation:cuein 1.6s ease-in-out infinite}
+/* the cue lives in the deadspace under the copy on every size: always on
+   screen at landing, and the fridge can never ride up into it */
+.scrollcue{font-family:"Space Mono";font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-soft);
+  margin-top:18px;opacity:calc(1 - var(--p1,0)*3);animation:cuein 1.6s ease-in-out infinite}
 @keyframes cuein{0%,100%{transform:translateY(0)}50%{transform:translateY(7px)}}
-@media(max-width:680px){.scrollcue.bottomcue{display:none}.scrollcue.incopy{display:block}}
 
 /* the fridge */
 .scene3d{--so:30vh;perspective:3200px;position:relative;z-index:2;
@@ -180,7 +176,7 @@ section.block .lead{max-width:44ch;margin:16px auto 0;color:var(--ink-soft);font
       <div class="eyebrow">the friday five club</div>
       <h1>your fridge is full.<br>your head is empty.</h1>
       <div class="sub">Five new recipes in your inbox every Friday morning. This is the story of how dinner gets decided.</div>
-      <div class="scrollcue incopy">scroll ↓</div>
+      <div class="scrollcue">scroll ↓</div>
     </div>
 
     <div class="scene3d">
@@ -249,7 +245,6 @@ section.block .lead{max-width:44ch;margin:16px auto 0;color:var(--ink-soft);font
       </div>
     </div>
 
-    <div class="scrollcue bottomcue">scroll ↓</div>
   </div>
 </div>
 
