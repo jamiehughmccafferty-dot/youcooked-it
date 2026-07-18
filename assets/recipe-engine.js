@@ -65,16 +65,15 @@
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
   $$('.up').forEach(function(el,i){el.style.transitionDelay=(i%3*0.05)+'s';io.observe(el);});
 
-  /* preloader — the brand moment plays once per session, then stays out of the way */
+  /* preloader — full brand moment on the first visit of a session, then a
+     quick flash version (~0.4s) on every page after so it never drags */
   var pre=$('#pre'),pct=$('#pct'),pbar=$('#prebar'),v=0,seen=false;
-  try{seen=!!sessionStorage.getItem('yciPre');}catch(e){}
-  if(seen&&pre){pre.classList.add('done');}
-  else{
-    try{sessionStorage.setItem('yciPre','1');}catch(e){}
-    var iv=setInterval(function(){v=Math.min(v+Math.random()*9+3,100);pct.textContent=Math.floor(v)+'%';pbar.style.width=v+'%';
-      if(v>=100){clearInterval(iv);setTimeout(function(){pre.classList.add('done');},250);}},90);
-    setTimeout(function(){pre.classList.add('done');},5000);
-  }
+  try{seen=!!sessionStorage.getItem('yciPre');sessionStorage.setItem('yciPre','1');}catch(e){}
+  var step=seen?(function(){return Math.random()*24+20;}):(function(){return Math.random()*9+3;});
+  var tick=seen?36:90, settle=seen?120:250;
+  var iv=setInterval(function(){v=Math.min(v+step(),100);pct.textContent=Math.floor(v)+'%';pbar.style.width=v+'%';
+    if(v>=100){clearInterval(iv);setTimeout(function(){pre.classList.add('done');},settle);}},tick);
+  setTimeout(function(){pre.classList.add('done');},5000);
 
   /* hero parallax */
   if(hero)addEventListener('pointermove',function(e){var dx=(e.clientX/innerWidth-.5),dy=(e.clientY/innerHeight-.5);
