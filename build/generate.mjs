@@ -106,7 +106,8 @@ const schemaFor = rec => {
     url:SITE+'/recipes/'+rec.slug,
     image:images,
     description:metaDesc(rec),
-    author:{'@type':'Organization',name:'You Cooked It',url:SITE,sameAs:SOCIALS.map(x=>x.url)},
+    author:{'@type':'Person',name:'Jay',url:SITE+'/about',worksFor:{'@type':'Organization',name:'You Cooked It'}},
+    publisher:{'@type':'Organization',name:'You Cooked It',url:SITE,logo:{'@type':'ImageObject',url:SITE+'/icon-512.png'},sameAs:SOCIALS.map(x=>x.url)},
     recipeCategory:rec.category,
     recipeYield:serves+' servings',
     keywords:[rec.title,rec.category,rec.cuisine].filter(Boolean).join(', '),
@@ -414,7 +415,7 @@ ${nlForm}
 ${moreRow(rec)}${partnerCard(rec)}
   <section id="foot"><div class="wrap">
     <div class="display" style="font-size:clamp(34px,7vw,72px);font-weight:800">you <span style="color:var(--accent)">cooked</span> it.</div>
-    <div class="mono">an immersive recipe · kitchen by croft &amp; hugh · © 2026</div>
+    <div class="mono">an immersive recipe · a small family kitchen · © 2026</div>
     ${socialLine}
 ${laneLinks}
     <div class="mono" style="margin-top:10px"><a href="/about">about</a> · <a href="/privacy">privacy</a> · <a href="/disclosure">affiliate disclosure</a></div>
@@ -502,7 +503,7 @@ ${nlForm}
 
   <section id="foot"><div class="wrap">
     <div class="display" style="font-size:clamp(34px,7vw,72px);font-weight:800">you cooked it.</div>
-    <div class="mono">an immersive recipe · kitchen by croft &amp; hugh · © 2026</div>
+    <div class="mono">an immersive recipe · a small family kitchen · © 2026</div>
 ${socialLine}
 ${laneLinks}
     <div class="mono" style="margin-top:10px"><a href="/about">about</a> · <a href="/privacy">privacy</a> · <a href="/disclosure">affiliate disclosure</a></div>
@@ -643,7 +644,7 @@ ${pt?`  <section id="partner"><div class="wrap">${pcardHtml({...pt, image:(pt.im
   </div></section>
 `:''}  <section id="foot"><div class="wrap">
     <div class="display" style="font-size:clamp(34px,7vw,72px);font-weight:800">you cooked it.</div>
-    <div class="mono">an immersive recipe · kitchen by croft &amp; hugh · © 2026</div>
+    <div class="mono">an immersive recipe · a small family kitchen · © 2026</div>
 ${socialLine}
 ${laneLinks}
     <div class="mono" style="margin-top:10px"><a href="/about">about</a> · <a href="/privacy">privacy</a> · <a href="/disclosure">affiliate disclosure</a></div>
@@ -690,7 +691,7 @@ ${noindex?'<meta name="robots" content="noindex"/>':`<link rel="canonical" href=
     ${bodyHtml}
   </div></section>
   <section id="foot" style="padding-top:0"><div class="wrap">
-    <div class="mono">kitchen by croft &amp; hugh · © 2026</div>
+    <div class="mono">a small family kitchen · © 2026</div>
     ${socialLine}
     <div class="mono" style="margin-top:10px"><a href="/about">about</a> · <a href="/privacy">privacy</a> · <a href="/disclosure">affiliate disclosure</a></div>
   </div></section>
@@ -699,9 +700,15 @@ ${noindex?'<meta name="robots" content="noindex"/>':`<link rel="canonical" href=
 };
 
 fs.writeFileSync(p('about.html'), staticPage('about','the kitchen','about<br>you cooked it',`
-    <p>You Cooked It is an independent kitchen project from Croft &amp; Hugh. We got tired of recipe sites that bury the food under pop-ups, life stories and fifteen ads, so we built the opposite: one recipe, one screen, and a steady hand on your shoulder from "prepping it" to "you cooked it."</p>
-    <p>Every recipe is written for real UK home kitchens, with metric measures, supermarket ingredients and honest timings, then shaped into a cook-along you can actually follow with floury hands: a live serving scaler, step timers, and a little celebration when you're done. Because you did cook it.</p>
-    <p>We're a small operation and we're building the biggest, calmest recipe database in the UK, one lane at a time. If a recipe let you down or you want us to cook something next, we want to hear about it.</p>`));
+    <p>You Cooked It is a small family kitchen: <span class="hl">Jay, Kelli and Walli 🐕</span> (head of quality control). Two young professionals who are always busy with work but love to cook, and who kept clocking the same thing every evening: more time went on finding a usable recipe than on cooking it. Scroll, popup, backstory, ad, another ad, and somewhere near the bottom, the ingredients.</p>
+    <p>Nothing in the recipe scene seemed in any hurry to change that, so we built the site we wanted to cook from. One recipe, one screen: a cook-along that walks with you from "prepping it" to "you cooked it", with step timers, a live serving scaler and a small celebration at the end. Because you did cook it.</p>
+    <p><span class="hl">How we cook.</span> Every recipe is written for real UK home kitchens: metric measures, fan oven temperatures, supermarket ingredients and timings that were actually timed. Five new recipes drop every friday, and the <a href="/friday-five" style="text-decoration:underline">friday five</a> lands them in your inbox.</p>
+    <p><span class="hl">House rules, in writing.</span> No fake reviews, ever. The cook-along stays ad-free, because nobody wants a popup with wet hands. Partners are always labelled and links are <a href="/disclosure" style="text-decoration:underline">disclosed</a>. And when we get something wrong, we fix it and say so.</p>
+    <p>If a recipe let you down, or you want us to cook something next: <span class="hl">hello@youcooked-it.com</span>. That is the most useful email we can get.</p>
+    <script type="application/ld+json">${JSON.stringify({'@context':'https://schema.org','@type':'AboutPage',url:SITE+'/about',
+      about:{'@type':'Organization',name:'You Cooked It',url:SITE,logo:SITE+'/icon-512.png',sameAs:SOCIALS.map(x=>x.url),
+        founder:[{'@type':'Person',name:'Jay'},{'@type':'Person',name:'Kelli'}],
+        contactPoint:{'@type':'ContactPoint',email:'hello@youcooked-it.com',contactType:'customer support'}}})}</script>`));
 
 fs.writeFileSync(p('privacy.html'), staticPage('privacy','the small print','privacy<br>policy',`
     <p>This is the privacy policy for You Cooked It (youcooked-it.com), operated by Croft &amp; Hugh. We keep it simple, because we collect almost nothing.</p>
