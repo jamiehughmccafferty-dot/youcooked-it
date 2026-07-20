@@ -1,6 +1,6 @@
 category,recipe,slug,tag
 chicken,Roast Chicken,roast-chicken,evergreen
-chicken,Marry Me Chicken,marry-me-chicken,trender
+chicken,Marry Me Chicken,marry-me-chicken,evergreen
 chicken,Chicken Parmesan,chicken-parmesan,evergreen
 chicken,Honey Garlic Chicken,honey-garlic-chicken,evergreen
 chicken,Chicken Fajitas,chicken-fajitas,evergreen
@@ -214,7 +214,7 @@ vegan,Cauliflower Tacos,cauliflower-tacos,evergreen
 vegan,Vegan Chocolate Brownies,vegan-chocolate-brownies,evergreen
 vegan,Vegan Pancakes,vegan-pancakes,evergreen
 vegan,Smoky Bean Stew,smoky-bean-stew,evergreen
-grill,BBQ Ribs,bbq-ribs,evergreen
+grill,BBQ Ribs,bbq-ribs,trender
 grill,Beef Brisket,beef-brisket,evergreen
 grill,Shish Kebabs,shish-kebabs,evergreen
 grill,Lamb Chops,lamb-chops,evergreen
