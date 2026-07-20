@@ -31,6 +31,11 @@
 body{--accent:#2f9bb0;background:#ffffff;transition:background 1.2s ease}
 body.flood{background:#2f9bb0}
 
+/* instant signup strip: usable before any scrolling */
+#topjoin{padding:88px 0 6px;text-align:center}
+#topjoin .tj-line{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)}
+#topjoin .nlform{margin-top:12px}
+
 /* ACT 1: one long scroll scene */
 #act1{height:620vh;position:relative}
 #act1 .stage{position:sticky;top:0;height:100vh;overflow:hidden;display:flex;flex-direction:column;
@@ -168,6 +173,20 @@ section.block .lead{max-width:44ch;margin:16px auto 0;color:var(--ink-soft);font
 </head>
 <body>
 <nav><a class="brand" href="/">you <span style="color:#d0644f">cook</span> it</a><div class="nl"><a href="/">all recipes</a></div></nav><!-- span is the blend-inverse of #2f9bb0: the difference blend renders it BLUE over the white page -->
+
+<!-- instant signup: at the top, before the story -->
+<section id="topjoin"><div class="wrap">
+  <div class="mono tj-line">five new recipes in your inbox, every friday · free</div>
+  <form class="nlform" action="https://assets.mailerlite.com/jsonp/2497756/forms/192434888920532489/subscribe" method="post" target="_blank">
+    <div class="nlrow"><input type="email" name="fields[email]" placeholder="your email" required aria-label="email address" autocomplete="email"/><input type="hidden" name="ml-submit" value="1"/><input type="hidden" name="anticsrf" value="true"/><button class="pill pop" type="submit">count me in</button></div>
+    <script>(function(){var f=document.currentScript.parentElement;var done=false;
+      f.addEventListener('submit',function(e){e.preventDefault();if(done)return;
+        var b=f.querySelector('button[type=submit]');b.textContent='adding you…';
+        fetch(f.action,{method:'POST',body:new URLSearchParams(new FormData(f))})
+          .then(function(r){if(!r.ok)throw 0;done=true;f.innerHTML='<div class="mono">welcome to the friday five 🎉 we send new recipes every friday morning, keep an eye out.</div>';})
+          .catch(function(){done=true;f.submit();});});})();</script>
+  </form>
+</div></section>
 
 <!-- ACT 1 · the fridge -->
 <div id="act1">
