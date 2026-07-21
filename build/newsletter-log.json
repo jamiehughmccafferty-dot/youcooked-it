@@ -224,16 +224,21 @@
     "smashed-cucumber-salad",
     "prawn-cocktail",
     "tzatziki",
-    "pimms-cup"
+    "pimms-cup",
+    "chicken-chow-mein",
+    "sweet-and-sour-chicken",
+    "kung-pao-chicken",
+    "salt-and-pepper-squid",
+    "prawn-toast"
   ],
   "lastDrop": {
-    "date": "2026-07-16",
+    "date": "2026-07-21",
     "slugs": [
-      "frozen-yogurt-bark",
-      "smashed-cucumber-salad",
-      "prawn-cocktail",
-      "tzatziki",
-      "pimms-cup"
+      "chicken-chow-mein",
+      "sweet-and-sour-chicken",
+      "kung-pao-chicken",
+      "salt-and-pepper-squid",
+      "prawn-toast"
     ]
   },
   "heldForSpecial": {

@@ -21,6 +21,7 @@
 <url><loc>https://youcooked-it.com/rice-recipes</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
 <url><loc>https://youcooked-it.com/drink-recipes</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
 <url><loc>https://youcooked-it.com/sauce-recipes</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://youcooked-it.com/recipes/roast-chicken</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 <url><loc>https://youcooked-it.com/recipes/marry-me-chicken</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 <url><loc>https://youcooked-it.com/recipes/chicken-parmesan</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 <url><loc>https://youcooked-it.com/recipes/honey-garlic-chicken</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
@@ -245,6 +246,11 @@
 <url><loc>https://youcooked-it.com/recipes/prawn-cocktail</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 <url><loc>https://youcooked-it.com/recipes/tzatziki</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 <url><loc>https://youcooked-it.com/recipes/pimms-cup</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://youcooked-it.com/recipes/chicken-chow-mein</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://youcooked-it.com/recipes/sweet-and-sour-chicken</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://youcooked-it.com/recipes/kung-pao-chicken</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://youcooked-it.com/recipes/salt-and-pepper-squid</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://youcooked-it.com/recipes/prawn-toast</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 <url><loc>https://youcooked-it.com/about</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
 <url><loc>https://youcooked-it.com/privacy</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
 <url><loc>https://youcooked-it.com/disclosure</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
