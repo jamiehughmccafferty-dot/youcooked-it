@@ -1,7 +1,4 @@
 category,recipe,slug,tag
-chicken,Chicken Chow Mein,chicken-chow-mein,evergreen
-chicken,Sweet and Sour Chicken,sweet-and-sour-chicken,evergreen
-chicken,Kung Pao Chicken,kung-pao-chicken,evergreen
 chicken,General Tso's Chicken,general-tsos-chicken,evergreen
 chicken,Peri Peri Chicken,peri-peri-chicken,evergreen
 chicken,Chicken Cordon Bleu,chicken-cordon-bleu,evergreen
@@ -91,12 +88,10 @@ salad,Chicken Caesar Salad,chicken-caesar-salad,evergreen
 seafood,Fish Pie,fish-pie,evergreen
 seafood,Moules Marinieres,moules-marinieres,evergreen
 seafood,Lobster Roll,lobster-roll,evergreen
-seafood,Salt and Pepper Squid,salt-and-pepper-squid,evergreen
 seafood,Kedgeree,kedgeree,evergreen
 seafood,Pan-Seared Scallops,pan-seared-scallops,evergreen
 seafood,Calamari,calamari,evergreen
 seafood,Cod in Parsley Sauce,cod-in-parsley-sauce,evergreen
-seafood,Prawn Toast,prawn-toast,evergreen
 rice,Jollof Rice,jollof-rice,evergreen
 rice,Bibimbap,bibimbap,evergreen
 rice,Coconut Rice,coconut-rice,evergreen

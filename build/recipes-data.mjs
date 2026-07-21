@@ -5669,6 +5669,152 @@ export default {
       {title:"finish",when:"1 min",body:"Slap the mint between your palms to wake it up and push it into the top of the jug.",timer_seconds:null},
       {title:"serve",when:"now",body:"Pour into tall glasses making sure everyone gets their share of the fruit. Refill the jug before anyone asks.",timer_seconds:null}],
     serving_ideas:[{emoji:"🍓",label:"extra strawberries"},{emoji:"🌿",label:"more mint"},{emoji:"🧊",label:"lots of ice"},{emoji:"🥒",label:"cucumber ribbons"}]
+  },
+
+  "chicken-chow-mein": {
+    cuisine:"Chinese",
+    story:"The takeaway classic that is quietly a fifteen-minute dinner. Marinated chicken, egg noodles and beansprouts thrown around a screaming hot pan with a glossy soy and oyster sauce. The trick is having everything ready before the heat goes on, because once it starts, it does not stop.",
+    meta:{total_time:"25 min",marinate_time:"15 min",serves:2,heat:"mild",skill:"easy"},
+    macros:{protein_g:38,fat_g:14,carbs_g:58,estimate:true},
+    ingredient_groups:[
+      {name:"the chicken",items:[
+        {qty:2,unit:"",name:"chicken breasts, sliced thin",countable:true},
+        {qty:1,unit:"tbsp",name:"light soy sauce",countable:false},
+        {qty:1,unit:"tsp",name:"cornflour",countable:false},
+        {qty:1,unit:"tsp",name:"sesame oil",countable:false}]},
+      {name:"the stir fry",items:[
+        {qty:2,unit:"nests",name:"dried egg noodles",countable:false},
+        {qty:200,unit:"g",name:"beansprouts",countable:false},
+        {qty:4,unit:"",name:"spring onions, sliced long",countable:true},
+        {qty:2,unit:"",name:"garlic cloves, sliced",countable:true},
+        {qty:2,unit:"tbsp",name:"light soy sauce",countable:false},
+        {qty:1,unit:"tbsp",name:"dark soy sauce",countable:false},
+        {qty:1,unit:"tbsp",name:"oyster sauce",countable:false},
+        {qty:1,unit:"tsp",name:"caster sugar",countable:false}]}],
+    spice_mix:[],
+    method:[
+      {title:"marinate",when:"15 min",body:"Toss the sliced chicken with the soy, cornflour and sesame oil and let it sit while you cook the noodles and line everything up by the hob.",timer_seconds:900},
+      {title:"noodles",when:"4 min",body:"Cook the noodles a minute short of the packet, drain and rinse cold so they do not clump.",timer_seconds:240},
+      {title:"chicken",when:"4 min",body:"Get a wok or big frying pan smoking hot with a little oil. Stir fry the chicken until just cooked and starting to catch, then add the garlic for thirty seconds.",timer_seconds:240},
+      {title:"the fast bit",when:"3 min",body:"Noodles in, sauces and sugar in, toss constantly until every strand is glossy. Beansprouts and spring onions last, one more minute so they stay crunchy.",timer_seconds:180},
+      {title:"serve",when:"now",body:"Straight into bowls, no resting, no waiting. Chopsticks optional, speed mandatory.",timer_seconds:null}],
+    serving_ideas:[{emoji:"🌶️",label:"chilli oil"},{emoji:"🥢",label:"extra spring onion"},{emoji:"🥟",label:"prawn toast on the side"},{emoji:"🍋",label:"squeeze of lime"}]
+  },
+
+  "sweet-and-sour-chicken": {
+    cuisine:"Chinese",
+    story:"The one everyone orders and nobody believes they can make. Crispy battered chicken in a sticky sweet and sour sauce with pineapple that has every right to be there. The batter is the whole game: cornflour makes it crackle, and the sauce comes together while the chicken fries.",
+    meta:{total_time:"40 min",marinate_time:null,serves:4,heat:"mild",skill:"medium"},
+    macros:{protein_g:32,fat_g:18,carbs_g:52,estimate:true},
+    ingredient_groups:[
+      {name:"the chicken",items:[
+        {qty:3,unit:"",name:"chicken breasts, in chunks",countable:true},
+        {qty:80,unit:"g",name:"cornflour",countable:false},
+        {qty:1,unit:"",name:"egg, beaten",countable:true},
+        {qty:1,unit:"pinch",name:"salt and white pepper",countable:false}]},
+      {name:"the sauce",items:[
+        {qty:1,unit:"",name:"red pepper, in chunks",countable:true},
+        {qty:1,unit:"",name:"onion, in petals",countable:true},
+        {qty:227,unit:"g",name:"tin pineapple chunks, juice kept",countable:false},
+        {qty:3,unit:"tbsp",name:"ketchup",countable:false},
+        {qty:2,unit:"tbsp",name:"rice vinegar",countable:false},
+        {qty:2,unit:"tbsp",name:"soft brown sugar",countable:false},
+        {qty:1,unit:"tbsp",name:"light soy sauce",countable:false},
+        {qty:1,unit:"tsp",name:"cornflour, in a little water",countable:false}]}],
+    spice_mix:[],
+    method:[
+      {title:"batter",when:"10 min",body:"Season the chicken, dip through the egg, then roll in cornflour until every piece is dusty and dry-looking. That dryness is future crunch.",timer_seconds:600},
+      {title:"fry",when:"10 min",body:"Shallow fry in batches in hot oil until deep golden and crisp, about four minutes a batch. Rest on a rack, never on paper.",timer_seconds:600},
+      {title:"the sauce",when:"8 min",body:"In a wok, soften the pepper and onion with a little oil, then add the pineapple with its juice, ketchup, vinegar, sugar and soy. Bubble, then thicken with the cornflour slurry until glossy.",timer_seconds:480},
+      {title:"unite",when:"2 min",body:"Chicken into the sauce, one fast toss so the crunch survives, then off the heat immediately.",timer_seconds:null},
+      {title:"serve",when:"now",body:"Over steamed rice, sauce dripping down the sides, takeaway container optional.",timer_seconds:null}],
+    serving_ideas:[{emoji:"🍚",label:"steamed rice"},{emoji:"🥢",label:"egg fried rice"},{emoji:"🌶️",label:"chilli flakes"},{emoji:"🥬",label:"steamed greens"}]
+  },
+
+  "kung-pao-chicken": {
+    cuisine:"Chinese",
+    story:"Sichuan's finest export: diced chicken, roasted peanuts and dried chillies in a sauce that manages sweet, sour, hot and numbing in the same mouthful. It moves fast once the wok is hot, so line your bowls up like a cooking show and enjoy feeling extremely competent.",
+    meta:{total_time:"30 min",marinate_time:"15 min",serves:2,heat:"hot",skill:"medium"},
+    macros:{protein_g:40,fat_g:24,carbs_g:28,estimate:true},
+    ingredient_groups:[
+      {name:"the chicken",items:[
+        {qty:3,unit:"",name:"chicken thighs, diced",countable:true},
+        {qty:1,unit:"tbsp",name:"light soy sauce",countable:false},
+        {qty:1,unit:"tsp",name:"cornflour",countable:false},
+        {qty:1,unit:"tsp",name:"shaoxing wine or dry sherry",countable:false}]},
+      {name:"the wok",items:[
+        {qty:8,unit:"",name:"dried red chillies",countable:true},
+        {qty:1,unit:"tsp",name:"sichuan peppercorns",countable:false},
+        {qty:60,unit:"g",name:"roasted peanuts",countable:false},
+        {qty:4,unit:"",name:"spring onions, in short lengths",countable:true},
+        {qty:2,unit:"",name:"garlic cloves, sliced",countable:true},
+        {qty:1,unit:"thumb",name:"ginger, sliced",countable:false}]},
+      {name:"the sauce",items:[
+        {qty:2,unit:"tbsp",name:"light soy sauce",countable:false},
+        {qty:1,unit:"tbsp",name:"black rice vinegar",countable:false},
+        {qty:1,unit:"tbsp",name:"caster sugar",countable:false},
+        {qty:1,unit:"tsp",name:"cornflour, in a little water",countable:false}]}],
+    spice_mix:[],
+    method:[
+      {title:"marinate",when:"15 min",body:"Toss the chicken with the soy, cornflour and wine. Mix the sauce ingredients in a separate bowl and put it where you can grab it.",timer_seconds:900},
+      {title:"bloom",when:"1 min",body:"Hot wok, splash of oil, then the dried chillies and sichuan peppercorns for thirty seconds until fragrant and just darkening. Do not walk away.",timer_seconds:null},
+      {title:"chicken",when:"5 min",body:"Chicken in, spread it out, let it catch before you toss. Add the garlic and ginger for the last minute.",timer_seconds:300},
+      {title:"the sauce",when:"2 min",body:"Sauce in, one fast stir as it thickens and grips every piece. Peanuts and spring onions in for the final thirty seconds.",timer_seconds:null},
+      {title:"serve",when:"now",body:"Over rice, chillies left in for the brave, warned about for everyone else.",timer_seconds:null}],
+    serving_ideas:[{emoji:"🍚",label:"steamed rice"},{emoji:"🥒",label:"smashed cucumber salad"},{emoji:"🥜",label:"extra peanuts"},{emoji:"🍺",label:"something cold"}]
+  },
+
+  "salt-and-pepper-squid": {
+    cuisine:"Chinese",
+    story:"The starter that disappears before anyone else's food arrives. Squid in a light cornflour crust, tossed through the pan with chilli, garlic, spring onion and a seasoning that earns the name. The squid cooks in two minutes; the trick is having the nerve to take it out that fast.",
+    meta:{total_time:"25 min",marinate_time:null,serves:4,heat:"medium",skill:"medium"},
+    macros:{protein_g:28,fat_g:14,carbs_g:24,estimate:true},
+    ingredient_groups:[
+      {name:"the squid",items:[
+        {qty:500,unit:"g",name:"squid, cleaned, in rings and tentacles",countable:false},
+        {qty:80,unit:"g",name:"cornflour",countable:false},
+        {qty:1,unit:"tsp",name:"salt",countable:false},
+        {qty:1,unit:"tsp",name:"white pepper",countable:false},
+        {qty:0.5,unit:"tsp",name:"chinese five spice",countable:false}]},
+      {name:"the toss",items:[
+        {qty:2,unit:"",name:"red chillies, sliced",countable:true},
+        {qty:3,unit:"",name:"garlic cloves, sliced",countable:true},
+        {qty:4,unit:"",name:"spring onions, sliced",countable:true},
+        {qty:1,unit:"",name:"lime, in wedges",countable:true}]}],
+    spice_mix:[],
+    method:[
+      {title:"dry",when:"5 min",body:"Pat the squid properly dry with kitchen paper. Wet squid steams, dry squid crisps, and this recipe lives or dies right here.",timer_seconds:300},
+      {title:"dust",when:"5 min",body:"Mix the cornflour, salt, white pepper and five spice, then toss the squid through until lightly coated all over.",timer_seconds:300},
+      {title:"fry",when:"6 min",body:"Shallow fry in very hot oil in small batches, about ninety seconds each, until pale gold and crisp. Out onto a rack the moment they turn.",timer_seconds:360},
+      {title:"the toss",when:"2 min",body:"Tip most of the oil away, flash the chilli, garlic and spring onion in the pan, then return the squid for one fast toss.",timer_seconds:null},
+      {title:"serve",when:"now",body:"Pile up, lime wedges on the side, and accept that it will be gone in four minutes.",timer_seconds:null}],
+    serving_ideas:[{emoji:"🍋",label:"lime wedges"},{emoji:"🌶️",label:"extra chilli"},{emoji:"🍚",label:"as a main with rice"},{emoji:"🥡",label:"with the chow mein"}]
+  },
+
+  "prawn-toast": {
+    cuisine:"Chinese",
+    story:"Prawns whizzed to a paste with ginger and spring onion, spread thick on bread, showered in sesame and fried until it is the best thing on the table. Takeaway prawn toast is fine. Yours, straight from the pan, is a different food entirely.",
+    meta:{total_time:"25 min",marinate_time:null,serves:4,heat:"mild",skill:"easy"},
+    macros:{protein_g:18,fat_g:16,carbs_g:22,estimate:true},
+    ingredient_groups:[
+      {name:"the paste",items:[
+        {qty:200,unit:"g",name:"raw prawns, peeled",countable:false},
+        {qty:2,unit:"",name:"spring onions, chopped",countable:true},
+        {qty:1,unit:"thumb",name:"ginger, grated",countable:false},
+        {qty:1,unit:"tsp",name:"light soy sauce",countable:false},
+        {qty:1,unit:"tsp",name:"sesame oil",countable:false},
+        {qty:1,unit:"",name:"egg white",countable:true},
+        {qty:1,unit:"tsp",name:"cornflour",countable:false}]},
+      {name:"the toast",items:[
+        {qty:4,unit:"slices",name:"slightly stale white bread",countable:false},
+        {qty:4,unit:"tbsp",name:"sesame seeds",countable:false}]}],
+    spice_mix:[],
+    method:[
+      {title:"the paste",when:"5 min",body:"Blitz the prawns with the spring onion, ginger, soy, sesame oil, egg white and cornflour to a rough, sticky paste. A few prawn pieces left whole is a good thing.",timer_seconds:300},
+      {title:"build",when:"5 min",body:"Spread the paste thickly to the very edges of each slice, then press the pasted side into a plate of sesame seeds until fully coated.",timer_seconds:300},
+      {title:"fry",when:"8 min",body:"Shallow fry sesame side down in hot oil for two to three minutes until deep gold, then flip for one more. The paste should be just cooked through, the bread shatteringly crisp.",timer_seconds:480},
+      {title:"serve",when:"now",body:"Drain, quarter into triangles, and serve hot enough that everyone burns their fingers slightly. Tradition.",timer_seconds:null}],
+    serving_ideas:[{emoji:"🥢",label:"sweet chilli dip"},{emoji:"🥬",label:"cucumber ribbons"},{emoji:"🍜",label:"before the chow mein"},{emoji:"🍺",label:"cold lager"}]
   }
 
 };
