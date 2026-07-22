@@ -12,7 +12,7 @@ const p = (...a) => path.join(ROOT, ...a);
 
 // rainbow order; each group = one scheduling block of matching accents
 const GROUPS = [
-  ['01-red',    ['pasta', 'sauce', 'grill']],                          // #c0341a #cf3636 #a8402a
+  ['01-red',    ['pasta', 'sauce', 'grill', 'steak']],                          // #c0341a #cf3636 #a8402a
   ['02-orange', ['chicken']],                                         // #e2561f
   ['03-amber',  ['curry', 'breakfast']],                              // #e8991c #e9a72f
   ['04-earth',  ['soup', 'brunch', 'bread', 'rice', 'baking', 'stew']], // warm browns, light->dark

@@ -29885,5 +29885,878 @@
       }
     ],
     "kitchen_notes": []
+  },
+  {
+    "slug": "steak-frites",
+    "title": "Steak Frites",
+    "category": "steak",
+    "tag": "evergreen",
+    "cuisine": "French",
+    "hero": "steak-frites.png",
+    "status": "published",
+    "story": "The bistro order that never misses: a well-seared steak, a pile of thin crispy chips and something buttery pooling between them. The French built an entire restaurant culture on this plate. You can build a friday night on it with one pan and an oven tray.",
+    "meta": {
+      "total_time": "45 min",
+      "marinate_time": null,
+      "serves": 2,
+      "heat": "mild",
+      "skill": "medium"
+    },
+    "macros": {
+      "protein_g": 44,
+      "fat_g": 32,
+      "carbs_g": 42,
+      "estimate": true
+    },
+    "ingredient_groups": [
+      {
+        "name": "the steak",
+        "items": [
+          {
+            "qty": 2,
+            "unit": "",
+            "name": "sirloin steaks, about 250g each",
+            "countable": true
+          },
+          {
+            "qty": 1,
+            "unit": "tbsp",
+            "name": "neutral oil",
+            "countable": false
+          },
+          {
+            "qty": 30,
+            "unit": "g",
+            "name": "butter",
+            "countable": false
+          },
+          {
+            "qty": 2,
+            "unit": "",
+            "name": "garlic cloves, crushed flat",
+            "countable": true
+          },
+          {
+            "qty": 2,
+            "unit": "sprigs",
+            "name": "thyme",
+            "countable": false
+          }
+        ]
+      },
+      {
+        "name": "the frites",
+        "items": [
+          {
+            "qty": 600,
+            "unit": "g",
+            "name": "floury potatoes, cut into thin chips",
+            "countable": false
+          },
+          {
+            "qty": 2,
+            "unit": "tbsp",
+            "name": "neutral oil",
+            "countable": false
+          },
+          {
+            "qty": 1,
+            "unit": "tsp",
+            "name": "sea salt",
+            "countable": false
+          }
+        ]
+      }
+    ],
+    "spice_mix": [],
+    "method": [
+      {
+        "title": "frites first",
+        "when": "30 min",
+        "body": "Toss the chips in oil and salt and roast at 210C fan, turning once, until deep gold and crisp. They can wait for the steak. The steak cannot wait for them.",
+        "timer_seconds": 1800
+      },
+      {
+        "title": "temper",
+        "when": "15 min",
+        "body": "While they roast, take the steaks out of the fridge, pat them properly dry and season hard with salt. Room temperature meat cooks evenly.",
+        "timer_seconds": 900
+      },
+      {
+        "title": "sear",
+        "when": "6 min",
+        "body": "Screaming hot pan, a little oil, steaks in. Three minutes a side for medium rare, pressing nothing, moving nothing.",
+        "timer_seconds": 360
+      },
+      {
+        "title": "baste",
+        "when": "2 min",
+        "body": "Heat off, butter, garlic and thyme in, and spoon the foaming butter over the steaks until they shine.",
+        "timer_seconds": null
+      },
+      {
+        "title": "the hard part",
+        "when": "6 min",
+        "body": "Rest the steaks on a warm plate for a full six minutes. Every minute you skip leaks onto the board instead of staying in the steak.",
+        "timer_seconds": 360
+      },
+      {
+        "title": "serve",
+        "when": "now",
+        "body": "Slice against the grain, pile the frites alongside and pour the pan butter over everything.",
+        "timer_seconds": null
+      }
+    ],
+    "serving_ideas": [
+      {
+        "emoji": "🥗",
+        "label": "green salad"
+      },
+      {
+        "emoji": "🍷",
+        "label": "red wine"
+      },
+      {
+        "emoji": "🧄",
+        "label": "the pan butter"
+      },
+      {
+        "emoji": "🌶️",
+        "label": "peppercorn sauce"
+      }
+    ],
+    "kitchen_notes": []
+  },
+  {
+    "slug": "garlic-butter-ribeye",
+    "title": "Garlic Butter Ribeye",
+    "category": "steak",
+    "tag": "evergreen",
+    "cuisine": "American",
+    "hero": "garlic-butter-ribeye.png",
+    "status": "published",
+    "story": "The ribeye is the steak that looks after you: all that marbling melts into the meat while it cooks, so it stays juicy even when nerves run the pan. Butter basting is the move that makes it restaurant-grade, and it is easier than it looks on the videos. Tilt, spoon, repeat.",
+    "meta": {
+      "total_time": "25 min",
+      "marinate_time": null,
+      "serves": 2,
+      "heat": "mild",
+      "skill": "medium"
+    },
+    "macros": {
+      "protein_g": 46,
+      "fat_g": 40,
+      "carbs_g": 2,
+      "estimate": true
+    },
+    "ingredient_groups": [
+      {
+        "name": "the steak",
+        "items": [
+          {
+            "qty": 2,
+            "unit": "",
+            "name": "ribeye steaks, about 300g each",
+            "countable": true
+          },
+          {
+            "qty": 1,
+            "unit": "tbsp",
+            "name": "neutral oil",
+            "countable": false
+          },
+          {
+            "qty": 50,
+            "unit": "g",
+            "name": "butter",
+            "countable": false
+          },
+          {
+            "qty": 3,
+            "unit": "",
+            "name": "garlic cloves, crushed flat",
+            "countable": true
+          },
+          {
+            "qty": 3,
+            "unit": "sprigs",
+            "name": "rosemary or thyme",
+            "countable": false
+          },
+          {
+            "qty": 1,
+            "unit": "tsp",
+            "name": "flaky sea salt",
+            "countable": false
+          }
+        ]
+      }
+    ],
+    "spice_mix": [],
+    "method": [
+      {
+        "title": "temper",
+        "when": "15 min",
+        "body": "Steaks out of the fridge, patted dry, salted generously on both sides. Dry surface plus hot pan equals crust.",
+        "timer_seconds": 900
+      },
+      {
+        "title": "sear",
+        "when": "5 min",
+        "body": "Get the pan just short of smoking with the oil. Steaks in, two and a half minutes a side, untouched, until deeply browned.",
+        "timer_seconds": 300
+      },
+      {
+        "title": "baste",
+        "when": "3 min",
+        "body": "Heat to low. Butter, garlic and herbs in, tilt the pan and spoon the foaming butter over the steaks again and again. This is the restaurant bit.",
+        "timer_seconds": 180
+      },
+      {
+        "title": "the hard part",
+        "when": "6 min",
+        "body": "Rest on a warm plate, butter and all. Six minutes. Set the timer and step away from the steak.",
+        "timer_seconds": 360
+      },
+      {
+        "title": "serve",
+        "when": "now",
+        "body": "Slice, flaky salt over the top, garlic butter from the pan over everything.",
+        "timer_seconds": null
+      }
+    ],
+    "serving_ideas": [
+      {
+        "emoji": "🥔",
+        "label": "dauphinoise energy"
+      },
+      {
+        "emoji": "🥦",
+        "label": "greens"
+      },
+      {
+        "emoji": "🍷",
+        "label": "big red wine"
+      },
+      {
+        "emoji": "🧂",
+        "label": "flaky salt"
+      }
+    ],
+    "kitchen_notes": []
+  },
+  {
+    "slug": "peppercorn-sirloin",
+    "title": "Peppercorn Sirloin",
+    "category": "steak",
+    "tag": "evergreen",
+    "cuisine": "French",
+    "hero": "peppercorn-sirloin.png",
+    "status": "published",
+    "story": "Steak au poivre without the accent: a seared sirloin under a creamy, brandy-spiked peppercorn sauce made in the same pan while the steak rests. The resting and the sauce take exactly the same four minutes, which feels like cheating and is in fact just good planning.",
+    "meta": {
+      "total_time": "30 min",
+      "marinate_time": null,
+      "serves": 2,
+      "heat": "medium",
+      "skill": "medium"
+    },
+    "macros": {
+      "protein_g": 45,
+      "fat_g": 34,
+      "carbs_g": 6,
+      "estimate": true
+    },
+    "ingredient_groups": [
+      {
+        "name": "the steak",
+        "items": [
+          {
+            "qty": 2,
+            "unit": "",
+            "name": "sirloin steaks, about 250g each",
+            "countable": true
+          },
+          {
+            "qty": 1,
+            "unit": "tbsp",
+            "name": "neutral oil",
+            "countable": false
+          },
+          {
+            "qty": 1,
+            "unit": "tsp",
+            "name": "sea salt",
+            "countable": false
+          }
+        ]
+      },
+      {
+        "name": "the sauce",
+        "items": [
+          {
+            "qty": 2,
+            "unit": "tbsp",
+            "name": "green peppercorns in brine, drained",
+            "countable": false
+          },
+          {
+            "qty": 1,
+            "unit": "",
+            "name": "shallot, finely chopped",
+            "countable": true
+          },
+          {
+            "qty": 50,
+            "unit": "ml",
+            "name": "brandy",
+            "countable": false
+          },
+          {
+            "qty": 150,
+            "unit": "ml",
+            "name": "double cream",
+            "countable": false
+          },
+          {
+            "qty": 100,
+            "unit": "ml",
+            "name": "beef stock",
+            "countable": false
+          },
+          {
+            "qty": 1,
+            "unit": "tsp",
+            "name": "dijon mustard",
+            "countable": false
+          }
+        ]
+      }
+    ],
+    "spice_mix": [],
+    "method": [
+      {
+        "title": "temper",
+        "when": "15 min",
+        "body": "Steaks out early, dried, salted. Get the sauce ingredients measured and standing by the hob.",
+        "timer_seconds": 900
+      },
+      {
+        "title": "sear",
+        "when": "6 min",
+        "body": "Hot pan, oil, three minutes a side for medium rare. Out onto a warm plate to rest, pan straight back on the heat.",
+        "timer_seconds": 360
+      },
+      {
+        "title": "the sauce",
+        "when": "5 min",
+        "body": "Shallot into the steak pan for a minute, then the brandy, scraping up every browned bit as it bubbles. Add the stock, cream, mustard and peppercorns and let it thicken to coating consistency.",
+        "timer_seconds": 300
+      },
+      {
+        "title": "unite",
+        "when": "now",
+        "body": "Pour any resting juices from the plate into the sauce, because that is free flavour, then sauce over the steaks.",
+        "timer_seconds": null
+      },
+      {
+        "title": "serve",
+        "when": "now",
+        "body": "With chips or mash and something green to make it look balanced.",
+        "timer_seconds": null
+      }
+    ],
+    "serving_ideas": [
+      {
+        "emoji": "🍟",
+        "label": "chips"
+      },
+      {
+        "emoji": "🥔",
+        "label": "mash"
+      },
+      {
+        "emoji": "🥦",
+        "label": "tenderstem"
+      },
+      {
+        "emoji": "🍷",
+        "label": "red wine"
+      }
+    ],
+    "kitchen_notes": []
+  },
+  {
+    "slug": "steak-diane",
+    "title": "Steak Diane",
+    "category": "steak",
+    "tag": "evergreen",
+    "cuisine": "British",
+    "hero": "steak-diane.png",
+    "status": "published",
+    "story": "The seventies dinner party showstopper that deserved its comeback: pan-fried steak in a sauce of mushrooms, mustard, cream and a flambé that makes everyone in the kitchen step back. The flame is optional and the drama is not. Thin steaks, fast pan, table nearby.",
+    "meta": {
+      "total_time": "30 min",
+      "marinate_time": null,
+      "serves": 2,
+      "heat": "mild",
+      "skill": "medium"
+    },
+    "macros": {
+      "protein_g": 42,
+      "fat_g": 36,
+      "carbs_g": 8,
+      "estimate": true
+    },
+    "ingredient_groups": [
+      {
+        "name": "the steak",
+        "items": [
+          {
+            "qty": 2,
+            "unit": "",
+            "name": "sirloin steaks, flattened to 1.5cm",
+            "countable": true
+          },
+          {
+            "qty": 1,
+            "unit": "tbsp",
+            "name": "neutral oil",
+            "countable": false
+          },
+          {
+            "qty": 20,
+            "unit": "g",
+            "name": "butter",
+            "countable": false
+          }
+        ]
+      },
+      {
+        "name": "the sauce",
+        "items": [
+          {
+            "qty": 150,
+            "unit": "g",
+            "name": "chestnut mushrooms, sliced",
+            "countable": false
+          },
+          {
+            "qty": 1,
+            "unit": "",
+            "name": "shallot, finely chopped",
+            "countable": true
+          },
+          {
+            "qty": 2,
+            "unit": "",
+            "name": "garlic cloves, crushed",
+            "countable": true
+          },
+          {
+            "qty": 50,
+            "unit": "ml",
+            "name": "brandy",
+            "countable": false
+          },
+          {
+            "qty": 150,
+            "unit": "ml",
+            "name": "double cream",
+            "countable": false
+          },
+          {
+            "qty": 1,
+            "unit": "tbsp",
+            "name": "dijon mustard",
+            "countable": false
+          },
+          {
+            "qty": 1,
+            "unit": "tbsp",
+            "name": "worcestershire sauce",
+            "countable": false
+          },
+          {
+            "qty": 1,
+            "unit": "handful",
+            "name": "parsley, chopped",
+            "countable": false
+          }
+        ]
+      }
+    ],
+    "spice_mix": [],
+    "method": [
+      {
+        "title": "flash fry",
+        "when": "4 min",
+        "body": "Season the thin steaks and fry in a very hot pan, ninety seconds a side. Out to rest on a warm plate.",
+        "timer_seconds": 240
+      },
+      {
+        "title": "mushrooms",
+        "when": "5 min",
+        "body": "Butter into the same pan, then the mushrooms and shallot until golden. Garlic for the last minute.",
+        "timer_seconds": 300
+      },
+      {
+        "title": "the flame",
+        "when": "2 min",
+        "body": "Brandy in. If you are feeling theatrical, tilt the pan to the flame and let it catch for three seconds. If not, just let it bubble away. Same sauce, less applause.",
+        "timer_seconds": null
+      },
+      {
+        "title": "the sauce",
+        "when": "4 min",
+        "body": "Cream, mustard and worcestershire sauce in, simmered until glossy. Return the steaks and their juices for a final minute in the sauce.",
+        "timer_seconds": 240
+      },
+      {
+        "title": "serve",
+        "when": "now",
+        "body": "Steaks sauced, parsley over, served to a table that heard the whoosh.",
+        "timer_seconds": null
+      }
+    ],
+    "serving_ideas": [
+      {
+        "emoji": "🥔",
+        "label": "buttery mash"
+      },
+      {
+        "emoji": "🍟",
+        "label": "skinny fries"
+      },
+      {
+        "emoji": "🥗",
+        "label": "watercress"
+      },
+      {
+        "emoji": "🍷",
+        "label": "something french"
+      }
+    ],
+    "kitchen_notes": []
+  },
+  {
+    "slug": "steak-fajitas",
+    "title": "Steak Fajitas",
+    "category": "steak",
+    "tag": "evergreen",
+    "cuisine": "Mexican",
+    "hero": "steak-fajitas.png",
+    "status": "published",
+    "story": "The sizzling platter, at home, without the waiter warning you the plate is hot. Strips of spiced steak, charred peppers and onions, warm tortillas, and everyone builds their own. Cook the steak whole and slice it after, and it stays pink inside instead of turning to gravel.",
+    "meta": {
+      "total_time": "30 min",
+      "marinate_time": "30 min",
+      "serves": 4,
+      "heat": "medium",
+      "skill": "easy"
+    },
+    "macros": {
+      "protein_g": 36,
+      "fat_g": 20,
+      "carbs_g": 38,
+      "estimate": true
+    },
+    "ingredient_groups": [
+      {
+        "name": "the steak",
+        "items": [
+          {
+            "qty": 500,
+            "unit": "g",
+            "name": "rump or sirloin steak",
+            "countable": false
+          },
+          {
+            "qty": 2,
+            "unit": "tbsp",
+            "name": "olive oil",
+            "countable": false
+          },
+          {
+            "qty": 1,
+            "unit": "",
+            "name": "lime, juiced",
+            "countable": true
+          }
+        ]
+      },
+      {
+        "name": "the pan",
+        "items": [
+          {
+            "qty": 2,
+            "unit": "",
+            "name": "peppers, any colours, sliced",
+            "countable": true
+          },
+          {
+            "qty": 1,
+            "unit": "",
+            "name": "red onion, sliced",
+            "countable": true
+          },
+          {
+            "qty": 8,
+            "unit": "",
+            "name": "small flour tortillas",
+            "countable": true
+          }
+        ]
+      },
+      {
+        "name": "the spice mix",
+        "items": [
+          {
+            "qty": 2,
+            "unit": "tsp",
+            "name": "smoked paprika",
+            "countable": false
+          },
+          {
+            "qty": 2,
+            "unit": "tsp",
+            "name": "ground cumin",
+            "countable": false
+          },
+          {
+            "qty": 1,
+            "unit": "tsp",
+            "name": "garlic granules",
+            "countable": false
+          },
+          {
+            "qty": 1,
+            "unit": "tsp",
+            "name": "dried oregano",
+            "countable": false
+          },
+          {
+            "qty": 0.5,
+            "unit": "tsp",
+            "name": "chilli powder",
+            "countable": false
+          }
+        ]
+      }
+    ],
+    "spice_mix": [
+      {
+        "name": "smoked paprika",
+        "note": "the sizzle smell"
+      },
+      {
+        "name": "ground cumin",
+        "note": "the fajita backbone"
+      },
+      {
+        "name": "garlic granules",
+        "note": "savoury base"
+      },
+      {
+        "name": "dried oregano",
+        "note": "the mexican herb"
+      },
+      {
+        "name": "chilli powder",
+        "note": "dial to taste"
+      }
+    ],
+    "method": [
+      {
+        "title": "marinate",
+        "when": "30 min",
+        "body": "Rub the steak with the oil, lime juice and spice mix and leave it while you slice the veg.",
+        "timer_seconds": 1800
+      },
+      {
+        "title": "steak",
+        "when": "7 min",
+        "body": "Very hot pan or griddle. Cook the steak whole, three minutes a side, then rest it on a board while the veg cooks.",
+        "timer_seconds": 420
+      },
+      {
+        "title": "char",
+        "when": "6 min",
+        "body": "Peppers and onion into the same pan with the steak's leftover spice oil, cooked hard until charred at the edges but still with bite.",
+        "timer_seconds": 360
+      },
+      {
+        "title": "slice",
+        "when": "2 min",
+        "body": "Slice the rested steak thinly against the grain and toss it back through the veg for thirty seconds.",
+        "timer_seconds": null
+      },
+      {
+        "title": "serve",
+        "when": "now",
+        "body": "Straight to the table in the pan, warm tortillas alongside, everyone builds their own.",
+        "timer_seconds": null
+      }
+    ],
+    "serving_ideas": [
+      {
+        "emoji": "🥑",
+        "label": "guacamole"
+      },
+      {
+        "emoji": "🍋",
+        "label": "lime wedges"
+      },
+      {
+        "emoji": "🥛",
+        "label": "soured cream"
+      },
+      {
+        "emoji": "🌶️",
+        "label": "hot sauce"
+      }
+    ],
+    "kitchen_notes": []
+  },
+  {
+    "slug": "steak-sandwich",
+    "title": "Steak Sandwich",
+    "category": "steak",
+    "tag": "evergreen",
+    "cuisine": "British",
+    "hero": "steak-sandwich.png",
+    "status": "published",
+    "story": "The best thing between two pieces of bread, full stop. Seared steak, sweet slow onions, mustard mayo and rocket in a ciabatta that has been wiped through the steak pan. It is a sandwich with a resting stage, and it has earned one.",
+    "meta": {
+      "total_time": "35 min",
+      "marinate_time": null,
+      "serves": 2,
+      "heat": "mild",
+      "skill": "easy"
+    },
+    "macros": {
+      "protein_g": 38,
+      "fat_g": 26,
+      "carbs_g": 46,
+      "estimate": true
+    },
+    "ingredient_groups": [
+      {
+        "name": "the sandwich",
+        "items": [
+          {
+            "qty": 1,
+            "unit": "",
+            "name": "sirloin steak, about 300g",
+            "countable": true
+          },
+          {
+            "qty": 2,
+            "unit": "",
+            "name": "ciabatta rolls",
+            "countable": true
+          },
+          {
+            "qty": 1,
+            "unit": "handful",
+            "name": "rocket",
+            "countable": false
+          },
+          {
+            "qty": 1,
+            "unit": "tbsp",
+            "name": "neutral oil",
+            "countable": false
+          }
+        ]
+      },
+      {
+        "name": "the extras",
+        "items": [
+          {
+            "qty": 2,
+            "unit": "",
+            "name": "onions, thinly sliced",
+            "countable": true
+          },
+          {
+            "qty": 20,
+            "unit": "g",
+            "name": "butter",
+            "countable": false
+          },
+          {
+            "qty": 1,
+            "unit": "tsp",
+            "name": "soft brown sugar",
+            "countable": false
+          },
+          {
+            "qty": 3,
+            "unit": "tbsp",
+            "name": "mayonnaise",
+            "countable": false
+          },
+          {
+            "qty": 2,
+            "unit": "tsp",
+            "name": "dijon mustard",
+            "countable": false
+          }
+        ]
+      }
+    ],
+    "spice_mix": [],
+    "method": [
+      {
+        "title": "onions",
+        "when": "20 min",
+        "body": "Cook the onions low and slow in the butter with the sugar and a pinch of salt until deep gold and sticky. They cannot be rushed and they know it.",
+        "timer_seconds": 1200
+      },
+      {
+        "title": "steak",
+        "when": "6 min",
+        "body": "Season the steak and sear in a hot pan, three minutes a side. Rest it on a board for five.",
+        "timer_seconds": 360
+      },
+      {
+        "title": "build prep",
+        "when": "4 min",
+        "body": "Stir the mustard into the mayonnaise. Halve the ciabattas and press the cut sides into the warm steak pan to soak up everything left behind.",
+        "timer_seconds": 240
+      },
+      {
+        "title": "build",
+        "when": "3 min",
+        "body": "Mustard mayo on both sides, rocket, sliced steak, sticky onions, lid on, gentle press.",
+        "timer_seconds": null
+      },
+      {
+        "title": "serve",
+        "when": "now",
+        "body": "Halve on the diagonal, obviously. Serve with whatever crisps are in the cupboard and no shame at all.",
+        "timer_seconds": null
+      }
+    ],
+    "serving_ideas": [
+      {
+        "emoji": "🍟",
+        "label": "chips or crisps"
+      },
+      {
+        "emoji": "🥒",
+        "label": "cornichons"
+      },
+      {
+        "emoji": "🌶️",
+        "label": "horseradish upgrade"
+      },
+      {
+        "emoji": "🍺",
+        "label": "cold beer"
+      }
+    ],
+    "kitchen_notes": []
   }
 ]

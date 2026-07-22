@@ -64,7 +64,7 @@ const ver = f => { try { return crypto.createHash('md5').update(fs.readFileSync(
 const cssVer = ver('styles.css'), jsVer = ver('recipe-engine.js');
 const CAT={curry:'#e8991c',rice:'#b7923c',chicken:'#e2561f',dessert:'#ff4d6d',cake:'#ef5fa0',baking:'#b86a4a',
   salad:'#4f8a3a',veg:'#6fae3c',vegetarian:'#3c9e74',vegan:'#9bb020',breakfast:'#e9a72f',brunch:'#d98a52',pasta:'#c0341a',
-  seafood:'#2f9bb0',soup:'#cf7b2a',stew:'#9c5526',bread:'#c98a3a',drinks:'#8a5cc4',sauce:'#cf3636',grill:'#a8402a'};
+  seafood:'#2f9bb0',soup:'#cf7b2a',stew:'#9c5526',bread:'#c98a3a',drinks:'#8a5cc4',sauce:'#cf3636',grill:'#a8402a',steak:'#8e2434'};
 const imgFiles = new Set(fs.existsSync(p('images')) ? fs.readdirSync(p('images')).map(f=>f.toLowerCase()) : []);
 const thumbFiles = new Set(fs.existsSync(p('images','thumb')) ? fs.readdirSync(p('images','thumb')).map(f=>f.toLowerCase()) : []);
 const ogFiles = new Set(fs.existsSync(p('og')) ? fs.readdirSync(p('og')).map(f=>f.toLowerCase()) : []);  // 1200x630 share cards
@@ -178,7 +178,7 @@ const PARTNERS = [
              drinks:'/partners/tower-summer.jpg' },
     tile:{ img:'partners/tower-plate.png', title:'kit for every recipe.', badge:'shop now', color:'#c3d941', label:'#66701d' } },
   { id:'muscle-food', name:'musclefood', active:false,   // ready: flip to true when Kate approves the example placements
-    categories:['chicken'],
+    categories:['chicken','steak'],
     link:'https://www.awin1.com/cread.php?awinmid=11002&awinaffid=2918949&clickref=recipe',
     headline:'fill the freezer.',
     blurb:'5kg of premium chicken breast fillets for £24.99 with code <b>24CHICK</b>, plus hampers, steaks and high protein boxes from MuscleFood.',
@@ -292,9 +292,15 @@ const HUBS = [
   { cat:'sauce', slug:'sauce-recipes', name:'sauce recipes', h1:'sauce<br>recipes.',
     intro:c=>`The ${c} little recipes that make everything else better. Sauces cooked along step by step, from five-minute chimichurri to a hollandaise that behaves.`,
     desc:'Sauce recipes cooked along step by step. Pesto, chimichurri, hollandaise, tzatziki and more from the You Cooked It kitchen.' },
+  { cat:'steak', slug:'steak-recipes', name:'steak recipes', h1:'steak<br>recipes.',
+    intro:c=>`${c} steaks done properly, from a friday night steak frites to a flambéed steak diane. Sear timers, flip timers, and a rest timer you are not allowed to skip.`,
+    desc:'Steak recipes with step-by-step cook-along timers. Steak frites, garlic butter ribeye, peppercorn sirloin and more from the You Cooked It kitchen.' },
 ];
-const hubByCat = Object.fromEntries(HUBS.map(h=>[h.cat,h]));
-const laneLinks = `<div class="mono" style="margin-top:10px">${HUBS.map(h=>`<a href="/${h.slug}">${h.name}</a>`).join(' · ')}</div>`;
+// a hub only exists once its lane has at least one displayed (imaged) recipe,
+// so a freshly authored lane never ships an empty landing page
+const liveHubs = HUBS.filter(h=>records.some(r=>r.category===h.cat && imaged[r.slug]));
+const hubByCat = Object.fromEntries(liveHubs.map(h=>[h.cat,h]));
+const laneLinks = `<div class="mono" style="margin-top:10px">${liveHubs.map(h=>`<a href="/${h.slug}">${h.name}</a>`).join(' · ')}</div>`;
 
 // ---- related recipes ("cook something like this") ----
 // 3 same-category picks, deterministic per slug. Server-rendered links = real
@@ -680,7 +686,7 @@ ${laneLinks}
 </body>
 </html>`;
 };
-HUBS.forEach(h=>fs.writeFileSync(p(h.slug+'.html'), hubPage(h)));
+liveHubs.forEach(h=>fs.writeFileSync(p(h.slug+'.html'), hubPage(h)));
 
 // ---- friday five club page: rebuilt from template every run, so the fridge
 // screen, the five cards and the stats always reflect the latest drop ----
@@ -778,7 +784,7 @@ fs.writeFileSync(p('404.html'), staticPage('404','lost in the kitchen',"we could
 
 // ---- sitemap.xml (clean URLs) + robots.txt ----
 const urls = ['<url><loc>'+SITE+'/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>']
-  .concat(HUBS.map(h=>'<url><loc>'+SITE+'/'+h.slug+'</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>'))
+  .concat(liveHubs.map(h=>'<url><loc>'+SITE+'/'+h.slug+'</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>'))
   .concat(onDisplay.map(r=>'<url><loc>'+SITE+'/recipes/'+r.slug+'</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>'))
   .concat(['about','privacy','disclosure'].map(s=>'<url><loc>'+SITE+'/'+s+'</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>'))
   .concat(['<url><loc>'+SITE+'/friday-five</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>']);  // the club signup page (friday-five.html, static)
