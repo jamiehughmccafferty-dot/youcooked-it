@@ -251,3 +251,12 @@ nav .nl{display:flex;gap:20px;font-size:13px;text-transform:lowercase}
 .kn-title{font-family:"Space Mono";font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent-deep,var(--accent));margin-bottom:8px}
 .kn{font-family:"Space Mono";font-size:13px;line-height:1.6;color:var(--ink-soft);padding:3px 0}
 .kn .kd{color:var(--ink);font-weight:700}
+
+/* home: instant signup strip under the nav + roaming join pill that only
+   appears after real scrolling (never on landing, never a popup) */
+#topjoin{padding:92px 0 0;text-align:center}
+#topjoin .tj-line{font-family:"Space Mono";font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)}
+#topjoin .nlform{margin-top:12px}
+#topjoin ~ #browse{padding-top:clamp(44px,6vw,64px)}
+#joinpill{position:fixed;right:18px;bottom:18px;z-index:90;opacity:0;pointer-events:none;transform:translateY(12px);transition:opacity .3s,transform .3s}
+#joinpill.show{opacity:1;pointer-events:auto;transform:none}

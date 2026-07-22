@@ -524,6 +524,9 @@ ${ogFiles.has('marry-me-chicken.jpg')?`<meta property="og:image" content="${SITE
 <body>
   <a class="skip" href="#browse">skip to recipes</a>
   <nav><a class="brand" href="${assetPrefix||'./'}">you <span style="color:var(--accent)">cook</span> it</a><div class="nl"><a href="${assetPrefix||'./'}">all recipes</a></div></nav>
+  <section id="topjoin"><div class="wrap">
+${nlForm}
+  </div></section>
   <section id="browse"><div class="wrap">
     <div class="head">
       <h1 class="display">every recipe.<br>one kitchen.</h1>
@@ -542,6 +545,7 @@ ${socialLine}
 ${laneLinks}
     <div class="mono" style="margin-top:10px"><a href="/about">about</a> · <a href="/privacy">privacy</a> · <a href="/disclosure">affiliate disclosure</a></div>
   </div></section>
+  <a class="pill pop" id="joinpill" href="/friday-five">join free</a>
   <script>
     var CARDS=${JSON.stringify(cards).replace(/</g,'\\u003c')};
     var CAT=${JSON.stringify(CAT)};
@@ -610,6 +614,12 @@ ${laneLinks}
     }
     filters.appendChild(searchChip);
     drawFilters();renderGrid();
+    // roaming join pill: appears only after real scrolling, gone again near the form
+    var jp=document.getElementById('joinpill');
+    if(jp)addEventListener('scroll',function(){
+      var deep=scrollY>innerHeight*2, beforeFormEnd=grid.getBoundingClientRect().bottom>innerHeight*.6;
+      jp.classList.toggle('show',deep&&beforeFormEnd);
+    },{passive:true});
   </script>
 </body>
 </html>`;
