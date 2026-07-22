@@ -235,11 +235,7 @@ section.block .lead{max-width:44ch;margin:16px auto 0;color:var(--ink-soft);font
               <div class="emailscroll">
                 <div class="echip">you<br>cooked<br>it.</div>
                 <div class="etitle">the friday five</div>
-                <div class="ecard" style="background:#e2561f"><img src="/images/thumb/chicken-chow-mein.webp" alt=""><div class="el"><b>chicken chow mein</b><i>chicken</i></div></div>
-                <div class="ecard" style="background:#e2561f"><img src="/images/thumb/sweet-and-sour-chicken.webp" alt=""><div class="el"><b>sweet and sour chicken</b><i>chicken</i></div></div>
-                <div class="ecard" style="background:#e2561f"><img src="/images/thumb/kung-pao-chicken.webp" alt=""><div class="el"><b>kung pao chicken</b><i>chicken</i></div></div>
-                <div class="ecard" style="background:#2f9bb0"><img src="/images/thumb/salt-and-pepper-squid.webp" alt=""><div class="el"><b>salt and pepper squid</b><i>seafood</i></div></div>
-                <div class="ecard" style="background:#2f9bb0"><img src="/images/thumb/prawn-toast.webp" alt=""><div class="el"><b>prawn toast</b><i>seafood</i></div></div>
+{{ECARDS}}
               </div>
               <div class="off"></div>
             </div>
@@ -272,7 +268,7 @@ section.block .lead{max-width:44ch;margin:16px auto 0;color:var(--ink-soft);font
   <div class="eyebrow">every friday morning</div>
   <h2>five new recipes.<br>yours first.</h2>
   <p class="lead">Real recipes from the You Cooked It kitchen, each one an immersive cook-along. Pick one for the weekend, we'll walk you through it.</p>
-  <div class="grid"><a class="card has-img" href="/recipes/chicken-chow-mein" style="--c:#e2561f;--cl:#8c3513"><div class="cglow"></div><img class="cimg" alt="" loading="lazy" decoding="async" width="256" height="256" src="/images/thumb/chicken-chow-mein.webp"><div class="inner"><div class="ccat">chicken</div><div class="ctitle">chicken chow mein</div></div></a><a class="card has-img" href="/recipes/sweet-and-sour-chicken" style="--c:#e2561f;--cl:#8c3513"><div class="cglow"></div><img class="cimg" alt="" loading="lazy" decoding="async" width="256" height="256" src="/images/thumb/sweet-and-sour-chicken.webp"><div class="inner"><div class="ccat">chicken</div><div class="ctitle">sweet and sour chicken</div></div></a><a class="card has-img" href="/recipes/kung-pao-chicken" style="--c:#e2561f;--cl:#8c3513"><div class="cglow"></div><img class="cimg" alt="" loading="lazy" decoding="async" width="256" height="256" src="/images/thumb/kung-pao-chicken.webp"><div class="inner"><div class="ccat">chicken</div><div class="ctitle">kung pao chicken</div></div></a><a class="card has-img" href="/recipes/salt-and-pepper-squid" style="--c:#2f9bb0;--cl:#1d606d"><div class="cglow"></div><img class="cimg" alt="" loading="lazy" decoding="async" width="256" height="256" src="/images/thumb/salt-and-pepper-squid.webp"><div class="inner"><div class="ccat">seafood</div><div class="ctitle">salt and pepper squid</div></div></a><a class="card has-img" href="/recipes/prawn-toast" style="--c:#2f9bb0;--cl:#1d606d"><div class="cglow"></div><img class="cimg" alt="" loading="lazy" decoding="async" width="256" height="256" src="/images/thumb/prawn-toast.webp"><div class="inner"><div class="ccat">seafood</div><div class="ctitle">prawn toast</div></div></a></div>
+  <div class="grid">{{CARDS}}</div>
 </div></section>
 
 <!-- ACT 3 · the numbers -->
@@ -280,8 +276,8 @@ section.block .lead{max-width:44ch;margin:16px auto 0;color:var(--ink-soft);font
   <div class="eyebrow">just numbers.</div>
   <h2>the kitchen so far</h2>
   <div class="meta">
-    <div><b>230</b><span>recipes</span></div>
-    <div><b>20</b><span>lanes</span></div>
+    <div><b>{{COUNT}}</b><span>recipes</span></div>
+    <div><b>{{LANES}}</b><span>lanes</span></div>
     <div><b>5</b><span>every friday</span></div>
     <div><b style="font-family:'Hanken Grotesk',sans-serif;font-weight:800;font-size:clamp(31px,5.5vw,53px);line-height:1">∞</b><span>ideas</span></div>
   </div>

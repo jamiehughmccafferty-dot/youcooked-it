@@ -177,6 +177,25 @@ const PARTNERS = [
              breakfast:'/partners/tower-freedom.jpg', brunch:'/partners/tower-freedom.jpg',
              drinks:'/partners/tower-summer.jpg' },
     tile:{ img:'partners/tower-plate.png', title:'kit for every recipe.', badge:'shop now', color:'#c3d941', label:'#66701d' } },
+  { id:'muscle-food', name:'musclefood', active:false,   // ready: flip to true when Kate approves the example placements
+    categories:['chicken'],
+    link:'https://www.awin1.com/cread.php?awinmid=11002&awinaffid=2918949&clickref=recipe',
+    headline:'fill the freezer.',
+    blurb:'5kg of premium chicken breast fillets for £24.99 with code <b>24CHICK</b>, plus hampers, steaks and high protein boxes from MuscleFood.',
+    cta:'claim the deal',
+    image:'/partners/muscle-food.jpg',
+    // creative rotation: each recipe page gets one variant (deterministic per
+    // slug) so the lane shows the whole range, never the same ad 26 times
+    variants:[
+      { image:'/partners/muscle-food.jpg', headline:'fill the freezer.',
+        blurb:'5kg of premium chicken breast fillets for £24.99 with code <b>24CHICK</b>, plus hampers, steaks and high protein boxes from MuscleFood.', cta:'claim the deal' },
+      { image:'/partners/muscle-food-hamper.jpg', headline:'the whole butcher, boxed.',
+        blurb:'Bestselling meat hampers from MuscleFood: chicken, steaks, mince and high protein boxes, delivered fresh to your door.', cta:'shop hampers' },
+      { image:'/partners/muscle-food-steaks.jpg', headline:'steak night, sorted.',
+        blurb:'8 Brazilian sirloin steaks for £24.99, saving £38.99, plus everything else the freezer is missing from MuscleFood.', cta:'claim the steaks' },
+    ],
+    hubVariant:1,
+    tile:{ img:'partners/muscle-food-plate.png', title:'fill the freezer.', badge:'code 24CHICK', color:'#2c5e4f', label:'#1b3f34' } },
 ];
 const pcardHtml = (pt, ref)=>`
     <a class="pcard" href="${pt.link.replace('clickref=recipe','clickref='+ref)}" target="_blank" rel="sponsored noopener">
@@ -191,9 +210,13 @@ const pcardHtml = (pt, ref)=>`
 const partnerCard = (rec)=>{
   const pt = PARTNERS.find(x=>x.active && x.categories.includes(rec.category));
   if(!pt) return '';
-  const image = (pt.images && pt.images[rec.category]) || pt.image;
+  let merged = {...pt, image:(pt.images && pt.images[rec.category]) || pt.image};
+  if(pt.variants && pt.variants.length){
+    let h=0; for(const ch of rec.slug) h=(h*31+ch.charCodeAt(0))>>>0;
+    merged = {...merged, ...pt.variants[h % pt.variants.length]};
+  }
   return `
-  <section id="partner"><div class="wrap">${pcardHtml({...pt, image},'recipe')}
+  <section id="partner"><div class="wrap">${pcardHtml(merged,'recipe')}
   </div></section>
 `;
 };
@@ -645,7 +668,7 @@ ${ogImg?`<meta property="og:image" content="${SITE}/og/${ogImg.slug}.jpg"/>
     <div class="grid">${cardsHtml}</div>
 ${nlForm}
   </div></section>
-${pt?`  <section id="partner"><div class="wrap">${pcardHtml({...pt, image:(pt.images&&pt.images[h.cat])||pt.image},'hub')}
+${pt?`  <section id="partner"><div class="wrap">${pcardHtml({...pt, image:(pt.images&&pt.images[h.cat])||pt.image, ...(pt.variants?pt.variants[pt.hubVariant||0]:{})},'hub')}
   </div></section>
 `:''}  <section id="foot"><div class="wrap">
     <div class="display" style="font-size:clamp(34px,7vw,72px);font-weight:800">you cooked it.</div>
@@ -658,6 +681,28 @@ ${laneLinks}
 </html>`;
 };
 HUBS.forEach(h=>fs.writeFileSync(p(h.slug+'.html'), hubPage(h)));
+
+// ---- friday five club page: rebuilt from template every run, so the fridge
+// screen, the five cards and the stats always reflect the latest drop ----
+(()=>{
+  const tplPath = p('build','friday-five-template.html');
+  if(!fs.existsSync(tplPath)) return;
+  let ff = fs.readFileSync(tplPath,'utf8');
+  let dropSlugs = [];
+  try{ dropSlugs = (JSON.parse(fs.readFileSync(p('build','newsletter-log.json'),'utf8')).lastDrop||{}).slugs||[]; }catch(e){}
+  let five = dropSlugs.map(s=>onDisplay.find(r=>r.slug===s)).filter(Boolean).slice(0,5);
+  if(five.length<5){
+    const fallback=['creamy-tuscan-pasta','jerk-chicken','smashed-cucumber-salad','seafood-paella','tiramisu'];
+    five = five.concat(fallback.filter(s=>!five.some(r=>r.slug===s)).map(s=>onDisplay.find(r=>r.slug===s)).filter(Boolean)).slice(0,5);
+  }
+  const ecards = five.map(r=>{ const col=CAT[r.category]||'#e2561f';
+    return `                <div class="ecard" style="background:${col}"><img src="/images/thumb/${r.slug}.webp" alt=""><div class="el"><b>${esc(r.title.toLowerCase())}</b><i>${esc(r.category)}</i></div></div>`; }).join('\n');
+  ff = ff.replace('{{ECARDS}}', ecards)
+         .replace('{{CARDS}}', five.map(gridCardHtml).join(''))
+         .replace('{{COUNT}}', String(onDisplay.length))
+         .replace('{{LANES}}', String(cats.length));
+  fs.writeFileSync(p('friday-five.html'), ff);
+})();
 
 // home page at root
 fs.writeFileSync(p('index.html'), browse('', 'recipes/'));
