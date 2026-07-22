@@ -545,7 +545,7 @@ ${socialLine}
 ${laneLinks}
     <div class="mono" style="margin-top:10px"><a href="/about">about</a> · <a href="/privacy">privacy</a> · <a href="/disclosure">affiliate disclosure</a></div>
   </div></section>
-  <a class="pill pop" id="joinpill" href="/friday-five">join free</a>
+  <a class="pill" id="joinpill" href="/friday-five">join free</a>
   <script>
     var CARDS=${JSON.stringify(cards).replace(/</g,'\\u003c')};
     var CAT=${JSON.stringify(CAT)};
