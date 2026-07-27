@@ -69,7 +69,7 @@ const NL_PARTNERS = [
     link: 'https://www.awin1.com/cread.php?awinmid=20823&awinaffid=2918949&clickref=newsletter' },
   { // Abel & Cole native card in the recipe-card style
     accent: '#eab308', label: 'partner · abel & cole', title: 'salad season, sorted.',
-    meta: '50% off your 1st box | code VEGBOX26', cta: 'get 50% off',
+    meta: '50% off your 1st box | code ACVEG26', cta: 'get 50% off',
     img: SITE + '/partners/abel-and-cole-box.jpg', alt: 'Abel and Cole veg box',
     link: 'https://www.awin1.com/awclick.php?gid=385402&mid=6388&awinaffid=2918949&linkid=2603115&clickref=newsletter' },
 ];

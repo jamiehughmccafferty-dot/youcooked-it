@@ -152,7 +152,7 @@ const PARTNERS = [
     categories:['veg','vegetarian','salad','soup'],
     link:'https://www.awin1.com/awclick.php?gid=385402&mid=6388&awinaffid=2918949&linkid=2603115&clickref=recipe',
     headline:'the veg drawer, sorted.',
-    blurb:'Organic fruit and veg boxes from Abel &amp; Cole, delivered to your door. 50% off your 1st and 4th boxes with code <b>VEGBOX26</b>.',
+    blurb:'Organic fruit and veg boxes from Abel &amp; Cole, delivered to your door. 50% off your 1st and 4th boxes with code <b>ACVEG26</b>.',
     cta:'get 50% off',
     image:'/partners/abel-and-cole.jpg',
     tile:{ img:'partners/abel-and-cole-plate.png', title:'the veg drawer, sorted.', badge:'50% off', color:'#eab308', label:'#8a6d00' } },
