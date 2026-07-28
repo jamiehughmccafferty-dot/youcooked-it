@@ -229,7 +229,13 @@
     "sweet-and-sour-chicken",
     "kung-pao-chicken",
     "salt-and-pepper-squid",
-    "prawn-toast"
+    "prawn-toast",
+    "steak-frites",
+    "garlic-butter-ribeye",
+    "peppercorn-sirloin",
+    "steak-diane",
+    "steak-fajitas",
+    "steak-sandwich"
   ],
   "lastDrop": {
     "date": "2026-07-21",
@@ -256,5 +262,16 @@
       "vegan-pancakes",
       "smoky-bean-stew"
     ]
+  },
+  "heldForSteakEdition": {
+    "slugs": [
+      "steak-frites",
+      "garlic-butter-ribeye",
+      "peppercorn-sirloin",
+      "steak-diane",
+      "steak-fajitas",
+      "steak-sandwich"
+    ],
+    "note": "held: send as dedicated steak edition w/c 2026-08-03 via node build/newsletter.mjs <slugs>"
   }
 }

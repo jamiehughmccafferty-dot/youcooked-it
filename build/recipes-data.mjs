@@ -5983,6 +5983,146 @@ export default {
       {title:"build",when:"3 min",body:"Mustard mayo on both sides, rocket, sliced steak, sticky onions, lid on, gentle press.",timer_seconds:null},
       {title:"serve",when:"now",body:"Halve on the diagonal, obviously. Serve with whatever crisps are in the cupboard and no shame at all.",timer_seconds:null}],
     serving_ideas:[{emoji:"🍟",label:"chips or crisps"},{emoji:"🥒",label:"cornichons"},{emoji:"🌶️",label:"horseradish upgrade"},{emoji:"🍺",label:"cold beer"}]
+  },
+
+  "hard-iced-tea": {
+    cuisine:"American",
+    story:"The canned drink of the summer, made properly in a jug for a fraction of the price. Real brewed tea, peach, lemon and a measured amount of vodka, over so much ice the jug sweats. It drinks dangerously easy, which is the whole point and also the warning.",
+    meta:{total_time:"15 min",marinate_time:"1 hr",serves:6,heat:"mild",skill:"easy"},
+    macros:{protein_g:0,fat_g:0,carbs_g:16,estimate:true},
+    ingredient_groups:[
+      {name:"the jug",items:[
+        {qty:4,unit:"",name:"black tea bags",countable:true},
+        {qty:750,unit:"ml",name:"just-boiled water",countable:false},
+        {qty:3,unit:"tbsp",name:"caster sugar",countable:false},
+        {qty:250,unit:"ml",name:"peach juice or nectar",countable:false},
+        {qty:200,unit:"ml",name:"vodka",countable:false},
+        {qty:1,unit:"",name:"lemon, sliced",countable:true},
+        {qty:1,unit:"handful",name:"mint sprigs",countable:false},
+        {qty:3,unit:"handfuls",name:"ice",countable:false}]}],
+    spice_mix:[],
+    method:[
+      {title:"brew strong",when:"5 min",body:"Steep the tea bags in the just-boiled water for five minutes, no longer. Strong is right, stewed is not. Stir the sugar in while it is hot.",timer_seconds:300},
+      {title:"chill",when:"1 hr",body:"Cool the tea completely in the fridge. Warm tea plus ice equals weak tea, and nobody queued for weak tea.",timer_seconds:3600},
+      {title:"build the jug",when:"5 min",body:"Load a big jug with ice, pour in the cold tea, peach juice and vodka, and stir once. Lemon slices and mint in last.",timer_seconds:300},
+      {title:"serve",when:"now",body:"Tall glasses, more ice, and keep the jug out of the sun and within reach.",timer_seconds:null}],
+    serving_ideas:[{emoji:"🍑",label:"peach slices"},{emoji:"🍋",label:"extra lemon"},{emoji:"🌿",label:"mint"},{emoji:"🧊",label:"more ice than feels right"}]
+  },
+
+  "yorkshire-pudding-wrap": {
+    cuisine:"British",
+    story:"The festival stand with the longest queue, recreated in your own kitchen: a giant yorkshire pudding rolled around sliced roast beef, gravy, crispy onions and a swipe of horseradish. It is a full sunday roast you can hold in one hand, and it is exactly as good as that sentence sounds.",
+    meta:{total_time:"50 min",marinate_time:null,serves:4,heat:"mild",skill:"medium"},
+    macros:{protein_g:36,fat_g:24,carbs_g:38,estimate:true},
+    ingredient_groups:[
+      {name:"the yorkshires",items:[
+        {qty:140,unit:"g",name:"plain flour",countable:false},
+        {qty:4,unit:"",name:"eggs",countable:true},
+        {qty:200,unit:"ml",name:"milk",countable:false},
+        {qty:4,unit:"tbsp",name:"vegetable oil",countable:false},
+        {qty:1,unit:"pinch",name:"salt",countable:false}]},
+      {name:"the filling",items:[
+        {qty:400,unit:"g",name:"rump steak or leftover roast beef, sliced thin",countable:false},
+        {qty:300,unit:"ml",name:"good beef gravy",countable:false},
+        {qty:4,unit:"tbsp",name:"crispy onions",countable:false},
+        {qty:2,unit:"tbsp",name:"horseradish sauce",countable:false},
+        {qty:1,unit:"handful",name:"rocket",countable:false}]}],
+    spice_mix:[],
+    method:[
+      {title:"batter",when:"10 min",body:"Whisk the flour, eggs, milk and salt into a smooth batter and let it rest while the oven gets serious.",timer_seconds:600},
+      {title:"giant yorkies",when:"20 min",body:"Get a tablespoon of oil smoking hot in each of four small round tins or one large one at 220C fan. Pour in the batter and do not open the oven until they are tall, golden and structural.",timer_seconds:1200},
+      {title:"the beef",when:"6 min",body:"If using steak, flash it in a screaming pan two minutes a side, rest it, then slice thin. Leftover roast beef just needs warming through in a little gravy.",timer_seconds:360},
+      {title:"build",when:"5 min",body:"Flatten each yorkshire slightly, swipe with horseradish, layer the beef, rocket and crispy onions, spoon over gravy and roll it like a giant soft taco.",timer_seconds:300},
+      {title:"serve",when:"now",body:"Wrap the bottom half in paper if you are committed to the festival experience. Extra gravy on the side for dunking, obviously.",timer_seconds:null}],
+    serving_ideas:[{emoji:"🍺",label:"something cold"},{emoji:"🥣",label:"gravy for dunking"},{emoji:"🧅",label:"extra crispy onions"},{emoji:"🌶️",label:"more horseradish"}]
+  },
+
+  "loaded-jacket-potato": {
+    cuisine:"British",
+    story:"The humble jacket, gone viral and fully loaded. The secret the famous spud vans all share: a long bake for a crackly skin, butter worked into the fluff like it owes you money, and toppings stacked without restraint. Cheesy beans, slaw, crispy onions. Order matters. Abundance matters more.",
+    meta:{total_time:"1 hr 30",marinate_time:null,serves:4,heat:"mild",skill:"easy"},
+    macros:{protein_g:16,fat_g:18,carbs_g:62,estimate:true},
+    ingredient_groups:[
+      {name:"the jackets",items:[
+        {qty:4,unit:"",name:"large baking potatoes",countable:true},
+        {qty:1,unit:"tbsp",name:"olive oil",countable:false},
+        {qty:1,unit:"tsp",name:"flaky sea salt",countable:false},
+        {qty:50,unit:"g",name:"butter",countable:false}]},
+      {name:"the load",items:[
+        {qty:400,unit:"g",name:"tin of baked beans",countable:false},
+        {qty:150,unit:"g",name:"mature cheddar, grated",countable:false},
+        {qty:150,unit:"g",name:"coleslaw",countable:false},
+        {qty:2,unit:"tbsp",name:"crispy onions",countable:false},
+        {qty:2,unit:"",name:"spring onions, sliced",countable:true}]}],
+    spice_mix:[],
+    method:[
+      {title:"the long bake",when:"1 hr 15",body:"Prick the potatoes, rub with oil and salt, and bake at 200C fan directly on the oven shelf until the skin is crackly and a knife meets no resistance. No foil. Foil is for steaming, and steaming is for other recipes.",timer_seconds:4500},
+      {title:"cheesy beans",when:"5 min",body:"Warm the beans and stir half the cheddar through them until it just melts. This is non-negotiable spud-van doctrine.",timer_seconds:300},
+      {title:"the butter moment",when:"3 min",body:"Split each jacket, add a quarter of the butter to each, and work it into the fluff with a fork like you mean it.",timer_seconds:null},
+      {title:"load",when:"3 min",body:"Cheesy beans first, remaining cheddar over so it melts on contact, coleslaw on top, crispy onions and spring onion to finish.",timer_seconds:null},
+      {title:"serve",when:"now",body:"With a fork, a napkin, and no apology for the portion size.",timer_seconds:null}],
+    serving_ideas:[{emoji:"🥓",label:"bacon bits upgrade"},{emoji:"🌶️",label:"chilli option"},{emoji:"🧀",label:"more cheese"},{emoji:"🥗",label:"pretend salad"}]
+  },
+
+  "chicken-and-chorizo-paella": {
+    cuisine:"Spanish",
+    story:"The giant pan smoking away at every festival, scaled down to your hob. Chicken thighs, smoky chorizo and short-grain rice drinking up a saffron stock, finished with the crispy bottom layer the spanish would riot to protect. One pan, no stirring at the end, big wooden spoon energy.",
+    meta:{total_time:"50 min",marinate_time:null,serves:4,heat:"medium",skill:"medium"},
+    macros:{protein_g:34,fat_g:22,carbs_g:56,estimate:true},
+    ingredient_groups:[
+      {name:"the pan",items:[
+        {qty:4,unit:"",name:"chicken thighs, boneless, in chunks",countable:true},
+        {qty:150,unit:"g",name:"chorizo, sliced",countable:false},
+        {qty:1,unit:"",name:"onion, chopped",countable:true},
+        {qty:3,unit:"",name:"garlic cloves, chopped",countable:true},
+        {qty:1,unit:"",name:"red pepper, sliced",countable:true},
+        {qty:300,unit:"g",name:"paella or short-grain rice",countable:false},
+        {qty:900,unit:"ml",name:"hot chicken stock",countable:false},
+        {qty:100,unit:"g",name:"frozen peas",countable:false},
+        {qty:1,unit:"",name:"lemon, in wedges",countable:true}]},
+      {name:"the spice mix",items:[
+        {qty:2,unit:"tsp",name:"smoked paprika",countable:false},
+        {qty:1,unit:"pinch",name:"saffron threads",countable:false},
+        {qty:1,unit:"tsp",name:"dried thyme",countable:false}]}],
+    spice_mix:[
+      {name:"smoked paprika",note:"the spanish backbone"},
+      {name:"saffron",note:"the golden colour, worth it"},
+      {name:"dried thyme",note:"quiet herbal depth"}],
+    method:[
+      {title:"chorizo first",when:"4 min",body:"Fry the chorizo in a wide pan until it releases its orange oil. That oil is the flavour engine for everything that follows.",timer_seconds:240},
+      {title:"chicken",when:"6 min",body:"Chicken in with the chorizo until golden at the edges, then the onion, garlic and pepper until softened.",timer_seconds:360},
+      {title:"rice",when:"2 min",body:"Stir in the rice and spice mix so every grain is coated and glossy.",timer_seconds:null},
+      {title:"the no-stir rule",when:"20 min",body:"Pour in the hot stock, arrange everything evenly, then do not stir again. Simmer until the rice is tender, scattering the peas over for the last five minutes.",timer_seconds:1200},
+      {title:"socarrat",when:"2 min",body:"Turn the heat up for a final two minutes to crisp the bottom layer. Listen for the crackle. That is the good bit.",timer_seconds:null},
+      {title:"serve",when:"now",body:"Pan to the table, lemon wedges over, spoon fights encouraged.",timer_seconds:null}],
+    serving_ideas:[{emoji:"🍋",label:"lemon wedges"},{emoji:"🥖",label:"crusty bread"},{emoji:"🍷",label:"cold something spanish"},{emoji:"🥗",label:"green salad"}]
+  },
+
+  "halloumi-fries": {
+    cuisine:"Cypriot",
+    story:"The festival stand that converted a nation: squeaky halloumi batons in a crisp coating, drizzled with hot honey, cooled with yogurt and scattered with pomegranate. Salty, sweet, hot and cold in the same bite. They do not survive long enough for a photo, so take it early.",
+    meta:{total_time:"25 min",marinate_time:null,serves:4,heat:"mild",skill:"easy"},
+    macros:{protein_g:22,fat_g:26,carbs_g:18,estimate:true},
+    ingredient_groups:[
+      {name:"the fries",items:[
+        {qty:2,unit:"",name:"blocks of halloumi, 225g each",countable:true},
+        {qty:60,unit:"g",name:"plain flour",countable:false},
+        {qty:1,unit:"tsp",name:"smoked paprika",countable:false},
+        {qty:1,unit:"tsp",name:"dried oregano",countable:false}]},
+      {name:"the finish",items:[
+        {qty:3,unit:"tbsp",name:"runny honey",countable:false},
+        {qty:1,unit:"pinch",name:"chilli flakes",countable:false},
+        {qty:150,unit:"g",name:"greek yogurt",countable:false},
+        {qty:3,unit:"tbsp",name:"pomegranate seeds",countable:false},
+        {qty:1,unit:"handful",name:"mint leaves",countable:false}]}],
+    spice_mix:[],
+    method:[
+      {title:"cut and dry",when:"5 min",body:"Cut the halloumi into chunky chips and pat them completely dry. Wet cheese fights the coating and wins.",timer_seconds:300},
+      {title:"dust",when:"3 min",body:"Toss the batons through the flour, paprika and oregano until every side is coated.",timer_seconds:null},
+      {title:"fry",when:"8 min",body:"Shallow fry in hot oil in batches, turning, until deep gold on every side. About two minutes a batch. Rest on a rack.",timer_seconds:480},
+      {title:"hot honey",when:"2 min",body:"Warm the honey with the chilli flakes for thirty seconds until it loosens. Or raid our hot honey recipe if you made a jar already.",timer_seconds:null},
+      {title:"serve",when:"now",body:"Pile the fries up, drizzle the hot honey, spoon over yogurt, scatter pomegranate and mint, and stand back.",timer_seconds:null}],
+    serving_ideas:[{emoji:"🍯",label:"extra hot honey"},{emoji:"🥛",label:"cool yogurt"},{emoji:"🌿",label:"mint"},{emoji:"🍋",label:"lemon squeeze"}]
   }
 
 };
