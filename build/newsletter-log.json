@@ -235,16 +235,21 @@
     "peppercorn-sirloin",
     "steak-diane",
     "steak-fajitas",
-    "steak-sandwich"
+    "steak-sandwich",
+    "hard-iced-tea",
+    "yorkshire-pudding-wrap",
+    "loaded-jacket-potato",
+    "chicken-and-chorizo-paella",
+    "halloumi-fries"
   ],
   "lastDrop": {
-    "date": "2026-07-21",
+    "date": "2026-07-28",
     "slugs": [
-      "chicken-chow-mein",
-      "sweet-and-sour-chicken",
-      "kung-pao-chicken",
-      "salt-and-pepper-squid",
-      "prawn-toast"
+      "hard-iced-tea",
+      "yorkshire-pudding-wrap",
+      "loaded-jacket-potato",
+      "chicken-and-chorizo-paella",
+      "halloumi-fries"
     ]
   },
   "heldForSpecial": {
