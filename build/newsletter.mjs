@@ -96,7 +96,8 @@ const partnerRows = !NL_PARTNERS.length ? '' : `
   </td></tr>`).join('')}
   <tr><td align="center" style="font-family:Poppins,Arial,sans-serif;font-size:11px;color:#6b574a;padding:0 26px 6px 26px;">partner links · they help keep the recipes free</td></tr>`;
 
-const today = new Date();
+// send date override: NL_DATE=2026-07-31 to stamp the file and header for a later send
+const today = process.env.NL_DATE ? new Date(process.env.NL_DATE + 'T09:00:00') : new Date();
 const stamp = today.toISOString().slice(0, 10);
 const nice = today.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
 
