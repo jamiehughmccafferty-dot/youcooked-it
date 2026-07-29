@@ -11,7 +11,7 @@
 <meta property="og:title" content="the friday five club — You Cooked It"/>
 <meta property="og:description" content="Five new recipes in your inbox every Friday morning. Free forever."/>
 <meta property="og:url" content="https://youcooked-it.com/friday-five"/>
-<meta property="og:image" content="https://youcooked-it.com/og/seafood-paella.jpg"/>
+<meta property="og:image" content="{{OG_IMG}}"/>
 <meta property="og:image:width" content="1200"/>
 <meta property="og:image:height" content="630"/>
 <meta name="twitter:card" content="summary_large_image"/>
@@ -28,8 +28,8 @@
 /* ---- friday five club: the fridge story ------------------------------- */
 /* monochrome world; the only colour is real food. colour arrives when you  */
 /* know what to cook.                                                       */
-body{--accent:#2f9bb0;background:#ffffff;transition:background 1.2s ease}
-body.flood{background:#2f9bb0}
+body{--accent:{{FLOOD}};background:#ffffff;transition:background 1.2s ease}
+body.flood{background:{{FLOOD}}}
 
 /* instant signup strip: usable before any scrolling */
 #topjoin{padding:88px 0 6px;text-align:center}
@@ -256,7 +256,7 @@ section.block .lead{max-width:44ch;margin:16px auto 0;color:var(--ink-soft);font
     <div class="bloom">
       <div class="bart">
         <div class="blob"></div>
-        <img src="/images/seafood-paella.png" alt="seafood paella, plated"/>
+        <img src="{{HERO_IMG}}" alt="{{HERO_ALT}}"/>
       </div>
     </div>
 

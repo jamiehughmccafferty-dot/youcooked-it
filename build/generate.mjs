@@ -704,8 +704,9 @@ liveHubs.forEach(h=>fs.writeFileSync(p(h.slug+'.html'), hubPage(h)));
   const tplPath = p('build','friday-five-template.html');
   if(!fs.existsSync(tplPath)) return;
   let ff = fs.readFileSync(tplPath,'utf8');
-  let dropSlugs = [];
-  try{ dropSlugs = (JSON.parse(fs.readFileSync(p('build','newsletter-log.json'),'utf8')).lastDrop||{}).slugs||[]; }catch(e){}
+  let dropSlugs = [], dropDate = '';
+  try{ const ld=(JSON.parse(fs.readFileSync(p('build','newsletter-log.json'),'utf8')).lastDrop||{});
+       dropSlugs = ld.slugs||[]; dropDate = ld.date||''; }catch(e){}
   let five = dropSlugs.map(s=>onDisplay.find(r=>r.slug===s)).filter(Boolean).slice(0,5);
   if(five.length<5){
     const fallback=['creamy-tuscan-pasta','jerk-chicken','smashed-cucumber-salad','seafood-paella','tiramisu'];
@@ -713,10 +714,21 @@ liveHubs.forEach(h=>fs.writeFileSync(p(h.slug+'.html'), hubPage(h)));
   }
   const ecards = five.map(r=>{ const col=CAT[r.category]||'#e2561f';
     return `                <div class="ecard" style="background:${col}"><img src="/images/thumb/${r.slug}.webp" alt=""><div class="el"><b>${esc(r.title.toLowerCase())}</b><i>${esc(r.category)}</i></div></div>`; }).join('\n');
+  // bloom hero: pick one of the week's five, deterministic per drop so it is
+  // stable across rebuilds within a week but rotates every friday drop
+  let seed=0; for(const ch of (dropDate||'0')) seed=(seed*31+ch.charCodeAt(0))>>>0;
+  const heroRec = five[seed % five.length] || five[0];
+  const heroImg = imaged[heroRec.slug] ? '/images/'+heroRec.slug+'.webp' : '';
+  const flood = CAT[heroRec.category] || '#2f9bb0';
+  const ogImg = ogFiles.has(heroRec.slug+'.jpg') ? SITE+'/og/'+heroRec.slug+'.jpg' : SITE+'/images/'+heroRec.slug+'.png';
   ff = ff.replace('{{ECARDS}}', ecards)
          .replace('{{CARDS}}', five.map(gridCardHtml).join(''))
          .replace('{{COUNT}}', String(onDisplay.length))
-         .replace('{{LANES}}', String(cats.length));
+         .replace('{{LANES}}', String(cats.length))
+         .replace('{{HERO_IMG}}', heroImg)
+         .replace('{{HERO_ALT}}', esc(heroRec.title)+', plated')
+         .replaceAll('{{FLOOD}}', flood)
+         .replace('{{OG_IMG}}', ogImg);
   fs.writeFileSync(p('friday-five.html'), ff);
 })();
 
