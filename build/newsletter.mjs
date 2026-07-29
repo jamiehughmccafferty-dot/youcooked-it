@@ -62,9 +62,9 @@ const INTRO = (introIdx !== -1 && process.argv[introIdx + 1]) || process.env.NL_
 // partner slot: native cards after the five, links tagged clickref=newsletter.
 // Edit per edition (or empty the array to skip the section).
 const NL_PARTNERS = [
-  { // Tower Pay Day Event banner (their creative; swap out when the promo ends)
+  { // Tower Pay Day Event banner (their creative; deep link to the sale page)
     banner: SITE + '/partners/tower-payday.jpg', alt: 'Tower Pay Day Event: save 20% with code PAYDAY',
-    link: 'https://www.awin1.com/cread.php?awinmid=20823&awinaffid=2918949&clickref=newsletter',
+    link: 'https://www.awin1.com/cread.php?awinmid=20823&awinaffid=2918949&campaign=&clickref=newsletter&ued=https%3A%2F%2Fwww.towerhousewares.co.uk%2Fpages%2Fpay-day-sale',
     note: 'code PAYDAY · 20% off full price Tower kit when you spend £40 or more' },
   { // Abel & Cole native card in the recipe-card style
     accent: '#eab308', label: 'partner · abel & cole', title: 'salad season, sorted.',
