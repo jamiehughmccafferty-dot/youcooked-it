@@ -148,7 +148,7 @@ const nlForm = NL_ACTION ? `
 // One card max per page, only on matching categories, always labelled,
 // rel=sponsored. EXAMPLE GATE below until the design is signed off.
 const PARTNERS = [
-  { id:'abel-and-cole', name:'abel &amp; cole', active:true,
+  { id:'abel-and-cole', name:'abel &amp; cole', active:true, pbg:'#eab308',
     categories:['veg','vegetarian','salad','soup'],
     link:'https://www.awin1.com/awclick.php?gid=385402&mid=6388&awinaffid=2918949&linkid=2603115&clickref=recipe',
     headline:'the veg drawer, sorted.',
@@ -156,7 +156,7 @@ const PARTNERS = [
     cta:'get 50% off',
     image:'/partners/abel-and-cole.jpg',
     tile:{ img:'partners/abel-and-cole-plate.png', title:'the veg drawer, sorted.', badge:'50% off', color:'#eab308', label:'#8a6d00' } },
-  { id:'real-food-hub', name:'real food hub', active:true,
+  { id:'real-food-hub', name:'real food hub', active:true, pbg:'#5c6b3e',
     categories:['seafood','stew','grill'],
     link:'https://www.awin1.com/cread.php?awinmid=20241&awinaffid=2918949&clickref=recipe',
     headline:'Real Food Hub, a marketplace for food, drink &amp; gifts.',
@@ -164,7 +164,7 @@ const PARTNERS = [
     cta:'shop now',
     image:'/partners/real-food-hub.jpg',
     tile:{ img:'partners/real-food-hub-plate.png', title:'food, drink & gifts, delivered.', badge:'shop now', color:'#e8384f', label:'#9c1f30' } },
-  { id:'tower', name:'tower', active:true,
+  { id:'tower', name:'tower', active:true, pbg:'#181818',
     categories:['curry','sauce','rice','breakfast','brunch','drinks'],
     link:'https://www.awin1.com/cread.php?awinmid=20823&awinaffid=2918949&clickref=recipe',
     headline:'the kit behind the cooking.',
@@ -177,7 +177,7 @@ const PARTNERS = [
              breakfast:'/partners/tower-freedom.jpg', brunch:'/partners/tower-freedom.jpg',
              drinks:'/partners/tower-summer.jpg' },
     tile:{ img:'partners/tower-plate.png', title:'kit for every recipe.', badge:'shop now', color:'#c3d941', label:'#66701d' } },
-  { id:'muscle-food', name:'musclefood', active:false,   // ready: flip to true when Kate approves the example placements
+  { id:'muscle-food', name:'musclefood', active:true, pbg:'#efeae0',
     categories:['chicken','steak'],
     link:'https://www.awin1.com/cread.php?awinmid=11002&awinaffid=2918949&clickref=recipe',
     headline:'fill the freezer.',
@@ -196,6 +196,41 @@ const PARTNERS = [
     ],
     hubVariant:1,
     tile:{ img:'partners/muscle-food-plate.png', title:'fill the freezer.', badge:'code 24CHICK', color:'#2c5e4f', label:'#1b3f34' } },
+  { id:'ninja', name:'shark ninja', active:true, pbg:'#f0e9de',
+    // Route A: full coverage. Sits alongside MuscleFood on chicken+steak (the meat + the kit)
+    categories:['chicken','steak','drinks','brunch','soup','sauce','curry','veg','breakfast','dessert'],
+    link:'https://www.awin1.com/cread.php?awinmid=8059&awinaffid=2918949&clickref=recipe',
+    headline:'the kit for the cook.',
+    blurb:'Ninja and Shark appliances built for real kitchens. Woodfire grills, DualZone air fryers, blenders, espresso and more.',
+    cta:'shop ninja',
+    image:'/partners/ninja-airfryer.jpg',
+    images:{
+      chicken:  '/partners/ninja-woodfire.jpg',
+      steak:    '/partners/ninja-woodfire.jpg',
+      drinks:   '/partners/ninja-slushi.jpg',
+      brunch:   '/partners/ninja-espresso.jpg',
+      soup:     '/partners/ninja-blender.jpg',
+      sauce:    '/partners/ninja-blender.jpg',
+      curry:    '/partners/ninja-airfryer.jpg',
+      veg:      '/partners/ninja-airfryer.jpg',
+      breakfast:'/partners/ninja-airfryer.jpg',
+      dessert:  '/partners/ninja-creami.jpg',
+    },
+    // per-appliance copy + tracked deep link, matched by lane so headline never lies
+    variants:[], // (unused; overrides applied via a small extension below)
+    _byCat:{
+      chicken:  { headline:'the kit for the flip.', blurb:'The Ninja Woodfire XL Electric BBQ plus FrostVault 47L cooler bundle: smoker, grill, air fryer and cold storage in one, ready for the garden.', cta:'shop the bundle', link:'https://www.awin1.com/cread.php?awinmid=8059&awinaffid=2918949&clickref=recipe&q=595382&s=4672647' },
+      steak:    { headline:'the kit for the flip.', blurb:'The Ninja Woodfire XL Electric BBQ plus FrostVault 47L cooler bundle: smoker, grill, air fryer and cold storage in one, ready for the garden.', cta:'shop the bundle', link:'https://www.awin1.com/cread.php?awinmid=8059&awinaffid=2918949&clickref=recipe&q=595382&s=4672647' },
+      drinks:   { headline:'slushies at home.', blurb:'The Ninja SLUSHi frozen drink maker for slushies, frozen cocktails and mocktails in ten minutes flat.', cta:'shop the slushi', link:'https://www.awin1.com/cread.php?awinmid=8059&awinaffid=2918949&clickref=recipe&q=595382&s=4672643' },
+      brunch:   { headline:'barista brunch, at home.', blurb:'The Ninja Espresso 3-in-1 does espresso, drip coffee and cold brew from one machine, with a proper milk frother.', cta:'shop the espresso', link:'https://www.awin1.com/cread.php?awinmid=8059&awinaffid=2918949&clickref=recipe&q=595382&s=4672637' },
+      soup:     { headline:'hot soup, no hob.', blurb:'The Ninja Heated Blender cooks and blends in the same jug: silky soups start to finish in minutes.', cta:'shop the blender', link:'https://www.awin1.com/cread.php?awinmid=8059&awinaffid=2918949&clickref=recipe&q=595382&s=4672644' },
+      sauce:    { headline:'sauce sorted.', blurb:'The Ninja 2-in-1 blender takes sauces, pestos and dips from ingredients to jar in seconds.', cta:'shop the blender', link:'https://www.awin1.com/cread.php?awinmid=8059&awinaffid=2918949&clickref=recipe' },
+      curry:    { headline:'the kit for weeknight dinner.', blurb:'The Ninja DualZone Air Fryer does two things at once, so chicken and veg land together with nothing overcooked.', cta:'shop the air fryer', link:'https://www.awin1.com/cread.php?awinmid=8059&awinaffid=2918949&clickref=recipe&q=595382&s=4672633' },
+      veg:      { headline:'crispier veg, no faff.', blurb:'The Ninja DualZone Air Fryer roasts veg to properly crispy in a fraction of the oven time.', cta:'shop the air fryer', link:'https://www.awin1.com/cread.php?awinmid=8059&awinaffid=2918949&clickref=recipe&q=595382&s=4672633' },
+      breakfast:{ headline:'breakfast, without the wait.', blurb:'The Ninja DualZone Air Fryer runs two things at once so the eggs and the bacon land at the same time.', cta:'shop the air fryer', link:'https://www.awin1.com/cread.php?awinmid=8059&awinaffid=2918949&clickref=recipe&q=595382&s=4672633' },
+      dessert:  { headline:'soft serve, from your own freezer.', blurb:'The Ninja CREAMi Swirl turns any frozen base into ice cream, sorbet or actual soft serve.', cta:'shop the creami', link:'https://www.awin1.com/cread.php?awinmid=8059&awinaffid=2918949&clickref=recipe' },
+    },
+    tile:{ img:'partners/ninja-plate.png', title:'the kit for the flip.', badge:'shop ninja', color:'#1c2532', label:'#1c2532' } },
 ];
 const pcardHtml = (pt, ref)=>`
     <a class="pcard" href="${pt.link.replace('clickref=recipe','clickref='+ref)}" target="_blank" rel="sponsored noopener">
@@ -207,16 +242,25 @@ const pcardHtml = (pt, ref)=>`
         <span class="pill">${pt.cta}</span>
       </div>
     </a>`;
-const partnerCard = (rec)=>{
-  const pt = PARTNERS.find(x=>x.active && x.categories.includes(rec.category));
-  if(!pt) return '';
+const mergedFor = (pt, rec)=>{
   let merged = {...pt, image:(pt.images && pt.images[rec.category]) || pt.image};
+  // per-lane appliance copy + tracked link (SharkNinja pattern)
+  if(pt._byCat && pt._byCat[rec.category]) merged = {...merged, ...pt._byCat[rec.category]};
+  // per-slug creative rotation (MuscleFood pattern)
   if(pt.variants && pt.variants.length){
     let h=0; for(const ch of rec.slug) h=(h*31+ch.charCodeAt(0))>>>0;
     merged = {...merged, ...pt.variants[h % pt.variants.length]};
   }
+  return merged;
+};
+const partnerCard = (rec)=>{
+  // pages can carry more than one partner where they naturally pair (e.g. the
+  // meat + the kit on a steak page); rendered as stacked cards with a slim rule
+  const pts = PARTNERS.filter(x=>x.active && x.categories.includes(rec.category));
+  if(!pts.length) return '';
+  const cards = pts.map(pt=>pcardHtml(mergedFor(pt,rec),'recipe')).join('\n    <div class="pgap"></div>\n');
   return `
-  <section id="partner"><div class="wrap">${pcardHtml(merged,'recipe')}
+  <section id="partner"><div class="wrap">${cards}
   </div></section>
 `;
 };
