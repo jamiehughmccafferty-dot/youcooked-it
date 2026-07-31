@@ -155,7 +155,8 @@ const PARTNERS = [
     blurb:'Organic fruit and veg boxes from Abel &amp; Cole, delivered to your door. 50% off your 1st and 4th boxes with code <b>ACVEG26</b>.',
     cta:'get 50% off',
     image:'/partners/abel-and-cole.jpg',
-    tile:{ img:'partners/abel-and-cole-plate.png', title:'the veg drawer, sorted.', badge:'50% off', color:'#eab308', label:'#8a6d00' } },
+    tile:{ img:'partners/abel-and-cole-plate.png', title:'the veg drawer, sorted.', badge:'50% off', color:'#eab308', label:'#8a6d00' },
+    tile2:{ title:'organic, at your door.', badge:'code ACVEG26' } },
   { id:'real-food-hub', name:'real food hub', active:true, pbg:'#5c6b3e',
     categories:['seafood','stew','grill'],
     link:'https://www.awin1.com/cread.php?awinmid=20241&awinaffid=2918949&clickref=recipe',
@@ -163,7 +164,8 @@ const PARTNERS = [
     blurb:'Shop for Heritage Breed Meat &amp; Regional Cheeses, Sustainably Sourced Fish &amp; Seafood, Deli &amp; Charcuterie, Organic Fruit &amp; Veg, plus Treats like Artisan Chocolate, Craft Beer, Boutique Wines, and British Gin all at one easy to use marketplace.',
     cta:'shop now',
     image:'/partners/real-food-hub.jpg',
-    tile:{ img:'partners/real-food-hub-plate.png', title:'food, drink & gifts, delivered.', badge:'shop now', color:'#e8384f', label:'#9c1f30' } },
+    tile:{ img:'partners/real-food-hub-plate.png', title:'food, drink & gifts, delivered.', badge:'shop now', color:'#e8384f', label:'#9c1f30' },
+    tile2:{ title:'small suppliers, one shop.', badge:'shop small' } },
   { id:'tower', name:'tower', active:true, pbg:'#181818',
     categories:['curry','sauce','rice','breakfast','brunch','drinks'],
     link:'https://www.awin1.com/cread.php?awinmid=20823&awinaffid=2918949&clickref=recipe',
@@ -176,7 +178,8 @@ const PARTNERS = [
              rice:'/partners/tower-smartstart.jpg',
              breakfast:'/partners/tower-freedom.jpg', brunch:'/partners/tower-freedom.jpg',
              drinks:'/partners/tower-summer.jpg' },
-    tile:{ img:'partners/tower-plate.png', title:'kit for every recipe.', badge:'shop now', color:'#c3d941', label:'#66701d' } },
+    tile:{ img:'partners/tower-plate.png', title:'kit for every recipe.', badge:'shop now', color:'#c3d941', label:'#66701d' },
+    tile2:{ title:'home of the air fryer.', badge:'free recipe book' } },
   { id:'muscle-food', name:'musclefood', active:true, pbg:'#efeae0',
     categories:['chicken','steak'],
     link:'https://www.awin1.com/cread.php?awinmid=11002&awinaffid=2918949&clickref=recipe',
@@ -201,14 +204,23 @@ const PARTNERS = [
       ],
     },
     hubVariant:1,
-    tile:{ img:'partners/muscle-food-plate.png', title:'fill the freezer.', badge:'code 24CHICK', color:'#2c5e4f', label:'#1b3f34' } },
+    tile:{ img:'partners/muscle-food-plate.png', title:'fill the freezer.', badge:'hamper', color:'#2c5e4f', label:'#1b3f34' },
+    tile2:{ title:'steak night, sorted.', badge:'8 sirloins £24.99' } },
   { id:'ninja', name:'shark ninja', active:true, pbg:'#f0e9de',
-    // Route A: full coverage. Sits alongside MuscleFood on chicken+steak (the meat + the kit)
+    // Route A: full coverage. Sits alongside MuscleFood on chicken+steak (the meat + the kit).
+    //
+    // ⏰ SIZZLING SUMMER SALE — ENDS 2026-08-11 23:59 (Europe/London)
+    //   REVERT ON 2026-08-12 (search this file for "SALE-ENDS-2026-08-11"):
+    //     • drop "20% off with code NINJA20" from every _byCat blurb below
+    //     • CTAs back to product-specific ("shop the slushi", "shop the espresso" etc)
+    //     • chicken/steak links stay on the Woodfire Pro Connect XL product page
+    //       (that swap is permanent — better image ↔ page match than the bundle)
+    //
     categories:['chicken','steak','drinks','brunch','soup','sauce','curry','veg','breakfast','dessert'],
     link:'https://www.awin1.com/cread.php?awinmid=8059&awinaffid=2918949&clickref=recipe',
     headline:'the kit for the cook.',
-    blurb:'Ninja and Shark appliances built for real kitchens. Woodfire grills, DualZone air fryers, blenders, espresso and more.',
-    cta:'shop ninja',
+    blurb:'Ninja and Shark appliances built for real kitchens. Woodfire grills, DualZone air fryers, blenders, espresso and more. Up to 20% off with code <b>NINJA20</b> until 11 Aug, exclusions apply.',
+    cta:'shop the sale',
     image:'/partners/ninja-airfryer.jpg',
     images:{
       chicken:  '/partners/ninja-woodfire.jpg',
@@ -222,21 +234,26 @@ const PARTNERS = [
       breakfast:'/partners/ninja-airfryer.jpg',
       dessert:  '/partners/ninja-creami.jpg',
     },
-    // per-appliance copy + tracked deep link, matched by lane so headline never lies
+    // per-appliance copy + tracked deep link, matched by lane so headline never lies.
+    // Sale-tagged blurbs marked SALE-ENDS-2026-08-11 for the revert sweep.
     variants:[], // (unused; overrides applied via a small extension below)
     _byCat:{
-      chicken:  { headline:'the kit for the flip.', blurb:'The Ninja Woodfire XL Electric BBQ plus FrostVault 47L cooler bundle: smoker, grill, air fryer and cold storage in one, ready for the garden.', cta:'shop the bundle', link:'https://www.awin1.com/cread.php?awinmid=8059&awinaffid=2918949&clickref=recipe&q=595382&s=4672647' },
-      steak:    { headline:'the kit for the flip.', blurb:'The Ninja Woodfire XL Electric BBQ plus FrostVault 47L cooler bundle: smoker, grill, air fryer and cold storage in one, ready for the garden.', cta:'shop the bundle', link:'https://www.awin1.com/cread.php?awinmid=8059&awinaffid=2918949&clickref=recipe&q=595382&s=4672647' },
-      drinks:   { headline:'slushies at home.', blurb:'The Ninja SLUSHi frozen drink maker for slushies, frozen cocktails and mocktails in ten minutes flat.', cta:'shop the slushi', link:'https://www.awin1.com/cread.php?awinmid=8059&awinaffid=2918949&clickref=recipe&q=595382&s=4672643' },
-      brunch:   { headline:'barista brunch, at home.', blurb:'The Ninja Espresso 3-in-1 does espresso, drip coffee and cold brew from one machine, with a proper milk frother.', cta:'shop the espresso', link:'https://www.awin1.com/cread.php?awinmid=8059&awinaffid=2918949&clickref=recipe&q=595382&s=4672637' },
-      soup:     { headline:'hot soup, no hob.', blurb:'The Ninja Heated Blender cooks and blends in the same jug: silky soups start to finish in minutes.', cta:'shop the blender', link:'https://www.awin1.com/cread.php?awinmid=8059&awinaffid=2918949&clickref=recipe&q=595382&s=4672644' },
-      sauce:    { headline:'sauce sorted.', blurb:'The Ninja 2-in-1 blender takes sauces, pestos and dips from ingredients to jar in seconds.', cta:'shop the blender', link:'https://www.awin1.com/cread.php?awinmid=8059&awinaffid=2918949&clickref=recipe' },
-      curry:    { headline:'the kit for weeknight dinner.', blurb:'The Ninja DualZone Air Fryer does two things at once, so chicken and veg land together with nothing overcooked.', cta:'shop the air fryer', link:'https://www.awin1.com/cread.php?awinmid=8059&awinaffid=2918949&clickref=recipe&q=595382&s=4672633' },
-      veg:      { headline:'crispier veg, no faff.', blurb:'The Ninja DualZone Air Fryer roasts veg to properly crispy in a fraction of the oven time.', cta:'shop the air fryer', link:'https://www.awin1.com/cread.php?awinmid=8059&awinaffid=2918949&clickref=recipe&q=595382&s=4672633' },
-      breakfast:{ headline:'breakfast, without the wait.', blurb:'The Ninja DualZone Air Fryer runs two things at once so the eggs and the bacon land at the same time.', cta:'shop the air fryer', link:'https://www.awin1.com/cread.php?awinmid=8059&awinaffid=2918949&clickref=recipe&q=595382&s=4672633' },
-      dessert:  { headline:'soft serve, from your own freezer.', blurb:'The Ninja CREAMi Swirl turns any frozen base into ice cream, sorbet or actual soft serve.', cta:'shop the creami', link:'https://www.awin1.com/cread.php?awinmid=8059&awinaffid=2918949&clickref=recipe' },
+      // chicken + steak: product-page deep link to the exact model in the creative (OG901UK Woodfire Pro Connect XL). Permanent, not sale-tied.
+      chicken:  { headline:'the kit for the flip.', blurb:"Smoker, grill and air fryer in one, ready for the garden. Ninja's summer sale is on: up to 20% off with code <b>NINJA20</b> until 11 Aug, exclusions apply.", /* SALE-ENDS-2026-08-11 */ cta:'shop ninja', link:'https://www.awin1.com/cread.php?awinmid=8059&awinaffid=2918949&clickref=recipe&ued=https%3A%2F%2Fwww.sharkninja.co.uk%2Fninja-woodfire-pro-connect-xl-electric-bbq-grill-smoker%2FOG901UK.html' },
+      steak:    { headline:'the kit for the flip.', blurb:"Smoker, grill and air fryer in one, ready for the garden. Ninja's summer sale is on: up to 20% off with code <b>NINJA20</b> until 11 Aug, exclusions apply.", /* SALE-ENDS-2026-08-11 */ cta:'shop ninja', link:'https://www.awin1.com/cread.php?awinmid=8059&awinaffid=2918949&clickref=recipe&ued=https%3A%2F%2Fwww.sharkninja.co.uk%2Fninja-woodfire-pro-connect-xl-electric-bbq-grill-smoker%2FOG901UK.html' },
+      // everything else: point to the sale page during the promo. SALE-ENDS-2026-08-11 markers on each blurb + cta.
+      drinks:   { headline:'slushies at home.', blurb:"Frozen drinks, cocktails and mocktails in ten minutes flat. Ninja's summer sale is on: up to 20% off with code <b>NINJA20</b> until 11 Aug, exclusions apply.", /* SALE-ENDS-2026-08-11 */ cta:'shop the sale', link:'https://www.awin1.com/cread.php?awinmid=8059&awinaffid=2918949&clickref=recipe&ued=https%3A%2F%2Fwww.sharkninja.co.uk%2Foffers%2Fsale' },
+      brunch:   { headline:'barista brunch, at home.', blurb:"Espresso, drip coffee and cold brew from one machine, milk frother included. Ninja's summer sale is on: up to 20% off with code <b>NINJA20</b> until 11 Aug, exclusions apply.", /* SALE-ENDS-2026-08-11 */ cta:'shop the sale', link:'https://www.awin1.com/cread.php?awinmid=8059&awinaffid=2918949&clickref=recipe&ued=https%3A%2F%2Fwww.sharkninja.co.uk%2Foffers%2Fsale' },
+      soup:     { headline:'hot soup, no hob.', blurb:"Cook and blend in the same jug: silky soups start to finish in minutes. Ninja's summer sale is on: up to 20% off with code <b>NINJA20</b> until 11 Aug, exclusions apply.", /* SALE-ENDS-2026-08-11 */ cta:'shop the sale', link:'https://www.awin1.com/cread.php?awinmid=8059&awinaffid=2918949&clickref=recipe&ued=https%3A%2F%2Fwww.sharkninja.co.uk%2Foffers%2Fsale' },
+      sauce:    { headline:'sauce sorted.', blurb:"Sauces, pestos and dips from ingredients to jar in seconds. Ninja's summer sale is on: up to 20% off with code <b>NINJA20</b> until 11 Aug, exclusions apply.", /* SALE-ENDS-2026-08-11 */ cta:'shop the sale', link:'https://www.awin1.com/cread.php?awinmid=8059&awinaffid=2918949&clickref=recipe&ued=https%3A%2F%2Fwww.sharkninja.co.uk%2Foffers%2Fsale' },
+      curry:    { headline:'the kit for weeknight dinner.', blurb:"Air fry two things at once, so chicken and veg land together with nothing overcooked. Ninja's summer sale is on: up to 20% off with code <b>NINJA20</b> until 11 Aug, exclusions apply.", /* SALE-ENDS-2026-08-11 */ cta:'shop the sale', link:'https://www.awin1.com/cread.php?awinmid=8059&awinaffid=2918949&clickref=recipe&ued=https%3A%2F%2Fwww.sharkninja.co.uk%2Foffers%2Fsale' },
+      veg:      { headline:'crispier veg, no faff.', blurb:"Roast veg to properly crispy in a fraction of the oven time. Ninja's summer sale is on: up to 20% off with code <b>NINJA20</b> until 11 Aug, exclusions apply.", /* SALE-ENDS-2026-08-11 */ cta:'shop the sale', link:'https://www.awin1.com/cread.php?awinmid=8059&awinaffid=2918949&clickref=recipe&ued=https%3A%2F%2Fwww.sharkninja.co.uk%2Foffers%2Fsale' },
+      breakfast:{ headline:'breakfast, without the wait.', blurb:"Run two things at once so the eggs and the bacon land at the same time. Ninja's summer sale is on: up to 20% off with code <b>NINJA20</b> until 11 Aug, exclusions apply.", /* SALE-ENDS-2026-08-11 */ cta:'shop the sale', link:'https://www.awin1.com/cread.php?awinmid=8059&awinaffid=2918949&clickref=recipe&ued=https%3A%2F%2Fwww.sharkninja.co.uk%2Foffers%2Fsale' },
+      dessert:  { headline:'soft serve, from your own freezer.', blurb:"Turn any frozen base into ice cream, sorbet or actual soft serve. Ninja's summer sale is on: up to 20% off with code <b>NINJA20</b> until 11 Aug, exclusions apply.", /* SALE-ENDS-2026-08-11 */ cta:'shop the sale', link:'https://www.awin1.com/cread.php?awinmid=8059&awinaffid=2918949&clickref=recipe&ued=https%3A%2F%2Fwww.sharkninja.co.uk%2Foffers%2Fsale' },
     },
-    tile:{ img:'partners/ninja-plate.png', title:'the kit for the flip.', badge:'shop ninja', color:'#1c2532', label:'#1c2532' } },
+    // SALE-ENDS-2026-08-11: badges say "20% off". After the sale revert badges to "shop ninja" / "shop the range".
+    tile:{ img:'partners/ninja-plate.png', title:'the kit for the flip.', badge:'summer sale', color:'#1c2532', label:'#1c2532' },
+    tile2:{ title:'grill, fry, roast.', badge:'code NINJA20' } },
 ];
 const pcardHtml = (pt, ref)=>`
     <a class="pcard" href="${pt.link.replace('clickref=recipe','clickref='+ref)}" target="_blank" rel="sponsored noopener">
@@ -275,11 +292,20 @@ const partnerCard = (rec)=>{
 // slot 1: native in-grid tiles on the home page. One tile per active partner
 // with a `tile` config, first at position 12 (first-scroll depth) then one
 // every ~14 cards. Unfiltered view only; labelled PARTNER so it reads honest.
-const PTILES = PARTNERS.filter(p=>p.active && p.tile).map(p=>({
-  link: p.link.replace('clickref=recipe','clickref=grid'),
-  img: p.tile.img, name: 'partner · '+p.name.replace(/&amp;/g,'&'),
-  title: p.tile.title, badge: p.tile.badge, color: p.tile.color, label: p.tile.label
-}));
+// Two-pass tile roster: every active partner runs once (positions 12/26/40...
+// with their primary tagline), then again deeper in the grid (positions 82/96/
+// 110... with a second tagline). The second-pass tagline lives in p.tile2 if
+// present, otherwise falls back to a generic "shop now" of the same headline.
+const _mkTile = (p, second) => ({
+  link: p.link.replace('clickref=recipe', second?'clickref=grid2':'clickref=grid'),
+  img: p.tile.img,
+  name: 'partner · ' + p.name.replace(/&amp;/g,'&'),
+  title: (second && p.tile2 && p.tile2.title) || p.tile.title,
+  badge: (second && p.tile2 && p.tile2.badge) || p.tile.badge,
+  color: p.tile.color, label: p.tile.label,
+});
+const _active = PARTNERS.filter(p=>p.active && p.tile);
+const PTILES = _active.map(p=>_mkTile(p,false)).concat(_active.map(p=>_mkTile(p,true)));
 
 // ---- category hub pages: lane landing pages targeting the head terms ----
 // Proof set of four; the rest of the lanes follow once the pattern is signed off.
