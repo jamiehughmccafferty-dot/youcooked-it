@@ -183,17 +183,23 @@ const PARTNERS = [
     headline:'fill the freezer.',
     blurb:'5kg of premium chicken breast fillets for £24.99 with code <b>24CHICK</b>, plus hampers, steaks and high protein boxes from MuscleFood.',
     cta:'claim the deal',
-    image:'/partners/muscle-food.jpg',
-    // creative rotation: each recipe page gets one variant (deterministic per
-    // slug) so the lane shows the whole range, never the same ad 26 times
-    variants:[
-      { image:'/partners/muscle-food.jpg', headline:'fill the freezer.',
-        blurb:'5kg of premium chicken breast fillets for £24.99 with code <b>24CHICK</b>, plus hampers, steaks and high protein boxes from MuscleFood.', cta:'claim the deal' },
-      { image:'/partners/muscle-food-hamper.jpg', headline:'the whole butcher, boxed.',
-        blurb:'Bestselling meat hampers from MuscleFood: chicken, steaks, mince and high protein boxes, delivered fresh to your door.', cta:'shop hampers' },
-      { image:'/partners/muscle-food-steaks.jpg', headline:'steak night, sorted.',
-        blurb:'8 Brazilian sirloin steaks for £24.99, saving £38.99, plus everything else the freezer is missing from MuscleFood.', cta:'claim the steaks' },
-    ],
+    image:'/partners/muscle-food-hamper.jpg',
+    // creative pool per lane so a steak page never carries the chicken deal
+    // and vice versa. Deterministic per slug so it is stable across builds.
+    _laneVariants:{
+      chicken:[
+        { image:'/partners/muscle-food.jpg', headline:'fill the freezer.',
+          blurb:'5kg of premium chicken breast fillets for £24.99 with code <b>24CHICK</b>, plus hampers and high protein boxes from MuscleFood.', cta:'claim the deal' },
+        { image:'/partners/muscle-food-hamper.jpg', headline:'the whole butcher, boxed.',
+          blurb:'Bestselling meat hampers from MuscleFood: chicken, steaks, mince and high protein boxes, delivered fresh to your door.', cta:'shop hampers' },
+      ],
+      steak:[
+        { image:'/partners/muscle-food-steaks.jpg', headline:'steak night, sorted.',
+          blurb:'8 Brazilian sirloin steaks for £24.99, saving £38.99, plus everything else the freezer is missing from MuscleFood.', cta:'claim the steaks' },
+        { image:'/partners/muscle-food-hamper.jpg', headline:'the whole butcher, boxed.',
+          blurb:'Bestselling meat hampers from MuscleFood: chicken, steaks, mince and high protein boxes, delivered fresh to your door.', cta:'shop hampers' },
+      ],
+    },
     hubVariant:1,
     tile:{ img:'partners/muscle-food-plate.png', title:'fill the freezer.', badge:'code 24CHICK', color:'#2c5e4f', label:'#1b3f34' } },
   { id:'ninja', name:'shark ninja', active:true, pbg:'#f0e9de',
@@ -246,10 +252,12 @@ const mergedFor = (pt, rec)=>{
   let merged = {...pt, image:(pt.images && pt.images[rec.category]) || pt.image};
   // per-lane appliance copy + tracked link (SharkNinja pattern)
   if(pt._byCat && pt._byCat[rec.category]) merged = {...merged, ...pt._byCat[rec.category]};
-  // per-slug creative rotation (MuscleFood pattern)
-  if(pt.variants && pt.variants.length){
+  // lane-scoped variant pool (MuscleFood pattern): rotate deterministically
+  // within the lane's creatives so chicken pages only see chicken/hamper etc.
+  const pool = (pt._laneVariants && pt._laneVariants[rec.category]) || pt.variants;
+  if(pool && pool.length){
     let h=0; for(const ch of rec.slug) h=(h*31+ch.charCodeAt(0))>>>0;
-    merged = {...merged, ...pt.variants[h % pt.variants.length]};
+    merged = {...merged, ...pool[h % pool.length]};
   }
   return merged;
 };
