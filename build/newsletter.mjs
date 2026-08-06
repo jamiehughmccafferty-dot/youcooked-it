@@ -61,16 +61,32 @@ const INTRO = (introIdx !== -1 && process.argv[introIdx + 1]) || process.env.NL_
 
 // partner slot: native cards after the five, links tagged clickref=newsletter.
 // Edit per edition (or empty the array to skip the section).
+// Four sponsor slots in the newsletter: Tower, Abel & Cole, MuscleFood and
+// SharkNinja. Real Food Hub deliberately excluded (Jamie's call). Every link
+// carries clickref=newsletter for per-slot AWIN reporting.
 const NL_PARTNERS = [
-  { // Tower Pay Day Event banner (their creative; deep link to the sale page)
-    banner: SITE + '/partners/tower-payday.jpg', alt: 'Tower Pay Day Event: save 20% with code PAYDAY',
-    link: 'https://www.awin1.com/cread.php?awinmid=20823&awinaffid=2918949&campaign=&clickref=newsletter&ued=https%3A%2F%2Fwww.towerhousewares.co.uk%2Fpages%2Fpay-day-sale',
-    note: 'code PAYDAY · 20% off full price Tower kit when you spend £40 or more' },
-  { // Abel & Cole native card in the recipe-card style
+  { // Tower — standing offer (PAYDAY promo ended, back to the everyday hook)
+    accent: '#9bb020', label: 'partner · tower', title: 'the kit behind the cooking.',
+    meta: 'pans, woks, air fryers | free recipe book',
+    cta: 'shop tower',
+    img: SITE + '/partners/tower-freedom.jpg', alt: 'Tower Freedom pans',
+    link: 'https://www.awin1.com/cread.php?awinmid=20823&awinaffid=2918949&clickref=newsletter' },
+  { // Abel & Cole
     accent: '#eab308', label: 'partner · abel & cole', title: 'salad season, sorted.',
     meta: '50% off your 1st box | code ACVEG26', cta: 'get 50% off',
     img: SITE + '/partners/abel-and-cole-box.jpg', alt: 'Abel and Cole veg box',
     link: 'https://www.awin1.com/awclick.php?gid=385402&mid=6388&awinaffid=2918949&linkid=2603115&clickref=newsletter' },
+  { // MuscleFood — hamper leads the slot: bigger basket than the 5kg chicken deal
+    accent: '#2c5e4f', label: 'partner · musclefood', title: 'the whole butcher, boxed.',
+    meta: 'meat hampers | chicken, steaks, mince and more', cta: 'shop hampers',
+    img: SITE + '/partners/muscle-food-hamper.jpg', alt: 'MuscleFood meat hamper',
+    link: 'https://www.awin1.com/cread.php?awinmid=11002&awinaffid=2918949&clickref=newsletter' },
+  { // SharkNinja — Sizzling Summer Sale (SALE-ENDS-2026-08-11: revert to standing headline after)
+    accent: '#1c2532', label: 'partner · shark ninja', title: 'the kit for the flip.',
+    meta: "Ninja's summer sale is on | up to 20% off with code NINJA20, exclusions apply",
+    cta: 'shop ninja',
+    img: SITE + '/partners/ninja-woodfire.jpg', alt: 'Ninja Woodfire Pro Connect XL Electric BBQ Grill and Smoker',
+    link: 'https://www.awin1.com/cread.php?awinmid=8059&awinaffid=2918949&clickref=newsletter&ued=https%3A%2F%2Fwww.sharkninja.co.uk%2Foffers%2Fsale' },
 ];
 const partnerRows = !NL_PARTNERS.length ? '' : `
   <tr><td align="center" style="font-family:Poppins,Arial,sans-serif;font-weight:700;font-size:15px;letter-spacing:1.5px;color:${INK};text-transform:uppercase;padding:26px 0 14px 0;">from our kitchen partners</td></tr>

@@ -6125,7 +6125,7 @@ export default {
     serving_ideas:[{emoji:"🍯",label:"extra hot honey"},{emoji:"🥛",label:"cool yogurt"},{emoji:"🌿",label:"mint"},{emoji:"🍋",label:"lemon squeeze"}]
   },
 
-  "sausage-and-egg-mcmuffin": {
+  "sausage-and-egg-muffin": {
     cuisine:"American",
     story:"The takeaway you queue for at eight in the morning, made properly in your own kitchen in less than that queue. A seasoned sausage patty, a perfectly round fried egg, melting cheese and a toasted muffin. The trick is a metal cutter or a jam-jar lid, which is the only piece of kit standing between you and never buying one again.",
     meta:{total_time:"20 min",marinate_time:null,serves:2,heat:"mild",skill:"easy"},
