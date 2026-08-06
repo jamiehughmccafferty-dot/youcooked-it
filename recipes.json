@@ -31489,5 +31489,734 @@
       }
     ],
     "kitchen_notes": []
+  },
+  {
+    "slug": "sausage-and-egg-mcmuffin",
+    "title": "Sausage and Egg McMuffin",
+    "category": "breakfast",
+    "tag": "trender",
+    "cuisine": "American",
+    "hero": "sausage-and-egg-mcmuffin.png",
+    "status": "published",
+    "story": "The takeaway you queue for at eight in the morning, made properly in your own kitchen in less than that queue. A seasoned sausage patty, a perfectly round fried egg, melting cheese and a toasted muffin. The trick is a metal cutter or a jam-jar lid, which is the only piece of kit standing between you and never buying one again.",
+    "meta": {
+      "total_time": "20 min",
+      "marinate_time": null,
+      "serves": 2,
+      "heat": "mild",
+      "skill": "easy"
+    },
+    "macros": {
+      "protein_g": 26,
+      "fat_g": 28,
+      "carbs_g": 32,
+      "estimate": true
+    },
+    "ingredient_groups": [
+      {
+        "name": "the patties",
+        "items": [
+          {
+            "qty": 250,
+            "unit": "g",
+            "name": "good sausage meat",
+            "countable": false
+          },
+          {
+            "qty": 0.5,
+            "unit": "tsp",
+            "name": "black pepper",
+            "countable": false
+          },
+          {
+            "qty": 0.5,
+            "unit": "tsp",
+            "name": "dried sage",
+            "countable": false
+          },
+          {
+            "qty": 1,
+            "unit": "pinch",
+            "name": "garlic granules",
+            "countable": false
+          }
+        ]
+      },
+      {
+        "name": "the build",
+        "items": [
+          {
+            "qty": 2,
+            "unit": "",
+            "name": "english muffins, split",
+            "countable": true
+          },
+          {
+            "qty": 2,
+            "unit": "slices",
+            "name": "american cheese",
+            "countable": false
+          },
+          {
+            "qty": 2,
+            "unit": "",
+            "name": "large eggs",
+            "countable": true
+          },
+          {
+            "qty": 1,
+            "unit": "knob",
+            "name": "butter",
+            "countable": false
+          }
+        ]
+      }
+    ],
+    "spice_mix": [],
+    "method": [
+      {
+        "title": "shape the patties",
+        "when": "5 min",
+        "body": "Mix the sausage meat with the pepper, sage and garlic and shape into two patties slightly wider than the muffins. They shrink as they cook, so go big.",
+        "timer_seconds": 300
+      },
+      {
+        "title": "toast the muffins",
+        "when": "3 min",
+        "body": "Split, butter and toast the muffins in a dry pan or under the grill until golden inside.",
+        "timer_seconds": 180
+      },
+      {
+        "title": "cook the patties",
+        "when": "6 min",
+        "body": "Fry the patties in a hot pan, three minutes a side, until deeply browned and cooked through. Cheese slice on top for the last thirty seconds so it slumps.",
+        "timer_seconds": 360
+      },
+      {
+        "title": "the round egg",
+        "when": "4 min",
+        "body": "In another pan on low, sit a greased 8cm metal ring, jam jar lid or small pastry cutter and crack an egg inside. Splash a teaspoon of water in the pan and lid it for two minutes to set the top.",
+        "timer_seconds": 240
+      },
+      {
+        "title": "build",
+        "when": "2 min",
+        "body": "Muffin base, cheesy patty, round egg, muffin lid. Press gently.",
+        "timer_seconds": null
+      },
+      {
+        "title": "serve",
+        "when": "now",
+        "body": "Wrap it in greaseproof paper for the full authentic experience, and eat it before it stops steaming.",
+        "timer_seconds": null
+      }
+    ],
+    "serving_ideas": [
+      {
+        "emoji": "🍅",
+        "label": "hash brown alongside"
+      },
+      {
+        "emoji": "☕",
+        "label": "proper coffee"
+      },
+      {
+        "emoji": "🌶️",
+        "label": "hot sauce"
+      },
+      {
+        "emoji": "🥓",
+        "label": "add a rasher"
+      }
+    ],
+    "kitchen_notes": []
+  },
+  {
+    "slug": "steak-and-eggs",
+    "title": "Steak and Eggs",
+    "category": "steak",
+    "tag": "evergreen",
+    "cuisine": "American",
+    "hero": "steak-and-eggs.png",
+    "status": "published",
+    "story": "The plate of a proper morning: a well-seared steak, eggs however you take them, and no polite portion sizes. It sounds like a diner order but it takes fifteen minutes at home and turns any random tuesday into a small occasion. Cook the steak first, eggs in the same pan for free flavour.",
+    "meta": {
+      "total_time": "20 min",
+      "marinate_time": null,
+      "serves": 2,
+      "heat": "mild",
+      "skill": "easy"
+    },
+    "macros": {
+      "protein_g": 44,
+      "fat_g": 26,
+      "carbs_g": 2,
+      "estimate": true
+    },
+    "ingredient_groups": [
+      {
+        "name": "the plate",
+        "items": [
+          {
+            "qty": 2,
+            "unit": "",
+            "name": "sirloin or rump steaks, about 200g each",
+            "countable": true
+          },
+          {
+            "qty": 4,
+            "unit": "",
+            "name": "eggs",
+            "countable": true
+          },
+          {
+            "qty": 1,
+            "unit": "tbsp",
+            "name": "neutral oil",
+            "countable": false
+          },
+          {
+            "qty": 20,
+            "unit": "g",
+            "name": "butter",
+            "countable": false
+          },
+          {
+            "qty": 1,
+            "unit": "tsp",
+            "name": "flaky sea salt",
+            "countable": false
+          },
+          {
+            "qty": 1,
+            "unit": "tsp",
+            "name": "black pepper",
+            "countable": false
+          }
+        ]
+      },
+      {
+        "name": "to finish",
+        "items": [
+          {
+            "qty": 1,
+            "unit": "handful",
+            "name": "chives, chopped",
+            "countable": false
+          },
+          {
+            "qty": 1,
+            "unit": "squeeze",
+            "name": "lemon",
+            "countable": false
+          }
+        ]
+      }
+    ],
+    "spice_mix": [],
+    "method": [
+      {
+        "title": "temper",
+        "when": "10 min",
+        "body": "Steaks out of the fridge, patted dry, salted hard on both sides. Room-temperature meat cooks evenly.",
+        "timer_seconds": 600
+      },
+      {
+        "title": "sear",
+        "when": "5 min",
+        "body": "Screaming hot pan, a little oil, steaks in for two and a half minutes a side for medium rare. Out onto a warm plate to rest.",
+        "timer_seconds": 300
+      },
+      {
+        "title": "eggs in the good pan",
+        "when": "3 min",
+        "body": "Butter into the same pan, heat down to medium-low, crack the eggs in and cook to your preference. Fried, over-easy, sunny — the pan is doing the work.",
+        "timer_seconds": 180
+      },
+      {
+        "title": "the hard part",
+        "when": "3 min",
+        "body": "Rest the steaks a full three minutes. Their juices are payment.",
+        "timer_seconds": 180
+      },
+      {
+        "title": "plate",
+        "when": "now",
+        "body": "Slice the steak against the grain, tip the pan juices over, eggs alongside, chives and a squeeze of lemon.",
+        "timer_seconds": null
+      }
+    ],
+    "serving_ideas": [
+      {
+        "emoji": "🥔",
+        "label": "hash browns"
+      },
+      {
+        "emoji": "🥑",
+        "label": "avocado"
+      },
+      {
+        "emoji": "🌶️",
+        "label": "hot sauce"
+      },
+      {
+        "emoji": "🍞",
+        "label": "toast for the yolk"
+      }
+    ],
+    "kitchen_notes": []
+  },
+  {
+    "slug": "ultimate-breakfast-sandwich",
+    "title": "Ultimate Breakfast Sandwich",
+    "category": "breakfast",
+    "tag": "trender",
+    "cuisine": "British",
+    "hero": "ultimate-breakfast-sandwich.png",
+    "status": "published",
+    "story": "The full english, all four food groups, held between two slices of golden eggy-bread. This is what happens when the diner meets the greasy spoon meets a slightly reckless Sunday morning. Bacon, sausage, hash brown, brown sauce, and a fried-bread hug on both sides. Eating it standing up is traditional. Sharing it is optional and, frankly, wrong.",
+    "meta": {
+      "total_time": "25 min",
+      "marinate_time": null,
+      "serves": 2,
+      "heat": "mild",
+      "skill": "easy"
+    },
+    "macros": {
+      "protein_g": 32,
+      "fat_g": 40,
+      "carbs_g": 48,
+      "estimate": true
+    },
+    "ingredient_groups": [
+      {
+        "name": "the fillings",
+        "items": [
+          {
+            "qty": 4,
+            "unit": "rashers",
+            "name": "thick back bacon",
+            "countable": false
+          },
+          {
+            "qty": 2,
+            "unit": "",
+            "name": "good pork sausages, split lengthways",
+            "countable": true
+          },
+          {
+            "qty": 2,
+            "unit": "",
+            "name": "hash browns",
+            "countable": true
+          },
+          {
+            "qty": 2,
+            "unit": "tbsp",
+            "name": "brown sauce",
+            "countable": false
+          }
+        ]
+      },
+      {
+        "name": "the eggy-bread base",
+        "items": [
+          {
+            "qty": 4,
+            "unit": "thick slices",
+            "name": "soft white bread",
+            "countable": false
+          },
+          {
+            "qty": 3,
+            "unit": "",
+            "name": "eggs",
+            "countable": true
+          },
+          {
+            "qty": 2,
+            "unit": "tbsp",
+            "name": "milk",
+            "countable": false
+          },
+          {
+            "qty": 1,
+            "unit": "pinch",
+            "name": "salt",
+            "countable": false
+          },
+          {
+            "qty": 20,
+            "unit": "g",
+            "name": "butter",
+            "countable": false
+          }
+        ]
+      }
+    ],
+    "spice_mix": [],
+    "method": [
+      {
+        "title": "the fillings, ready",
+        "when": "12 min",
+        "body": "Cook the bacon, split sausages and hash browns in a hot pan or a hot oven at 200C fan until everything is deep gold and crisp at the edges. Keep them warm on a plate while the bread happens.",
+        "timer_seconds": 720
+      },
+      {
+        "title": "soak the bread",
+        "when": "2 min",
+        "body": "Whisk the eggs, milk and salt in a wide dish and lay the bread in it, thirty seconds a side, so it drinks up the custard without turning to mush.",
+        "timer_seconds": 120
+      },
+      {
+        "title": "golden the bread",
+        "when": "6 min",
+        "body": "Melt the butter in the same pan the fillings came out of and fry the soaked bread three minutes a side, until deep gold and crisp outside, soft and eggy inside.",
+        "timer_seconds": 360
+      },
+      {
+        "title": "the build",
+        "when": "3 min",
+        "body": "Eggy-bread base, hash brown, split sausage, bacon, big fingerprint of brown sauce, eggy-bread lid. Press gently. Feel the weight.",
+        "timer_seconds": 180
+      },
+      {
+        "title": "serve",
+        "when": "now",
+        "body": "Slice on the diagonal so the cross-section does its work, eat immediately, tea within reach. Do not, under any circumstances, put it on a plate that matters.",
+        "timer_seconds": null
+      }
+    ],
+    "serving_ideas": [
+      {
+        "emoji": "☕",
+        "label": "strong tea"
+      },
+      {
+        "emoji": "🍅",
+        "label": "grilled tomato"
+      },
+      {
+        "emoji": "🍳",
+        "label": "add a fried egg on top"
+      },
+      {
+        "emoji": "🌶️",
+        "label": "or hot sauce"
+      }
+    ],
+    "kitchen_notes": []
+  },
+  {
+    "slug": "breakfast-tacos",
+    "title": "Breakfast Tacos",
+    "category": "breakfast",
+    "tag": "trender",
+    "cuisine": "Mexican",
+    "hero": "breakfast-tacos.png",
+    "status": "published",
+    "story": "Small warm corn tortillas piled with soft scrambled eggs, crispy chorizo, avocado and a proper hot salsa. Not lunch, not tapas, entirely breakfast — the Austin way of starting the day, with juice at hand and options for everyone at the table.",
+    "meta": {
+      "total_time": "25 min",
+      "marinate_time": null,
+      "serves": 4,
+      "heat": "medium",
+      "skill": "easy"
+    },
+    "macros": {
+      "protein_g": 22,
+      "fat_g": 22,
+      "carbs_g": 28,
+      "estimate": true
+    },
+    "ingredient_groups": [
+      {
+        "name": "the fillings",
+        "items": [
+          {
+            "qty": 8,
+            "unit": "",
+            "name": "small corn or flour tortillas",
+            "countable": true
+          },
+          {
+            "qty": 200,
+            "unit": "g",
+            "name": "cooking chorizo, sliced",
+            "countable": false
+          },
+          {
+            "qty": 8,
+            "unit": "",
+            "name": "eggs",
+            "countable": true
+          },
+          {
+            "qty": 1,
+            "unit": "knob",
+            "name": "butter",
+            "countable": false
+          },
+          {
+            "qty": 2,
+            "unit": "tbsp",
+            "name": "soured cream or greek yogurt",
+            "countable": false
+          }
+        ]
+      },
+      {
+        "name": "the trimmings",
+        "items": [
+          {
+            "qty": 1,
+            "unit": "",
+            "name": "ripe avocado, sliced",
+            "countable": true
+          },
+          {
+            "qty": 100,
+            "unit": "g",
+            "name": "cheddar or monterey jack, grated",
+            "countable": false
+          },
+          {
+            "qty": 1,
+            "unit": "handful",
+            "name": "coriander leaves",
+            "countable": false
+          },
+          {
+            "qty": 1,
+            "unit": "",
+            "name": "lime, in wedges",
+            "countable": true
+          },
+          {
+            "qty": 3,
+            "unit": "tbsp",
+            "name": "salsa or hot sauce",
+            "countable": false
+          }
+        ]
+      }
+    ],
+    "spice_mix": [],
+    "method": [
+      {
+        "title": "chorizo first",
+        "when": "5 min",
+        "body": "Fry the chorizo in a dry pan until crisp at the edges and it has released its orange oil. Move to a plate, leave the oil.",
+        "timer_seconds": 300
+      },
+      {
+        "title": "soft scramble",
+        "when": "5 min",
+        "body": "Butter into the chorizo pan, heat to low, add the beaten eggs and stir slowly with a spatula until barely set. Off the heat while they still look a touch loose.",
+        "timer_seconds": 300
+      },
+      {
+        "title": "warm the tortillas",
+        "when": "3 min",
+        "body": "Toast each tortilla directly over a gas flame or in a dry pan for ten seconds a side, until pliable and lightly charred.",
+        "timer_seconds": 180
+      },
+      {
+        "title": "build",
+        "when": "3 min",
+        "body": "Warm tortilla, eggs, chorizo, avocado, cheese, coriander. Lime and hot sauce at the table so everyone can dial it.",
+        "timer_seconds": 180
+      },
+      {
+        "title": "serve",
+        "when": "now",
+        "body": "Two per person, or four for the brave. Hand them out fast; cold tacos are sadder than they need to be.",
+        "timer_seconds": null
+      }
+    ],
+    "serving_ideas": [
+      {
+        "emoji": "🥑",
+        "label": "more avocado"
+      },
+      {
+        "emoji": "🍋",
+        "label": "lime wedges"
+      },
+      {
+        "emoji": "🌶️",
+        "label": "green hot sauce"
+      },
+      {
+        "emoji": "🍺",
+        "label": "or a bloody mary"
+      }
+    ],
+    "kitchen_notes": []
+  },
+  {
+    "slug": "cinnamon-french-toast-bake",
+    "title": "Cinnamon French Toast Bake",
+    "category": "baking",
+    "tag": "trender",
+    "cuisine": "American",
+    "hero": "cinnamon-french-toast-bake.png",
+    "status": "published",
+    "story": "French toast for a table, in one tin, before anyone has to stand at a hob. Torn brioche soaked in a cinnamon-vanilla custard overnight, then baked until golden on top and soft as pudding underneath. Feeds four properly, six politely, and makes the kitchen smell like the good bit of Christmas.",
+    "meta": {
+      "total_time": "1 hr",
+      "marinate_time": "overnight",
+      "serves": 6,
+      "heat": "mild",
+      "skill": "easy"
+    },
+    "macros": {
+      "protein_g": 14,
+      "fat_g": 18,
+      "carbs_g": 44,
+      "estimate": true
+    },
+    "ingredient_groups": [
+      {
+        "name": "the bake",
+        "items": [
+          {
+            "qty": 400,
+            "unit": "g",
+            "name": "brioche or challah, torn into chunks",
+            "countable": false
+          },
+          {
+            "qty": 6,
+            "unit": "",
+            "name": "eggs",
+            "countable": true
+          },
+          {
+            "qty": 400,
+            "unit": "ml",
+            "name": "whole milk",
+            "countable": false
+          },
+          {
+            "qty": 100,
+            "unit": "ml",
+            "name": "double cream",
+            "countable": false
+          },
+          {
+            "qty": 60,
+            "unit": "g",
+            "name": "caster sugar",
+            "countable": false
+          },
+          {
+            "qty": 2,
+            "unit": "tsp",
+            "name": "vanilla extract",
+            "countable": false
+          },
+          {
+            "qty": 2,
+            "unit": "tsp",
+            "name": "ground cinnamon",
+            "countable": false
+          },
+          {
+            "qty": 1,
+            "unit": "pinch",
+            "name": "salt",
+            "countable": false
+          }
+        ]
+      },
+      {
+        "name": "the crumb",
+        "items": [
+          {
+            "qty": 60,
+            "unit": "g",
+            "name": "soft brown sugar",
+            "countable": false
+          },
+          {
+            "qty": 40,
+            "unit": "g",
+            "name": "cold butter, cubed",
+            "countable": false
+          },
+          {
+            "qty": 40,
+            "unit": "g",
+            "name": "plain flour",
+            "countable": false
+          },
+          {
+            "qty": 1,
+            "unit": "tsp",
+            "name": "ground cinnamon",
+            "countable": false
+          }
+        ]
+      }
+    ],
+    "spice_mix": [],
+    "method": [
+      {
+        "title": "tear and pack",
+        "when": "10 min",
+        "body": "Tear the brioche into rough chunks and pile them into a greased baking dish. Uneven pieces make good corners.",
+        "timer_seconds": 600
+      },
+      {
+        "title": "custard",
+        "when": "5 min",
+        "body": "Whisk the eggs, milk, cream, sugar, vanilla, cinnamon and salt until smooth, then pour evenly over the bread.",
+        "timer_seconds": 300
+      },
+      {
+        "title": "overnight",
+        "when": "overnight",
+        "body": "Cover and chill in the fridge overnight. Every hour makes it softer, richer and more forgiving.",
+        "timer_seconds": null
+      },
+      {
+        "title": "the crumb",
+        "when": "5 min",
+        "body": "Rub the butter into the flour, sugar and cinnamon with your fingertips until it clumps. Scatter over the bake.",
+        "timer_seconds": 300
+      },
+      {
+        "title": "bake",
+        "when": "40 min",
+        "body": "Bake at 170C fan until the top is deep gold and the middle wobbles slightly when you nudge the tin.",
+        "timer_seconds": 2400
+      },
+      {
+        "title": "serve",
+        "when": "now",
+        "body": "Rest for five minutes, then serve warm with maple syrup and berries. Fights encouraged over corner pieces.",
+        "timer_seconds": null
+      }
+    ],
+    "serving_ideas": [
+      {
+        "emoji": "🍁",
+        "label": "maple syrup"
+      },
+      {
+        "emoji": "🫐",
+        "label": "berries"
+      },
+      {
+        "emoji": "🥛",
+        "label": "vanilla yogurt"
+      },
+      {
+        "emoji": "☕",
+        "label": "strong coffee"
+      }
+    ],
+    "kitchen_notes": []
   }
 ]

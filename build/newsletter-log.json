@@ -240,16 +240,18 @@
     "yorkshire-pudding-wrap",
     "loaded-jacket-potato",
     "chicken-and-chorizo-paella",
-    "halloumi-fries"
+    "halloumi-fries",
+    "sausage-and-egg-mcmuffin",
+    "steak-and-eggs",
+    "bacon-sandwich",
+    "breakfast-tacos",
+    "cinnamon-french-toast-bake",
+    "ultimate-breakfast-sandwich"
   ],
   "lastDrop": {
-    "date": "2026-07-28",
+    "date": "2026-08-06",
     "slugs": [
-      "hard-iced-tea",
-      "yorkshire-pudding-wrap",
-      "loaded-jacket-potato",
-      "chicken-and-chorizo-paella",
-      "halloumi-fries"
+      "ultimate-breakfast-sandwich"
     ]
   },
   "heldForSpecial": {
