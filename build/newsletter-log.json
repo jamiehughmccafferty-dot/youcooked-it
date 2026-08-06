@@ -249,9 +249,13 @@
     "ultimate-breakfast-sandwich"
   ],
   "lastDrop": {
-    "date": "2026-08-06",
+    "date": "2026-08-07",
     "slugs": [
-      "ultimate-breakfast-sandwich"
+      "sausage-and-egg-muffin",
+      "ultimate-breakfast-sandwich",
+      "steak-and-eggs",
+      "breakfast-tacos",
+      "cinnamon-french-toast-bake"
     ]
   },
   "heldForSpecial": {
