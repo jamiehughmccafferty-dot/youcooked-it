@@ -129,18 +129,14 @@ const schemaFor = rec => {
 };
 
 // ---- newsletter signup (the friday five) ----
-// Hands the email over to Beehiiv's hosted subscribe page in a new tab (they
-// finish the flow: confirm-your-email, welcome email). Site keeps the design
-// and shows an inline "check your inbox" hint after submit.
+// One-tap join: opens Beehiiv's hosted subscribe page so users only enter
+// their email once. Same design language (mono line + pill), no double form.
 const NL_ACTION = process.env.NLACTION || 'https://youcookedit.beehiiv.com/subscribe';
 const nlForm = `
-    <form class="nlform" action="${NL_ACTION}" method="get" target="_blank">
+    <div class="nlform">
       <div class="mono" style="margin-bottom:10px">the friday five · new recipes in your inbox, every friday</div>
-      <div class="nlrow"><input type="email" name="email" placeholder="your email" required aria-label="email address" autocomplete="email"/><button class="pill" type="submit">count me in</button></div>
-      <script>(function(){var f=document.currentScript.parentElement;var done=false;
-        f.addEventListener('submit',function(){if(done)return;done=true;
-          setTimeout(function(){f.innerHTML='<div class="mono">nearly there — check your inbox for a quick confirm click, then friday recipes are on their way.</div>';},400);});})();</script>
-    </form>`;
+      <a class="pill" href="${NL_ACTION}" target="_blank" rel="noopener">join the friday five</a>
+    </div>`;
 
 // ---- partners (slot 2: category-matched card after the encore) ----
 // One card max per page, only on matching categories, always labelled,
