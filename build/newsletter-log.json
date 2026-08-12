@@ -246,16 +246,21 @@
     "bacon-sandwich",
     "breakfast-tacos",
     "cinnamon-french-toast-bake",
-    "ultimate-breakfast-sandwich"
+    "ultimate-breakfast-sandwich",
+    "coronation-chicken-sandwich",
+    "whipped-feta-dip",
+    "sausage-rolls",
+    "scotch-eggs",
+    "strawberry-pimms-jelly"
   ],
   "lastDrop": {
-    "date": "2026-08-07",
+    "date": "2026-08-12",
     "slugs": [
-      "sausage-and-egg-muffin",
-      "ultimate-breakfast-sandwich",
-      "steak-and-eggs",
-      "breakfast-tacos",
-      "cinnamon-french-toast-bake"
+      "coronation-chicken-sandwich",
+      "whipped-feta-dip",
+      "sausage-rolls",
+      "scotch-eggs",
+      "strawberry-pimms-jelly"
     ]
   },
   "heldForSpecial": {
