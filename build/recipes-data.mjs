@@ -6180,7 +6180,7 @@ export default {
 
   "coronation-chicken-sandwich": {
     cuisine:"British",
-    story:"The unofficial king of the picnic hamper. Poached chicken bound in a mango-spiked mayo, packed into soft white bread with crisp little gem and enough curried richness to make the tomato sandwich next to it feel underdressed. Best made the night before so the flavours settle in properly.",
+    story:"The unofficial king of the picnic hamper, done properly on rustic sourdough. Poached chicken bound in a mango-spiked mayo, piled onto thick-cut country bread with crisp little gem and enough curried richness to make the tomato sandwich next to it feel underdressed. Best made the night before so the flavours settle in properly.",
     meta:{total_time:"30 min",marinate_time:"1 hr",serves:4,heat:"mild",skill:"easy"},
     macros:{protein_g:24,fat_g:22,carbs_g:34,estimate:true},
     ingredient_groups:[
@@ -6198,7 +6198,7 @@ export default {
         {qty:2,unit:"tbsp",name:"toasted flaked almonds",countable:false},
         {qty:1,unit:"handful",name:"coriander, chopped",countable:false}]},
       {name:"to build",items:[
-        {qty:8,unit:"slices",name:"soft white bread",countable:false},
+        {qty:8,unit:"thick slices",name:"rustic sourdough or country bread",countable:false},
         {qty:2,unit:"tbsp",name:"salted butter, softened",countable:false},
         {qty:1,unit:"",name:"little gem, shredded",countable:true}]}],
     spice_mix:[],
@@ -6207,7 +6207,7 @@ export default {
       {title:"shred",when:"5 min",body:"Lift out, drain, and shred into rough chunks with two forks. Not a paste, not a slice, somewhere handsome in between.",timer_seconds:300},
       {title:"the dressing",when:"5 min",body:"Stir the mayo, chutney, curry powder and lemon juice together, then fold through the chicken with the sultanas, almonds and coriander.",timer_seconds:300},
       {title:"the wait",when:"1 hr",body:"Chill for an hour, ideally overnight. This is where the sandwich earns its reputation.",timer_seconds:3600},
-      {title:"build",when:"5 min",body:"Butter every slice properly. Little gem on the base, generous mound of chicken, top slice, press gently, cut on the diagonal.",timer_seconds:300},
+      {title:"build",when:"5 min",body:"Butter both slices of sourdough properly. Little gem on the base, generous mound of chicken spilling over the edges, top slice, press gently, cut on the diagonal so the filling shows.",timer_seconds:300},
       {title:"serve",when:"now",body:"Wrap in greaseproof paper for a hamper, or eat straight from the board with a glass of something cold.",timer_seconds:null}],
     serving_ideas:[{emoji:"🥒",label:"cucumber ribbons"},{emoji:"🥭",label:"extra chutney"},{emoji:"🍷",label:"cold rosé"},{emoji:"🧂",label:"salted crisps"}]
   },
@@ -6240,29 +6240,32 @@ export default {
 
   "sausage-rolls": {
     cuisine:"British",
-    story:"The bake sale bestseller and the picnic hamper anchor. Good sausage meat with plenty of black pepper and thyme, wrapped in shop-bought puff pastry that behaves better than most homemade versions. The egg wash on top is the whole difference between beige and burnished.",
-    meta:{total_time:"45 min",marinate_time:null,serves:8,heat:"mild",skill:"easy"},
-    macros:{protein_g:14,fat_g:22,carbs_g:20,estimate:true},
+    story:"The proper sausage roll: one big, dark, mahogany-baked slab you slice at the table, not a beige tray of school-lunch minis. Coarse sausage meat with black pepper, sage and English mustard, wrapped in all-butter puff, egg-washed twice and baked until the top is deeply burnished. Cut into two thick portions for a picnic, or four for a lunchbox that outranks everyone else's.",
+    meta:{total_time:"55 min",marinate_time:null,serves:4,heat:"mild",skill:"easy"},
+    macros:{protein_g:22,fat_g:34,carbs_g:32,estimate:true},
     ingredient_groups:[
       {name:"the filling",items:[
-        {qty:500,unit:"g",name:"good sausage meat (or sausages, skins removed)",countable:false},
-        {qty:1,unit:"",name:"small onion, grated",countable:true},
+        {qty:500,unit:"g",name:"coarse sausage meat (or good butcher's sausages, skins off)",countable:false},
+        {qty:1,unit:"",name:"small onion, grated and squeezed dry",countable:true},
         {qty:2,unit:"tsp",name:"fresh thyme leaves",countable:false},
-        {qty:1,unit:"tsp",name:"black pepper",countable:false},
-        {qty:1,unit:"tsp",name:"dijon mustard",countable:false},
+        {qty:1,unit:"tsp",name:"dried sage",countable:false},
+        {qty:1,unit:"tsp",name:"coarse black pepper",countable:false},
+        {qty:1,unit:"tsp",name:"english mustard",countable:false},
         {qty:2,unit:"tbsp",name:"panko breadcrumbs",countable:false}]},
       {name:"the pastry",items:[
         {qty:320,unit:"g",name:"sheet all-butter puff pastry",countable:false},
-        {qty:1,unit:"",name:"egg, beaten",countable:true},
-        {qty:1,unit:"tsp",name:"sesame or nigella seeds (optional)",countable:false}]}],
+        {qty:1,unit:"",name:"egg, beaten (for a double wash)",countable:true},
+        {qty:1,unit:"tsp",name:"nigella or sesame seeds",countable:false},
+        {qty:1,unit:"pinch",name:"flaky sea salt",countable:false}]}],
     spice_mix:[],
     method:[
-      {title:"the mix",when:"5 min",body:"Squeeze the grated onion dry in a tea towel, then mix everything for the filling with your hands until just combined. Overmixed sausage meat turns springy, and this is not that recipe.",timer_seconds:300},
-      {title:"shape",when:"10 min",body:"Unroll the pastry on baking paper, cut in half lengthways, then pipe or spoon a long line of filling down the middle of each half.",timer_seconds:600},
-      {title:"roll",when:"5 min",body:"Egg wash one long edge, fold the pastry over and press to seal. Turn seam-down, egg wash the tops, scatter seeds if using and cut into six pieces per log. Slash the top of each with a knife.",timer_seconds:300},
-      {title:"bake",when:"25 min",body:"Bake on a lined tray at 200C fan until the pastry is deeply golden and the filling is bubbling through the cuts.",timer_seconds:1500},
-      {title:"serve",when:"now",body:"Eat warm out of the oven, or cool completely and pack for the picnic. Both are correct answers.",timer_seconds:null}],
-    serving_ideas:[{emoji:"🌶️",label:"brown sauce"},{emoji:"🥒",label:"piccalilli"},{emoji:"🧀",label:"cheese board partner"},{emoji:"🍺",label:"cold beer"}]
+      {title:"the mix",when:"5 min",body:"Squeeze the grated onion bone-dry in a tea towel, then mix everything for the filling with your hands just until combined. Overworked sausage meat goes springy, and this is not that.",timer_seconds:300},
+      {title:"shape",when:"10 min",body:"Unroll the pastry on baking paper and shape the filling into one long thick log down the middle two-thirds. Chill it in the fridge for ten minutes so it holds its shape while wrapping.",timer_seconds:600},
+      {title:"wrap",when:"5 min",body:"Egg-wash one long edge of the pastry, fold the other side over the filling and press to seal, then turn the whole thing seam-side down. This is your one big roll.",timer_seconds:300},
+      {title:"double wash",when:"5 min",body:"Egg-wash the top, then again after two minutes for the darkest bake. Slash the top diagonally three or four times, scatter with nigella seeds and flaky salt.",timer_seconds:300},
+      {title:"bake dark",when:"30 min",body:"Bake on a lined tray at 200C fan for thirty minutes, until the top is deeply mahogany and the pastry underneath is properly crisp. Longer than you think.",timer_seconds:1800},
+      {title:"serve",when:"now",body:"Rest five minutes, then slice into thick portions on a wooden board. Warm from the oven or cool for the picnic — both correct answers.",timer_seconds:null}],
+    serving_ideas:[{emoji:"🌶️",label:"brown sauce"},{emoji:"🥒",label:"piccalilli"},{emoji:"🧀",label:"cheeseboard partner"},{emoji:"🍺",label:"cold beer"}]
   },
 
   "scotch-eggs": {
