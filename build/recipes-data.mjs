@@ -6178,6 +6178,149 @@ export default {
     serving_ideas:[{emoji:"🥔",label:"hash browns"},{emoji:"🥑",label:"avocado"},{emoji:"🌶️",label:"hot sauce"},{emoji:"🍞",label:"toast for the yolk"}]
   },
 
+  "coronation-chicken-sandwich": {
+    cuisine:"British",
+    story:"The unofficial king of the picnic hamper. Poached chicken bound in a mango-spiked mayo, packed into soft white bread with crisp little gem and enough curried richness to make the tomato sandwich next to it feel underdressed. Best made the night before so the flavours settle in properly.",
+    meta:{total_time:"30 min",marinate_time:"1 hr",serves:4,heat:"mild",skill:"easy"},
+    macros:{protein_g:24,fat_g:22,carbs_g:34,estimate:true},
+    ingredient_groups:[
+      {name:"the chicken",items:[
+        {qty:3,unit:"",name:"chicken breasts",countable:true},
+        {qty:1,unit:"",name:"bay leaf",countable:true},
+        {qty:6,unit:"",name:"peppercorns",countable:true},
+        {qty:1,unit:"pinch",name:"salt",countable:false}]},
+      {name:"the dressing",items:[
+        {qty:4,unit:"tbsp",name:"good mayonnaise",countable:false},
+        {qty:2,unit:"tbsp",name:"mango chutney",countable:false},
+        {qty:2,unit:"tsp",name:"mild curry powder",countable:false},
+        {qty:1,unit:"tsp",name:"lemon juice",countable:false},
+        {qty:2,unit:"tbsp",name:"sultanas",countable:false},
+        {qty:2,unit:"tbsp",name:"toasted flaked almonds",countable:false},
+        {qty:1,unit:"handful",name:"coriander, chopped",countable:false}]},
+      {name:"to build",items:[
+        {qty:8,unit:"slices",name:"soft white bread",countable:false},
+        {qty:2,unit:"tbsp",name:"salted butter, softened",countable:false},
+        {qty:1,unit:"",name:"little gem, shredded",countable:true}]}],
+    spice_mix:[],
+    method:[
+      {title:"poach",when:"15 min",body:"Cover the chicken with cold water in a pan with the bay, peppercorns and salt, bring to a bare simmer and cook for twelve minutes until just done. Cool in the liquid for another ten to stay juicy.",timer_seconds:900},
+      {title:"shred",when:"5 min",body:"Lift out, drain, and shred into rough chunks with two forks. Not a paste, not a slice, somewhere handsome in between.",timer_seconds:300},
+      {title:"the dressing",when:"5 min",body:"Stir the mayo, chutney, curry powder and lemon juice together, then fold through the chicken with the sultanas, almonds and coriander.",timer_seconds:300},
+      {title:"the wait",when:"1 hr",body:"Chill for an hour, ideally overnight. This is where the sandwich earns its reputation.",timer_seconds:3600},
+      {title:"build",when:"5 min",body:"Butter every slice properly. Little gem on the base, generous mound of chicken, top slice, press gently, cut on the diagonal.",timer_seconds:300},
+      {title:"serve",when:"now",body:"Wrap in greaseproof paper for a hamper, or eat straight from the board with a glass of something cold.",timer_seconds:null}],
+    serving_ideas:[{emoji:"🥒",label:"cucumber ribbons"},{emoji:"🥭",label:"extra chutney"},{emoji:"🍷",label:"cold rosé"},{emoji:"🧂",label:"salted crisps"}]
+  },
+
+  "whipped-feta-dip": {
+    cuisine:"Greek",
+    story:"Cloudy, tangy, savoury feta whipped with yogurt to something between a dip and a spread, drizzled with hot honey and scattered with pistachios. It disappears the moment it hits the table, and it earns its own tote bag on the way home from any picnic it attends.",
+    meta:{total_time:"10 min",marinate_time:null,serves:4,heat:"mild",skill:"easy"},
+    macros:{protein_g:10,fat_g:16,carbs_g:6,estimate:true},
+    ingredient_groups:[
+      {name:"the whip",items:[
+        {qty:200,unit:"g",name:"feta, drained",countable:false},
+        {qty:150,unit:"g",name:"thick greek yogurt",countable:false},
+        {qty:2,unit:"tbsp",name:"olive oil",countable:false},
+        {qty:1,unit:"",name:"lemon, zested and juiced",countable:true},
+        {qty:1,unit:"pinch",name:"black pepper",countable:false}]},
+      {name:"to finish",items:[
+        {qty:2,unit:"tbsp",name:"hot honey (or honey + a pinch of chilli flakes)",countable:false},
+        {qty:2,unit:"tbsp",name:"pistachios, roughly chopped",countable:false},
+        {qty:1,unit:"pinch",name:"dried oregano",countable:false},
+        {qty:1,unit:"drizzle",name:"more olive oil",countable:false}]}],
+    spice_mix:[],
+    method:[
+      {title:"whip",when:"3 min",body:"Blitz the feta, yogurt, olive oil and lemon juice in a food processor until smooth and cloudy, scraping down once. Season with pepper and a little of the lemon zest.",timer_seconds:180},
+      {title:"swoosh",when:"2 min",body:"Spoon into a shallow bowl and use the back of the spoon to make a proper swoosh across the top: this is where the honey pools.",timer_seconds:120},
+      {title:"finish",when:"2 min",body:"Drizzle with hot honey, scatter the pistachios, dried oregano, remaining lemon zest and a final splash of olive oil.",timer_seconds:120},
+      {title:"serve",when:"now",body:"With warm flatbreads or good crackers, in the middle of the table, near everyone.",timer_seconds:null}],
+    serving_ideas:[{emoji:"🫓",label:"warm flatbreads"},{emoji:"🍯",label:"more hot honey"},{emoji:"🥒",label:"veg sticks"},{emoji:"🌿",label:"basil leaves"}]
+  },
+
+  "sausage-rolls": {
+    cuisine:"British",
+    story:"The bake sale bestseller and the picnic hamper anchor. Good sausage meat with plenty of black pepper and thyme, wrapped in shop-bought puff pastry that behaves better than most homemade versions. The egg wash on top is the whole difference between beige and burnished.",
+    meta:{total_time:"45 min",marinate_time:null,serves:8,heat:"mild",skill:"easy"},
+    macros:{protein_g:14,fat_g:22,carbs_g:20,estimate:true},
+    ingredient_groups:[
+      {name:"the filling",items:[
+        {qty:500,unit:"g",name:"good sausage meat (or sausages, skins removed)",countable:false},
+        {qty:1,unit:"",name:"small onion, grated",countable:true},
+        {qty:2,unit:"tsp",name:"fresh thyme leaves",countable:false},
+        {qty:1,unit:"tsp",name:"black pepper",countable:false},
+        {qty:1,unit:"tsp",name:"dijon mustard",countable:false},
+        {qty:2,unit:"tbsp",name:"panko breadcrumbs",countable:false}]},
+      {name:"the pastry",items:[
+        {qty:320,unit:"g",name:"sheet all-butter puff pastry",countable:false},
+        {qty:1,unit:"",name:"egg, beaten",countable:true},
+        {qty:1,unit:"tsp",name:"sesame or nigella seeds (optional)",countable:false}]}],
+    spice_mix:[],
+    method:[
+      {title:"the mix",when:"5 min",body:"Squeeze the grated onion dry in a tea towel, then mix everything for the filling with your hands until just combined. Overmixed sausage meat turns springy, and this is not that recipe.",timer_seconds:300},
+      {title:"shape",when:"10 min",body:"Unroll the pastry on baking paper, cut in half lengthways, then pipe or spoon a long line of filling down the middle of each half.",timer_seconds:600},
+      {title:"roll",when:"5 min",body:"Egg wash one long edge, fold the pastry over and press to seal. Turn seam-down, egg wash the tops, scatter seeds if using and cut into six pieces per log. Slash the top of each with a knife.",timer_seconds:300},
+      {title:"bake",when:"25 min",body:"Bake on a lined tray at 200C fan until the pastry is deeply golden and the filling is bubbling through the cuts.",timer_seconds:1500},
+      {title:"serve",when:"now",body:"Eat warm out of the oven, or cool completely and pack for the picnic. Both are correct answers.",timer_seconds:null}],
+    serving_ideas:[{emoji:"🌶️",label:"brown sauce"},{emoji:"🥒",label:"piccalilli"},{emoji:"🧀",label:"cheese board partner"},{emoji:"🍺",label:"cold beer"}]
+  },
+
+  "scotch-eggs": {
+    cuisine:"British",
+    story:"The picnic craft project that always earns applause. A soft-jammy egg wrapped in seasoned sausage meat and breadcrumbs, deep gold on the outside and orange in the middle. The trick is boiling the eggs the right side of runny, and being brave enough to lower them into the oil.",
+    meta:{total_time:"45 min",marinate_time:null,serves:4,heat:"mild",skill:"medium"},
+    macros:{protein_g:22,fat_g:24,carbs_g:22,estimate:true},
+    ingredient_groups:[
+      {name:"the eggs",items:[
+        {qty:5,unit:"",name:"eggs (4 to wrap, 1 to coat)",countable:true}]},
+      {name:"the wrap",items:[
+        {qty:400,unit:"g",name:"good sausage meat",countable:false},
+        {qty:1,unit:"tsp",name:"english mustard",countable:false},
+        {qty:1,unit:"tsp",name:"fresh thyme leaves",countable:false},
+        {qty:1,unit:"tsp",name:"black pepper",countable:false},
+        {qty:1,unit:"handful",name:"parsley, chopped",countable:false}]},
+      {name:"the coat",items:[
+        {qty:60,unit:"g",name:"plain flour",countable:false},
+        {qty:100,unit:"g",name:"panko breadcrumbs",countable:false},
+        {qty:1,unit:"litre",name:"neutral oil, for frying",countable:false}]}],
+    spice_mix:[],
+    method:[
+      {title:"the jammy egg",when:"8 min",body:"Lower four eggs into gently boiling water and cook for six and a half minutes exactly. Straight into ice water for five minutes, then peel very carefully.",timer_seconds:480},
+      {title:"the wrap",when:"5 min",body:"Mix the sausage meat with the mustard, thyme, pepper and parsley, divide into four and flatten each into a rough round on cling film.",timer_seconds:300},
+      {title:"parcel up",when:"10 min",body:"Sit a peeled egg on each round, use the cling film to wrap the sausage up and around, sealing every gap. Chill in the fridge for ten minutes so they hold shape.",timer_seconds:600},
+      {title:"coat",when:"5 min",body:"Roll each parcel through flour, then beaten egg, then panko breadcrumbs, pressing gently so the coating sticks.",timer_seconds:300},
+      {title:"fry",when:"10 min",body:"Heat the oil to 170C. Lower the scotch eggs in two at a time and fry seven minutes, turning, until deep gold. Drain on a rack.",timer_seconds:600},
+      {title:"the reveal",when:"now",body:"Rest for five minutes before cutting. The yolk should still show a soft orange centre.",timer_seconds:null}],
+    serving_ideas:[{emoji:"🌶️",label:"english mustard"},{emoji:"🥒",label:"piccalilli"},{emoji:"🍞",label:"crusty bread"},{emoji:"🍺",label:"cold ale"}]
+  },
+
+  "strawberry-pimms-jelly": {
+    cuisine:"British",
+    story:"The Pimm's jug, set. A boozy jelly full of strawberries, cucumber, orange and mint that wobbles on the plate and tastes like the last day of the season. Grown-up trifle energy, three hours in the fridge, five minutes of work.",
+    meta:{total_time:"20 min",marinate_time:"4 hr",serves:6,heat:"mild",skill:"easy"},
+    macros:{protein_g:2,fat_g:0,carbs_g:22,estimate:true},
+    ingredient_groups:[
+      {name:"the jelly",items:[
+        {qty:400,unit:"ml",name:"lemonade",countable:false},
+        {qty:200,unit:"ml",name:"Pimm's No.1",countable:false},
+        {qty:6,unit:"sheets",name:"leaf gelatine (or 3 tsp powdered)",countable:false},
+        {qty:2,unit:"tbsp",name:"caster sugar",countable:false}]},
+      {name:"the fruit",items:[
+        {qty:200,unit:"g",name:"strawberries, sliced",countable:false},
+        {qty:0.25,unit:"",name:"cucumber, in fine slices",countable:false},
+        {qty:0.5,unit:"",name:"orange, in half moons",countable:false},
+        {qty:1,unit:"handful",name:"small mint leaves",countable:false}]}],
+    spice_mix:[],
+    method:[
+      {title:"bloom",when:"5 min",body:"Soak the gelatine sheets in a bowl of cold water for five minutes until floppy. (If using powdered, sprinkle over 3 tbsp cold water and leave to bloom.)",timer_seconds:300},
+      {title:"warm",when:"4 min",body:"Warm 200ml of the lemonade with the sugar in a pan until just steaming, off the heat. Squeeze the gelatine dry and stir into the warm lemonade until fully dissolved.",timer_seconds:240},
+      {title:"mix",when:"2 min",body:"Stir in the remaining lemonade and the Pimm's. Do not boil the alcohol away — this is the point of the whole thing.",timer_seconds:120},
+      {title:"layer",when:"5 min",body:"Scatter half the fruit and mint into a serving dish or glasses, pour over half the jelly liquid, then repeat with the rest so the fruit stays suspended.",timer_seconds:300},
+      {title:"the hard part",when:"4 hr",body:"Chill for at least four hours, ideally overnight, until wobbly-set.",timer_seconds:14400},
+      {title:"serve",when:"now",body:"Straight from the fridge with a spoon and a small pot of double cream on the side if you are feeling formal.",timer_seconds:null}],
+    serving_ideas:[{emoji:"🍓",label:"extra strawberries"},{emoji:"🌿",label:"more mint"},{emoji:"🥂",label:"a glass of Pimm's alongside"},{emoji:"🥛",label:"pouring cream"}]
+  },
+
   "ultimate-breakfast-sandwich": {
     cuisine:"British",
     story:"The full english, all four food groups, held between two slices of golden eggy-bread. This is what happens when the diner meets the greasy spoon meets a slightly reckless Sunday morning. Bacon, sausage, hash brown, brown sauce, and a fried-bread hug on both sides. Eating it standing up is traditional. Sharing it is optional and, frankly, wrong.",

@@ -177,14 +177,11 @@ section.block .lead{max-width:44ch;margin:16px auto 0;color:var(--ink-soft);font
 <!-- instant signup: at the top, before the story -->
 <section id="topjoin"><div class="wrap">
   <div class="mono tj-line">five new recipes in your inbox, every friday · free</div>
-  <form class="nlform" action="https://assets.mailerlite.com/jsonp/2497756/forms/192434888920532489/subscribe" method="post" target="_blank">
-    <div class="nlrow"><input type="email" name="fields[email]" placeholder="your email" required aria-label="email address" autocomplete="email"/><input type="hidden" name="ml-submit" value="1"/><input type="hidden" name="anticsrf" value="true"/><button class="pill pop" type="submit">count me in</button></div>
+  <form class="nlform" action="https://youcookedit.beehiiv.com/subscribe" method="get" target="_blank">
+    <div class="nlrow"><input type="email" name="email" placeholder="your email" required aria-label="email address" autocomplete="email"/><button class="pill pop" type="submit">count me in</button></div>
     <script>(function(){var f=document.currentScript.parentElement;var done=false;
-      f.addEventListener('submit',function(e){e.preventDefault();if(done)return;
-        var b=f.querySelector('button[type=submit]');b.textContent='adding you…';
-        fetch(f.action,{method:'POST',body:new URLSearchParams(new FormData(f))})
-          .then(function(r){if(!r.ok)throw 0;done=true;f.innerHTML='<div class="mono">welcome to the friday five 🎉 we send new recipes every friday morning, keep an eye out.</div>';})
-          .catch(function(){done=true;f.submit();});});})();</script>
+      f.addEventListener('submit',function(){if(done)return;done=true;
+        setTimeout(function(){f.innerHTML='<div class="mono">nearly there — check your inbox for a quick confirm click, then friday recipes are on their way.</div>';},400);});})();</script>
   </form>
 </div></section>
 
@@ -288,14 +285,11 @@ section.block .lead{max-width:44ch;margin:16px auto 0;color:var(--ink-soft);font
   <div class="eyebrow" style="color:var(--lime)">free</div>
   <h2>join the friday five.</h2>
   <p class="lead">New recipes every Friday morning, in the same design you just scrolled through. One email a week, worth opening.</p>
-  <form class="nlform" action="https://assets.mailerlite.com/jsonp/2497756/forms/192434888920532489/subscribe" method="post" target="_blank">
-    <div class="nlrow"><input type="email" name="fields[email]" placeholder="your email" required aria-label="email address" autocomplete="email"/><input type="hidden" name="ml-submit" value="1"/><input type="hidden" name="anticsrf" value="true"/><button class="pill pop" type="submit">count me in</button></div>
+  <form class="nlform" action="https://youcookedit.beehiiv.com/subscribe" method="get" target="_blank">
+    <div class="nlrow"><input type="email" name="email" placeholder="your email" required aria-label="email address" autocomplete="email"/><button class="pill pop" type="submit">count me in</button></div>
     <script>(function(){var f=document.currentScript.parentElement;var done=false;
-      f.addEventListener('submit',function(e){e.preventDefault();if(done)return;
-        var b=f.querySelector('button[type=submit]');b.textContent='adding you…';
-        fetch(f.action,{method:'POST',body:new URLSearchParams(new FormData(f))})
-          .then(function(r){if(!r.ok)throw 0;done=true;f.innerHTML='<div class="mono" style="color:var(--cream)">welcome to the friday five 🎉 we send new recipes every friday morning, keep an eye out.</div>';})
-          .catch(function(){done=true;f.submit();});});})();</script>
+      f.addEventListener('submit',function(){if(done)return;done=true;
+        setTimeout(function(){f.innerHTML='<div class="mono" style="color:var(--cream)">nearly there — check your inbox for a quick confirm click, then friday recipes are on their way.</div>';},400);});})();</script>
   </form>
   <div class="smallprint">free · unsubscribe anytime, no hard feelings</div>
 </div></section>

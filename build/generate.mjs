@@ -129,20 +129,18 @@ const schemaFor = rec => {
 };
 
 // ---- newsletter signup (the friday five) ----
-// Posts to the MailerLite "Friday five" form. Submits via fetch for an inline
-// success message; falls back to a plain form post if fetch fails.
-const NL_ACTION = process.env.NLACTION || 'https://assets.mailerlite.com/jsonp/2497756/forms/192434888920532489/subscribe';
-const nlForm = NL_ACTION ? `
-    <form class="nlform" action="${NL_ACTION}" method="post" target="_blank">
+// Hands the email over to Beehiiv's hosted subscribe page in a new tab (they
+// finish the flow: confirm-your-email, welcome email). Site keeps the design
+// and shows an inline "check your inbox" hint after submit.
+const NL_ACTION = process.env.NLACTION || 'https://youcookedit.beehiiv.com/subscribe';
+const nlForm = `
+    <form class="nlform" action="${NL_ACTION}" method="get" target="_blank">
       <div class="mono" style="margin-bottom:10px">the friday five · new recipes in your inbox, every friday</div>
-      <div class="nlrow"><input type="email" name="fields[email]" placeholder="your email" required aria-label="email address" autocomplete="email"/><input type="hidden" name="ml-submit" value="1"/><input type="hidden" name="anticsrf" value="true"/><button class="pill" type="submit">count me in</button></div>
+      <div class="nlrow"><input type="email" name="email" placeholder="your email" required aria-label="email address" autocomplete="email"/><button class="pill" type="submit">count me in</button></div>
       <script>(function(){var f=document.currentScript.parentElement;var done=false;
-        f.addEventListener('submit',function(e){e.preventDefault();if(done)return;
-          var b=f.querySelector('button[type=submit]');b.textContent='adding you…';
-          fetch(f.action,{method:'POST',body:new URLSearchParams(new FormData(f))})
-            .then(function(r){if(!r.ok)throw 0;done=true;f.innerHTML='<div class="mono">welcome to the friday five 🎉 we send new recipes every friday morning, keep an eye out.</div>';})
-            .catch(function(){done=true;f.submit();});});})();</script>
-    </form>` : '';
+        f.addEventListener('submit',function(){if(done)return;done=true;
+          setTimeout(function(){f.innerHTML='<div class="mono">nearly there — check your inbox for a quick confirm click, then friday recipes are on their way.</div>';},400);});})();</script>
+    </form>`;
 
 // ---- partners (slot 2: category-matched card after the encore) ----
 // One card max per page, only on matching categories, always labelled,

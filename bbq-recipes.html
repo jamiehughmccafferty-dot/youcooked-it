@@ -39,15 +39,12 @@
   <section class="hubgrid" id="lane"><div class="wrap">
     <div class="grid"><a class="card has-img" href="/recipes/bbq-ribs" style="--c:#a8402a;--cl:#68281a"><div class="cglow"></div><img class="cimg" alt="" loading="lazy" decoding="async" width="256" height="256" src="/images/thumb/bbq-ribs.webp"><div class="tag">trending</div><div class="inner"><div class="ccat">grill</div><div class="ctitle">bbq ribs</div></div></a><a class="card has-img" href="/recipes/beef-brisket" style="--c:#a8402a;--cl:#68281a"><div class="cglow"></div><img class="cimg" alt="" loading="lazy" decoding="async" width="256" height="256" src="/images/thumb/beef-brisket.webp"><div class="inner"><div class="ccat">grill</div><div class="ctitle">beef brisket</div></div></a><a class="card has-img" href="/recipes/shish-kebabs" style="--c:#a8402a;--cl:#68281a"><div class="cglow"></div><img class="cimg" alt="" loading="lazy" decoding="async" width="256" height="256" src="/images/thumb/shish-kebabs.webp"><div class="inner"><div class="ccat">grill</div><div class="ctitle">shish kebabs</div></div></a><a class="card has-img" href="/recipes/lamb-chops" style="--c:#a8402a;--cl:#68281a"><div class="cglow"></div><img class="cimg" alt="" loading="lazy" decoding="async" width="256" height="256" src="/images/thumb/lamb-chops.webp"><div class="inner"><div class="ccat">grill</div><div class="ctitle">lamb chops</div></div></a><a class="card has-img" href="/recipes/lamb-koftas" style="--c:#a8402a;--cl:#68281a"><div class="cglow"></div><img class="cimg" alt="" loading="lazy" decoding="async" width="256" height="256" src="/images/thumb/lamb-koftas.webp"><div class="inner"><div class="ccat">grill</div><div class="ctitle">lamb koftas</div></div></a></div>
 
-    <form class="nlform" action="https://assets.mailerlite.com/jsonp/2497756/forms/192434888920532489/subscribe" method="post" target="_blank">
+    <form class="nlform" action="https://youcookedit.beehiiv.com/subscribe" method="get" target="_blank">
       <div class="mono" style="margin-bottom:10px">the friday five · new recipes in your inbox, every friday</div>
-      <div class="nlrow"><input type="email" name="fields[email]" placeholder="your email" required aria-label="email address" autocomplete="email"/><input type="hidden" name="ml-submit" value="1"/><input type="hidden" name="anticsrf" value="true"/><button class="pill" type="submit">count me in</button></div>
+      <div class="nlrow"><input type="email" name="email" placeholder="your email" required aria-label="email address" autocomplete="email"/><button class="pill" type="submit">count me in</button></div>
       <script>(function(){var f=document.currentScript.parentElement;var done=false;
-        f.addEventListener('submit',function(e){e.preventDefault();if(done)return;
-          var b=f.querySelector('button[type=submit]');b.textContent='adding you…';
-          fetch(f.action,{method:'POST',body:new URLSearchParams(new FormData(f))})
-            .then(function(r){if(!r.ok)throw 0;done=true;f.innerHTML='<div class="mono">welcome to the friday five 🎉 we send new recipes every friday morning, keep an eye out.</div>';})
-            .catch(function(){done=true;f.submit();});});})();</script>
+        f.addEventListener('submit',function(){if(done)return;done=true;
+          setTimeout(function(){f.innerHTML='<div class="mono">nearly there — check your inbox for a quick confirm click, then friday recipes are on their way.</div>';},400);});})();</script>
     </form>
   </div></section>
   <section id="partner"><div class="wrap">
