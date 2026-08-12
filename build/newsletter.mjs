@@ -81,12 +81,12 @@ const NL_PARTNERS = [
     meta: 'meat hampers | chicken, steaks, mince and more', cta: 'shop hampers',
     img: SITE + '/partners/muscle-food-hamper.jpg', alt: 'MuscleFood meat hamper',
     link: 'https://www.awin1.com/cread.php?awinmid=11002&awinaffid=2918949&clickref=newsletter' },
-  { // SharkNinja — Sizzling Summer Sale (SALE-ENDS-2026-08-11: revert to standing headline after)
-    accent: '#1c2532', label: 'partner · shark ninja', title: 'the kit for the flip.',
-    meta: "Ninja's summer sale is on | up to 20% off with code NINJA20, exclusions apply",
-    cta: 'shop ninja',
+  { // SharkNinja — School's Out sale (SALE-ENDS-2026-08-18: revert to standing headline after)
+    accent: '#1c2532', label: 'partner · shark ninja', title: "school's out sale.",
+    meta: "up to 30% off across Ninja | until 18 Aug, exclusions apply",
+    cta: 'shop the sale',
     img: SITE + '/partners/ninja-woodfire.jpg', alt: 'Ninja Woodfire Pro Connect XL Electric BBQ Grill and Smoker',
-    link: 'https://www.awin1.com/cread.php?awinmid=8059&awinaffid=2918949&clickref=newsletter&ued=https%3A%2F%2Fwww.sharkninja.co.uk%2Foffers%2Fsale' },
+    link: 'https://www.awin1.com/cread.php?awinmid=8059&awinaffid=2918949&clickref=newsletter&ued=https%3A%2F%2Fwww.sharkninja.co.uk%2Foffers%2Fshop-all-offers' },
 ];
 const partnerRows = !NL_PARTNERS.length ? '' : `
   <tr><td align="center" style="font-family:Poppins,Arial,sans-serif;font-weight:700;font-size:15px;letter-spacing:1.5px;color:${INK};text-transform:uppercase;padding:26px 0 14px 0;">from our kitchen partners</td></tr>
