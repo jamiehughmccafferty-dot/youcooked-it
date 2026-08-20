@@ -251,16 +251,21 @@
     "whipped-feta-dip",
     "sausage-rolls",
     "scotch-eggs",
-    "strawberry-pimms-jelly"
+    "strawberry-pimms-jelly",
+    "japanese-milk-bread",
+    "smash-burger-tacos",
+    "marry-me-butter-beans",
+    "crispy-rice-salad",
+    "basque-cheesecake"
   ],
   "lastDrop": {
-    "date": "2026-08-12",
+    "date": "2026-08-21",
     "slugs": [
-      "coronation-chicken-sandwich",
-      "whipped-feta-dip",
-      "sausage-rolls",
-      "scotch-eggs",
-      "strawberry-pimms-jelly"
+      "japanese-milk-bread",
+      "smash-burger-tacos",
+      "marry-me-butter-beans",
+      "crispy-rice-salad",
+      "basque-cheesecake"
     ]
   },
   "heldForSpecial": {

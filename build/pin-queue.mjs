@@ -48,18 +48,22 @@ if (!fresh.length) { console.log('Queue up to date: nothing new to add.'); proce
 // bucket fresh slugs: group -> category -> [slugs]
 const buckets = new Map(RAINBOW.map(([g]) => [g, new Map()]));
 const groupOfCat = {}; RAINBOW.forEach(([g, cats]) => cats.forEach((c) => (groupOfCat[c] = g)));
+// count only pins that actually land in a bucket — an unmapped category must
+// not inflate `remaining` or the interleave loop below spins forever
+let bucketed = 0;
 for (const slug of fresh.sort()) {
   const g = groupOfCat[catOf[slug]];
-  if (!g) continue;
+  if (!g) { console.log('  ?? skipping ' + slug + ' (category ' + catOf[slug] + ' has no rainbow group)'); continue; }
   const gm = buckets.get(g);
   const cat = catOf[slug];
   if (!gm.has(cat)) gm.set(cat, []);
   gm.get(cat).push(slug);
+  bucketed++;
 }
 
 // interleave: cycle groups in rainbow order; within a group, rotate its categories
 const order = [];
-let remaining = fresh.length;
+let remaining = bucketed;
 const catCursor = new Map(RAINBOW.map(([g]) => [g, 0]));
 while (remaining > 0) {
   for (const [g] of RAINBOW) {

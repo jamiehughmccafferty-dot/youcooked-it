@@ -174,48 +174,15 @@ const PARTNERS = [
              drinks:'/partners/tower-summer.jpg' },
     tile:{ img:'partners/tower-plate.png', title:'kit for every recipe.', badge:'shop now', color:'#c3d941', label:'#66701d' },
     tile2:{ title:'home of the air fryer.', badge:'free recipe book' } },
-  { id:'muscle-food', name:'musclefood', active:true, pbg:'#efeae0',
-    categories:['chicken','steak'],
-    link:'https://www.awin1.com/cread.php?awinmid=11002&awinaffid=2918949&clickref=recipe',
-    headline:'fill the freezer.',
-    blurb:'5kg of premium chicken breast fillets for £24.99 with code <b>24CHICK</b>, plus hampers, steaks and high protein boxes from MuscleFood.',
-    cta:'claim the deal',
-    image:'/partners/muscle-food-hamper.jpg',
-    // creative pool per lane so a steak page never carries the chicken deal
-    // and vice versa. Deterministic per slug so it is stable across builds.
-    _laneVariants:{
-      chicken:[
-        { image:'/partners/muscle-food.jpg', headline:'fill the freezer.',
-          blurb:'5kg of premium chicken breast fillets for £24.99 with code <b>24CHICK</b>, plus hampers and high protein boxes from MuscleFood.', cta:'claim the deal' },
-        { image:'/partners/muscle-food-hamper.jpg', headline:'the whole butcher, boxed.',
-          blurb:'Bestselling meat hampers from MuscleFood: chicken, steaks, mince and high protein boxes, delivered fresh to your door.', cta:'shop hampers' },
-      ],
-      steak:[
-        { image:'/partners/muscle-food-steaks.jpg', headline:'steak night, sorted.',
-          blurb:'8 Brazilian sirloin steaks for £24.99, saving £38.99, plus everything else the freezer is missing from MuscleFood.', cta:'claim the steaks' },
-        { image:'/partners/muscle-food-hamper.jpg', headline:'the whole butcher, boxed.',
-          blurb:'Bestselling meat hampers from MuscleFood: chicken, steaks, mince and high protein boxes, delivered fresh to your door.', cta:'shop hampers' },
-      ],
-    },
-    hubVariant:1,
-    tile:{ img:'partners/muscle-food-plate.png', title:'fill the freezer.', badge:'hamper', color:'#2c5e4f', label:'#1b3f34' },
-    tile2:{ title:'steak night, sorted.', badge:'8 sirloins £24.99' } },
+  // MuscleFood: REMOVED 2026-08-20 (lost their AWIN partnership). Ninja now
+  // carries chicken+steak solo. Config preserved in git history if they return.
   { id:'ninja', name:'shark ninja', active:true, pbg:'#f0e9de',
-    // Route A: full coverage. Sits alongside MuscleFood on chicken+steak (the meat + the kit).
-    //
-    // ⏰ SCHOOL'S OUT SALE — ENDS 2026-08-18 23:59 (Europe/London)
-    //   REVERT ON 2026-08-19 (search this file for "SALE-ENDS-2026-08-18"):
-    //     • drop "school's out sale" sentence from every _byCat blurb below
-    //     • CTAs back to product-specific ("shop the slushi", "shop the espresso" etc)
-    //     • chicken/steak links stay on the Woodfire Pro Connect XL product page
-    //       (that swap is permanent — better image ↔ page match than the bundle)
-    //     • tile badges back to "shop ninja" / "shop the range"
-    //
+    // Route A: full coverage across all ten lanes.
     categories:['chicken','steak','drinks','brunch','soup','sauce','curry','veg','breakfast','dessert'],
     link:'https://www.awin1.com/cread.php?awinmid=8059&awinaffid=2918949&clickref=recipe',
     headline:'the kit for the cook.',
-    blurb:"Ninja and Shark appliances built for real kitchens. Woodfire grills, air fryers, blenders, espresso and more. School's out sale on now: up to 30% off, until 18 Aug, exclusions apply.",
-    cta:'shop the sale',
+    blurb:'Ninja and Shark appliances built for real kitchens. Woodfire grills, DualZone air fryers, blenders, espresso and more.',
+    cta:'shop ninja',
     image:'/partners/ninja-airfryer.jpg',
     images:{
       chicken:  '/partners/ninja-woodfire.jpg',
@@ -230,27 +197,22 @@ const PARTNERS = [
       dessert:  '/partners/ninja-creami.jpg',
     },
     // per-appliance copy + tracked deep link, matched by lane so headline never lies.
-    // Sale-tagged blurbs marked SALE-ENDS-2026-08-18 for the revert sweep.
     variants:[], // (unused; overrides applied via a small extension below)
     _byCat:{
-      // chicken + steak: product-page deep link to the exact model in the creative (OG901UK Woodfire Pro Connect XL). Permanent, not sale-tied.
-      chicken:  { headline:'the kit for the flip.', blurb:"Smoker, grill and air fryer in one, ready for the garden. School's out sale on: up to 30% off across Ninja until 18 Aug, exclusions apply.", /* SALE-ENDS-2026-08-18 */ cta:'shop ninja', link:'https://www.awin1.com/cread.php?awinmid=8059&awinaffid=2918949&clickref=recipe&ued=https%3A%2F%2Fwww.sharkninja.co.uk%2Fninja-woodfire-pro-connect-xl-electric-bbq-grill-smoker%2FOG901UK.html' },
-      steak:    { headline:'the kit for the flip.', blurb:"Smoker, grill and air fryer in one, ready for the garden. School's out sale on: up to 30% off across Ninja until 18 Aug, exclusions apply.", /* SALE-ENDS-2026-08-18 */ cta:'shop ninja', link:'https://www.awin1.com/cread.php?awinmid=8059&awinaffid=2918949&clickref=recipe&ued=https%3A%2F%2Fwww.sharkninja.co.uk%2Fninja-woodfire-pro-connect-xl-electric-bbq-grill-smoker%2FOG901UK.html' },
-      // drinks + dessert: deep-linked to the exact product on offer this week
-      drinks:   { headline:'slushies at home.', blurb:"Frozen drinks, cocktails and mocktails in ten minutes flat. Ninja SLUSHi bundle now £263.99, part of the school's out sale until 18 Aug.", /* SALE-ENDS-2026-08-18 */ cta:'shop the slushi', link:'https://www.awin1.com/cread.php?awinmid=8059&awinaffid=2918949&clickref=recipe&ued=https%3A%2F%2Fwww.sharkninja.co.uk%2Fninja-slushi-frozen-drink-maker-fs301uk%2FFS301UK.html' },
-      dessert:  { headline:'soft serve, from your own freezer.', blurb:"Turn any frozen base into ice cream, sorbet or actual soft serve. Ninja CREAMi + SLUSHi bundle now £399.99, part of the school's out sale until 18 Aug.", /* SALE-ENDS-2026-08-18 */ cta:'shop the bundle', link:'https://www.awin1.com/cread.php?awinmid=8059&awinaffid=2918949&clickref=recipe&ued=https%3A%2F%2Fwww.sharkninja.co.uk%2Fninja-creami-ice-cream-maker-ninja-slushi-frozen-drink-maker-bundle%2FNCFS300UK.html' },
-      // curry/veg/breakfast: CRISPi Pro air fryer deep-link (family-set on offer)
-      curry:    { headline:'the kit for weeknight dinner.', blurb:"Air fry two things at once, so chicken and veg land together with nothing overcooked. CRISPi Pro Family Set now £213.99, part of the school's out sale until 18 Aug.", /* SALE-ENDS-2026-08-18 */ cta:'shop the air fryer', link:'https://www.awin1.com/cread.php?awinmid=8059&awinaffid=2918949&clickref=recipe&ued=https%3A%2F%2Fwww.sharkninja.co.uk%2Fninja-crispi-pro-5-in-1-xl-glass-air-fryer---white-family-set%2FAS090UKWH38.html' },
-      veg:      { headline:'crispier veg, no faff.', blurb:"Roast veg to properly crispy in a fraction of the oven time. CRISPi Pro Family Set now £213.99, part of the school's out sale until 18 Aug.", /* SALE-ENDS-2026-08-18 */ cta:'shop the air fryer', link:'https://www.awin1.com/cread.php?awinmid=8059&awinaffid=2918949&clickref=recipe&ued=https%3A%2F%2Fwww.sharkninja.co.uk%2Fninja-crispi-pro-5-in-1-xl-glass-air-fryer---white-family-set%2FAS090UKWH38.html' },
-      breakfast:{ headline:'breakfast, without the wait.', blurb:"Air fry breakfast without switching things on and off. CRISPi Pro Family Set now £213.99, part of the school's out sale until 18 Aug.", /* SALE-ENDS-2026-08-18 */ cta:'shop the air fryer', link:'https://www.awin1.com/cread.php?awinmid=8059&awinaffid=2918949&clickref=recipe&ued=https%3A%2F%2Fwww.sharkninja.co.uk%2Fninja-crispi-pro-5-in-1-xl-glass-air-fryer---white-family-set%2FAS090UKWH38.html' },
-      // brunch/soup/sauce: no product-specific deep-link this week, umbrella sale page
-      brunch:   { headline:'barista brunch, at home.', blurb:"Espresso, drip coffee and cold brew from one machine, milk frother included. School's out sale on: up to 30% off across Ninja until 18 Aug.", /* SALE-ENDS-2026-08-18 */ cta:'shop the sale', link:'https://www.awin1.com/cread.php?awinmid=8059&awinaffid=2918949&clickref=recipe&ued=https%3A%2F%2Fwww.sharkninja.co.uk%2Foffers%2Fshop-all-offers' },
-      soup:     { headline:'hot soup, no hob.', blurb:"Cook and blend in the same jug: silky soups start to finish in minutes. School's out sale on: up to 30% off across Ninja until 18 Aug.", /* SALE-ENDS-2026-08-18 */ cta:'shop the sale', link:'https://www.awin1.com/cread.php?awinmid=8059&awinaffid=2918949&clickref=recipe&ued=https%3A%2F%2Fwww.sharkninja.co.uk%2Foffers%2Fshop-all-offers' },
-      sauce:    { headline:'sauce sorted.', blurb:"Sauces, pestos and dips from ingredients to jar in seconds. School's out sale on: up to 30% off across Ninja until 18 Aug.", /* SALE-ENDS-2026-08-18 */ cta:'shop the sale', link:'https://www.awin1.com/cread.php?awinmid=8059&awinaffid=2918949&clickref=recipe&ued=https%3A%2F%2Fwww.sharkninja.co.uk%2Foffers%2Fshop-all-offers' },
+      // chicken + steak: product-page deep link to the exact model in the creative (OG901UK Woodfire Pro Connect XL). Permanent.
+      chicken:  { headline:'the kit for the flip.', blurb:'The Ninja Woodfire Pro Connect XL: smoker, grill and air fryer in one, ready for the garden.', cta:'shop ninja', link:'https://www.awin1.com/cread.php?awinmid=8059&awinaffid=2918949&clickref=recipe&ued=https%3A%2F%2Fwww.sharkninja.co.uk%2Fninja-woodfire-pro-connect-xl-electric-bbq-grill-smoker%2FOG901UK.html' },
+      steak:    { headline:'the kit for the flip.', blurb:'The Ninja Woodfire Pro Connect XL: smoker, grill and air fryer in one, ready for the garden.', cta:'shop ninja', link:'https://www.awin1.com/cread.php?awinmid=8059&awinaffid=2918949&clickref=recipe&ued=https%3A%2F%2Fwww.sharkninja.co.uk%2Fninja-woodfire-pro-connect-xl-electric-bbq-grill-smoker%2FOG901UK.html' },
+      drinks:   { headline:'slushies at home.', blurb:'The Ninja SLUSHi frozen drink maker for slushies, frozen cocktails and mocktails in ten minutes flat.', cta:'shop the slushi', link:'https://www.awin1.com/cread.php?awinmid=8059&awinaffid=2918949&clickref=recipe&q=595382&s=4672643' },
+      brunch:   { headline:'barista brunch, at home.', blurb:'The Ninja Espresso 3-in-1 does espresso, drip coffee and cold brew from one machine, with a proper milk frother.', cta:'shop the espresso', link:'https://www.awin1.com/cread.php?awinmid=8059&awinaffid=2918949&clickref=recipe&q=595382&s=4672637' },
+      soup:     { headline:'hot soup, no hob.', blurb:'The Ninja Heated Blender cooks and blends in the same jug: silky soups start to finish in minutes.', cta:'shop the blender', link:'https://www.awin1.com/cread.php?awinmid=8059&awinaffid=2918949&clickref=recipe&q=595382&s=4672644' },
+      sauce:    { headline:'sauce sorted.', blurb:'The Ninja 2-in-1 blender takes sauces, pestos and dips from ingredients to jar in seconds.', cta:'shop the blender', link:'https://www.awin1.com/cread.php?awinmid=8059&awinaffid=2918949&clickref=recipe' },
+      curry:    { headline:'the kit for weeknight dinner.', blurb:'The Ninja DualZone Air Fryer does two things at once, so chicken and veg land together with nothing overcooked.', cta:'shop the air fryer', link:'https://www.awin1.com/cread.php?awinmid=8059&awinaffid=2918949&clickref=recipe&q=595382&s=4672633' },
+      veg:      { headline:'crispier veg, no faff.', blurb:'The Ninja DualZone Air Fryer roasts veg to properly crispy in a fraction of the oven time.', cta:'shop the air fryer', link:'https://www.awin1.com/cread.php?awinmid=8059&awinaffid=2918949&clickref=recipe&q=595382&s=4672633' },
+      breakfast:{ headline:'breakfast, without the wait.', blurb:'The Ninja DualZone Air Fryer runs two things at once so the eggs and the bacon land at the same time.', cta:'shop the air fryer', link:'https://www.awin1.com/cread.php?awinmid=8059&awinaffid=2918949&clickref=recipe&q=595382&s=4672633' },
+      dessert:  { headline:'soft serve, from your own freezer.', blurb:'The Ninja CREAMi Swirl turns any frozen base into ice cream, sorbet or actual soft serve.', cta:'shop the creami', link:'https://www.awin1.com/cread.php?awinmid=8059&awinaffid=2918949&clickref=recipe' },
     },
-    // SALE-ENDS-2026-08-18: badges say "up to 30% off" / "school's out sale". After the sale revert badges to "shop ninja" / "shop the range".
-    tile:{ img:'partners/ninja-plate.png', title:'the kit for the flip.', badge:'up to 30% off', color:'#1c2532', label:'#1c2532' },
-    tile2:{ title:"school's out sale.", badge:'up to 30% off' } },
+    tile:{ img:'partners/ninja-plate.png', title:'the kit for the flip.', badge:'shop ninja', color:'#1c2532', label:'#1c2532' },
+    tile2:{ title:'grill, fry, roast.', badge:'shop the range' } },
 ];
 const pcardHtml = (pt, ref)=>`
     <a class="pcard" href="${pt.link.replace('clickref=recipe','clickref='+ref)}" target="_blank" rel="sponsored noopener">

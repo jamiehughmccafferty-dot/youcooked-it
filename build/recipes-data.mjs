@@ -6178,6 +6178,155 @@ export default {
     serving_ideas:[{emoji:"🥔",label:"hash browns"},{emoji:"🥑",label:"avocado"},{emoji:"🌶️",label:"hot sauce"},{emoji:"🍞",label:"toast for the yolk"}]
   },
 
+  "japanese-milk-bread": {
+    cuisine:"Japanese",
+    story:"Shokupan, the cloud-soft Japanese loaf that ruined ordinary sandwich bread for everyone who tried it. The secret is tangzhong, a cooked flour paste that keeps the crumb impossibly fluffy for days. Tear it, toast it, or slice it thick for the best french toast of your life.",
+    meta:{total_time:"3 hr 30 min",marinate_time:null,serves:8,heat:"mild",skill:"medium"},
+    macros:{protein_g:7,fat_g:6,carbs_g:38,estimate:true},
+    ingredient_groups:[
+      {name:"the tangzhong",items:[
+        {qty:20,unit:"g",name:"strong white bread flour",countable:false},
+        {qty:100,unit:"ml",name:"whole milk",countable:false}]},
+      {name:"the dough",items:[
+        {qty:350,unit:"g",name:"strong white bread flour",countable:false},
+        {qty:7,unit:"g",name:"fast-action yeast",countable:false},
+        {qty:50,unit:"g",name:"caster sugar",countable:false},
+        {qty:1,unit:"tsp",name:"fine salt",countable:false},
+        {qty:120,unit:"ml",name:"whole milk, warm",countable:false},
+        {qty:1,unit:"",name:"egg",countable:true},
+        {qty:40,unit:"g",name:"unsalted butter, soft",countable:false}]},
+      {name:"to finish",items:[
+        {qty:1,unit:"",name:"egg, beaten with a splash of milk",countable:true}]}],
+    spice_mix:[],
+    method:[
+      {title:"tangzhong",when:"5 min",body:"Whisk the flour and milk in a small pan over medium heat until it thickens to a smooth paste, about two minutes. Scrape into a bowl and cool to room temperature.",timer_seconds:300},
+      {title:"the dough",when:"15 min",body:"Mix the flour, yeast, sugar and salt. Add the warm milk, egg and cooled tangzhong and knead for ten minutes until silky and stretchy. Work in the soft butter a little at a time and knead five more minutes until glossy.",timer_seconds:900},
+      {title:"first rise",when:"1 hr 30 min",body:"Cover and rise somewhere warm until doubled, about ninety minutes.",timer_seconds:5400},
+      {title:"shape",when:"15 min",body:"Knock back and divide into three. Roll each piece into an oval, fold the sides in, roll up into a fat spiral and sit all three seam-down in a lined loaf tin.",timer_seconds:900},
+      {title:"second rise",when:"45 min",body:"Cover and prove until the dough domes over the tin edge, about forty five minutes. Brush gently with the egg wash.",timer_seconds:2700},
+      {title:"bake",when:"30 min",body:"Bake at 170C fan for thirty minutes until deeply golden on top and hollow-sounding underneath. Cool in the tin for ten, then on a rack. Tearing it warm is allowed.",timer_seconds:1800}],
+    serving_ideas:[{emoji:"🍓",label:"jam and butter"},{emoji:"🍳",label:"tomorrow's french toast"},{emoji:"🥪",label:"the softest sandwich"},{emoji:"🍯",label:"honey, warm"}]
+  },
+
+  "smash-burger-tacos": {
+    cuisine:"Mexican",
+    story:"The internet's favourite mash-up and one of the few that deserves the hype. A ball of seasoned beef smashed straight onto a tortilla, seared until the beef and the tortilla fuse into one crispy-edged, cheese-topped thing of beauty. Faster than burgers, easier than tacos, better than both.",
+    meta:{total_time:"25 min",marinate_time:null,serves:4,heat:"medium",skill:"easy"},
+    macros:{protein_g:28,fat_g:26,carbs_g:24,estimate:true},
+    ingredient_groups:[
+      {name:"the smash",items:[
+        {qty:500,unit:"g",name:"beef mince, 20% fat",countable:false},
+        {qty:1,unit:"tsp",name:"fine salt",countable:false},
+        {qty:1,unit:"tsp",name:"coarse black pepper",countable:false},
+        {qty:8,unit:"",name:"small flour tortillas",countable:true},
+        {qty:8,unit:"slices",name:"american-style burger cheese",countable:false}]},
+      {name:"the burger sauce",items:[
+        {qty:4,unit:"tbsp",name:"mayonnaise",countable:false},
+        {qty:1,unit:"tbsp",name:"ketchup",countable:false},
+        {qty:1,unit:"tbsp",name:"american mustard",countable:false},
+        {qty:2,unit:"",name:"gherkins, finely chopped",countable:true},
+        {qty:1,unit:"pinch",name:"smoked paprika",countable:false}]},
+      {name:"to build",items:[
+        {qty:0.25,unit:"",name:"iceberg lettuce, shredded",countable:false},
+        {qty:1,unit:"",name:"white onion, finely diced",countable:true}]}],
+    spice_mix:[],
+    method:[
+      {title:"the sauce",when:"5 min",body:"Stir everything for the burger sauce together and set aside. It gets better while it waits.",timer_seconds:300},
+      {title:"ball up",when:"5 min",body:"Season the mince with the salt and pepper, handling it as little as possible, and divide into eight loose balls.",timer_seconds:300},
+      {title:"smash",when:"3 min",body:"Get a dry heavy pan or flat grill screaming hot. Press a ball of beef onto one side of each tortilla, thin as you dare, right to the edges.",timer_seconds:180},
+      {title:"sear",when:"4 min",body:"Lay beef-side down and press hard with a spatula for two to three minutes until deeply crusted. The tortilla steams and softens while the beef sears.",timer_seconds:240},
+      {title:"flip and cheese",when:"2 min",body:"Flip, lay a slice of cheese on the beef and give it one minute for the tortilla side to crisp and the cheese to melt.",timer_seconds:120},
+      {title:"build",when:"now",body:"Burger sauce, shredded iceberg, diced onion, fold and eat immediately over the pan like nobody's watching.",timer_seconds:null}],
+    serving_ideas:[{emoji:"🍟",label:"fries on the side"},{emoji:"🥒",label:"extra gherkins"},{emoji:"🌶️",label:"pickled jalapeños"},{emoji:"🥤",label:"cold cola"}]
+  },
+
+  "marry-me-butter-beans": {
+    cuisine:"Italian",
+    story:"The viral chicken dish traded its chicken for butter beans and somehow got better. Fat, creamy beans in a sun-dried tomato and parmesan cream sauce that tastes like it took hours, ready in twenty minutes from mostly storecupboard. One pan, crusty bread mandatory, marriage proposals optional.",
+    meta:{total_time:"20 min",marinate_time:null,serves:4,heat:"medium",skill:"easy"},
+    macros:{protein_g:14,fat_g:20,carbs_g:28,estimate:true},
+    ingredient_groups:[
+      {name:"the pan",items:[
+        {qty:2,unit:"tbsp",name:"olive oil (from the sun-dried tomato jar if possible)",countable:false},
+        {qty:1,unit:"",name:"onion, finely chopped",countable:true},
+        {qty:3,unit:"cloves",name:"garlic, sliced",countable:false},
+        {qty:80,unit:"g",name:"sun-dried tomatoes, roughly chopped",countable:false},
+        {qty:1,unit:"tsp",name:"dried oregano",countable:false},
+        {qty:0.5,unit:"tsp",name:"chilli flakes",countable:false},
+        {qty:1,unit:"tbsp",name:"tomato purée",countable:false}]},
+      {name:"the sauce",items:[
+        {qty:2,unit:"tins",name:"butter beans (drained, liquid saved)",countable:false},
+        {qty:200,unit:"ml",name:"double cream",countable:false},
+        {qty:100,unit:"ml",name:"vegetable stock (or the saved bean liquid)",countable:false},
+        {qty:40,unit:"g",name:"parmesan (or veggie hard cheese), grated",countable:false},
+        {qty:1,unit:"handful",name:"baby spinach",countable:false},
+        {qty:1,unit:"handful",name:"basil leaves",countable:false}]}],
+    spice_mix:[],
+    method:[
+      {title:"the base",when:"6 min",body:"Soften the onion in the oil over medium heat for four minutes, then add the garlic, sun-dried tomatoes, oregano, chilli flakes and purée and cook two more until it smells like an Italian deli.",timer_seconds:360},
+      {title:"beans in",when:"2 min",body:"Tip in the butter beans and stir to coat them in everything.",timer_seconds:120},
+      {title:"the sauce",when:"8 min",body:"Pour in the cream and stock and simmer gently for six to eight minutes until the sauce thickens enough to coat a spoon. Loosen with bean liquid if it goes too far.",timer_seconds:480},
+      {title:"finish",when:"3 min",body:"Off the heat, stir through the parmesan and spinach until the leaves collapse. Taste, season, tear over the basil.",timer_seconds:180},
+      {title:"serve",when:"now",body:"Straight from the pan with crusty bread for the sauce, or over pasta or rice if you want it to stretch further.",timer_seconds:null}],
+    serving_ideas:[{emoji:"🍞",label:"crusty bread, essential"},{emoji:"🍝",label:"over pappardelle"},{emoji:"🧀",label:"extra parmesan"},{emoji:"🍷",label:"glass of white"}]
+  },
+
+  "crispy-rice-salad": {
+    cuisine:"Thai",
+    story:"The salad that finally made rice exciting. Clumps of cooked rice fried until golden and shattering, tossed while still warm with herbs, cucumber, peanuts and a lime-fish-sauce dressing that wakes everything up. Inspired by Laotian nam khao, adopted by the entire internet, kept because it's genuinely brilliant.",
+    meta:{total_time:"30 min",marinate_time:null,serves:4,heat:"medium",skill:"easy"},
+    macros:{protein_g:9,fat_g:16,carbs_g:42,estimate:true},
+    ingredient_groups:[
+      {name:"the crispy rice",items:[
+        {qty:400,unit:"g",name:"cooked and cooled jasmine rice (day-old is perfect)",countable:false},
+        {qty:2,unit:"tbsp",name:"cornflour",countable:false},
+        {qty:1,unit:"tbsp",name:"sriracha",countable:false},
+        {qty:4,unit:"tbsp",name:"neutral oil",countable:false}]},
+      {name:"the salad",items:[
+        {qty:1,unit:"",name:"cucumber, smashed and chopped",countable:true},
+        {qty:4,unit:"",name:"spring onions, sliced",countable:true},
+        {qty:1,unit:"big handful",name:"coriander and mint, torn",countable:false},
+        {qty:60,unit:"g",name:"roasted peanuts, roughly crushed",countable:false},
+        {qty:1,unit:"",name:"red chilli, finely sliced",countable:true}]},
+      {name:"the dressing",items:[
+        {qty:2,unit:"",name:"limes, juiced",countable:true},
+        {qty:2,unit:"tbsp",name:"fish sauce (or light soy)",countable:false},
+        {qty:1,unit:"tbsp",name:"honey",countable:false},
+        {qty:1,unit:"clove",name:"garlic, grated",countable:false}]}],
+    spice_mix:[],
+    method:[
+      {title:"season the rice",when:"5 min",body:"Toss the cold rice with the cornflour and sriracha, keeping some clumps together. The clumps are the point.",timer_seconds:300},
+      {title:"fry",when:"12 min",body:"Heat the oil in a wide pan over medium-high and fry the rice in a single layer, undisturbed, for four to five minutes a side until deeply golden and crisp in patches. Do it in two batches rather than crowding.",timer_seconds:720},
+      {title:"the dressing",when:"3 min",body:"Whisk the lime juice, fish sauce, honey and garlic until the honey dissolves.",timer_seconds:180},
+      {title:"toss",when:"3 min",body:"While the rice is still warm, toss it with the cucumber, spring onions, herbs, most of the peanuts and the dressing. The warm rice drinks the dressing in.",timer_seconds:180},
+      {title:"serve",when:"now",body:"Pile onto a platter, finish with the rest of the peanuts and the chilli. Eat before the crunch fades, which will not be a problem.",timer_seconds:null}],
+    serving_ideas:[{emoji:"🍗",label:"grilled chicken thighs"},{emoji:"🥚",label:"a jammy egg on top"},{emoji:"🌶️",label:"extra sriracha"},{emoji:"🍺",label:"ice cold lager"}]
+  },
+
+  "basque-cheesecake": {
+    cuisine:"Spanish",
+    story:"The cheesecake you burn on purpose. Born in San Sebastián, no base, no water bath, no careful anything: just a rich vanilla cheesecake baked hot until the top goes deeply bronzed and the middle stays molten. The cracked, caramelised top is not a mistake, it's the whole point.",
+    meta:{total_time:"1 hr",marinate_time:"4 hr",serves:10,heat:"mild",skill:"easy"},
+    macros:{protein_g:7,fat_g:28,carbs_g:22,estimate:true},
+    ingredient_groups:[
+      {name:"the cheesecake",items:[
+        {qty:600,unit:"g",name:"full-fat cream cheese, room temperature",countable:false},
+        {qty:200,unit:"g",name:"caster sugar",countable:false},
+        {qty:4,unit:"",name:"eggs, room temperature",countable:true},
+        {qty:300,unit:"ml",name:"double cream",countable:false},
+        {qty:25,unit:"g",name:"plain flour",countable:false},
+        {qty:1,unit:"tsp",name:"vanilla bean paste",countable:false},
+        {qty:1,unit:"pinch",name:"fine salt",countable:false}]}],
+    spice_mix:[],
+    method:[
+      {title:"the tin",when:"5 min",body:"Heat the oven to 200C fan. Line a 20cm springform tin with two big overlapping sheets of baking paper, pressed in roughly so the paper pleats and stands well above the rim. Rustic is correct.",timer_seconds:300},
+      {title:"the batter",when:"10 min",body:"Beat the cream cheese and sugar until completely smooth. Beat in the eggs one at a time, then the cream, vanilla and salt. Sift over the flour and fold through until just combined.",timer_seconds:600},
+      {title:"bake hot",when:"40 min",body:"Pour into the tin and bake for forty minutes until the top is deeply browned, almost burnt at the edges, and the centre still wobbles like a set custard when you nudge it. It will look overdone on top and underdone inside. Both are right.",timer_seconds:2400},
+      {title:"the collapse",when:"4 hr",body:"Cool completely in the tin: it will sink and crack as it cools, which is part of the look. Chill for at least four hours, or serve barely warm and molten in the middle if you can't wait.",timer_seconds:14400},
+      {title:"serve",when:"now",body:"Peel back the paper and slice with a hot knife. It needs absolutely nothing, but no one has ever complained about a few berries.",timer_seconds:null}],
+    serving_ideas:[{emoji:"🍓",label:"macerated berries"},{emoji:"🍒",label:"cherries in syrup"},{emoji:"☕",label:"strong espresso"},{emoji:"🥃",label:"a small sherry"}]
+  },
+
   "coronation-chicken-sandwich": {
     cuisine:"British",
     story:"The unofficial king of the picnic hamper, done properly on rustic sourdough. Poached chicken bound in a mango-spiked mayo, piled onto thick-cut country bread with crisp little gem and enough curried richness to make the tomato sandwich next to it feel underdressed. Best made the night before so the flavours settle in properly.",

@@ -9,6 +9,7 @@
 // Output: newsletters/<yyyy-mm-dd>.html
 import fs from 'node:fs';
 import path from 'node:path';
+import crypto from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -21,6 +22,12 @@ const INK = '#241712', CREAM = '#f6edda';
 const esc = (s) => String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 
 const records = JSON.parse(fs.readFileSync(p('recipes.json'), 'utf8'));
+// content-hash cache-buster for thumbs, so Beehiiv/inbox caches always see
+// a fresh URL when the image bytes change
+const thumbHash = (slug) => {
+  try { return crypto.createHash('md5').update(fs.readFileSync(p('images','thumb',slug+'.png'))).digest('hex').slice(0,8); }
+  catch { return '1'; }
+};
 const bySlug = {}; records.forEach((r) => (bySlug[r.slug] = r));
 
 let slugs = process.argv.slice(2).filter((a) => !a.startsWith('--'));
@@ -48,7 +55,7 @@ const card = (rec) => {
           <a href="${url}" style="font-family:Poppins,Arial,sans-serif;font-size:14px;font-weight:600;color:${accent};background:#ffffff;text-decoration:none;padding:9px 20px;border-radius:999px;display:inline-block;">cook it</a>
         </td>
         <td width="170" style="padding:14px 18px 14px 0;vertical-align:middle;">
-          <a href="${url}"><img src="${SITE}/images/thumb/${rec.slug}.png" width="170" alt="${esc(rec.title)}" style="display:block;width:170px;height:auto;border:0;"/></a>
+          <a href="${url}"><img src="${SITE}/images/thumb/${rec.slug}.png?v=${thumbHash(rec.slug)}" width="170" alt="${esc(rec.title)}" style="display:block;width:170px;height:auto;border:0;"/></a>
         </td>
       </tr>
     </table>
@@ -61,11 +68,12 @@ const INTRO = (introIdx !== -1 && process.argv[introIdx + 1]) || process.env.NL_
 
 // partner slot: native cards after the five, links tagged clickref=newsletter.
 // Edit per edition (or empty the array to skip the section).
-// Four sponsor slots in the newsletter: Tower, Abel & Cole, MuscleFood and
-// SharkNinja. Real Food Hub deliberately excluded (Jamie's call). Every link
-// carries clickref=newsletter for per-slot AWIN reporting.
+// Four sponsor slots in the newsletter: Tower, Abel & Cole and two SharkNinja
+// creatives (MuscleFood removed 2026-08-20, lost their AWIN partnership).
+// Real Food Hub deliberately excluded (Jamie's call). Every link carries
+// clickref=newsletter for per-slot AWIN reporting.
 const NL_PARTNERS = [
-  { // Tower — standing offer (PAYDAY promo ended, back to the everyday hook)
+  { // Tower — standing offer
     accent: '#9bb020', label: 'partner · tower', title: 'the kit behind the cooking.',
     meta: 'pans, woks, air fryers | free recipe book',
     cta: 'shop tower',
@@ -76,17 +84,18 @@ const NL_PARTNERS = [
     meta: '50% off your 1st box | code ACVEG26', cta: 'get 50% off',
     img: SITE + '/partners/abel-and-cole-box.jpg', alt: 'Abel and Cole veg box',
     link: 'https://www.awin1.com/awclick.php?gid=385402&mid=6388&awinaffid=2918949&linkid=2603115&clickref=newsletter' },
-  { // MuscleFood — hamper leads the slot: bigger basket than the 5kg chicken deal
-    accent: '#2c5e4f', label: 'partner · musclefood', title: 'the whole butcher, boxed.',
-    meta: 'meat hampers | chicken, steaks, mince and more', cta: 'shop hampers',
-    img: SITE + '/partners/muscle-food-hamper.jpg', alt: 'MuscleFood meat hamper',
-    link: 'https://www.awin1.com/cread.php?awinmid=11002&awinaffid=2918949&clickref=newsletter' },
-  { // SharkNinja — School's Out sale (SALE-ENDS-2026-08-18: revert to standing headline after)
-    accent: '#1c2532', label: 'partner · shark ninja', title: "school's out sale.",
-    meta: "up to 30% off across Ninja | until 18 Aug, exclusions apply",
-    cta: 'shop the sale',
+  { // SharkNinja — the Woodfire (standing, sale ended 18 Aug)
+    accent: '#1c2532', label: 'partner · shark ninja', title: 'the kit for the flip.',
+    meta: 'woodfire pro connect xl | smoker, grill and air fryer in one',
+    cta: 'shop ninja',
     img: SITE + '/partners/ninja-woodfire.jpg', alt: 'Ninja Woodfire Pro Connect XL Electric BBQ Grill and Smoker',
-    link: 'https://www.awin1.com/cread.php?awinmid=8059&awinaffid=2918949&clickref=newsletter&ued=https%3A%2F%2Fwww.sharkninja.co.uk%2Foffers%2Fshop-all-offers' },
+    link: 'https://www.awin1.com/cread.php?awinmid=8059&awinaffid=2918949&clickref=newsletter&ued=https%3A%2F%2Fwww.sharkninja.co.uk%2Fninja-woodfire-pro-connect-xl-electric-bbq-grill-smoker%2FOG901UK.html' },
+  { // SharkNinja — the SLUSHi (second creative fills the ex-MuscleFood slot)
+    accent: '#2a7f8e', label: 'partner · shark ninja', title: 'slushies at home.',
+    meta: 'frozen drinks, cocktails and mocktails | ten minutes flat',
+    cta: 'shop the slushi',
+    img: SITE + '/partners/ninja-slushi.jpg', alt: 'Ninja SLUSHi frozen drink maker',
+    link: 'https://www.awin1.com/cread.php?awinmid=8059&awinaffid=2918949&clickref=newsletter&q=595382&s=4672643' },
 ];
 const partnerRows = !NL_PARTNERS.length ? '' : `
   <tr><td align="center" style="font-family:Poppins,Arial,sans-serif;font-weight:700;font-size:15px;letter-spacing:1.5px;color:${INK};text-transform:uppercase;padding:26px 0 14px 0;">from our kitchen partners</td></tr>
