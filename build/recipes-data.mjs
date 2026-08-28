@@ -6178,6 +6178,142 @@ export default {
     serving_ideas:[{emoji:"🥔",label:"hash browns"},{emoji:"🥑",label:"avocado"},{emoji:"🌶️",label:"hot sauce"},{emoji:"🍞",label:"toast for the yolk"}]
   },
 
+  "gochujang-chicken-skewers": {
+    cuisine:"Korean",
+    story:"The bank holiday skewer that makes everyone put their burger down. Chicken thighs in a sticky gochujang glaze that lacquers deep red over the coals, sweet then smoky then properly hot at the finish. Works just as well under a screaming grill if the weather turns, which it will, because bank holiday.",
+    meta:{total_time:"20 min",marinate_time:"30 min",serves:4,heat:"hot",skill:"easy"},
+    macros:{protein_g:30,fat_g:14,carbs_g:16,estimate:true},
+    ingredient_groups:[
+      {name:"the chicken",items:[
+        {qty:600,unit:"g",name:"chicken thigh fillets, in big chunks",countable:false},
+        {qty:1,unit:"tbsp",name:"neutral oil",countable:false},
+        {qty:1,unit:"pinch",name:"salt",countable:false}]},
+      {name:"the glaze",items:[
+        {qty:3,unit:"tbsp",name:"gochujang",countable:false},
+        {qty:2,unit:"tbsp",name:"honey",countable:false},
+        {qty:1,unit:"tbsp",name:"soy sauce",countable:false},
+        {qty:1,unit:"tbsp",name:"rice vinegar",countable:false},
+        {qty:2,unit:"cloves",name:"garlic, grated",countable:false},
+        {qty:1,unit:"tsp",name:"grated ginger",countable:false},
+        {qty:1,unit:"tsp",name:"sesame oil",countable:false}]},
+      {name:"to finish",items:[
+        {qty:1,unit:"tsp",name:"toasted sesame seeds",countable:false},
+        {qty:2,unit:"",name:"spring onions, sliced",countable:true}]}],
+    spice_mix:[],
+    method:[
+      {title:"the glaze",when:"5 min",body:"Whisk everything for the glaze together. Set a third of it aside in a clean bowl for brushing at the end.",timer_seconds:300},
+      {title:"marinate",when:"30 min",body:"Toss the chicken with the oil, salt and the rest of the glaze. Thirty minutes on the side is plenty; overnight is even better if you're organised.",timer_seconds:1800},
+      {title:"skewer",when:"5 min",body:"Thread onto skewers, not too tight, so the heat gets between the pieces. Soak wooden skewers first or use metal.",timer_seconds:300},
+      {title:"grill",when:"12 min",body:"Over medium-hot coals or under a hot grill, turn every three minutes until charred at the edges and cooked through, about twelve minutes.",timer_seconds:720},
+      {title:"lacquer",when:"2 min",body:"Brush with the reserved glaze in the last minute so it goes glossy without burning.",timer_seconds:120},
+      {title:"serve",when:"now",body:"Scatter with sesame seeds and spring onions. Eat straight off the stick, standing up, in the garden.",timer_seconds:null}],
+    serving_ideas:[{emoji:"🍚",label:"sticky rice"},{emoji:"🥒",label:"quick cucumber pickle"},{emoji:"🥬",label:"lettuce cups"},{emoji:"🍺",label:"cold lager"}]
+  },
+
+  "charred-corn-ribs": {
+    cuisine:"American",
+    story:"Corn on the cob, quartered lengthways so the pieces curl like ribs as they cook. Charred edges, chilli-lime butter in every groove, a drizzle of cool crema over the top. The trend that stuck around because it's genuinely a better way to eat corn.",
+    meta:{total_time:"15 min",marinate_time:null,serves:4,heat:"medium",skill:"easy"},
+    macros:{protein_g:5,fat_g:14,carbs_g:26,estimate:true},
+    ingredient_groups:[
+      {name:"the ribs",items:[
+        {qty:3,unit:"",name:"corn cobs, husked",countable:true},
+        {qty:2,unit:"tbsp",name:"butter, melted",countable:false},
+        {qty:1,unit:"tsp",name:"smoked paprika",countable:false},
+        {qty:0.5,unit:"tsp",name:"chilli powder",countable:false},
+        {qty:1,unit:"",name:"lime, zested and juiced",countable:true},
+        {qty:1,unit:"pinch",name:"salt",countable:false}]},
+      {name:"to finish",items:[
+        {qty:3,unit:"tbsp",name:"soured cream or crema",countable:false},
+        {qty:2,unit:"tbsp",name:"crumbled feta",countable:false},
+        {qty:1,unit:"handful",name:"coriander, chopped",countable:false},
+        {qty:1,unit:"pinch",name:"chilli flakes",countable:false}]}],
+    spice_mix:[],
+    method:[
+      {title:"quarter",when:"5 min",body:"Stand each cob upright and cut down through the core into quarters with your biggest knife and some confidence. This is the only hard part.",timer_seconds:300},
+      {title:"butter",when:"2 min",body:"Mix the melted butter with the paprika, chilli powder, lime zest and salt, and brush it all over the ribs.",timer_seconds:120},
+      {title:"cook",when:"10 min",body:"Air fryer at 200C for ten minutes, or a hot bbq or grill for the same, turning once, until the edges char and the ribs curl.",timer_seconds:600},
+      {title:"dress",when:"2 min",body:"Pile onto a platter, drizzle with the crema, squeeze over the lime juice, scatter the feta, coriander and chilli flakes.",timer_seconds:120},
+      {title:"serve",when:"now",body:"Eat with your hands, like ribs, because that's the point.",timer_seconds:null}],
+    serving_ideas:[{emoji:"🍗",label:"next to the skewers"},{emoji:"🌶️",label:"hot sauce"},{emoji:"🧀",label:"extra feta"},{emoji:"🍹",label:"frozen margarita"}]
+  },
+
+  "peach-burrata-salad": {
+    cuisine:"Italian",
+    story:"August on a plate. Ripe peaches torn next to a whole burrata, draped with prosciutto, showered in basil and finished with olive oil, honey and a crack of pepper. Ten minutes, no cooking, and it looks like you hired a caterer.",
+    meta:{total_time:"10 min",marinate_time:null,serves:4,heat:"mild",skill:"easy"},
+    macros:{protein_g:12,fat_g:18,carbs_g:14,estimate:true},
+    ingredient_groups:[
+      {name:"the salad",items:[
+        {qty:3,unit:"",name:"ripe peaches, at room temperature",countable:true},
+        {qty:1,unit:"ball",name:"burrata (the biggest you can find)",countable:false},
+        {qty:6,unit:"slices",name:"prosciutto",countable:false},
+        {qty:1,unit:"big handful",name:"basil leaves",countable:false},
+        {qty:1,unit:"handful",name:"rocket",countable:false}]},
+      {name:"the finish",items:[
+        {qty:3,unit:"tbsp",name:"good olive oil",countable:false},
+        {qty:1,unit:"tbsp",name:"honey",countable:false},
+        {qty:1,unit:"tsp",name:"balsamic vinegar",countable:false},
+        {qty:1,unit:"pinch",name:"flaky sea salt",countable:false},
+        {qty:1,unit:"pinch",name:"coarse black pepper",countable:false}]}],
+    spice_mix:[],
+    method:[
+      {title:"tear",when:"5 min",body:"Halve, stone and thickly slice or tear the peaches. Scatter the rocket over a big platter and arrange the peaches on top.",timer_seconds:300},
+      {title:"the burrata",when:"2 min",body:"Sit the burrata in the middle and tear it open so the cream spills. Drape the prosciutto in loose folds around it.",timer_seconds:120},
+      {title:"finish",when:"3 min",body:"Scatter the basil, then dress the whole platter with the olive oil, honey, balsamic, salt and a proper crack of pepper.",timer_seconds:180},
+      {title:"serve",when:"now",body:"Immediately, with bread to chase the burrata cream and peach juice around the platter.",timer_seconds:null}],
+    serving_ideas:[{emoji:"🍞",label:"grilled sourdough"},{emoji:"🥂",label:"cold prosecco"},{emoji:"🌰",label:"toasted almonds"},{emoji:"🍑",label:"nectarines work too"}]
+  },
+
+  "garlic-butter-prawn-skewers": {
+    cuisine:"Mediterranean",
+    story:"The fastest thing you can put on a bank holiday barbecue and the first thing to disappear. Big prawns basted with garlic-lemon butter as they char, threaded with lemon halves that catch fire at the edges in the best way. Fifteen minutes including the washing up.",
+    meta:{total_time:"15 min",marinate_time:null,serves:4,heat:"medium",skill:"easy"},
+    macros:{protein_g:24,fat_g:12,carbs_g:3,estimate:true},
+    ingredient_groups:[
+      {name:"the skewers",items:[
+        {qty:400,unit:"g",name:"raw king prawns, peeled, tails on",countable:false},
+        {qty:2,unit:"",name:"lemons, one in wedges for the skewers, one for squeezing",countable:true},
+        {qty:1,unit:"tbsp",name:"olive oil",countable:false},
+        {qty:1,unit:"pinch",name:"salt",countable:false}]},
+      {name:"the butter",items:[
+        {qty:60,unit:"g",name:"butter",countable:false},
+        {qty:3,unit:"cloves",name:"garlic, grated",countable:false},
+        {qty:0.5,unit:"tsp",name:"smoked paprika",countable:false},
+        {qty:1,unit:"pinch",name:"chilli flakes",countable:false},
+        {qty:1,unit:"handful",name:"parsley, chopped",countable:false}]}],
+    spice_mix:[],
+    method:[
+      {title:"the butter",when:"3 min",body:"Melt the butter gently with the garlic, paprika and chilli flakes until it smells outrageous. Stir in half the parsley.",timer_seconds:180},
+      {title:"thread",when:"5 min",body:"Toss the prawns with the oil and salt, then thread onto skewers with the lemon wedges between every few prawns.",timer_seconds:300},
+      {title:"grill",when:"6 min",body:"Over hot coals or a screaming grill pan, two to three minutes a side, basting with the garlic butter as they go, until pink with charred edges.",timer_seconds:360},
+      {title:"serve",when:"now",body:"Pile onto a platter, pour over any remaining butter, squeeze the spare lemon over the lot and finish with the rest of the parsley.",timer_seconds:null}],
+    serving_ideas:[{emoji:"🍞",label:"bread for the butter"},{emoji:"🥗",label:"next to the peach salad"},{emoji:"🍋",label:"extra lemon"},{emoji:"🥂",label:"cold white wine"}]
+  },
+
+  "eton-mess": {
+    cuisine:"British",
+    story:"The pudding that proves the British got something right. Crushed meringue, softly whipped cream and ripe strawberries folded together into a glorious mess, invented at a posh school and perfected in ordinary gardens ever since. Fifteen minutes, zero skill required, always the first bowl empty.",
+    meta:{total_time:"15 min",marinate_time:null,serves:6,heat:"mild",skill:"easy"},
+    macros:{protein_g:4,fat_g:22,carbs_g:30,estimate:true},
+    ingredient_groups:[
+      {name:"the strawberries",items:[
+        {qty:400,unit:"g",name:"ripe strawberries",countable:false},
+        {qty:1,unit:"tbsp",name:"caster sugar",countable:false},
+        {qty:0.5,unit:"",name:"lemon, juiced",countable:false}]},
+      {name:"the mess",items:[
+        {qty:400,unit:"ml",name:"double cream",countable:false},
+        {qty:1,unit:"tsp",name:"vanilla bean paste",countable:false},
+        {qty:8,unit:"",name:"shop-bought meringue nests",countable:true}]}],
+    spice_mix:[],
+    method:[
+      {title:"macerate",when:"10 min",body:"Hull and quarter the strawberries. Toss half with the sugar and lemon juice and leave for ten minutes to go glossy and juicy. Crush a handful of the rest to a rough purée.",timer_seconds:600},
+      {title:"whip",when:"4 min",body:"Whip the cream and vanilla to soft, floppy peaks. Stop before it goes stiff: the mess should slump, not stand.",timer_seconds:240},
+      {title:"the mess",when:"3 min",body:"Break the meringues into the cream in big shards, add the macerated strawberries and their juices, and fold once or twice. Streaky, not uniform.",timer_seconds:180},
+      {title:"serve",when:"now",body:"Pile into glasses or one big bowl, ripple through the crushed strawberries, top with the remaining fresh ones. Serve immediately while the meringue still crunches.",timer_seconds:null}],
+    serving_ideas:[{emoji:"🍓",label:"extra strawberries"},{emoji:"🫐",label:"raspberry version"},{emoji:"🌿",label:"a few mint leaves"},{emoji:"🥂",label:"pudding wine, if fancy"}]
+  },
+
   "japanese-milk-bread": {
     cuisine:"Japanese",
     story:"Shokupan, the cloud-soft Japanese loaf that ruined ordinary sandwich bread for everyone who tried it. The secret is tangzhong, a cooked flour paste that keeps the crumb impossibly fluffy for days. Tear it, toast it, or slice it thick for the best french toast of your life.",

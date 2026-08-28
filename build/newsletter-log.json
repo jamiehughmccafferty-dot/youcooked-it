@@ -256,16 +256,21 @@
     "smash-burger-tacos",
     "marry-me-butter-beans",
     "crispy-rice-salad",
-    "basque-cheesecake"
+    "basque-cheesecake",
+    "gochujang-chicken-skewers",
+    "charred-corn-ribs",
+    "peach-burrata-salad",
+    "garlic-butter-prawn-skewers",
+    "eton-mess"
   ],
   "lastDrop": {
-    "date": "2026-08-21",
+    "date": "2026-08-28",
     "slugs": [
-      "japanese-milk-bread",
-      "smash-burger-tacos",
-      "marry-me-butter-beans",
-      "crispy-rice-salad",
-      "basque-cheesecake"
+      "gochujang-chicken-skewers",
+      "charred-corn-ribs",
+      "peach-burrata-salad",
+      "garlic-butter-prawn-skewers",
+      "eton-mess"
     ]
   },
   "heldForSpecial": {
